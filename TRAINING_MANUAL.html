@@ -1,0 +1,776 @@
+<!doctype html>
+<html><head><meta charset=utf-8>
+<title>TRAINING_MANUAL</title>
+<style>
+
+body { font-family: Segoe UI, Arial, sans-serif; line-height: 1.45; color: #202124; margin: 42px; max-width: 980px; }
+h1, h2, h3 { color: #17324d; margin-top: 1.35em; }
+h1 { border-bottom: 2px solid #d9e2ec; padding-bottom: 8px; }
+table { border-collapse: collapse; width: 100%; margin: 18px 0; font-size: 0.94rem; }
+th, td { border: 1px solid #cfd8e3; padding: 7px 9px; vertical-align: top; }
+th { background: #eef3f8; text-align: left; }
+code, pre { background: #f4f6f8; border-radius: 4px; }
+code { padding: 1px 4px; }
+pre { padding: 12px; overflow-x: auto; }
+.document-meta { color: #5f6b7a; font-size: 0.9rem; margin-bottom: 22px; }
+
+</style></head><body>
+<div class=document-meta>Source: user/TRAINING_MANUAL.md</div>
+<h1>WorkPlace Conditions Governance Training Manual</h1>
+<h2>Purpose of this manual</h2>
+<p>This manual is the training hub for the WorkPlace Conditions Governance application.</p>
+<p>It should not be read as a single-page quick-start guide. The system is a specialist governance-control-room application. It helps a governance team test whether organizational change is improving real working conditions over time and whether those changes remain connected to legitimate value creation, structural evidence, execution, measurement, review, and learning.</p>
+<p>The application is not a casual self-service dashboard. Some pages can be read by ordinary staff after basic orientation, but advanced governance-action workflows require trained users, prepared data, and role-specific test scripts.</p>
+<p>Use this manual to understand:</p>
+<ul>
+<li>what the system is for</li>
+<li>who should use which parts</li>
+<li>what training sequence to follow</li>
+<li>how the main pages fit together</li>
+<li>which separate learning resources to read before using complex pages</li>
+<li>what ordinary staff can reasonably test</li>
+<li>what should be tested only by trained governance users or fixture-based validation</li>
+</ul>
+<hr>
+<hr>
+<h2>Management purpose of the system</h2>
+<p>WorkPlace Conditions Governance helps leaders:</p>
+<ul>
+<li>understand;</li>
+<li>test;</li>
+<li>decide;</li>
+<li>govern;</li>
+<li>revise;</li>
+<li>learn.</li>
+</ul>
+<p>The system is not merely a dashboard, compliance checklist, reporting pack, or page sequence. It is a governance operating discipline that helps management connect evidence, judgment, action, review, and learning.</p>
+<hr>
+<h2>Six management-intention questions</h2>
+<p>The system helps management answer six core questions.</p>
+<table><thead><tr><th>Question</th><th>One-line explanation</th></tr></thead><tbody>
+<tr><td>What is structurally happening in the organization?</td><td>Identify the actual conditions, constraints, patterns, and structural pressures shaping work.</td></tr>
+<tr><td>What are people experiencing?</td><td>Understand human experience, dignity, trust, voice, workload, conflict, and contribution conditions.</td></tr>
+<tr><td>Where do stated values, trust signals, or symbolic claims diverge from actual structural conditions?</td><td>Compare values language, trust signals, and cultural claims with evidence of real working conditions.</td></tr>
+<tr><td>Which recommendations should be preserved, reformed, replaced, watched, accepted, or deferred?</td><td>Make disciplined recommendation-gating judgments rather than reactive status updates.</td></tr>
+<tr><td>Are interventions producing measurable improvement through pilots and KPIs?</td><td>Distinguish proposed or accepted change from demonstrated improvement.</td></tr>
+<tr><td>What should governance approve, block, reopen, qualify, or escalate?</td><td>Decide what is ready, unsafe, unresolved, conditional, or urgent enough for higher attention.</td></tr>
+</tbody></table>
+<p>For detail, use:</p>
+<pre><code>user/SIX_MANAGEMENT_INTENTIONS_AND_FOUR_CYCLE_OPERATING_PATTERN.md</code></pre>
+<hr>
+<h2>Seven value-adding activities</h2>
+<p>The system answers the six questions through seven value-adding activities.</p>
+<table><thead><tr><th>Activity</th><th>Concise meaning</th></tr></thead><tbody>
+<tr><td>Diagnose</td><td>Establish what is structurally happening and what people are experiencing.</td></tr>
+<tr><td>Recommend</td><td>Propose responses.</td></tr>
+<tr><td>Decide</td><td>Make commitment, restraint, or revision judgments.</td></tr>
+<tr><td>Execute</td><td>Create action pathways and ownership.</td></tr>
+<tr><td>Measure</td><td>Test whether change is occurring.</td></tr>
+<tr><td>Review</td><td>Challenge, qualify, and interpret evidence.</td></tr>
+<tr><td>Learn</td><td>Validate, contradict, supersede, reopen, and preserve review history.</td></tr>
+</tbody></table>
+<hr>
+<h2>Metric-system interpretation</h2>
+<p>The metric system should be taught as a value chain, not as a list of numbers.</p>
+<table><thead><tr><th>Metric role</th><th>Plain meaning</th><th>Main resources</th></tr></thead><tbody>
+<tr><td>Stage A diagnostic</td><td>Helps users understand current workplace reality.</td><td><code>user/metrics/Metrics explained.md</code>, <code>user/metrics/Metric Definitions.md</code>, <code>user/metrics/Diagnostic Input Data Collection and Scoring.md</code></td></tr>
+<tr><td>Stage A / Stage B readiness</td><td>Shows whether the organization can act and learn responsibly.</td><td><code>user/metrics/Comprehensive Metric Reference.md</code></td></tr>
+<tr><td>Stage B execution</td><td>Tests whether pilots, KPIs, recommendations, governance actions, and learning states show movement.</td><td><code>user/KPI_DASHBOARD_PAGE_LEARNING_RESOURCE.md</code>, <code>user/PILOT_TRACKER_PAGE_LEARNING_RESOURCE.md</code></td></tr>
+<tr><td>Bridge / governance</td><td>Connects diagnosis to action, evidence, continuity, scenario pressure, and review.</td><td><code>user/metrics/Score Component Details Page User Guide.md</code>, <code>user/SCORE_COMPONENT_DETAILS_PAGE_LEARNING_RESOURCE.md</code>, <code>user/LINEAGE_VIEW_PAGE_LEARNING_RESOURCE.md</code></td></tr>
+</tbody></table>
+<p>Training should emphasize that Stage A scores diagnose conditions, Stage B signals test action, and Bridge metrics qualify whether evidence supports governance conclusions.</p>
+<hr>
+<h2>Four-cycle operating pattern</h2>
+<p>The seven activities are operationalized as a repeatable governance rhythm.</p>
+<table><thead><tr><th>Cycle</th><th>Loop focus</th><th>Main purpose</th><th>Main page group</th></tr></thead><tbody>
+<tr><td>Cycle 1 — Baseline Diagnosis</td><td>diagnose</td><td>Establish the first structured picture of organizational conditions.</td><td>Home; Setup; Assessment Cycle; Diagnostic Input; Survey Input; Evidence Notes; Score Dashboard; Alignment Dashboard; Score Component Details</td></tr>
+<tr><td>Cycle 2 — Governance Response</td><td>recommend, decide, execute, begin measuring</td><td>Generate and review recommendations, convert decisions, create pilots/KPIs, and check early lineage.</td><td>Recommendations; Preserve / Reform / Replace; Foresight Execution; Pilot Tracker; KPI Dashboard; Lineage View</td></tr>
+<tr><td>Cycle 3 — Human Challenge and Review</td><td>measure, review, challenge conclusions</td><td>Test whether conclusions are corroborated, challenged, unresolved, or revised.</td><td>Comparative Cycle Review; Governance Execution Review; Governance Summary; Governance Action Queue; Evidence Notes</td></tr>
+<tr><td>Cycle 4 — Revision and Institutionalization</td><td>learn, revise, preserve review history</td><td>Validate, revise, supersede, reopen, preserve learning, and prepare the next cycle.</td><td>Recommendations; Preserve / Reform / Replace; Pilot Tracker; KPI Dashboard; Governance Summary; Review History</td></tr>
+</tbody></table>
+<hr>
+<h2>Judgment-gate warnings</h2>
+<p>Recommendation gating is a major governance judgment point, not a status update.</p>
+<p>Recommendation gates include:</p>
+<pre><code>preserve
+reform
+replace
+watch
+accept
+defer</code></pre>
+<p>Governance gating is a major governance judgment point, not a reactive workflow response.</p>
+<p>Governance gates include:</p>
+<pre><code>approve
+block
+reopen
+qualify
+escalate</code></pre>
+<p>Use the Transformation Lead resources for the detailed gating framework.</p>
+<hr>
+<h2>Proposed change versus demonstrated change</h2>
+<p>An accepted recommendation is not evidence of improvement.</p>
+<p>Improvement requires execution feedback:</p>
+<pre><code>recommendation
+→ structural decision
+→ pilot
+→ KPI
+→ evidence
+→ review
+→ learning</code></pre>
+<p>Pilots and KPIs help distinguish proposed change from demonstrated change.</p>
+<hr>
+<h2>Role-boundary reminder</h2>
+<p>Ordinary staff should not be asked to discover hidden prerequisite states or validate advanced governance logic by exploration.</p>
+<p>Missing fixture data is not a defect. Classify it as:</p>
+<pre><code>not exercised — fixture unavailable</code></pre>
+<hr>
+<h2>Performance-integrity reminder</h2>
+<p>The system must distinguish:</p>
+<ul>
+<li>presentational performance;</li>
+<li>value-realising performance.</li>
+</ul>
+<p>Guiding question:</p>
+<pre><code>Are we observing a persuasive performance of alignment, or evidence that the intended value is actually being realised?</code></pre>
+<h2>Core management message</h2>
+<p>If management says the system is too complicated for ordinary staff to test properly, the correct response is:</p>
+<p>&gt; That concern is valid. The system is not designed as a casual reporting dashboard. It is a specialist governance-control-room application. It needs role-specific training, prepared examples, and a clear distinction between ordinary staff review, trained governance use, Project Owner validation, and developer or fixture-based testing.</p>
+<p>Complexity does not by itself invalidate the system.</p>
+<p>The important question is whether the complexity is purposeful and governed. In this system, complexity exists because the app preserves links among:</p>
+<ul>
+<li>diagnosis</li>
+<li>evidence</li>
+<li>recommendations</li>
+<li>decisions</li>
+<li>pilots</li>
+<li>KPIs</li>
+<li>thresholds</li>
+<li>lineage</li>
+<li>scenarios</li>
+<li>governance actions</li>
+<li>review history</li>
+<li>learning</li>
+</ul>
+<p>Those links are the system&#x27;s value. They prevent the organization from treating activity, rhetoric, or good intentions as proof that conditions have improved.</p>
+<hr>
+<h2>The operating loop</h2>
+<p>The simplest way to explain the system is:</p>
+<pre><code>diagnose → recommend → decide → execute → measure → review → learn</code></pre>
+<p>This loop should guide training, testing, and management explanation.</p>
+<h3>Diagnose</h3>
+<p>The organization records structural conditions, survey perceptions, evidence notes, and score patterns.</p>
+<h3>Recommend</h3>
+<p>The system helps generate and qualify recommendations based on diagnostic evidence, risk, contradictions, and governance significance.</p>
+<h3>Decide</h3>
+<p>Recommendations can be accepted, revised, linked across cycles, or converted into structural decisions.</p>
+<h3>Execute</h3>
+<p>Decisions can lead to pilots, actions, or governance responses.</p>
+<h3>Measure</h3>
+<p>KPIs, pilot metrics, threshold rules, and evidence notes test whether execution is producing meaningful change.</p>
+<h3>Review</h3>
+<p>Governance review pages compare cycles, qualify execution, surface contradictions, and prepare board-level interpretation.</p>
+<h3>Learn</h3>
+<p>The system tracks whether recommendations, decisions, pilots, and evidence lead to validated learning, contradiction, revision, or reopening.</p>
+<hr>
+<h2>Core doctrine</h2>
+<p>The application is built around two governing doctrines.</p>
+<h3>1. Structural primacy</h3>
+<p>Structural systems generate durable conditions of flourishing.</p>
+<p>This means the system gives special weight to:</p>
+<ul>
+<li>workload design</li>
+<li>incentives</li>
+<li>decision rights</li>
+<li>capability pathways</li>
+<li>technology use</li>
+<li>governance routines</li>
+<li>authority and accountability</li>
+<li>evidence-backed execution</li>
+</ul>
+<p>Symbolic claims matter, but they do not substitute for structural adequacy.</p>
+<h3>2. Mission–flourishing integrity</h3>
+<p>The organization exists to pursue a legitimate value-creating objective under constraint.</p>
+<p>Human flourishing in the workplace does not replace that objective. It is:</p>
+<ul>
+<li>a non-violable human constraint on legitimate value creation</li>
+<li>an operational enabler of truthful coordination, responsible agency, learning, adaptability, and sustained contribution</li>
+</ul>
+<p>The system should not drift into treating internal cohesion, sentiment, or symbolic reassurance as the final objective.</p>
+<hr>
+<h2>What a new user should read first</h2>
+<p>Use this training sequence.</p>
+<h3>Step 1 — Project Owner / management orientation</h3>
+<p>Read:</p>
+<pre><code>user/PROJECT_OWNER_ORIENTATION_AND_TESTING_BOUNDARIES.md</code></pre>
+<p>This explains:</p>
+<ul>
+<li>why the system feels complex</li>
+<li>why staff cannot be expected to test every advanced workflow unaided</li>
+<li>what ordinary staff can test</li>
+<li>what trained governance users should test</li>
+<li>what requires Project Owner or developer/fixture validation</li>
+<li>how to explain the system to management</li>
+</ul>
+<h3>Step 2 — Core concepts</h3>
+<p>Read:</p>
+<pre><code>user/GOVERNANCE_ACTION_CONCEPT_PRIMER.md</code></pre>
+<p>This explains the unfamiliar terminology used across the Governance Action pages, including:</p>
+<ul>
+<li>assessment cycle</li>
+<li>recommendation</li>
+<li>structural decision</li>
+<li>pilot</li>
+<li>KPI</li>
+<li>evidence relinking</li>
+<li>lineage</li>
+<li>recommendation series</li>
+<li>predecessor</li>
+<li>carry-forward</li>
+<li>continuity status</li>
+<li>conversion</li>
+<li>learning state</li>
+<li>scenario pressure</li>
+<li>governance consequence</li>
+</ul>
+<p>Do not start advanced page testing until these terms are understood.</p>
+<h3>Step 3 — Page-specific guides</h3>
+<p>Then read the operating guide for the page being used.</p>
+<p>Key Governance Action guides:</p>
+<pre><code>user/RECOMMENDATIONS_PAGE_LEARNING_RESOURCE.md
+user/KPI_DASHBOARD_PAGE_LEARNING_RESOURCE.md
+user/LINEAGE_VIEW_PAGE_LEARNING_RESOURCE.md
+user/PILOT_TRACKER_PAGE_LEARNING_RESOURCE.md</code></pre>
+<p>Other page resources remain available for baseline and review pages.</p>
+<hr>
+<h2>User roles and testing boundaries</h2>
+<p>The system should be tested by different roles in different ways.</p>
+<h3>Ordinary staff</h3>
+<p>Ordinary staff can reasonably test:</p>
+<ul>
+<li>whether pages open</li>
+<li>whether page labels are understandable</li>
+<li>whether the selected item is visible</li>
+<li>whether the page purpose is broadly clear</li>
+<li>whether obvious empty states make sense</li>
+<li>whether the page feels navigable after orientation</li>
+</ul>
+<p>Ordinary staff should not be expected to validate:</p>
+<ul>
+<li>predecessor/carry-forward eligibility</li>
+<li>continuity correction logic</li>
+<li>threshold-rule versioning effects</li>
+<li>scenario trigger states</li>
+<li>recommendation-series linkage</li>
+<li>structural-decision conversion logic</li>
+<li>evidence-relating consequences</li>
+<li>lineage completeness across multiple cycles</li>
+<li>exact calculation or classification edge cases</li>
+</ul>
+<p>If ordinary staff cannot test those advanced paths without extensive explanation, that is expected. It means the test was assigned to the wrong role or lacked prepared fixtures.</p>
+<h3>Trained governance users</h3>
+<p>Trained governance users can test:</p>
+<ul>
+<li>evidence interpretation</li>
+<li>recommendation workflow updates</li>
+<li>recommendation continuity</li>
+<li>conversion to structural decision</li>
+<li>pilot metrics and linked KPIs</li>
+<li>evidence relinking</li>
+<li>pilot outcome recomputation</li>
+<li>lineage interpretation</li>
+<li>governance action follow-up</li>
+<li>review-history implications</li>
+</ul>
+<p>They should receive the Project Owner orientation, concept primer, and relevant page guide before testing.</p>
+<h3>Project Owner / implementation lead</h3>
+<p>The Project Owner should test:</p>
+<ul>
+<li>whether the system supports the intended governance model</li>
+<li>whether pages preserve the operating loop</li>
+<li>whether local context cues are sufficient for trained users</li>
+<li>whether role boundaries are clear</li>
+<li>whether training resources match current UI</li>
+<li>whether management-facing value and complexity are correctly framed</li>
+</ul>
+<h3>Developer or fixture-based validation</h3>
+<p>Developer or fixture-based validation is required for:</p>
+<ul>
+<li>scenario trigger-state branches</li>
+<li>precise continuity predecessor eligibility</li>
+<li>carry-forward series behavior</li>
+<li>seeded partial-data combinations</li>
+<li>edge-case threshold logic</li>
+<li>all rare lineage or historical transition states</li>
+</ul>
+<p>These should not be assigned to ordinary exploratory testers.</p>
+<hr>
+<h2>Recommended training setup</h2>
+<p>For training and validation, use a prepared demo or fixture dataset.</p>
+<p>Typical local run sequence:</p>
+<pre><code>python .\scripts\test_data_builder.py
+streamlit run .\main.py</code></pre>
+<p>Use the builder output as the reference dataset for training. It identifies organizations, cycles, users, metrics, recommendations, pilots, KPIs, governance actions, scenarios, and readiness states.</p>
+<p>If a workflow cannot be tested because the necessary predecessor, series, pilot, KPI, or scenario state does not exist, record it as:</p>
+<pre><code>Not exercised — valid fixture not available</code></pre>
+<p>Do not record it as a UI failure unless a known valid fixture exists and the expected action is still missing.</p>
+<hr>
+<h2>The four-cycle learning pattern</h2>
+<p>The application is most useful when users understand it as a repeatable governance loop across assessment cycles.</p>
+<h3>Cycle 1 — Baseline diagnosis</h3>
+<p>Goal:</p>
+<p>&gt; Establish a structured picture of current conditions.</p>
+<p>Use this cycle to answer:</p>
+<ul>
+<li>What is structurally happening?</li>
+<li>What are people experiencing?</li>
+<li>Where do symbolic claims and structural realities diverge?</li>
+<li>Which risks require governance attention?</li>
+</ul>
+<p>Primary pages:</p>
+<ul>
+<li>Home</li>
+<li>Setup</li>
+<li>Assessment Cycle</li>
+<li>Diagnostic Input</li>
+<li>Survey Input</li>
+<li>Evidence Notes</li>
+<li>Score Dashboard</li>
+<li>Alignment Dashboard</li>
+<li>Score Component Details</li>
+</ul>
+<p>Typical output:</p>
+<ul>
+<li>active organization and cycle</li>
+<li>diagnostic inputs</li>
+<li>survey signals</li>
+<li>evidence notes</li>
+<li>score and alignment patterns</li>
+<li>initial governance concerns</li>
+</ul>
+<h3>Cycle 2 — Governance response</h3>
+<p>Goal:</p>
+<p>&gt; Convert diagnosis into governed recommendations, decisions, pilots, KPIs, and action.</p>
+<p>Primary pages:</p>
+<ul>
+<li>Recommendations</li>
+<li>Preserve / Reform / Replace</li>
+<li>Foresight Execution</li>
+<li>Pilot Tracker</li>
+<li>KPI Dashboard</li>
+<li>Lineage View</li>
+</ul>
+<p>Typical output:</p>
+<ul>
+<li>generated or reviewed recommendations</li>
+<li>workflow decisions</li>
+<li>structural decisions</li>
+<li>pilots</li>
+<li>pilot metrics</li>
+<li>linked KPIs</li>
+<li>evidence relinks</li>
+<li>lineage visibility</li>
+</ul>
+<h3>Cycle 3 — Human challenge and review</h3>
+<p>Goal:</p>
+<p>&gt; Test whether system conclusions remain valid when challenged by human evidence and governance judgment.</p>
+<p>Primary pages:</p>
+<ul>
+<li>Governance Execution Review</li>
+<li>Comparative Cycle Review</li>
+<li>Scenario Effectiveness Review</li>
+<li>Governance Summary</li>
+<li>Governance Action Queue</li>
+<li>Review History</li>
+</ul>
+<p>Typical output:</p>
+<ul>
+<li>challenge-qualified conclusions</li>
+<li>contradiction and incompleteness handling</li>
+<li>scenario-to-execution review</li>
+<li>governance action queue</li>
+<li>board-level summaries</li>
+<li>review history</li>
+</ul>
+<h3>Cycle 4 — Revision and institutionalization</h3>
+<p>Goal:</p>
+<p>&gt; Carry forward what is validated, revise what is weak, retire what is superseded, and reopen what remains unresolved.</p>
+<p>Primary pages:</p>
+<ul>
+<li>Recommendations</li>
+<li>Comparative Cycle Review</li>
+<li>Governance Summary</li>
+<li>Review History</li>
+<li>KPI Dashboard</li>
+<li>Lineage View</li>
+<li>Pilot Tracker</li>
+</ul>
+<p>Typical output:</p>
+<ul>
+<li>preserved or updated recommendations</li>
+<li>continuity series and predecessor links</li>
+<li>retired-by-regeneration audit records</li>
+<li>revised pilots or KPIs</li>
+<li>learning closure</li>
+<li>governance review prompts</li>
+</ul>
+<hr>
+<h2>Page map</h2>
+<h3>Baseline Pages</h3>
+<p>Use these to establish the data foundation.</p>
+<ul>
+<li><strong>Home</strong></li>
+<li>initialize definitions or load sample/demo data</li>
+<li><strong>Setup</strong></li>
+<li>create/select organization, users, divisions, segments</li>
+<li><strong>Assessment Cycle</strong></li>
+<li>create/select active cycle</li>
+<li><strong>Diagnostic Input</strong></li>
+<li>record structural diagnostic scores</li>
+<li><strong>Survey Input</strong></li>
+<li>record perception/survey signals</li>
+<li><strong>Evidence Notes</strong></li>
+<li>record qualitative evidence, confidence, and interpretation</li>
+<li><strong>Score Dashboard</strong></li>
+<li>inspect domain scores and generate recommendation candidates</li>
+<li><strong>Alignment Dashboard</strong></li>
+<li>compare stated and structural signals</li>
+<li><strong>Score Component Details</strong></li>
+<li>inspect detailed score contributors</li>
+</ul>
+<h3>Governance Action Pages</h3>
+<p>Use these to turn diagnosis into governed response and learning.</p>
+<ul>
+<li><strong>Recommendations</strong></li>
+<li>review recommendations, evidence, workflow, continuity, learning, and conversion to structural decisions</li>
+<li><strong>Preserve / Reform / Replace</strong></li>
+<li>classify structural posture and reform direction</li>
+<li><strong>Foresight Execution</strong></li>
+<li>inspect scenario signals and foresight-linked execution concerns</li>
+<li><strong>Pilot Tracker</strong></li>
+<li>test decisions through pilots, metrics, KPIs, evidence, outcome, and lineage</li>
+<li><strong>KPI Dashboard</strong></li>
+<li>review governance KPIs, reassessment triggers, selected KPI lineage, and threshold rules</li>
+<li><strong>Lineage View</strong></li>
+<li>trace recommendation → decision → pilot → KPI → evidence pathways and execution drop-off</li>
+</ul>
+<h3>Review Pages</h3>
+<p>Use these to qualify conclusions and prepare governance action.</p>
+<ul>
+<li><strong>Governance Execution Review</strong></li>
+<li>review execution strength and governance action implications</li>
+<li><strong>Comparative Cycle Review</strong></li>
+<li>compare cycles, continuity, challenge, trajectory, and fragmentation</li>
+<li><strong>Scenario Effectiveness Review</strong></li>
+<li>test whether scenario pressures are matched by execution evidence</li>
+<li><strong>Governance Summary</strong></li>
+<li>synthesize governance-significant interpretation</li>
+<li><strong>Governance Action Queue</strong></li>
+<li>inspect and manage governance follow-up</li>
+<li><strong>Review History</strong></li>
+<li>inspect event history, audit trail, and decision/action records</li>
+</ul>
+<hr>
+<h2>Governance Action page operating guides</h2>
+<p>The Governance Action pages are the most training-dependent pages.</p>
+<p>Each has its own operating guide.</p>
+<h3>Recommendations</h3>
+<p>Read:</p>
+<pre><code>user/RECOMMENDATIONS_PAGE_LEARNING_RESOURCE.md</code></pre>
+<p>Current workspace model:</p>
+<pre><code>Overview | Evidence | Workflow | Continuity | Learning | Convert</code></pre>
+<p>Use this guide before testing:</p>
+<ul>
+<li>evidence relinking</li>
+<li>workflow updates</li>
+<li>continuity series</li>
+<li>predecessor/carry-forward</li>
+<li>learning actions</li>
+<li>conversion to structural decision</li>
+</ul>
+<h3>KPI Dashboard</h3>
+<p>Read:</p>
+<pre><code>user/KPI_DASHBOARD_PAGE_LEARNING_RESOURCE.md</code></pre>
+<p>Current workspace model:</p>
+<pre><code>KPI Outcomes | Reassessment | KPI Detail &amp; Lineage | Threshold Rules</code></pre>
+<p>Use this guide before testing:</p>
+<ul>
+<li>KPI creation</li>
+<li>reassessment triggers</li>
+<li>selected KPI lineage</li>
+<li>evidence relinking</li>
+<li>threshold-rule versioning</li>
+</ul>
+<h3>Lineage View</h3>
+<p>Read:</p>
+<pre><code>user/LINEAGE_VIEW_PAGE_LEARNING_RESOURCE.md</code></pre>
+<p>Current workspace model:</p>
+<pre><code>Path Detail | Evidence | Learning | Scenario | Governance Response | Threshold Impact</code></pre>
+<p>Use this guide before testing:</p>
+<ul>
+<li>lineage drop-off</li>
+<li>evidence relinking</li>
+<li>learning timelines</li>
+<li>scenario linkage</li>
+<li>governance response linkage</li>
+<li>threshold-impact interpretation</li>
+</ul>
+<h3>Pilot Tracker</h3>
+<p>Read:</p>
+<pre><code>user/PILOT_TRACKER_PAGE_LEARNING_RESOURCE.md</code></pre>
+<p>Current workspace model:</p>
+<pre><code>Outcome | Metrics | Linked KPIs | Evidence | Lineage</code></pre>
+<p>Use this guide before testing:</p>
+<ul>
+<li>pilot outcome</li>
+<li>pilot metrics</li>
+<li>linked KPIs</li>
+<li>evidence relinking</li>
+<li>outcome recomputation</li>
+<li>pilot lineage</li>
+</ul>
+<hr>
+<h2>How to read selected-workspace pages</h2>
+<p>The refactored Governance Action pages use a selected-item or selected-path model.</p>
+<p>The common pattern is:</p>
+<ol>
+<li>readiness panel</li>
+<li>summary or attention strip</li>
+<li>worklist or primary table</li>
+<li>selected item/path context</li>
+<li>workspace navigation</li>
+<li>area-specific detail and actions</li>
+<li>supporting/audit detail</li>
+</ol>
+<p>This means a page may show one selected recommendation, KPI, lineage path, or pilot at a time.</p>
+<p>Before using a write action, confirm:</p>
+<ul>
+<li>which item or path is selected</li>
+<li>which workspace area is active</li>
+<li>what the action will change</li>
+<li>whether the page explains unavailable actions</li>
+<li>whether the necessary evidence, predecessor, KPI, pilot, or scenario state exists</li>
+</ul>
+<p>A write action should not be used if the selected item is unclear.</p>
+<hr>
+<h2>Empty states and unavailable actions</h2>
+<p>Empty states are not automatically defects.</p>
+<p>A page may legitimately say that no items exist yet, no linked evidence exists, no predecessor is available, no lineage path exists, or no scenario-linked data exists.</p>
+<p>Use this interpretation:</p>
+<ul>
+<li><strong>No active cycle</strong></li>
+<li>setup or assessment cycle selection is required</li>
+<li><strong>No recommendations</strong></li>
+<li>recommendation generation or upstream scoring may be required</li>
+<li><strong>No predecessor</strong></li>
+<li>a valid prior-cycle recommendation and series may not exist</li>
+<li><strong>No linked evidence</strong></li>
+<li>evidence may not yet have been created or relinked</li>
+<li><strong>No linked KPI</strong></li>
+<li>the pilot or decision may not yet be measured in the governance KPI layer</li>
+<li><strong>No lineage</strong></li>
+<li>the path from recommendation to decision, pilot, KPI, or evidence may be incomplete</li>
+<li><strong>No scenario overlay</strong></li>
+<li>scenario pressure may not yet be linked to execution evidence</li>
+</ul>
+<p>If the user cannot tell why an action is unavailable, that may be a documentation or UI-context issue. If the required data does not exist, it is not automatically a defect.</p>
+<hr>
+<h2>Evidence discipline</h2>
+<p>Evidence notes are not decorative.</p>
+<p>They qualify whether system outputs should be trusted.</p>
+<p>Evidence can:</p>
+<ul>
+<li>support a recommendation</li>
+<li>qualify a KPI</li>
+<li>challenge a pilot outcome</li>
+<li>explain a contradiction</li>
+<li>reveal incompleteness</li>
+<li>justify reopening review</li>
+<li>provide audit context</li>
+</ul>
+<p>Evidence relinking is an audit-significant action. It should be performed only when the user understands which entity the evidence is being attached to and why.</p>
+<hr>
+<h2>Continuity discipline</h2>
+<p>Recommendation continuity is one of the most advanced concepts in the system.</p>
+<p>It concerns whether a recommendation in one assessment cycle is:</p>
+<ul>
+<li>new</li>
+<li>continued from a prior cycle</li>
+<li>revised</li>
+<li>superseded</li>
+<li>retired</li>
+<li>fragmented</li>
+<li>carried forward through a recommendation series</li>
+</ul>
+<p>Key terms:</p>
+<ul>
+<li><strong>recommendation series</strong></li>
+<li>the cross-cycle identity of a continuing recommendation issue</li>
+<li><strong>predecessor recommendation</strong></li>
+<li>the prior-cycle recommendation from which the current recommendation continues</li>
+<li><strong>carry-forward</strong></li>
+<li>the current-cycle continuation of a prior recommendation issue</li>
+<li><strong>continuity correction</strong></li>
+<li>a trained-user correction to the cross-cycle linkage</li>
+</ul>
+<p>Ordinary staff should not be asked to validate continuity logic through exploration.</p>
+<p>Use prepared fixture data for predecessor/carry-forward testing.</p>
+<hr>
+<h2>Scenario discipline</h2>
+<p>Scenario-linked pages test whether external or future-facing pressures are being met by evidence-backed execution.</p>
+<p>A scenario signal does not prove that mitigation has occurred.</p>
+<p>A scenario-linked recommendation, pilot, KPI, or governance response must still show:</p>
+<ul>
+<li>execution evidence</li>
+<li>measurement evidence</li>
+<li>learning state</li>
+<li>lineage</li>
+<li>governance interpretation</li>
+</ul>
+<p>Scenario-trigger-state testing should use prepared data. It should not be treated as an ordinary staff smoke-test responsibility.</p>
+<hr>
+<h2>Board and governance review discipline</h2>
+<p>Governance review pages should not be read as simple score reports.</p>
+<p>They combine:</p>
+<ul>
+<li>structural scores</li>
+<li>evidence confidence</li>
+<li>trajectory</li>
+<li>recommendation continuity</li>
+<li>scenario pressure</li>
+<li>challenge state</li>
+<li>execution status</li>
+<li>governance consequence</li>
+<li>review history</li>
+</ul>
+<p>Board-pack outputs should be interpreted as qualified governance summaries, not as automatic truth.</p>
+<p>A board-ready statement should make clear:</p>
+<ul>
+<li>what is known</li>
+<li>what is uncertain</li>
+<li>what is contradicted</li>
+<li>what requires action</li>
+<li>what requires monitoring</li>
+<li>what needs further evidence</li>
+</ul>
+<hr>
+<h2>Safe testing sequence</h2>
+<p>Use this sequence for a trained validation session.</p>
+<h3>1. Confirm setup</h3>
+<ul>
+<li>organization selected</li>
+<li>active assessment cycle selected</li>
+<li>test/demo data loaded</li>
+<li>relevant users present</li>
+<li>page readiness panels pass</li>
+</ul>
+<h3>2. Walk Baseline Pages</h3>
+<p>Confirm that input and diagnostic pages open and show expected data.</p>
+<h3>3. Walk Governance Action Pages</h3>
+<p>For each page, confirm:</p>
+<ul>
+<li>readiness appears first</li>
+<li>summary/worklist appears</li>
+<li>selected item or path is visible</li>
+<li>workspace areas are understandable</li>
+<li>write actions are anchored to selected context</li>
+<li>empty states explain missing data</li>
+</ul>
+<h3>4. Walk Review Pages</h3>
+<p>Confirm that review pages synthesize rather than merely repeat data.</p>
+<h3>5. Validate only prepared advanced paths</h3>
+<p>Use prepared fixture data for:</p>
+<ul>
+<li>continuity predecessor/carry-forward</li>
+<li>threshold-version effects</li>
+<li>scenario trigger states</li>
+<li>contradiction and challenge states</li>
+<li>partial lineage states</li>
+<li>conversion to structural decision</li>
+</ul>
+<p>Do not ask users to discover these states by trial and error.</p>
+<hr>
+<h2>Smoke-test classification</h2>
+<p>Use these classifications.</p>
+<h3>Pass</h3>
+<p>The page or area opens and the user can understand:</p>
+<ul>
+<li>what they are looking at</li>
+<li>what item/path is selected</li>
+<li>what the area is for</li>
+<li>what action is available</li>
+<li>what missing data means</li>
+</ul>
+<h3>Minor issue</h3>
+<p>The page is usable but:</p>
+<ul>
+<li>wording is unclear</li>
+<li>context is too terse</li>
+<li>supporting detail is poorly signposted</li>
+<li>a trained user can proceed but an occasional user may hesitate</li>
+</ul>
+<h3>Material defect</h3>
+<p>A material defect exists when:</p>
+<ul>
+<li>the page crashes</li>
+<li>readiness is bypassed or buried</li>
+<li>a write action lacks selected-item context</li>
+<li>a write action appears to affect the wrong item</li>
+<li>a required action is missing for a valid data state</li>
+<li>an empty workspace is blank without explanation</li>
+<li>an advanced action is available but its consequence is unclear</li>
+</ul>
+<h3>Not exercised</h3>
+<p>Use this when the valid test data state does not exist.</p>
+<p>Examples:</p>
+<ul>
+<li>no valid predecessor/carry-forward pair</li>
+<li>no scenario branch for insufficient evidence</li>
+<li>no pilot with mixed evidence</li>
+<li>no KPI threshold-version comparison case</li>
+</ul>
+<p>Do not convert &quot;not exercised&quot; into failure.</p>
+<hr>
+<h2>Completion standard for training readiness</h2>
+<p>The training resources are adequate when a Project Owner can explain:</p>
+<ol>
+<li>what the system is for</li>
+<li>why it is not a casual dashboard</li>
+<li>how the operating loop works</li>
+<li>which roles can test which parts</li>
+<li>which pages require trained governance users</li>
+<li>which tests require prepared data</li>
+<li>how evidence, recommendations, decisions, pilots, KPIs, lineage, scenarios, and learning fit together</li>
+<li>why complexity is being managed through training and role boundaries rather than hidden inside oversimplified UI labels</li>
+</ol>
+<p>A trained governance user is ready when they can:</p>
+<ol>
+<li>identify the selected item/path on each Governance Action page</li>
+<li>explain the purpose of each workspace area</li>
+<li>distinguish activity from evidence of effectiveness</li>
+<li>distinguish status from learning state</li>
+<li>understand continuity and carry-forward at a practical level</li>
+<li>interpret empty states and unavailable actions</li>
+<li>avoid using advanced write actions without adequate context</li>
+</ol>
+<hr>
+<h2>Historical note</h2>
+<p>Earlier versions of this manual contained more page-specific walkthrough material and historical close-out notes. Those details have been moved out of the main training hub.</p>
+<p>Use the current page-specific operating guides for page-level instruction.</p>
+<p>Use <code>docs/</code> implementation notes for development history and pass records.</p>
+<p>This keeps the main manual focused on training architecture, role boundaries, and the operating model.</p>
+<hr>
+<h2>Training resources by need</h2>
+<table><thead><tr><th>Need</th><th>Resource</th></tr></thead><tbody>
+<tr><td>Management-purpose architecture</td><td><code>user/SIX_MANAGEMENT_INTENTIONS_AND_FOUR_CYCLE_OPERATING_PATTERN.md</code></td></tr>
+<tr><td>Diversity, respect, trust, mission integrity, and performance ambiguity</td><td><code>user/DIVERSITY_RESPECT_TRUST_MISSION_INTEGRITY_MODULE.md</code></td></tr>
+<tr><td>Facilitator delivery</td><td><code>user/TRANSFORMATION_LEAD_TRAINING_FACILITATOR_GUIDE.md</code></td></tr>
+<tr><td>Learner practice</td><td><code>user/TRANSFORMATION_LEAD_TRAINING_PARTICIPANT_WORKBOOK.md</code></td></tr>
+<tr><td>Readiness assessment</td><td><code>user/TRANSFORMATION_LEAD_TRAINING_COMPETENCY_ASSESSMENT.md</code></td></tr>
+<tr><td>End-to-end worked example</td><td><code>user/WORKED_TRAINING_EXAMPLE_ASSESSMENT_CYCLE.md</code></td></tr>
+<tr><td>Final resource map</td><td><code>user/TRANSFORMATION_LEAD_TRAINING_RESOURCE_CLOSURE_GUIDE.md</code></td></tr>
+<tr><td>Governance-action concepts</td><td><code>user/GOVERNANCE_ACTION_CONCEPT_PRIMER.md</code></td></tr>
+<tr><td>Review-page use</td><td><code>user/REVIEW_PAGE_OPERATING_GUIDES.md</code></td></tr>
+<tr><td>Role-based testing boundaries</td><td><code>user/ROLE_BASED_SMOKE_TEST_SCRIPTS.md</code></td></tr>
+<tr><td>Fixture validation discipline</td><td><code>user/PROJECT_OWNER_FIXTURE_VALIDATION_GUIDE.md</code></td></tr>
+</tbody></table>
+</body></html>

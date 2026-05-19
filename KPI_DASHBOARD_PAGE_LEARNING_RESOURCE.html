@@ -1,0 +1,444 @@
+<!doctype html>
+<html><head><meta charset=utf-8>
+<title>KPI_DASHBOARD_PAGE_LEARNING_RESOURCE</title>
+<style>
+
+body { font-family: Segoe UI, Arial, sans-serif; line-height: 1.45; color: #202124; margin: 42px; max-width: 980px; }
+h1, h2, h3 { color: #17324d; margin-top: 1.35em; }
+h1 { border-bottom: 2px solid #d9e2ec; padding-bottom: 8px; }
+table { border-collapse: collapse; width: 100%; margin: 18px 0; font-size: 0.94rem; }
+th, td { border: 1px solid #cfd8e3; padding: 7px 9px; vertical-align: top; }
+th { background: #eef3f8; text-align: left; }
+code, pre { background: #f4f6f8; border-radius: 4px; }
+code { padding: 1px 4px; }
+pre { padding: 12px; overflow-x: auto; }
+.document-meta { color: #5f6b7a; font-size: 0.9rem; margin-bottom: 22px; }
+
+</style></head><body>
+<div class=document-meta>Source: user/KPI_DASHBOARD_PAGE_LEARNING_RESOURCE.md</div>
+<h1>KPI Dashboard Page Operating Guide</h1>
+<h2>Workplace Conditions Governance Application</h2>
+<h2>Fiftysixth_pass Stage 6C.5 amendment</h2>
+<h2>Purpose of this guide</h2>
+<p>This guide explains how to use the <strong>KPI Dashboard</strong> after the Governance Action Pages refactor.</p>
+<p>The page is now a selected-workspace page. It is not a simple KPI reporting screen and it is not a generic performance dashboard. It helps trained governance users inspect whether measurable outcome evidence supports, qualifies, contradicts, or reopens earlier governance judgments.</p>
+<p>The KPI Dashboard sits inside the system operating loop:</p>
+<p>&gt; diagnose -&gt; recommend -&gt; decide -&gt; execute -&gt; measure -&gt; review -&gt; learn</p>
+<p>KPIs belong mainly to the <strong>measure</strong> and <strong>review</strong> parts of that loop. They help governance ask whether structural decisions and pilots are changing real conditions.</p>
+<p>A KPI is evidence. It is not automatic proof. KPI interpretation depends on threshold rules, baseline/current/target values, linked pilots, linked decisions, linked recommendations, and supporting evidence notes.</p>
+<p>In the Stage A / Stage B / Bridge framing, KPI Dashboard is mainly <strong>Stage B: Change reality intelligently</strong>. KPI progress helps test whether action is changing conditions. It can also feed Bridge interpretation through execution feedback, threshold stability, lineage completeness, and governance review.</p>
+<p>Use KPI signals alongside <code>user/metrics/Metrics explained.md</code> and <code>user/metrics/Comprehensive Metric Reference.md</code> so users can distinguish Stage A diagnosis from Stage B outcome evidence.</p>
+<hr>
+<h2>Before using this guide</h2>
+<p>Users should first read:</p>
+<ol>
+<li><code>PROJECT_OWNER_ORIENTATION_AND_TESTING_BOUNDARIES.md</code></li>
+<li><code>GOVERNANCE_ACTION_CONCEPT_PRIMER.md</code></li>
+</ol>
+<p>Those documents explain why this system requires training, what ordinary staff can reasonably test, and why advanced actions such as threshold-rule versioning and reassessment logging should be validated by trained users or with prepared test data.</p>
+<p>This page guide assumes the user already understands these basic terms:</p>
+<ul>
+<li>assessment cycle</li>
+<li>KPI</li>
+<li>pilot</li>
+<li>evidence note</li>
+<li>evidence relinking</li>
+<li>threshold rule</li>
+<li>threshold version</li>
+<li>reassessment trigger</li>
+<li>learning action</li>
+<li>lineage</li>
+<li>governance state</li>
+</ul>
+<hr>
+<h2>What the KPI Dashboard is for</h2>
+<p>Use the KPI Dashboard to:</p>
+<ul>
+<li>create or update KPI records for the selected assessment cycle;</li>
+<li>scan KPI outcome coverage and at-risk KPI status;</li>
+<li>identify KPI reassessment triggers;</li>
+<li>inspect one KPI&#x27;s connection to a pilot, structural decision, recommendation, and evidence;</li>
+<li>relink existing evidence to a selected KPI;</li>
+<li>inspect threshold rules that interpret KPI governance state;</li>
+<li>create new threshold rule versions when interpretation rules need to change;</li>
+<li>review whether threshold changes alter KPI governance meaning.</li>
+</ul>
+<p>The page is for governance interpretation of outcome evidence. It is not only a data-entry page.</p>
+<hr>
+<h2>What the KPI Dashboard is not for</h2>
+<p>The KPI Dashboard is not for:</p>
+<ul>
+<li>proving that a recommendation or pilot succeeded by KPI value alone;</li>
+<li>casual staff testing of threshold-rule versioning without training;</li>
+<li>full continuity, predecessor, or recommendation-series validation;</li>
+<li>creating recommendations or structural decisions;</li>
+<li>editing pilot outcomes directly;</li>
+<li>replacing governance judgment with a numeric score;</li>
+<li>changing thresholds without considering downstream interpretation.</li>
+</ul>
+<p>Do not treat a positive KPI as conclusive unless lineage, evidence, threshold interpretation, and governance context support that reading.</p>
+<hr>
+<h2>The page pattern</h2>
+<p>The current page follows this pattern:</p>
+<ol>
+<li>Readiness panel</li>
+<li>KPI Summary and Alert Strip</li>
+<li>KPI workspace selector</li>
+<li>Workspace-specific content and actions</li>
+</ol>
+<p>The KPI workspace selector contains:</p>
+<ul>
+<li>KPI Outcomes</li>
+<li>Reassessment</li>
+<li>KPI Detail &amp; Lineage</li>
+<li>Threshold Rules</li>
+</ul>
+<p>This pattern means users should not expect every KPI action to be visible at once. They should choose the workspace that matches the task.</p>
+<p>The safe sequence is:</p>
+<ol>
+<li>Confirm the current organization and assessment cycle.</li>
+<li>Read the KPI Summary and Alert Strip.</li>
+<li>Choose the relevant KPI workspace.</li>
+<li>Confirm the selected KPI or threshold rule before using write actions.</li>
+<li>Read any local guidance before saving, relinking, logging reassessment, or creating a new threshold version.</li>
+</ol>
+<hr>
+<h2>Readiness and empty states</h2>
+<p>At the top of the page, the readiness panel checks whether required workspace context exists.</p>
+<p>If no organization or assessment cycle is selected, the page should not proceed into KPI work.</p>
+<p>If the selected cycle has no KPI items:</p>
+<ul>
+<li><strong>KPI Outcomes</strong> remains useful because users can create KPI records there;</li>
+<li><strong>Reassessment</strong> explains that KPI records must exist before reassessment triggers can be evaluated;</li>
+<li><strong>KPI Detail &amp;amp; Lineage</strong> explains that KPI records must exist before detailed inspection is available;</li>
+<li><strong>Threshold Rules</strong> can still be available because threshold rules may be inspected or defaulted independently of KPI creation.</li>
+</ul>
+<p>A sparse page is not automatically a defect. Ask:</p>
+<ul>
+<li>Is an organization selected?</li>
+<li>Is an assessment cycle selected?</li>
+<li>Have any KPI records been created for this cycle?</li>
+<li>Are there linked pilots if the user wants pilot-linked KPIs?</li>
+<li>Are reassessment triggers expected for this data state?</li>
+<li>Is the user in the correct workspace area?</li>
+</ul>
+<hr>
+<h2>KPI Summary and Alert Strip</h2>
+<p>The top summary strip shows:</p>
+<ul>
+<li>KPIs tracked</li>
+<li>Reassessment triggers</li>
+<li>Governance alerts</li>
+<li>At-risk KPIs</li>
+</ul>
+<p>Use this strip as a first-screen orientation device.</p>
+<p>It answers:</p>
+<ul>
+<li>Does this cycle have measurable outcome coverage?</li>
+<li>Are any KPI records creating governance attention?</li>
+<li>Are any KPI outcomes already at risk?</li>
+<li>Is reassessment likely to be relevant?</li>
+</ul>
+<p>Do not use the summary strip as final interpretation. It points to where review is needed.</p>
+<hr>
+<h2>Workspace selector</h2>
+<p>The KPI Dashboard has four workspace areas:</p>
+<table><thead><tr><th>Workspace</th><th>Main question</th><th>Typical action</th></tr></thead><tbody>
+<tr><td>KPI Outcomes</td><td>What KPI records exist and what do their values show?</td><td>Create/update KPI; review KPI table and alerts.</td></tr>
+<tr><td>Reassessment</td><td>Do KPI signals require earlier judgments to be revisited?</td><td>Log reassessment required for a selected trigger.</td></tr>
+<tr><td>KPI Detail &amp; Lineage</td><td>What does one KPI connect to?</td><td>Inspect pilot/decision/recommendation/evidence lineage; relink evidence.</td></tr>
+<tr><td>Threshold Rules</td><td>Which interpretation rule is being applied?</td><td>Inspect or create threshold rule versions.</td></tr>
+</tbody></table>
+<p>Users should choose the workspace that matches the task. They should not try to validate hidden data-flow prerequisites by exploration alone.</p>
+<hr>
+<h2>KPI Outcomes workspace</h2>
+<p>Use <strong>KPI Outcomes</strong> when the user needs to create, update, or scan KPI records.</p>
+<p>This area includes:</p>
+<ul>
+<li><strong>Create or update KPI</strong> expander;</li>
+<li>KPI creation form;</li>
+<li>KPI outcome table;</li>
+<li>KPI current values and governance-state chart;</li>
+<li>KPI governance alerts table when alerts exist.</li>
+</ul>
+<p>The KPI form includes:</p>
+<ul>
+<li>KPI name</li>
+<li>Domain</li>
+<li>Linked pilot</li>
+<li>Baseline</li>
+<li>Current</li>
+<li>Target</li>
+<li>Status</li>
+<li>Note</li>
+<li><strong>Save KPI</strong> button</li>
+</ul>
+<p>Status options are:</p>
+<ul>
+<li>tracking</li>
+<li>on_track</li>
+<li>at_risk</li>
+<li>achieved</li>
+</ul>
+<h3>Safe use</h3>
+<p>Before saving a KPI, confirm:</p>
+<ul>
+<li>the KPI belongs to the current assessment cycle;</li>
+<li>the name is specific enough to distinguish it from similar KPIs;</li>
+<li>the domain is meaningful for later threshold-rule interpretation;</li>
+<li>the linked pilot is correct or intentionally set to none;</li>
+<li>baseline/current/target values are entered consistently;</li>
+<li>the note explains what the value represents.</li>
+</ul>
+<p>A KPI can still be useful without linked evidence, but it is weaker as governance evidence until its evidence and lineage are clear.</p>
+<h3>Staff testing boundary</h3>
+<p>Ordinary staff can usually test whether the form is understandable and whether a simple KPI can be saved in prepared demo data.</p>
+<p>Trained governance users should test whether the KPI is being interpreted correctly in relation to thresholds, pilot lineage, and reassessment.</p>
+<hr>
+<h2>Reassessment workspace</h2>
+<p>Use <strong>Reassessment</strong> when KPI outcomes may require earlier judgments to be revisited.</p>
+<p>This area is available only when KPI items exist. If no KPI outcomes are available, the page explains that KPI records must be added before reassessment triggers can be evaluated.</p>
+<p>When triggers exist, this area shows:</p>
+<ul>
+<li>reassessment trigger table;</li>
+<li>KPI name;</li>
+<li>domain;</li>
+<li>baseline;</li>
+<li>current value;</li>
+<li>target;</li>
+<li>learning state;</li>
+<li>recommended action;</li>
+<li>explanation;</li>
+<li><strong>Log reassessment required</strong> section;</li>
+<li><strong>Select KPI trigger</strong> selector;</li>
+<li>explanation caption for the selected trigger;</li>
+<li><strong>Log reassessment required</strong> button.</li>
+</ul>
+<p>The local page guidance also states that threshold rule detail remains in <strong>Threshold Rules</strong>. This separation matters: Reassessment is where users log the need to revisit judgment; Threshold Rules is where users inspect or administer the interpretation rules.</p>
+<h3>Safe use</h3>
+<p>Before clicking <strong>Log reassessment required</strong>, confirm:</p>
+<ul>
+<li>which KPI trigger is selected;</li>
+<li>why the trigger exists;</li>
+<li>whether the current KPI value is missing, below target, worse than baseline, mixed, or target-met;</li>
+<li>what recommendation, decision, pilot, or governance interpretation may need review;</li>
+<li>whether this is a real reassessment need rather than a data-entry problem.</li>
+</ul>
+<p>Logging reassessment records a learning action. It should not be used as a casual acknowledgement button.</p>
+<h3>Staff testing boundary</h3>
+<p>Ordinary staff should not be asked to prove all reassessment trigger states by exploration. Trigger states depend on prepared KPI data, learning states, and threshold interpretation.</p>
+<p>A better smoke test asks ordinary staff only:</p>
+<ul>
+<li>Can you see whether there are reassessment triggers?</li>
+<li>Can you identify the selected trigger before the log button?</li>
+<li>Is the page clear that reassessment is different from threshold administration?</li>
+</ul>
+<hr>
+<h2>KPI Detail &amp; Lineage workspace</h2>
+<p>Use <strong>KPI Detail &amp;amp; Lineage</strong> when the user needs to inspect one KPI&#x27;s traceability.</p>
+<p>This area is available only when KPI items exist. If no KPI outcomes are available, the page explains that KPI records must be added before detailed inspection is available.</p>
+<p>This area includes:</p>
+<ul>
+<li><strong>Inspect KPI</strong> selector;</li>
+<li>KPI name, progress score, and status;</li>
+<li>KPI note;</li>
+<li>domain rule governance state, governance floor, and alert floor;</li>
+<li>linked pilot and pilot outcome;</li>
+<li>linked structural decision and decision status;</li>
+<li>linked recommendation and recommendation status;</li>
+<li>linked evidence for the KPI;</li>
+<li><strong>Relink existing evidence to this KPI</strong> selector;</li>
+<li><strong>Apply KPI evidence relink</strong> button.</li>
+</ul>
+<h3>Safe use</h3>
+<p>Before applying an evidence relink, confirm:</p>
+<ul>
+<li>the selected KPI is the correct KPI;</li>
+<li>the linked pilot, decision, and recommendation context is understood;</li>
+<li>the evidence note actually supports or explains this KPI;</li>
+<li>the evidence is not being linked merely because it is available;</li>
+<li>the relink will not misrepresent what the evidence shows.</li>
+</ul>
+<p>Evidence relinking attaches an existing evidence note to the KPI. It does not create new evidence and it does not prove that the KPI is valid.</p>
+<h3>How to read missing lineage</h3>
+<p>If the selected KPI has no linked pilot, decision, recommendation, or evidence, that does not always mean the page is broken. It may mean:</p>
+<ul>
+<li>the KPI was created without a pilot link;</li>
+<li>the pilot has not been converted from a decision or recommendation;</li>
+<li>evidence has not yet been linked;</li>
+<li>the current cycle lacks the required upstream records.</li>
+</ul>
+<p>Treat missing lineage as a governance question: is the KPI merely a standalone measure, or is it intended to evidence a specific action pathway?</p>
+<hr>
+<h2>Threshold Rules workspace</h2>
+<p>Use <strong>Threshold Rules</strong> when the user needs to inspect or version the rules that interpret KPI progress.</p>
+<p>This area includes:</p>
+<ul>
+<li>threshold rule selector;</li>
+<li>current version caption;</li>
+<li>threshold rule version form;</li>
+<li>threshold version comparison;</li>
+<li>KPI governance-state impact of threshold changes;</li>
+<li>threshold version history table.</li>
+</ul>
+<p>The rule form includes:</p>
+<ul>
+<li>Governance floor;</li>
+<li>Alert floor;</li>
+<li>Score weight;</li>
+<li>Effective start date;</li>
+<li>Active checkbox;</li>
+<li><strong>Create new threshold rule version</strong> button.</li>
+</ul>
+<h3>What threshold rules mean</h3>
+<p>A threshold rule defines how KPI values are translated into governance interpretation.</p>
+<p>For example:</p>
+<ul>
+<li>a KPI may be treated as above governance floor;</li>
+<li>a KPI may fall below alert floor;</li>
+<li>a KPI may carry a particular score weight;</li>
+<li>a threshold version may apply from a particular date.</li>
+</ul>
+<p>Threshold rules matter because a KPI&#x27;s governance state can change when the interpretation rule changes. A movement in governance state may reflect real performance change, rule change, or both.</p>
+<h3>Safe use</h3>
+<p>Before creating a new threshold rule version, confirm:</p>
+<ul>
+<li>which threshold rule is selected;</li>
+<li>the selected rule domain;</li>
+<li>the current version number;</li>
+<li>effective start and end dates;</li>
+<li>governance floor;</li>
+<li>alert floor;</li>
+<li>score weight;</li>
+<li>whether the rule should be active;</li>
+<li>why a new rule version is justified.</li>
+</ul>
+<p>Do not create threshold versions just to test the button unless using disposable test data. Threshold versioning changes how KPI evidence is interpreted.</p>
+<h3>Staff testing boundary</h3>
+<p>Threshold-rule versioning is an advanced governance-administration action. Ordinary staff should not be expected to validate threshold-version logic without training and prepared fixture data.</p>
+<p>A staff-level smoke test can check:</p>
+<ul>
+<li>Is the selected threshold rule visible before the form?</li>
+<li>Are the current version and values visible?</li>
+<li>Is the Threshold Rules workspace clearly separate from Reassessment?</li>
+</ul>
+<p>A trained-user test can check:</p>
+<ul>
+<li>whether version comparison is meaningful;</li>
+<li>whether rule-impact rows appear where expected;</li>
+<li>whether cross-cycle KPI interpretation is not being confused with rule change.</li>
+</ul>
+<hr>
+<h2>Governance meaning of KPI outcomes</h2>
+<p>KPI outcomes become governance-relevant when they:</p>
+<ul>
+<li>validate a pilot or action direction;</li>
+<li>contradict expected outcomes;</li>
+<li>remain below target;</li>
+<li>worsen relative to baseline;</li>
+<li>lack current values;</li>
+<li>trigger reassessment;</li>
+<li>create governance alerts;</li>
+<li>show threshold-rule instability;</li>
+<li>lack evidence linkage;</li>
+<li>lack lineage to a pilot, decision, or recommendation.</li>
+</ul>
+<p>A KPI should be read together with:</p>
+<ul>
+<li>pilot outcome;</li>
+<li>decision status;</li>
+<li>recommendation status;</li>
+<li>threshold rule;</li>
+<li>linked evidence;</li>
+<li>assessment cycle;</li>
+<li>governance review context.</li>
+</ul>
+<hr>
+<h2>Downstream impact</h2>
+<p>KPI Dashboard feeds downstream interpretation by giving execution work measurable outcome evidence.</p>
+<p>It connects to:</p>
+<ul>
+<li>Pilot Tracker, through linked pilot outcomes;</li>
+<li>Lineage View, through recommendation-to-decision-to-pilot-to-KPI traceability;</li>
+<li>Governance Execution Review, through KPI context, learning closure, and progression decisions;</li>
+<li>Scenario Effectiveness Review, when scenario-linked entities need outcome evidence;</li>
+<li>Comparative Cycle Review, through KPI-related score movement and threshold-rule stability;</li>
+<li>Governance Summary, through KPI alerts, threshold comparisons, learning closure, and board-pack sections;</li>
+<li>Evidence Notes, through evidence linked to KPI records.</li>
+</ul>
+<p>The practical downstream question is whether KPI evidence strengthens, qualifies, contradicts, or reopens the governance interpretation.</p>
+<hr>
+<h2>Common mistakes</h2>
+<p>Avoid treating a KPI as proof without checking threshold rules.</p>
+<p>Avoid treating an achieved KPI as unqualified success when evidence is missing, lineage is weak, or thresholds shifted.</p>
+<p>Avoid linking a KPI to the wrong pilot.</p>
+<p>Avoid ignoring at-risk KPIs when recommendations, decisions, or pilots are marked validated.</p>
+<p>Avoid logging reassessment without reading the selected trigger explanation.</p>
+<p>Avoid assuming a KPI has governance weight when it has no lineage or evidence support.</p>
+<p>Avoid changing threshold rules without checking version comparison and governance-state impact.</p>
+<p>Avoid asking ordinary staff to validate advanced threshold or reassessment behavior without prepared data and role-specific instructions.</p>
+<hr>
+<h2>Best-practice review pattern</h2>
+<p>Use this sequence for trained governance review:</p>
+<ol>
+<li>Select the intended assessment cycle.</li>
+<li>Read the KPI Summary and Alert Strip.</li>
+<li>Open <strong>KPI Outcomes</strong> to create, update, or scan KPI records.</li>
+<li>Review KPI governance alerts before assuming outcomes are healthy.</li>
+<li>Open <strong>Reassessment</strong> to see whether KPI outcomes trigger learning follow-up.</li>
+<li>Open <strong>KPI Detail &amp;amp; Lineage</strong> to inspect one KPI&#x27;s pilot, decision, recommendation, threshold rule, and evidence trail.</li>
+<li>Relink existing evidence only when the evidence note genuinely belongs to the selected KPI.</li>
+<li>Open <strong>Threshold Rules</strong> to inspect the rule version interpreting KPI governance state.</li>
+<li>Use threshold comparison before making cross-cycle KPI claims.</li>
+<li>Record uncertainty as a governance interpretation issue rather than forcing the KPI to prove more than it can prove.</li>
+</ol>
+<hr>
+<h2>Smoke-test guidance</h2>
+<p>Do not ask an untrained user to prove all KPI Dashboard data-flow states.</p>
+<h3>Ordinary staff smoke test</h3>
+<p>Ask ordinary staff to check:</p>
+<ul>
+<li>Can they see the KPI Summary and Alert Strip?</li>
+<li>Can they identify the four workspace areas?</li>
+<li>Can they tell where KPI creation happens?</li>
+<li>Can they tell where reassessment is logged?</li>
+<li>Can they tell where one KPI&#x27;s detail and evidence linkage is inspected?</li>
+<li>Can they tell where threshold rules are administered?</li>
+<li>Do write actions appear after enough context?</li>
+</ul>
+<h3>Trained governance-user smoke test</h3>
+<p>Ask trained governance users to check:</p>
+<ul>
+<li>KPI creation and update path;</li>
+<li>reassessment trigger interpretation;</li>
+<li>evidence relinking to a selected KPI;</li>
+<li>threshold rule version context;</li>
+<li>rule-impact interpretation;</li>
+<li>missing lineage and missing evidence states.</li>
+</ul>
+<h3>Developer or fixture-based validation</h3>
+<p>Use prepared data to validate:</p>
+<ul>
+<li>all reassessment trigger branches;</li>
+<li>threshold rule version comparison edge cases;</li>
+<li>rule-impact changes across domains;</li>
+<li>sparse-data behavior;</li>
+<li>default-threshold behavior;</li>
+<li>cross-cycle interpretation where thresholds changed.</li>
+</ul>
+<hr>
+<h2>Training exercise</h2>
+<p>Use a prepared demo cycle with at least one KPI linked to a pilot.</p>
+<p>Ask the trainee to:</p>
+<ol>
+<li>Open KPI Dashboard.</li>
+<li>Read the summary strip.</li>
+<li>Open <strong>KPI Outcomes</strong> and identify one KPI.</li>
+<li>Open <strong>KPI Detail &amp;amp; Lineage</strong> and inspect that KPI.</li>
+<li>State the KPI name, current value, target, status, governance state, linked pilot, linked decision, linked recommendation, and linked evidence.</li>
+<li>Open <strong>Threshold Rules</strong> and identify the rule version being used for the KPI&#x27;s domain.</li>
+<li>Explain whether the KPI supports validation, triggers reassessment, needs evidence relinking, or requires threshold-rule caution.</li>
+</ol>
+<p>Completion standard:</p>
+<p>The user can explain both the KPI result and the rule, lineage, and evidence basis used to interpret it. The user does not treat the KPI value alone as proof.</p>
+</body></html>

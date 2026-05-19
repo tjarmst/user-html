@@ -1,0 +1,708 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>GOVERNANCE_ACTION_CONCEPT_PRIMER</title>
+<style>
+
+@page {
+  size: A4;
+  margin: 18mm 16mm 18mm 16mm;
+  @bottom-center {
+    content: "Page " counter(page) " of " counter(pages);
+    font-size: 8pt;
+    color: #666;
+  }
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.38;
+  color: #1f2933;
+}
+h1 {
+  font-size: 20pt;
+  border-bottom: 2px solid #1f2933;
+  padding-bottom: 6px;
+  margin-top: 0;
+}
+h2 {
+  font-size: 15pt;
+  border-bottom: 1px solid #c9d1d9;
+  padding-bottom: 4px;
+  margin-top: 24px;
+}
+h3 {
+  font-size: 12.5pt;
+  margin-top: 18px;
+}
+h4 {
+  font-size: 11pt;
+  margin-top: 14px;
+}
+p {
+  margin: 0 0 8px 0;
+}
+ul, ol {
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+li {
+  margin-bottom: 3px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0 14px 0;
+  font-size: 8.6pt;
+  page-break-inside: auto;
+}
+thead {
+  display: table-header-group;
+}
+tr {
+  page-break-inside: avoid;
+}
+th, td {
+  border: 1px solid #aab2bd;
+  padding: 4px 5px;
+  vertical-align: top;
+  word-break: break-word;
+}
+th {
+  background: #eef2f6;
+  font-weight: bold;
+}
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 8.6pt;
+  line-height: 1.28;
+}
+code {
+  font-family: Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.92em;
+  background: #f6f8fa;
+  padding: 1px 3px;
+  border-radius: 3px;
+}
+pre code {
+  padding: 0;
+  background: transparent;
+}
+blockquote {
+  border-left: 4px solid #c9d1d9;
+  margin-left: 0;
+  padding-left: 10px;
+  color: #4b5563;
+}
+hr {
+  border: none;
+  border-top: 1px solid #c9d1d9;
+  margin: 18px 0;
+}
+.document-meta {
+  font-size: 8.5pt;
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+</style>
+</head>
+<body>
+<div class="document-meta">Source: user/GOVERNANCE_ACTION_CONCEPT_PRIMER.md</div>
+<h1>Governance Action Concept Primer</h1>
+<h2>Workplace Conditions Governance Application</h2>
+<h2>Fiftysixth_pass Stage 6C.3</h2>
+<h2>Purpose</h2>
+<p>This primer explains the core concepts and decision flows used by the Workplace Conditions Governance application before users enter the more complex governance-action pages.</p>
+<p>It is written for staff, managers, governance users, and project sponsors who have been told the system is difficult to test or understand without prior training.</p>
+<p>That concern is valid. The system is not a simple HR dashboard. It is a specialist governance-control-room application. It connects diagnosis, evidence, recommendations, decisions, pilots, KPIs, review history, scenario pressure, and cross-cycle learning. Those connections create unfamiliar terminology and action paths.</p>
+<p>This primer does not replace page-specific operating guides. It gives users the conceptual map they need before using those guides.</p>
+<p>---</p>
+<h2>The simplest way to understand the system</h2>
+<p>Use this operating loop:</p>
+<p>&gt; diagnose → recommend → decide → execute → measure → review → learn</p>
+<table><thead><tr><th>Step</th><th>Plain-language meaning</th><th>Typical system question</th></tr></thead><tbody>
+<tr><td>Diagnose</td><td>Understand what is happening in work conditions.</td><td>What do scores, surveys, and evidence say?</td></tr>
+<tr><td>Recommend</td><td>Identify what should be preserved, changed, tested, or watched.</td><td>What should governance consider doing?</td></tr>
+<tr><td>Decide</td><td>Turn accepted recommendations into governed structural choices.</td><td>What structural decision has been made?</td></tr>
+<tr><td>Execute</td><td>Put decisions into pilots, actions, or implementation work.</td><td>Is anything actually being done?</td></tr>
+<tr><td>Measure</td><td>Track whether real conditions are changing.</td><td>Are KPIs and evidence showing movement?</td></tr>
+<tr><td>Review</td><td>Check whether claims are supported, contradicted, incomplete, or scenario-qualified.</td><td>Can governance rely on this conclusion?</td></tr>
+<tr><td>Learn</td><td>Carry forward, revise, validate, reopen, or retire conclusions across cycles.</td><td>What have we learned, and what remains unresolved?</td></tr>
+</tbody></table>
+<p>Every advanced page in the system is trying to preserve some part of this chain.</p>
+<p>---</p>
+<h2>What the system is for</h2>
+<p>The system is designed to help governance users answer questions such as:</p>
+<ul>
+<li>What is structurally happening in the organization?</li>
+<li>Which risks are supported by evidence and which are weakly evidenced?</li>
+<li>Which recommendations should become decisions, pilots, KPIs, or watchpoints?</li>
+<li>Which actions are improving conditions, making no difference, or producing contradiction?</li>
+<li>Which issues are new, carried forward, revised, fragmented, validated, or unresolved across assessment cycles?</li>
+<li>Where does scenario pressure change the interpretation of an action or recommendation?</li>
+<li>What should management approve, defer, qualify, escalate, reopen, or retire?</li>
+</ul>
+<p>The system is not trying to make automatic decisions. It preserves structured evidence and decision context so trained people can make better governance judgments.</p>
+<p>---</p>
+<h2>What ordinary staff should understand first</h2>
+<p>Before testing or using governance-action pages, users should understand four ideas.</p>
+<h3>1. The system follows a chain, not a single score</h3>
+<p>A score may start the discussion, but it does not finish it. The system asks whether a diagnostic finding becomes a recommendation, whether the recommendation becomes a decision, whether the decision is executed, whether execution is measured, and whether later review supports or contradicts the expected change.</p>
+<h3>2. Selected items matter</h3>
+<p>Most advanced pages now use a selected-workspace pattern. The user selects one recommendation, KPI, pilot, or lineage path, then works inside one area such as Evidence, Workflow, Continuity, Learning, Convert, Metrics, or Threshold Rules.</p>
+<p>Before taking an action, users should confirm:</p>
+<ul>
+<li>What item is selected?</li>
+<li>What area am I in?</li>
+<li>What state is the item currently in?</li>
+<li>What will this action change?</li>
+</ul>
+<h3>3. Missing actions often mean missing prerequisites</h3>
+<p>An action may be unavailable because the required upstream data does not exist yet. For example, a predecessor recommendation cannot be selected if no valid prior-cycle recommendation exists. A lineage path may not appear until a recommendation has been converted, piloted, or linked to KPIs.</p>
+<p>This is not automatically a defect.</p>
+<h3>4. Some checks require trained or fixture-based testing</h3>
+<p>Ordinary staff should not be expected to validate cross-cycle predecessor logic, continuity correction, threshold-rule interpretation, or scenario trigger states without training and prepared data. Those checks belong to trained governance users or developer/test-fixture validation.</p>
+<p>---</p>
+<h2>Core vocabulary</h2>
+<h2>Assessment cycle</h2>
+<p>An assessment cycle is a dated round of diagnosis, action, review, and learning.</p>
+<p>Examples:</p>
+<ul>
+<li>2025 Workplace Baseline</li>
+<li>2026 Workplace Baseline</li>
+<li>2026 Q2 review cycle</li>
+</ul>
+<p>Assessment cycles let the system compare what changed over time. A recommendation in one cycle may be new. In a later cycle, a related recommendation may be carried forward, revised, validated, contradicted, or retired.</p>
+<h3>Why it matters</h3>
+<p>Without cycles, the system cannot preserve learning over time. Each cycle is a governance memory unit.</p>
+<p>---</p>
+<h2>Organization and workspace context</h2>
+<p>The selected organization and active assessment cycle define what data the page is showing.</p>
+<p>If a page appears empty, the first question is usually:</p>
+<ul>
+<li>Is an organization selected?</li>
+<li>Is an assessment cycle selected?</li>
+<li>Does this cycle have the upstream records needed for this page?</li>
+</ul>
+<p>---</p>
+<h2>Evidence note</h2>
+<p>An evidence note is a recorded piece of supporting, contradictory, or contextual information.</p>
+<p>It may describe:</p>
+<ul>
+<li>a mechanism;</li>
+<li>an observation;</li>
+<li>a contradiction;</li>
+<li>an implementation issue;</li>
+<li>a survey-related interpretation;</li>
+<li>a scenario-related concern;</li>
+<li>a pilot or KPI explanation.</li>
+</ul>
+<h3>Evidence relinking</h3>
+<p>Evidence relinking attaches an existing evidence note to another item, such as a recommendation, structural decision, pilot, KPI, or lineage path.</p>
+<p>It does not create new evidence. It corrects or strengthens the connection between evidence and the item it supports or qualifies.</p>
+<h3>User caution</h3>
+<p>Before relinking evidence, confirm the selected item. Evidence relinking changes what later review surfaces may treat as supporting or qualifying context.</p>
+<p>---</p>
+<h2>Recommendation</h2>
+<p>A recommendation is a proposed governance response to a diagnosed condition.</p>
+<p>It may suggest that the organization should:</p>
+<ul>
+<li>preserve something that is working;</li>
+<li>reform a structure or practice;</li>
+<li>replace an inadequate mechanism;</li>
+<li>watch an emerging scenario pressure;</li>
+<li>test an intervention through a pilot;</li>
+<li>strengthen evidence before acting.</li>
+</ul>
+<p>A recommendation is not yet a structural decision. It is a governance proposal or work item that must be reviewed, accepted, deferred, escalated, converted, tested, or retired.</p>
+<p>---</p>
+<h2>Recommendation status and workflow</h2>
+<p>Recommendation workflow status tells users where a recommendation currently sits in the governance process.</p>
+<p>Typical workflow ideas include:</p>
+<ul>
+<li>proposed;</li>
+<li>accepted;</li>
+<li>in progress;</li>
+<li>deferred;</li>
+<li>closed;</li>
+<li>retired;</li>
+<li>reopened.</li>
+</ul>
+<p>Exact labels may vary by implementation, but the purpose is the same: record how governance is treating the recommendation.</p>
+<h3>User caution</h3>
+<p>Changing workflow status affects how the recommendation appears in later governance review. Do not treat it as a casual note field.</p>
+<p>---</p>
+<h2>Learning state</h2>
+<p>Learning state records what has been learned about a recommendation, decision, pilot, or intervention.</p>
+<p>Common learning meanings include:</p>
+<ul>
+<li>**untested** — no meaningful implementation evidence yet;</li>
+<li>**in test** — implementation is underway or being observed;</li>
+<li>**validated** — evidence supports the expected effect;</li>
+<li>**contradicted** — evidence conflicts with the expected effect;</li>
+<li>**inconclusive** — signals are mixed or insufficient;</li>
+<li>**reopened** — earlier closure or confidence needs renewed review.</li>
+</ul>
+<h3>Why it matters</h3>
+<p>Learning state prevents the organization from treating activity as proof. It asks whether implementation evidence actually supports the conclusion.</p>
+<p>---</p>
+<h2>Structural decision</h2>
+<p>A structural decision is a governed choice to change, preserve, reform, replace, or formalize part of the organization’s operating structure.</p>
+<p>A structural decision may involve:</p>
+<ul>
+<li>role design;</li>
+<li>capability pathways;</li>
+<li>workload rules;</li>
+<li>decision rights;</li>
+<li>reporting mechanisms;</li>
+<li>accountability structures;</li>
+<li>governance routines;</li>
+<li>technology use conditions.</li>
+</ul>
+<p>A recommendation can be converted or linked to a structural decision when governance accepts that it should move from proposal into formal action.</p>
+<h3>Conversion</h3>
+<p>Conversion is the process of creating or linking a structural decision from a selected recommendation.</p>
+<h3>User caution</h3>
+<p>Conversion is a significant governance action. Before converting, confirm:</p>
+<ul>
+<li>selected recommendation;</li>
+<li>recommendation domain;</li>
+<li>current status;</li>
+<li>existing linked structural decision, if any;</li>
+<li>supporting evidence.</li>
+</ul>
+<p>---</p>
+<h2>Pilot</h2>
+<p>A pilot is a controlled implementation test.</p>
+<p>It lets the organization test whether a decision or intervention improves real conditions before treating it as fully validated.</p>
+<p>A pilot may have:</p>
+<ul>
+<li>status;</li>
+<li>owner;</li>
+<li>linked recommendation;</li>
+<li>linked structural decision;</li>
+<li>linked KPIs;</li>
+<li>evidence notes;</li>
+<li>learning state;</li>
+<li>outcome score or explanation.</li>
+</ul>
+<h3>Pilot learning</h3>
+<p>Pilot learning asks whether the pilot is producing the expected improvement, deterioration, contradiction, or mixed result.</p>
+<p>---</p>
+<h2>KPI</h2>
+<p>A KPI is a key performance or condition indicator used to track whether a structural decision or pilot is changing real conditions.</p>
+<p>In this system, KPIs are not merely reporting metrics. They help governance decide whether actions are working, whether thresholds have been crossed, and whether reassessment is needed.</p>
+<p>---</p>
+<h2>Threshold rule</h2>
+<p>A threshold rule defines how KPI values are interpreted.</p>
+<p>It may include:</p>
+<ul>
+<li>governance floor;</li>
+<li>alert floor;</li>
+<li>score weight;</li>
+<li>effective start date;</li>
+<li>version number.</li>
+</ul>
+<h3>Why threshold versions matter</h3>
+<p>Changing threshold rules can change how a KPI state is interpreted. A later cycle may look better or worse partly because conditions changed, or partly because the interpretation rule changed.</p>
+<h3>User caution</h3>
+<p>Threshold-rule versioning should be tested or changed only by trained users. Ordinary staff should not be asked to validate threshold version logic without guidance.</p>
+<p>---</p>
+<h2>Lineage</h2>
+<p>Lineage is the trace from recommendation to downstream action and evidence.</p>
+<p>A lineage path may include:</p>
+<ul>
+<li>recommendation;</li>
+<li>structural decision;</li>
+<li>pilot;</li>
+<li>KPI;</li>
+<li>evidence;</li>
+<li>scenario pressure;</li>
+<li>learning state;</li>
+<li>governance response.</li>
+</ul>
+<h3>Why lineage matters</h3>
+<p>Lineage prevents governance from losing track of whether recommendations actually became decisions, pilots, KPIs, and measured change.</p>
+<h3>Lineage drop-off</h3>
+<p>Lineage drop-off means the chain breaks. For example:</p>
+<ul>
+<li>recommendation exists, but no structural decision follows;</li>
+<li>decision exists, but no pilot follows;</li>
+<li>pilot exists, but no KPI or evidence follows;</li>
+<li>action exists, but learning is not reviewed.</li>
+</ul>
+<p>Drop-off is not always a defect. It may show that implementation has not reached that stage yet. But it is a governance signal.</p>
+<p>---</p>
+<h2>Recommendation series</h2>
+<p>A recommendation series is a cross-cycle thread that links related recommendations over time.</p>
+<p>It helps answer:</p>
+<ul>
+<li>Is this issue new?</li>
+<li>Is this a carry-forward of an unresolved prior issue?</li>
+<li>Has the recommendation changed?</li>
+<li>Was the earlier recommendation validated, contradicted, superseded, fragmented, or retired?</li>
+</ul>
+<h3>Why it matters</h3>
+<p>Without series, similar recommendations in different cycles may look unrelated. With series, governance can see continuity and learning across cycles.</p>
+<p>---</p>
+<h2>Predecessor recommendation</h2>
+<p>A predecessor recommendation is the earlier-cycle recommendation that a current recommendation follows from.</p>
+<p>Example:</p>
+<ul>
+<li>2025 recommendation: close evidence-routing accountability gap.</li>
+<li>2026 recommendation: continue or revise accountability-gap closure.</li>
+</ul>
+<p>The 2025 recommendation may be the predecessor of the 2026 recommendation.</p>
+<h3>User caution</h3>
+<p>A predecessor cannot be chosen unless a valid earlier-cycle recommendation exists and is eligible. If the selector is empty, that may mean the current test data does not contain a valid predecessor. It is not automatically a UI defect.</p>
+<p>---</p>
+<h2>Carry-forward</h2>
+<p>Carry-forward means an unresolved recommendation series is brought from one cycle into a later cycle.</p>
+<p>Carry-forward preserves continuity while still creating a separate recommendation record for the new cycle.</p>
+<h3>Why it matters</h3>
+<p>Carry-forward prevents unresolved issues from disappearing just because a new assessment cycle begins.</p>
+<h3>Who should test it</h3>
+<p>Carry-forward should be tested by trained governance users or with prepared fixture data. Ordinary staff should not be asked to infer whether predecessor data is valid.</p>
+<p>---</p>
+<h2>Continuity status</h2>
+<p>Continuity status describes how a recommendation relates to prior cycles.</p>
+<p>Common meanings include:</p>
+<ul>
+<li>new issue;</li>
+<li>carried forward;</li>
+<li>revised;</li>
+<li>continued;</li>
+<li>fragmented;</li>
+<li>superseded;</li>
+<li>closed;</li>
+<li>reopened.</li>
+</ul>
+<p>The exact options may vary, but the purpose is to preserve governance memory.</p>
+<h3>User caution</h3>
+<p>Continuity actions change cross-cycle lineage and later governance interpretation. Review selected series, predecessor, change summary, and rationale before saving.</p>
+<p>---</p>
+<h2>Continuity correction</h2>
+<p>Continuity correction is an advanced action that repairs or changes recommendation-series linkage.</p>
+<p>It may involve:</p>
+<ul>
+<li>assigning a different predecessor;</li>
+<li>moving a recommendation to another series;</li>
+<li>removing a series link;</li>
+<li>detaching from an incorrect continuity path.</li>
+</ul>
+<h3>Who should use it</h3>
+<p>Continuity correction is for trained governance administrators or project-owner-level users. It should not be treated as ordinary page use.</p>
+<p>---</p>
+<h2>Scenario pressure</h2>
+<p>Scenario pressure is an external, future-facing, or environmental condition that may change how a recommendation or execution path should be interpreted.</p>
+<p>Examples:</p>
+<ul>
+<li>AI augmentation pressure;</li>
+<li>surveillance-tool expansion;</li>
+<li>workforce capability disruption;</li>
+<li>regulatory pressure;</li>
+<li>demographic or labor-market change.</li>
+</ul>
+<p>Scenario pressure does not automatically prove that an action should change. It qualifies governance judgment. It may mean that a recommendation needs mitigation, monitoring, or a different interpretation.</p>
+<p>---</p>
+<h2>Governance consequence</h2>
+<p>Governance consequence is the action implication of a finding.</p>
+<p>Examples:</p>
+<ul>
+<li>proceed;</li>
+<li>monitor;</li>
+<li>qualify;</li>
+<li>strengthen evidence;</li>
+<li>mitigate first;</li>
+<li>escalate;</li>
+<li>reopen;</li>
+<li>block progression;</li>
+<li>defer;</li>
+<li>close.</li>
+</ul>
+<p>The system does not replace human judgment. It helps users see why a governance action may be warranted.</p>
+<p>---</p>
+<h2>Board-pack qualification</h2>
+<p>A board-pack qualification is a governance-facing caution or explanation that should accompany a conclusion when presented to senior governance audiences.</p>
+<p>It prevents unsupported certainty.</p>
+<p>Examples:</p>
+<ul>
+<li>evidence is weak;</li>
+<li>scenario pressure qualifies the conclusion;</li>
+<li>continuity is fragmented;</li>
+<li>threshold rules changed;</li>
+<li>human validation challenged the conclusion;</li>
+<li>execution lineage is incomplete.</li>
+</ul>
+<p>---</p>
+<h2>Selected-workspace page model</h2>
+<p>Several Governance Action pages now use the same broad pattern:</p>
+<ol>
+<li>readiness and page context;</li>
+<li>summary or attention strip;</li>
+<li>worklist or diagnostic table;</li>
+<li>selected item/path;</li>
+<li>workspace area selector;</li>
+<li>area-specific action or supporting detail.</li>
+</ol>
+<p>This means users should not expect every action to appear in one long page stream. They select the item first, then choose the area relevant to the task.</p>
+<p>---</p>
+<h2>How to read selected-workspace pages</h2>
+<p>When entering a selected-workspace page, follow this sequence.</p>
+<h3>Step 1 — Confirm readiness</h3>
+<p>Check whether the page says the required organization, assessment cycle, or upstream data exists.</p>
+<h3>Step 2 — Read the summary</h3>
+<p>Look for the attention strip, worklist, diagnostic table, or summary metrics.</p>
+<h3>Step 3 — Select the item</h3>
+<p>Select the recommendation, KPI, pilot, or lineage path you want to inspect.</p>
+<h3>Step 4 — Confirm selected-item facts</h3>
+<p>Before taking action, check the selected item’s title, domain, status, owner, learning state, score, or lineage context.</p>
+<h3>Step 5 — Choose the workspace area</h3>
+<p>Examples:</p>
+<ul>
+<li>Evidence — evidence notes and evidence relinking;</li>
+<li>Workflow — status, owner, due date, progress;</li>
+<li>Continuity — cross-cycle series and predecessor linkage;</li>
+<li>Learning — learning actions and learning history;</li>
+<li>Convert — structural decision creation or linkage;</li>
+<li>Metrics — pilot metric entry;</li>
+<li>Threshold Rules — KPI interpretation rule administration.</li>
+</ul>
+<h3>Step 6 — Act only when the context is clear</h3>
+<p>If the page does not show what the action will affect, stop and ask for clarification or treat it as a usability issue.</p>
+<p>---</p>
+<h2>Page concept map</h2>
+<h2>Recommendations</h2>
+<p>The Recommendations page is where governance users work with recommendations after they have been generated or carried forward.</p>
+<p>Key areas:</p>
+<ul>
+<li>**Overview** — understand the selected recommendation.</li>
+<li>**Evidence** — inspect or relink evidence.</li>
+<li>**Workflow** — update status, owner, due date, or progress.</li>
+<li>**Continuity** — link the recommendation to cross-cycle series and predecessor context.</li>
+<li>**Learning** — record or inspect learning state and history.</li>
+<li>**Convert** — create or link a structural decision from the selected recommendation.</li>
+</ul>
+<p>Most difficult concepts:</p>
+<ul>
+<li>recommendation series;</li>
+<li>predecessor;</li>
+<li>carry-forward;</li>
+<li>continuity correction;</li>
+<li>conversion to structural decision;</li>
+<li>learning state.</li>
+</ul>
+<p>---</p>
+<h2>KPI Dashboard</h2>
+<p>The KPI Dashboard is where users inspect KPI outcomes, reassessment triggers, selected KPI detail, and threshold-rule interpretation.</p>
+<p>Key areas:</p>
+<ul>
+<li>**KPI Outcomes** — KPI creation and overall KPI review.</li>
+<li>**Reassessment** — triggered KPI reassessment.</li>
+<li>**KPI Detail &amp; Lineage** — selected KPI detail and evidence linkage.</li>
+<li>**Threshold Rules** — threshold rule versions and interpretation.</li>
+</ul>
+<p>Most difficult concepts:</p>
+<ul>
+<li>threshold rules;</li>
+<li>threshold versions;</li>
+<li>reassessment triggers;</li>
+<li>KPI evidence linkage;</li>
+<li>threshold interpretation across cycles.</li>
+</ul>
+<p>---</p>
+<h2>Lineage View</h2>
+<p>The Lineage View shows whether recommendations are connected to downstream decisions, pilots, KPIs, evidence, scenario pressure, and governance response.</p>
+<p>Key areas:</p>
+<ul>
+<li>**Path Detail** — selected lineage path facts.</li>
+<li>**Evidence** — evidence linkage and gaps.</li>
+<li>**Learning** — learning-state overlays and history.</li>
+<li>**Scenario** — scenario-to-execution interpretation.</li>
+<li>**Governance Response** — action consequence and response context.</li>
+<li>**Threshold Impact** — KPI threshold interpretation by domain.</li>
+</ul>
+<p>Most difficult concepts:</p>
+<ul>
+<li>lineage path;</li>
+<li>drop-off;</li>
+<li>weak execution;</li>
+<li>scenario pressure;</li>
+<li>governance response;</li>
+<li>threshold impact.</li>
+</ul>
+<p>---</p>
+<h2>Pilot Tracker</h2>
+<p>The Pilot Tracker shows whether interventions are being tested and what those tests are revealing.</p>
+<p>Key areas:</p>
+<ul>
+<li>**Outcome** — current pilot outcome and learning interpretation.</li>
+<li>**Metrics** — pilot metric entry.</li>
+<li>**Linked KPIs** — KPI linkage for the selected pilot.</li>
+<li>**Evidence** — evidence linkage for the selected pilot.</li>
+<li>**Lineage** — recommendation-to-decision-to-pilot context.</li>
+</ul>
+<p>Most difficult concepts:</p>
+<ul>
+<li>pilot learning state;</li>
+<li>mixed improvement/deterioration signals;</li>
+<li>linked KPI relationship;</li>
+<li>evidence linkage;</li>
+<li>broader lineage context.</li>
+</ul>
+<p>---</p>
+<h2>Common action types</h2>
+<h2>Inspect</h2>
+<p>Inspect means read the data, evidence, or context without changing anything.</p>
+<p>Ordinary staff can often inspect pages if they have enough orientation.</p>
+<h2>Relink evidence</h2>
+<p>Relink evidence means attach an existing evidence note to the currently selected object.</p>
+<p>It changes evidence traceability. It should be done by trained users.</p>
+<h2>Update workflow</h2>
+<p>Update workflow means change the status or operational handling of a recommendation or governance action.</p>
+<p>It affects work management and review interpretation.</p>
+<h2>Record learning</h2>
+<p>Record learning means mark whether an action is untested, in test, validated, contradicted, inconclusive, or reopened.</p>
+<p>It affects later review and closure.</p>
+<h2>Convert</h2>
+<p>Convert means move from recommendation to structural decision linkage.</p>
+<p>It is a governance action, not a casual note.</p>
+<h2>Link continuity</h2>
+<p>Link continuity means connect a recommendation to a cross-cycle series and, where appropriate, a predecessor.</p>
+<p>It affects cross-cycle memory.</p>
+<h2>Correct continuity</h2>
+<p>Correct continuity means repair or alter existing series/predecessor linkage.</p>
+<p>It should be restricted to trained governance administrators.</p>
+<p>---</p>
+<h2>Why actions may be unavailable</h2>
+<p>An action may not appear or may not be usable because:</p>
+<ul>
+<li>no organization is selected;</li>
+<li>no assessment cycle is selected;</li>
+<li>no item exists yet;</li>
+<li>no selected item has been chosen;</li>
+<li>required evidence notes do not exist;</li>
+<li>no prior-cycle predecessor exists;</li>
+<li>the current recommendation is not linked to a series;</li>
+<li>the selected pilot has no metrics yet;</li>
+<li>the KPI has no linked evidence;</li>
+<li>scenario data has not generated a relevant watchpoint;</li>
+<li>the action belongs in a different workspace area.</li>
+</ul>
+<p>Unavailable action is not automatically a defect. The question is whether the page explains the missing prerequisite well enough.</p>
+<p>---</p>
+<h2>What different users should test</h2>
+<h2>Ordinary staff</h2>
+<p>Ordinary staff can test:</p>
+<ul>
+<li>whether page purpose is understandable;</li>
+<li>whether selected item context is visible;</li>
+<li>whether empty states are understandable;</li>
+<li>whether labels are confusing;</li>
+<li>whether it is clear when a page is for trained governance users.</li>
+</ul>
+<p>Ordinary staff should not be asked to validate:</p>
+<ul>
+<li>carry-forward predecessor eligibility;</li>
+<li>continuity correction;</li>
+<li>threshold-rule versioning;</li>
+<li>structural conversion integrity;</li>
+<li>scenario trigger-state completeness;</li>
+<li>cross-cycle lineage correctness.</li>
+</ul>
+<h2>Trained governance users</h2>
+<p>Trained governance users can test:</p>
+<ul>
+<li>selected-workspace operation;</li>
+<li>evidence relinking;</li>
+<li>workflow updates;</li>
+<li>learning-state updates;</li>
+<li>ordinary continuity linking where valid data exists;</li>
+<li>conversion to structural decision;</li>
+<li>KPI reassessment;</li>
+<li>lineage interpretation.</li>
+</ul>
+<h2>Project Owner / implementation lead</h2>
+<p>The Project Owner should test:</p>
+<ul>
+<li>whether the system supports the operating loop;</li>
+<li>whether management value is visible;</li>
+<li>whether role boundaries are clear;</li>
+<li>whether training resources are adequate;</li>
+<li>whether advanced test paths require seeded fixture preparation.</li>
+</ul>
+<h2>Developer or fixture-based validation</h2>
+<p>Developer or fixture validation should cover:</p>
+<ul>
+<li>predecessor eligibility;</li>
+<li>carry-forward correctness;</li>
+<li>continuity correction edge cases;</li>
+<li>scenario trigger-state branches;</li>
+<li>threshold-version interpretation edge cases;</li>
+<li>database lineage integrity.</li>
+</ul>
+<p>---</p>
+<h2>Smoke-test boundary rule</h2>
+<p>Do not ask users to prove hidden data-flow prerequisites by exploration.</p>
+<p>A good smoke test asks:</p>
+<ul>
+<li>Can I tell what I am looking at?</li>
+<li>Can I tell what item is selected?</li>
+<li>Can I tell what action area I am in?</li>
+<li>Can I tell what the action will change?</li>
+<li>If the action is unavailable, does the page explain why?</li>
+</ul>
+<p>A poor smoke test asks an untrained user to infer whether the database contains a valid predecessor, threshold fixture, scenario trigger branch, or cross-cycle series state.</p>
+<p>---</p>
+<h2>Quick glossary</h2>
+<table><thead><tr><th>Term</th><th>Short meaning</th></tr></thead><tbody>
+<tr><td>Assessment cycle</td><td>A dated round of diagnosis, action, review, and learning.</td></tr>
+<tr><td>Evidence note</td><td>Recorded support, contradiction, or context.</td></tr>
+<tr><td>Evidence relinking</td><td>Attaching an existing evidence note to a selected item.</td></tr>
+<tr><td>Recommendation</td><td>A proposed governance response to a diagnosed condition.</td></tr>
+<tr><td>Workflow status</td><td>Current governance handling state of a recommendation or action.</td></tr>
+<tr><td>Learning state</td><td>What has been learned from implementation evidence.</td></tr>
+<tr><td>Structural decision</td><td>A governed choice to change or preserve organizational structure.</td></tr>
+<tr><td>Conversion</td><td>Creating or linking a structural decision from a recommendation.</td></tr>
+<tr><td>Pilot</td><td>A controlled test of an intervention.</td></tr>
+<tr><td>KPI</td><td>A metric used to track whether conditions are changing.</td></tr>
+<tr><td>Threshold rule</td><td>A rule for interpreting KPI values.</td></tr>
+<tr><td>Lineage</td><td>The trace from recommendation to decision, pilot, KPI, evidence, and learning.</td></tr>
+<tr><td>Drop-off</td><td>A break or gap in the expected action/evidence chain.</td></tr>
+<tr><td>Recommendation series</td><td>A cross-cycle thread linking related recommendations over time.</td></tr>
+<tr><td>Predecessor</td><td>The prior-cycle recommendation that a current recommendation follows.</td></tr>
+<tr><td>Carry-forward</td><td>Bringing an unresolved recommendation series into a later cycle.</td></tr>
+<tr><td>Continuity correction</td><td>Repairing recommendation-series or predecessor linkage.</td></tr>
+<tr><td>Scenario pressure</td><td>External/future-facing pressure that qualifies interpretation.</td></tr>
+<tr><td>Governance consequence</td><td>The action implication of a finding.</td></tr>
+<tr><td>Board-pack qualification</td><td>A caution attached to governance reporting.</td></tr>
+</tbody></table>
+<p>---</p>
+<h2>What to read next</h2>
+<p>Recommended sequence:</p>
+<ol>
+<li>`PROJECT_OWNER_ORIENTATION_AND_TESTING_BOUNDARIES.md`</li>
+<li>`GOVERNANCE_ACTION_CONCEPT_PRIMER.md` — this document</li>
+<li>Updated page operating guides, once rewritten or amended:</li>
+</ol>
+<ul>
+<li>`RECOMMENDATIONS_PAGE_LEARNING_RESOURCE.md`</li>
+<li>`KPI_DASHBOARD_PAGE_LEARNING_RESOURCE.md`</li>
+<li>`LINEAGE_VIEW_PAGE_LEARNING_RESOURCE.md`</li>
+<li>`PILOT_TRACKER_PAGE_LEARNING_RESOURCE.md`</li>
+</ul>
+<ol>
+<li>Role-based smoke-test scripts, once prepared</li>
+</ol>
+<p>---</p>
+<h2>Closing message for users</h2>
+<p>The system is complex because it preserves governance memory and decision integrity across time. The training goal is not to make every concept disappear. The goal is to make sure users know which concepts they need for their role, which actions are safe for them to test, and when a task requires trained governance or fixture-based validation.</p>
+</body>
+</html>

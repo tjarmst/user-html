@@ -1,0 +1,108 @@
+<!doctype html>
+<html><head><meta charset=utf-8>
+<title>DIAGNOSTIC_INPUT_PAGE_LEARNING_RESOURCE</title>
+<style>
+
+body { font-family: Segoe UI, Arial, sans-serif; line-height: 1.45; color: #202124; margin: 42px; max-width: 980px; }
+h1, h2, h3 { color: #17324d; margin-top: 1.35em; }
+h1 { border-bottom: 2px solid #d9e2ec; padding-bottom: 8px; }
+table { border-collapse: collapse; width: 100%; margin: 18px 0; font-size: 0.94rem; }
+th, td { border: 1px solid #cfd8e3; padding: 7px 9px; vertical-align: top; }
+th { background: #eef3f8; text-align: left; }
+code, pre { background: #f4f6f8; border-radius: 4px; }
+code { padding: 1px 4px; }
+pre { padding: 12px; overflow-x: auto; }
+.document-meta { color: #5f6b7a; font-size: 0.9rem; margin-bottom: 22px; }
+
+</style></head><body>
+<div class=document-meta>Source: user/DIAGNOSTIC_INPUT_PAGE_LEARNING_RESOURCE.md</div>
+<h1>Diagnostic Input Page Learning Resource</h1>
+<p>This guide teaches users how the <strong>Diagnostic Input</strong> page captures structured observations for the current assessment cycle.</p>
+<h2>Purpose</h2>
+<p>Diagnostic Input records observed metric values for the selected organization and assessment cycle.</p>
+<p>Use it to:</p>
+<ul>
+<li>enter Stage A structural, symbolic, alignment, technology, and readiness observations</li>
+<li>review metric definitions and scoring cues</li>
+<li>compare against prior observed values when available</li>
+<li>save metric observations for scorecard computation</li>
+<li>export or print saved diagnostic metric observations for the current cycle, division, and segment</li>
+</ul>
+<p>The page is about disciplined Stage A input, not interpretation by itself.</p>
+<h2>Stage A Metric Role</h2>
+<p>Diagnostic Input is mainly <strong>Stage A: Understand reality</strong>. It records evidence-backed observations about current workplace conditions before the system recommends, decides, pilots, or reviews action.</p>
+<p>Some inputs also indicate readiness for Stage B. For example, <code>PILOT_CAPACITY</code>, <code>DATA_QUALITY_SCORE</code>, <code>STAKEHOLDER_SUPPORT_AVG</code>, <code>LEARNING_CULTURE</code>, and <code>LEADERSHIP_SUPPORT</code> still describe current reality, but they also tell governance whether intelligent change can proceed responsibly.</p>
+<p>Use the metric resources for the detailed framing:</p>
+<ul>
+<li><code>user/metrics/Metrics explained.md</code></li>
+<li><code>user/metrics/Metric Definitions.md</code></li>
+<li><code>user/metrics/Diagnostic Input Data Collection and Scoring.md</code></li>
+</ul>
+<h2>Metric Definitions</h2>
+<p>Each metric has:</p>
+<ul>
+<li>code</li>
+<li>name</li>
+<li>domain</li>
+<li>description</li>
+<li>polarity</li>
+<li>value range</li>
+</ul>
+<p>Polarity matters. For some metrics, higher values are healthier. For others, lower values indicate healthier conditions.</p>
+<p>If metric definitions are missing in a real organization workflow, go to Home and use <strong>Initialize framework definitions</strong>. Do not use <strong>Load sample data</strong> unless the user intentionally wants the separate sample workspace.</p>
+<h2>Workflow</h2>
+<p>The user should:</p>
+<ol>
+<li>Confirm organization and cycle context.</li>
+<li>Confirm the selected organization is the intended real or sample workspace.</li>
+<li>Read the metric definitions and scoring cues.</li>
+<li>Enter values for the assessment window.</li>
+<li>Use notes where interpretation needs context.</li>
+<li>Review observations before saving.</li>
+<li>Persist metric observations.</li>
+</ol>
+<p>The page supports review before save so users can catch default or accidental entries.</p>
+<p>The progress message treats any value of <strong>50</strong> as a possible default or placeholder, even if that value was previously saved. A saved value of 50 may still be legitimate, but the user should be able to explain why it is neutral rather than accidental.</p>
+<h2>Export And Print</h2>
+<p>The <strong>Export / print saved diagnostic input</strong> expander lets the user save a local copy of saved metric observations.</p>
+<p>Available outputs:</p>
+<ul>
+<li>Diagnostic input CSV</li>
+<li>Printable diagnostic input HTML</li>
+</ul>
+<p>Exports include persisted records for the currently selected cycle, division, and segment. If the user has just edited values in the form, they should save first before exporting. Unsaved form edits are not included.</p>
+<h2>What The User Should Notice</h2>
+<p>Ask the user to identify:</p>
+<ul>
+<li>current organization and cycle</li>
+<li>whether the current organization is sample data or user data</li>
+<li>metric domain groups</li>
+<li>higher-is-healthier or lower-is-healthier cues</li>
+<li>non-default entries</li>
+<li>prior observed values</li>
+<li>review progress before saving</li>
+<li>whether any value of 50 is intentional evidence or only a placeholder</li>
+<li>whether the export scope matches the intended cycle, division, and segment</li>
+</ul>
+<h2>Downstream Impact</h2>
+<p>Diagnostic Input feeds:</p>
+<ul>
+<li>Score Dashboard scorecard computation</li>
+<li>Alignment Dashboard gap analysis</li>
+<li>Score Component Details</li>
+<li>Recommendations generation</li>
+<li>Governance Summary</li>
+<li>Comparative Cycle Review</li>
+<li>local CSV or printable HTML records of saved numeric inputs</li>
+</ul>
+<p>It does not itself prove improvement. Improvement is tested later through Stage B signals such as pilot outcomes, KPI progress, execution feedback, learning state, and governance action resolution.</p>
+<h2>Common Mistakes</h2>
+<p>Avoid treating default values as real observations.</p>
+<p>Avoid exporting before saving recent edits.</p>
+<p>Avoid mixing time periods inside one cycle.</p>
+<p>Avoid entering values without reading polarity.</p>
+<p>Avoid using diagnostic input as evidence narrative. Use Evidence Notes for source, confidence, and interpretation.</p>
+<h2>Training Prompt</h2>
+<p>Ask the trainee to enter a small set of metric observations, explain polarity for two metrics, review the entries, save them, and download the diagnostic CSV or printable HTML.</p>
+<p>Completion standard: the user can explain how a saved metric observation becomes part of scorecard computation and how to export the saved input record.</p>
+</body></html>

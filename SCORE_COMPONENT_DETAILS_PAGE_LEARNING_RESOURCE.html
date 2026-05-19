@@ -1,0 +1,147 @@
+<!doctype html>
+<html><head><meta charset=utf-8>
+<title>SCORE_COMPONENT_DETAILS_PAGE_LEARNING_RESOURCE</title>
+<style>
+
+body { font-family: Segoe UI, Arial, sans-serif; line-height: 1.45; color: #202124; margin: 42px; max-width: 980px; }
+h1, h2, h3 { color: #17324d; margin-top: 1.35em; }
+h1 { border-bottom: 2px solid #d9e2ec; padding-bottom: 8px; }
+table { border-collapse: collapse; width: 100%; margin: 18px 0; font-size: 0.94rem; }
+th, td { border: 1px solid #cfd8e3; padding: 7px 9px; vertical-align: top; }
+th { background: #eef3f8; text-align: left; }
+code, pre { background: #f4f6f8; border-radius: 4px; }
+code { padding: 1px 4px; }
+pre { padding: 12px; overflow-x: auto; }
+.document-meta { color: #5f6b7a; font-size: 0.9rem; margin-bottom: 22px; }
+
+</style></head><body>
+<div class=document-meta>Source: user/SCORE_COMPONENT_DETAILS_PAGE_LEARNING_RESOURCE.md</div>
+<h1>Score Component Details Page Learning Resource</h1>
+<p>This guide teaches users how the <strong>Score Component Details</strong> page supports detailed review of score components and evidence.</p>
+<h2>Purpose</h2>
+<p>Score Component Details lets users inspect the component-level building blocks behind scorecard outputs.</p>
+<p>Use it to:</p>
+<ul>
+<li>select a score group</li>
+<li>inspect normalized component values</li>
+<li>read component notes</li>
+<li>review status and review notes</li>
+<li>inspect linked evidence</li>
+<li>relink existing evidence</li>
+<li>create new evidence directly linked to a component</li>
+</ul>
+<p>This page is for evidence-grounded score interpretation.</p>
+<h2>Bridge Role</h2>
+<p>Score Component Details is a <strong>Bridge</strong> page. It connects Stage A score outputs to the evidence, contradiction, validation, and review notes needed before Stage B action or executive governance relies on those scores.</p>
+<p>Use it to ask:</p>
+<ul>
+<li>What metric or component is driving the score?</li>
+<li>Is the component supported by mechanism, interpretation, contradiction, or validation evidence?</li>
+<li>Does the evidence make the score stronger, weaker, or more qualified?</li>
+<li>Should recommendations or governance summaries treat the score as supportable, cautious, or unresolved?</li>
+</ul>
+<p>For the detailed component-review framing, use <code>user/metrics/Score Component Details Page User Guide.md</code>.</p>
+<h2>Component Review</h2>
+<p>Each component shows:</p>
+<ul>
+<li>component name</li>
+<li>normalized value</li>
+<li>notes or rationale</li>
+<li>review status</li>
+<li>review note</li>
+<li>linked evidence</li>
+</ul>
+<p>Use this detail when a high-level score looks surprising, too strong, or contradicted.</p>
+<h2>Evidence Linking</h2>
+<p>Users can either:</p>
+<ul>
+<li>relink an existing evidence note to the component</li>
+<li>create a new linked evidence note</li>
+</ul>
+<p>Evidence roles include mechanism, interpretation, contradiction, and validation.</p>
+<h2>Downstream Impact</h2>
+<p>Score Component Details feeds:</p>
+<ul>
+<li>Evidence Notes</li>
+<li>Alignment Dashboard contradiction review</li>
+<li>Score Dashboard explanation</li>
+<li>Governance Summary evidence sections</li>
+<li>board-pack qualifications</li>
+</ul>
+<p>The feed matters because Score Component Details is where high-level score outputs become explainable at the component level. A score by itself can tell users that something is high, low, improving, or worrying. Component detail explains which underlying metric, rationale, review status, and evidence note make that score credible, qualified, or contradicted.</p>
+<h3>Evidence Notes</h3>
+<p>Score Component Details feeds Evidence Notes by creating or relinking evidence with score and component linkage already attached.</p>
+<p>The page can create evidence notes with:</p>
+<ul>
+<li>evidence title</li>
+<li>evidence narrative or excerpt</li>
+<li>evidence role</li>
+<li>confidence level</li>
+<li>source type</li>
+<li>linked score group</li>
+<li>linked component name</li>
+</ul>
+<p>It can also relink an existing evidence note to the selected component. This is useful when evidence was already captured elsewhere but belongs with a specific score component.</p>
+<p>The downstream impact is traceability. Evidence Notes becomes the durable register of why a score component should be trusted, interpreted cautiously, contradicted, or validated. Later reviewers can inspect the evidence note directly rather than relying on memory or dashboard interpretation.</p>
+<h3>Alignment Dashboard Contradiction Review</h3>
+<p>Score Component Details affects Alignment Dashboard contradiction review when evidence is linked to alignment, integrity-gap, or contradiction-related components.</p>
+<p>Alignment Dashboard uses component-linked evidence to help users interpret:</p>
+<ul>
+<li>alignment gaps</li>
+<li>unresolved contradiction components</li>
+<li>integrity-gap contributors</li>
+<li>review status and review notes</li>
+<li>contradiction evidence, validation evidence, and interpretation evidence</li>
+</ul>
+<p>The practical impact is that contradiction review becomes evidence-grounded. A large alignment gap should not be resolved merely because the user wants a clean dashboard. If Score Component Details links contradiction evidence to the relevant component, Alignment Dashboard can show why the gap remains unresolved, why it has been accepted as a tension, or why it has been resolved.</p>
+<p>This also helps prevent contradiction from being softened into ordinary weakness. If the evidence role is <code>contradiction</code>, users should treat it as a direct challenge to the component interpretation until reviewed.</p>
+<h3>Score Dashboard Explanation</h3>
+<p>Score Dashboard is affected because component evidence explains the meaning behind top-level scorecard outputs.</p>
+<p>Score Component Details can help explain:</p>
+<ul>
+<li>why a normalized component value is high or low</li>
+<li>which component is driving a score group</li>
+<li>whether a surprising score has supporting evidence</li>
+<li>whether a strong-looking score is contradicted by evidence</li>
+<li>whether a weak-looking score reflects real risk or only incomplete data</li>
+<li>whether score interpretation should be qualified by confidence</li>
+</ul>
+<p>The downstream impact is interpretive clarity. Score Dashboard gives the high-level view; Score Component Details provides the evidence trail behind that view. When a user sees a score that looks too strong, too weak, or inconsistent with lived experience, they should use Score Component Details to inspect the component notes and linked evidence before drawing a governance conclusion.</p>
+<h3>Governance Summary Evidence Sections</h3>
+<p>Governance Summary uses evidence sections to qualify executive review and board-facing interpretation.</p>
+<p>Component-linked evidence can affect:</p>
+<ul>
+<li>evidence excerpt sections</li>
+<li>unresolved contradiction sections</li>
+<li>evidence gap interpretation</li>
+<li>score explanation and qualification</li>
+<li>alignment and integrity-gap summaries</li>
+<li>governance confidence in a score-driven claim</li>
+</ul>
+<p>The practical impact is that Governance Summary can show evidence context rather than only score values. If a component has validation evidence, the summary can support stronger interpretation. If a component has contradiction evidence, low-confidence evidence, or no evidence, the summary should qualify the relevant score claim.</p>
+<p>This matters especially when the governance summary is used for decision-making. A high score with weak evidence should not be treated the same as a high score with strong validation. A concerning score with clear contradiction evidence may require follow-up rather than narrative smoothing.</p>
+<h3>Board-Pack Qualifications</h3>
+<p>Board-pack outputs are affected because score component evidence supplies the caveats, evidence excerpts, and contradiction lines that prevent overconfident reporting.</p>
+<p>Score Component Details can shape board-pack qualifications by adding:</p>
+<ul>
+<li>evidence excerpts linked to score components</li>
+<li>contradiction evidence behind integrity-gap claims</li>
+<li>validation evidence supporting score interpretation</li>
+<li>confidence qualifications for component-level claims</li>
+<li>review notes explaining why a component remains unresolved or accepted as tension</li>
+<li>source context for board-facing score narratives</li>
+</ul>
+<p>The board-pack impact is important because exported board packs may be read without access to the full app. Component-linked evidence helps the export explain not only what the score says, but why the score should be believed, challenged, or treated cautiously.</p>
+<p>A good board-pack qualification might indicate that a score is supported by high-confidence validation evidence, challenged by contradiction evidence, or currently limited by missing component evidence. This keeps board reporting from becoming a score-only narrative.</p>
+<h3>Practical Feed Interpretation</h3>
+<p>When reviewing downstream impact, use this rule:</p>
+<p>Score Component Details feeds downstream pages with <strong>component-level evidence meaning</strong>, not just component values.</p>
+<p>That meaning can validate a score, qualify a score, contradict a score, explain a surprising result, or expose an evidence gap. The most important downstream signal is whether the component has evidence strong enough to support the interpretation being made from it.</p>
+<h2>Common Mistakes</h2>
+<p>Avoid reviewing only top-level scores when a component is driving the result.</p>
+<p>Avoid adding evidence without a clear role.</p>
+<p>Avoid using low-confidence evidence as if it fully validates a component.</p>
+<h2>Training Prompt</h2>
+<p>Ask the trainee to select a score group, open one component, link or create evidence, and explain whether the evidence validates, contradicts, or merely interprets the component.</p>
+<p>Completion standard: the user can trace a score component to evidence.</p>
+</body></html>

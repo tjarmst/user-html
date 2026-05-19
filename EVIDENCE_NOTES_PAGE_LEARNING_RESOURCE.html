@@ -1,0 +1,176 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>EVIDENCE_NOTES_PAGE_LEARNING_RESOURCE</title>
+<style>
+
+@page {
+  size: A4;
+  margin: 18mm 16mm 18mm 16mm;
+  @bottom-center {
+    content: "Page " counter(page) " of " counter(pages);
+    font-size: 8pt;
+    color: #666;
+  }
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.38;
+  color: #1f2933;
+}
+h1 {
+  font-size: 20pt;
+  border-bottom: 2px solid #1f2933;
+  padding-bottom: 6px;
+  margin-top: 0;
+}
+h2 {
+  font-size: 15pt;
+  border-bottom: 1px solid #c9d1d9;
+  padding-bottom: 4px;
+  margin-top: 24px;
+}
+h3 {
+  font-size: 12.5pt;
+  margin-top: 18px;
+}
+h4 {
+  font-size: 11pt;
+  margin-top: 14px;
+}
+p {
+  margin: 0 0 8px 0;
+}
+ul, ol {
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+li {
+  margin-bottom: 3px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0 14px 0;
+  font-size: 8.6pt;
+  page-break-inside: auto;
+}
+thead {
+  display: table-header-group;
+}
+tr {
+  page-break-inside: avoid;
+}
+th, td {
+  border: 1px solid #aab2bd;
+  padding: 4px 5px;
+  vertical-align: top;
+  word-break: break-word;
+}
+th {
+  background: #eef2f6;
+  font-weight: bold;
+}
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 8.6pt;
+  line-height: 1.28;
+}
+code {
+  font-family: Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.92em;
+  background: #f6f8fa;
+  padding: 1px 3px;
+  border-radius: 3px;
+}
+pre code {
+  padding: 0;
+  background: transparent;
+}
+blockquote {
+  border-left: 4px solid #c9d1d9;
+  margin-left: 0;
+  padding-left: 10px;
+  color: #4b5563;
+}
+hr {
+  border: none;
+  border-top: 1px solid #c9d1d9;
+  margin: 18px 0;
+}
+.document-meta {
+  font-size: 8.5pt;
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+</style>
+</head>
+<body>
+<div class="document-meta">Source: user/EVIDENCE_NOTES_PAGE_LEARNING_RESOURCE.md</div>
+<h1>Evidence Notes Page Learning Resource</h1>
+<p>This guide teaches users how the **Evidence Notes** page turns raw observations into auditable governance evidence.</p>
+<h2>Purpose</h2>
+<p>Evidence Notes capture narrative evidence, source context, confidence, role, cognition stage, and optional links to app entities.</p>
+<p>Use the page to:</p>
+<ul>
+<li>create evidence notes</li>
+<li>attribute evidence to a user</li>
+<li>classify evidence role</li>
+<li>link evidence to scores, score components, recommendations, decisions, pilots, or KPIs</li>
+<li>inspect existing evidence notes</li>
+</ul>
+<p>Evidence is what prevents the app from becoming a score-only dashboard.</p>
+<h2>Evidence Roles</h2>
+<p>Use evidence roles carefully:</p>
+<ul>
+<li>`mechanism`: explains how a condition or change works</li>
+<li>`interpretation`: supports a reading of the data</li>
+<li>`contradiction`: challenges or weakens a claim</li>
+<li>`validation`: confirms, tests, or corroborates a claim</li>
+</ul>
+<p>Contradiction should remain visible. Do not soften contradiction into ordinary weakness when it directly challenges a conclusion.</p>
+<h2>Optional Linkage</h2>
+<p>Evidence can be linked to:</p>
+<ul>
+<li>score group</li>
+<li>score component</li>
+<li>recommendation</li>
+<li>decision</li>
+<li>pilot</li>
+<li>KPI</li>
+</ul>
+<p>Linking evidence makes downstream review stronger because later pages can show why a claim is supported, qualified, or contradicted.</p>
+<h2>Confidence And Source</h2>
+<p>Confidence records how strong the evidence is.</p>
+<p>Source type records where it came from, such as interview, observation, document, metric, or governance review.</p>
+<p>Low confidence evidence can still matter, especially when it identifies a risk or contradiction. It should just be interpreted carefully.</p>
+<h2>Downstream Impact</h2>
+<p>Evidence Notes feed:</p>
+<ul>
+<li>Score Component Details</li>
+<li>Alignment Dashboard</li>
+<li>Recommendations</li>
+<li>Pilot Tracker</li>
+<li>KPI Dashboard</li>
+<li>Lineage View</li>
+<li>Governance Execution Review</li>
+<li>Governance Summary</li>
+<li>Comparative challenge review</li>
+</ul>
+<h2>Common Mistakes</h2>
+<p>Avoid writing vague evidence notes that do not say what claim they support or challenge.</p>
+<p>Avoid leaving important evidence unlinked when a relevant entity exists.</p>
+<p>Avoid treating a link as proof. The evidence narrative and confidence still matter.</p>
+<h2>Training Prompt</h2>
+<p>Ask the trainee to create one validation note and one contradiction note, link each to a relevant entity, and explain how each should change governance interpretation.</p>
+<p>Completion standard: the user can use evidence to qualify a claim rather than merely decorate it.</p>
+</body>
+</html>

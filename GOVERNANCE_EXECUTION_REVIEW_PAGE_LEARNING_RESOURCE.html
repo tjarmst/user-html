@@ -1,0 +1,228 @@
+<!doctype html>
+<html><head><meta charset=utf-8>
+<title>GOVERNANCE_EXECUTION_REVIEW_PAGE_LEARNING_RESOURCE</title>
+<style>
+
+body { font-family: Segoe UI, Arial, sans-serif; line-height: 1.45; color: #202124; margin: 42px; max-width: 980px; }
+h1, h2, h3 { color: #17324d; margin-top: 1.35em; }
+h1 { border-bottom: 2px solid #d9e2ec; padding-bottom: 8px; }
+table { border-collapse: collapse; width: 100%; margin: 18px 0; font-size: 0.94rem; }
+th, td { border: 1px solid #cfd8e3; padding: 7px 9px; vertical-align: top; }
+th { background: #eef3f8; text-align: left; }
+code, pre { background: #f4f6f8; border-radius: 4px; }
+code { padding: 1px 4px; }
+pre { padding: 12px; overflow-x: auto; }
+.document-meta { color: #5f6b7a; font-size: 0.9rem; margin-bottom: 22px; }
+
+</style></head><body>
+<div class=document-meta>Source: user/GOVERNANCE_EXECUTION_REVIEW_PAGE_LEARNING_RESOURCE.md</div>
+<h1>Governance Execution Review Page Learning Resource</h1>
+<p>This guide teaches users how the <strong>Governance Execution Review</strong> page is organized around a selected lineage path and task-specific execution review areas.</p>
+<p>The page asks a practical governance question:</p>
+<p>&gt; Is a recommendation actually moving through decision, pilot, KPI, scenario pressure, and learning closure, or is execution leaking before conditions change?</p>
+<p>Governance Execution Review is not a broad score dashboard. It is the working review surface for lineage-level execution judgement.</p>
+<p>In the Stage A / Stage B / Bridge framing, this page is where Stage B execution evidence is reviewed through Bridge governance judgment. It asks whether recommendations, decisions, pilots, KPIs, scenario pressure, evidence, and learning state justify progression, pause, mitigation, reopening, or blockage.</p>
+<p>Use it after reading the metric system resources when users need to distinguish a good diagnostic score from a tested execution path.</p>
+<h2>Purpose</h2>
+<p>Use Governance Execution Review to answer five execution questions:</p>
+<ul>
+<li><strong>Decide Progression:</strong> Should the selected execution path progress, pause, reopen, require mitigation, require stronger evidence, or be blocked?</li>
+<li><strong>Diagnose Path Health:</strong> Where are execution paths blocked, stalled, mitigation-dependent, weakly evidenced, or leaking between stages?</li>
+<li><strong>Govern Scenario Pressure:</strong> How do linked scenarios, watchpoints, mitigation status, and scenario-to-execution effectiveness affect execution judgement?</li>
+<li><strong>Close Learning:</strong> Which execution outcomes should cause reassessment, revision, scaling, stopping, or reopening?</li>
+<li><strong>Inspect Selected Path:</strong> What is the detailed recommendation, decision, pilot, KPI, and evidence context for the selected lineage path?</li>
+</ul>
+<p>The page loads lineage diagnostics for the selected assessment cycle, then asks the user to choose a <strong>Selected lineage path</strong>. That selected path anchors progression actioning, scenario interpretation, and detailed inspection.</p>
+<h2>Required Starting Point</h2>
+<p>The page requires:</p>
+<ul>
+<li>a selected assessment cycle</li>
+<li>enough workflow readiness to enter Governance Execution Review</li>
+<li>lineage rows built from recommendations, structural decisions, pilots, KPIs, and related diagnostics</li>
+</ul>
+<p>If no lineage rows are available, the page explains that recommendations can exist before execution lineage exists. A recommendation may need conversion into structural decisions and linkage to pilots or KPIs before this page has a path to inspect.</p>
+<h2>Selected Lineage Path</h2>
+<p>The <strong>Selected lineage path</strong> selector combines:</p>
+<ul>
+<li>recommendation title</li>
+<li>structural decision element</li>
+<li>pilot title</li>
+<li>path identifier</li>
+</ul>
+<p>This selection matters. Several areas use the selected path as the anchor for row-level reading, governed action, scenario context, KPI context, and evidence re-linking.</p>
+<p>Before applying any action, inspect the selected path&#x27;s:</p>
+<ul>
+<li>path state</li>
+<li>review state</li>
+<li>governance context</li>
+<li>recommendation</li>
+<li>decision</li>
+<li>pilot</li>
+<li>semantic classification</li>
+<li>routing or handling cue</li>
+<li>reasons</li>
+<li>weak execution signals</li>
+<li>evidence gap reasons</li>
+</ul>
+<h2>Execution Review Area Buttons</h2>
+<p>The <strong>Execution review area</strong> selector contains:</p>
+<ul>
+<li>Decide Progression</li>
+<li>Diagnose Path Health</li>
+<li>Govern Scenario Pressure</li>
+<li>Close Learning</li>
+<li>Inspect Selected Path</li>
+</ul>
+<p>Each area serves a different task.</p>
+<h2>Decide Progression</h2>
+<p>Use <strong>Decide Progression</strong> when the governance question is what should happen next to the selected execution path.</p>
+<p>This area shows:</p>
+<ul>
+<li>selected path decision context</li>
+<li>selected-row governance reading</li>
+<li>progression-relevant entity status</li>
+<li>escalation-to-action coupling</li>
+<li>governed action controls</li>
+</ul>
+<p>The selected path decision context shows path state, review state, governance context, recommendation, decision, and pilot.</p>
+<p>The selected-row governance reading shows review context, semantic caption, handling caption, reasons, weak execution reasons, and evidence gap reasons. Read these before choosing an action.</p>
+<p>Progression-relevant entity status shows current recommendation lifecycle, structural decision status, and pilot status when those entities can be resolved.</p>
+<p>Available governed actions are:</p>
+<ul>
+<li>approve progression</li>
+<li>require mitigation first</li>
+<li>require evidence strengthening</li>
+<li>reopen for revision</li>
+<li>block progression</li>
+</ul>
+<p>The main action is <strong>Apply governed action</strong>. Applying a governed action calls the governance execution service, clears cached page context for the cycle, records allowed status changes, and reloads the page. If current rules do not allow a status change, the page says no status change was allowed.</p>
+<p>Do not treat the action selector as automatic authority. It is a controlled workflow action that should follow the row&#x27;s evidence, scenario pressure, KPI context, and routing meaning.</p>
+<h2>Diagnose Path Health</h2>
+<p>Use <strong>Diagnose Path Health</strong> when the governance question is where execution is leaking across the cycle.</p>
+<p>This area shows:</p>
+<ul>
+<li>comparative execution leakage</li>
+<li>stage-by-stage conversion table</li>
+<li>conversion-rate chart</li>
+<li>weak execution path count</li>
+<li>evidence gap count</li>
+<li>blocked path count</li>
+<li>stalled path count</li>
+<li>execution-path diagnostics</li>
+<li>execution health by domain</li>
+<li>execution path-state summary</li>
+<li>blocked execution paths</li>
+<li>stalled execution paths</li>
+<li>mitigation-dependent execution paths</li>
+</ul>
+<p>Execution-path diagnostics include recommendation, decision, pilot, path state, review state, governance context, current classification, governance handling, key reasons, weak execution signals, evidence gaps, and recommended next step.</p>
+<p>Use this area to find structural patterns. A single selected path may look manageable, but domain health and drop-off tables can show whether execution weakness is isolated or systemic.</p>
+<p>Blocked, stalled, and mitigation-dependent sections should be read as governance triage. They identify where work may need stronger evidence, scenario mitigation, revision, or progression blockage.</p>
+<h2>Govern Scenario Pressure</h2>
+<p>Use <strong>Govern Scenario Pressure</strong> when scenario pressure may qualify execution judgement.</p>
+<p>This area shows:</p>
+<ul>
+<li>scenario-to-execution effectiveness</li>
+<li>scenario response effectiveness chart</li>
+<li>scenario execution review context</li>
+<li>linked scenario and mitigation context for the selected path</li>
+</ul>
+<p>Scenario-to-execution effectiveness shows whether scenario-linked work has meaningful execution support, mitigation, linked recommendations, linked decisions, pilots, KPIs, weak execution flags, and review prompts.</p>
+<p>Scenario execution review context shows scenario, entity, review state, governance context, current classification, governance handling, and recommended next step.</p>
+<p>Linked scenario and mitigation context uses the selected path&#x27;s linked scenario ID. If no linked scenario alerts exist for the selected row, the page says so.</p>
+<p>Scenario pressure should not be read as a general reason to stop or approve work. It qualifies the selected path. Use it to decide whether mitigation must happen first, whether evidence is too weak, or whether progression can continue under current conditions.</p>
+<h2>Close Learning</h2>
+<p>Use <strong>Close Learning</strong> when execution outcomes should be converted into learning interpretation.</p>
+<p>This area shows:</p>
+<ul>
+<li>validated pilot count</li>
+<li>contradicted pilot count</li>
+<li>KPI reassessment trigger count</li>
+<li>reopen candidate count</li>
+<li>execution evidence and KPI outcome warning when data is unavailable</li>
+<li>reopen candidate rows</li>
+</ul>
+<p>Close Learning does not redesign the learning-closure service. It displays where execution evidence should cause reassessment, revision, scaling, stopping, or reopening.</p>
+<p>Reopen candidate rows include entity type, entity ID, title, reason, severity, and recommended action. Severity is derived from learning state: contradicted items are high, inconclusive items are medium, and other candidates are lower priority.</p>
+<p>If there is no execution evidence or KPI outcome data, complete pilot tracking and KPI capture before relying on learning closure.</p>
+<h2>Inspect Selected Path</h2>
+<p>Use <strong>Inspect Selected Path</strong> for detailed traceability and evidence repair.</p>
+<p>This area shows:</p>
+<ul>
+<li>selected path decision context</li>
+<li>selected-row governance reading</li>
+<li>current workflow entities</li>
+<li>KPI context</li>
+<li>evidence re-linking for the selected execution path</li>
+<li>currently linked evidence</li>
+</ul>
+<p>Current workflow entities can show:</p>
+<ul>
+<li>recommendation execution summary, including scenario state, domain mitigation, and counts of decisions, pilots, and KPIs</li>
+<li>structural decision rule status</li>
+<li>pilot status, alert count, critical unmitigated alert count, and average KPI progress</li>
+<li>linked KPI rows, including progress score, status, and evaluated governance state</li>
+</ul>
+<p>Evidence re-linking attaches an existing evidence note to the selected recommendation, structural decision, pilot, and optionally a KPI. It does not create a new evidence note.</p>
+<p>The main evidence action is <strong>Save evidence re-link for this execution path</strong>. Saving re-links the evidence, updates audit history, clears cached context, and reloads the page.</p>
+<p>If no evidence is linked to the selected path, the page warns that this is an evidence traceability gap. Create new evidence in Evidence Notes first, then return here to re-link it.</p>
+<h2>Semantic, Context, And Routing Lines</h2>
+<p>Selected lineage rows can show:</p>
+<ul>
+<li>governance context</li>
+<li>semantic caption</li>
+<li>handling or routing caption</li>
+<li>reasons</li>
+<li>weak execution reasons</li>
+<li>evidence gap reasons</li>
+</ul>
+<p>Use these cues to distinguish:</p>
+<ul>
+<li>progressing paths</li>
+<li>weak execution paths</li>
+<li>evidence gaps</li>
+<li>stalled paths</li>
+<li>blocked paths</li>
+<li>mitigation-dependent paths</li>
+<li>caution prompts</li>
+<li>reassessment needs</li>
+<li>redesign-oriented concerns</li>
+</ul>
+<p>Semantic and routing cues guide bounded governance review. They do not replace human judgement, and they do not create automatic decision authority.</p>
+<h2>Downstream Impact</h2>
+<p>Governance Execution Review feeds downstream interpretation by clarifying whether execution is actually moving through the workflow.</p>
+<p>It connects to:</p>
+<ul>
+<li>Governance Summary, through lineage diagnostics, scenario effectiveness, execution leakage, and board-pack qualifications</li>
+<li>Governance Action Queue, when learning-driven or governed follow-up work becomes ownerable elsewhere</li>
+<li>Governance Action Review and Review History, through governed actions and evidence re-link audit records</li>
+<li>Foresight Execution, through scenario watchpoints and mitigation context</li>
+<li>Evidence Notes, through existing evidence that may need creation before re-linking</li>
+<li>Lineage View, through recommendation-to-decision-to-pilot-to-KPI traceability</li>
+<li>KPI Dashboard and Pilot Tracker, through outcome data needed for learning closure</li>
+</ul>
+<p>The page should help users decide whether an execution path can progress, must pause, needs mitigation, needs stronger evidence, should reopen, or should be blocked.</p>
+<h2>Common Mistakes</h2>
+<p>Avoid applying governed actions before reading selected-row reasons and routing cues.</p>
+<p>Avoid approving progression when evidence is insufficient, KPI context is absent, or contradiction is unresolved.</p>
+<p>Avoid treating scenario watchpoints as mitigated merely because they are visible.</p>
+<p>Avoid treating scenario mitigation as effective without linked decision, pilot, KPI, or evidence support.</p>
+<p>Avoid using evidence re-linking as if it creates new evidence.</p>
+<p>Avoid interpreting a single selected path without also checking Diagnose Path Health for cycle-level leakage patterns.</p>
+<p>Avoid reading semantic routing as automatic authority. It guides bounded review.</p>
+<h2>Best-Practice Review Pattern</h2>
+<ol>
+<li>Select the intended assessment cycle.</li>
+<li>Choose the relevant <strong>Selected lineage path</strong>.</li>
+<li>Open <strong>Decide Progression</strong> to read the selected row and decide whether action is needed.</li>
+<li>Open <strong>Diagnose Path Health</strong> to see whether the selected issue is part of a wider execution pattern.</li>
+<li>Open <strong>Govern Scenario Pressure</strong> when scenario or mitigation context may qualify the path.</li>
+<li>Open <strong>Inspect Selected Path</strong> to review recommendation, decision, pilot, KPI, and evidence details.</li>
+<li>Re-link existing evidence only when the evidence note already belongs to the selected execution path.</li>
+<li>Open <strong>Close Learning</strong> to see whether execution outcomes should trigger reassessment, revision, scaling, stopping, or reopening.</li>
+<li>Apply governed action only when the evidence, scenario, KPI, learning, and routing context support it.</li>
+</ol>
+<h2>Training Prompt</h2>
+<p>Ask the trainee to select one lineage path, read its path state, governance context, semantic caption, routing cue, weak execution signals, and evidence gaps. Then ask whether the path should progress, require mitigation first, require evidence strengthening, reopen for revision, block progression, or remain under monitoring.</p>
+<p>Completion standard: the user can explain why a selected execution path should progress, pause, strengthen evidence, reopen, or block based on the revised area arrangement.</p>
+</body></html>

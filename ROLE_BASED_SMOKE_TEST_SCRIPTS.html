@@ -1,0 +1,355 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>ROLE_BASED_SMOKE_TEST_SCRIPTS</title>
+<style>
+
+@page {
+  size: A4;
+  margin: 18mm 16mm 18mm 16mm;
+  @bottom-center {
+    content: "Page " counter(page) " of " counter(pages);
+    font-size: 8pt;
+    color: #666;
+  }
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.38;
+  color: #1f2933;
+}
+h1 {
+  font-size: 20pt;
+  border-bottom: 2px solid #1f2933;
+  padding-bottom: 6px;
+  margin-top: 0;
+}
+h2 {
+  font-size: 15pt;
+  border-bottom: 1px solid #c9d1d9;
+  padding-bottom: 4px;
+  margin-top: 24px;
+}
+h3 {
+  font-size: 12.5pt;
+  margin-top: 18px;
+}
+h4 {
+  font-size: 11pt;
+  margin-top: 14px;
+}
+p {
+  margin: 0 0 8px 0;
+}
+ul, ol {
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+li {
+  margin-bottom: 3px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0 14px 0;
+  font-size: 8.6pt;
+  page-break-inside: auto;
+}
+thead {
+  display: table-header-group;
+}
+tr {
+  page-break-inside: avoid;
+}
+th, td {
+  border: 1px solid #aab2bd;
+  padding: 4px 5px;
+  vertical-align: top;
+  word-break: break-word;
+}
+th {
+  background: #eef2f6;
+  font-weight: bold;
+}
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 8.6pt;
+  line-height: 1.28;
+}
+code {
+  font-family: Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.92em;
+  background: #f6f8fa;
+  padding: 1px 3px;
+  border-radius: 3px;
+}
+pre code {
+  padding: 0;
+  background: transparent;
+}
+blockquote {
+  border-left: 4px solid #c9d1d9;
+  margin-left: 0;
+  padding-left: 10px;
+  color: #4b5563;
+}
+hr {
+  border: none;
+  border-top: 1px solid #c9d1d9;
+  margin: 18px 0;
+}
+.document-meta {
+  font-size: 8.5pt;
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+</style>
+</head>
+<body>
+<div class="document-meta">Source: user/ROLE_BASED_SMOKE_TEST_SCRIPTS.md</div>
+<h1>Role-Based Smoke-Test Scripts</h1>
+<h2>WorkPlace Conditions Governance</h2>
+<h2>Stage 6N</h2>
+<h2>Purpose</h2>
+<p>These smoke-test scripts support rollout readiness.</p>
+<p>They are intentionally role-specific because different users are qualified to test different things.</p>
+<p>The critical rule is:</p>
+<p>&gt; Ordinary staff should not be asked to discover hidden prerequisite states or validate advanced governance logic by exploration.</p>
+<p>This means ordinary staff can test whether pages are readable, navigable, and contextually clear. They should not be asked to validate scenario trigger logic, predecessor/carry-forward conditions, continuity correction, threshold-rule branching, or hidden fixture states.</p>
+<p>---</p>
+<h2>How to use these scripts</h2>
+<p>Use these scripts as short guided checks, not as exhaustive QA.</p>
+<p>Each tester should record:</p>
+<ul>
+<li>tester role</li>
+<li>date</li>
+<li>app version or codebase package</li>
+<li>page tested</li>
+<li>pass / issue / not applicable</li>
+<li>short note if something is unclear</li>
+</ul>
+<p>Use this result scale:</p>
+<table><thead><tr><th>Result</th><th>Meaning</th></tr></thead><tbody>
+<tr><td>Pass</td><td>The tester could complete the check and the result was understandable.</td></tr>
+<tr><td>Minor issue</td><td>The result worked but wording, layout, or signposting was unclear.</td></tr>
+<tr><td>Material defect</td><td>A visible action or result was wrong, unsafe, missing, or misleading.</td></tr>
+<tr><td>Not applicable</td><td>The data or state needed for this check was not present.</td></tr>
+</tbody></table>
+<p>Important:</p>
+<p>&gt; Not applicable is not failure.</p>
+<p>---</p>
+<h1>Script 1 — Ordinary Staff Readability and Navigation Check</h1>
+<h2>Tester role</h2>
+<p>Ordinary staff member or non-specialist user.</p>
+<h2>Purpose</h2>
+<p>Check whether the application is readable, navigable, and visibly contextual.</p>
+<p>This script does not test governance correctness.</p>
+<h2>What ordinary staff should test</h2>
+<p>Ordinary staff may test:</p>
+<ul>
+<li>page names are understandable</li>
+<li>navigation labels are clear</li>
+<li>the selected item is visible</li>
+<li>the page explains what it is for</li>
+<li>empty states are understandable</li>
+<li>instructions are not intimidating or overly technical</li>
+<li>obvious wording problems are identified</li>
+</ul>
+<h2>What ordinary staff must not test</h2>
+<p>Ordinary staff should not be asked to test:</p>
+<ul>
+<li>scenario trigger-state correctness</li>
+<li>predecessor / carry-forward eligibility</li>
+<li>continuity correction</li>
+<li>evidence relinking validity</li>
+<li>KPI threshold-rule logic</li>
+<li>governance-action routing logic</li>
+<li>board-pack semantic completeness</li>
+<li>whether hidden prerequisite data exists</li>
+</ul>
+<h2>Ordinary staff check</h2>
+<table><thead><tr><th>Check</th><th>Pass / issue / not applicable</th><th>Notes</th></tr></thead><tbody>
+<tr><td>I can tell what application I am using: WorkPlace Conditions Governance.</td><td></td><td></td></tr>
+<tr><td>I can find the main navigation/sidebar.</td><td></td><td></td></tr>
+<tr><td>Page names are understandable enough to know where I am.</td><td></td><td></td></tr>
+<tr><td>When a page has a selected item, I can see what item is selected.</td><td></td><td></td></tr>
+<tr><td>If no data is available, the page explains what is missing or what to do next.</td><td></td><td></td></tr>
+<tr><td>I can tell which area/tab/workspace I am in.</td><td></td><td></td></tr>
+<tr><td>I can identify confusing words or phrases.</td><td></td><td></td></tr>
+<tr><td>I am not being asked to infer hidden technical states.</td><td></td><td></td></tr>
+</tbody></table>
+<h2>Ordinary staff stop rule</h2>
+<p>Stop the test if the tester is being asked to decide whether advanced governance logic is correct.</p>
+<p>Record:</p>
+<pre><code>Stopped — this check requires trained governance or fixture validation.</code></pre>
+<p>---</p>
+<h1>Script 2 — Trained Governance User Workflow Check</h1>
+<h2>Tester role</h2>
+<p>Trained governance user.</p>
+<h2>Purpose</h2>
+<p>Check whether the main governance workflows are reachable, understandable, and action-context safe.</p>
+<p>This script assumes the user has learned the basic concepts:</p>
+<ul>
+<li>recommendation</li>
+<li>KPI/reassessment</li>
+<li>lineage</li>
+<li>pilot</li>
+<li>evidence</li>
+<li>learning state</li>
+<li>governance action</li>
+<li>scenario pressure</li>
+</ul>
+<h2>Pages to check</h2>
+<ul>
+<li>Recommendations</li>
+<li>KPI Dashboard</li>
+<li>Lineage View</li>
+<li>Pilot Tracker</li>
+<li>Governance Action Queue</li>
+<li>Governance Execution Review</li>
+<li>Scenario Effectiveness Review</li>
+<li>Comparative Cycle Review</li>
+<li>Governance Summary</li>
+</ul>
+<p>---</p>
+<h2>Recommendations check</h2>
+<table><thead><tr><th>Check</th><th>Pass / issue / not applicable</th><th>Notes</th></tr></thead><tbody>
+<tr><td>I can select a recommendation and see its title/domain/status.</td><td></td><td></td></tr>
+<tr><td>Overview gives enough context before further action.</td><td></td><td></td></tr>
+<tr><td>Evidence area makes linked evidence understandable.</td><td></td><td></td></tr>
+<tr><td>Workflow controls appear with selected recommendation context.</td><td></td><td></td></tr>
+<tr><td>Continuity area explains continuity actions before controls.</td><td></td><td></td></tr>
+<tr><td>Learning area shows current learning state before learning action.</td><td></td><td></td></tr>
+<tr><td>Convert area shows selected recommendation and linked decision context before conversion/evidence controls.</td><td></td><td></td></tr>
+</tbody></table>
+<p>---</p>
+<h2>KPI / reassessment check</h2>
+<table><thead><tr><th>Check</th><th>Pass / issue / not applicable</th><th>Notes</th></tr></thead><tbody>
+<tr><td>KPI Dashboard opens with readiness/context before detailed controls.</td><td></td><td></td></tr>
+<tr><td>KPI Outcomes are understandable.</td><td></td><td></td></tr>
+<tr><td>Reassessment area explains what is being reassessed.</td><td></td><td></td></tr>
+<tr><td>KPI Detail &amp; Lineage shows selected KPI context.</td><td></td><td></td></tr>
+<tr><td>Threshold Rules shows selected rule/version context before threshold administration.</td><td></td><td></td></tr>
+<tr><td>Threshold values are visible before threshold actions.</td><td></td><td></td></tr>
+</tbody></table>
+<p>---</p>
+<h2>Lineage check</h2>
+<table><thead><tr><th>Check</th><th>Pass / issue / not applicable</th><th>Notes</th></tr></thead><tbody>
+<tr><td>A selected path can be identified.</td><td></td><td></td></tr>
+<tr><td>Path Detail shows enough context to understand the path.</td><td></td><td></td></tr>
+<tr><td>Evidence area shows linked or missing evidence clearly.</td><td></td><td></td></tr>
+<tr><td>Learning area shows path learning context.</td><td></td><td></td></tr>
+<tr><td>Scenario area makes linked scenario pressure visible.</td><td></td><td></td></tr>
+<tr><td>Governance Response area is reachable.</td><td></td><td></td></tr>
+<tr><td>Threshold Impact area is reachable and understandable.</td><td></td><td></td></tr>
+</tbody></table>
+<p>---</p>
+<h2>Pilot Tracker check</h2>
+<table><thead><tr><th>Check</th><th>Pass / issue / not applicable</th><th>Notes</th></tr></thead><tbody>
+<tr><td>I can select a pilot and see selected pilot context.</td><td></td><td></td></tr>
+<tr><td>Outcome explains the pilot’s current state.</td><td></td><td></td></tr>
+<tr><td>Metrics controls are not detached from selected pilot context.</td><td></td><td></td></tr>
+<tr><td>Linked KPIs area is understandable.</td><td></td><td></td></tr>
+<tr><td>Evidence area shows evidence context.</td><td></td><td></td></tr>
+<tr><td>Lineage area shows selected-pilot lineage and broader lineage context where relevant.</td><td></td><td></td></tr>
+</tbody></table>
+<p>---</p>
+<h2>Governance Action Queue check</h2>
+<table><thead><tr><th>Check</th><th>Pass / issue / not applicable</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Review Queue Posture shows queue table/posture.</td><td></td><td></td></tr>
+<tr><td>Inspect Selected Action shows selected-action summary.</td><td></td><td></td></tr>
+<tr><td>Manage Ownership and Progress shows selected-action summary before controls.</td><td></td><td></td></tr>
+<tr><td>Ownership/status controls remain reachable.</td><td></td><td></td></tr>
+<tr><td>Resolve and Close Action shows selected-action summary before closure controls.</td><td></td><td></td></tr>
+</tbody></table>
+<p>---</p>
+<h2>Review-page refresh/context check</h2>
+<p>Use this for review pages hardened in Stages 6E–6I.</p>
+<table><thead><tr><th>Page</th><th>Refresh visible?</th><th>Current area remains coherent after refresh?</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Governance Summary</td><td></td><td></td><td></td></tr>
+<tr><td>Comparative Cycle Review</td><td></td><td></td><td></td></tr>
+<tr><td>Governance Execution Review</td><td></td><td></td><td></td></tr>
+<tr><td>Scenario Effectiveness Review</td><td></td><td></td><td></td></tr>
+<tr><td>Governance Action Queue</td><td>n/a unless provided</td><td>n/a</td><td></td></tr>
+</tbody></table>
+<p>---</p>
+<h1>Script 3 — Project Owner Governance-Fit Check</h1>
+<h2>Tester role</h2>
+<p>Project Owner.</p>
+<h2>Purpose</h2>
+<p>Check whether the application supports the intended governance model.</p>
+<p>The Project Owner is not testing every hidden branch. The Project Owner is checking whether workflows support the doctrine and whether validation is being classified responsibly.</p>
+<h2>Project Owner check</h2>
+<table><thead><tr><th>Check</th><th>Pass / issue / not applicable</th><th>Notes</th></tr></thead><tbody>
+<tr><td>The application supports governance of workplace conditions rather than merely presenting survey results.</td><td></td><td></td></tr>
+<tr><td>Structural conditions remain primary over symbolic claims.</td><td></td><td></td></tr>
+<tr><td>Flourishing is treated as a governing condition/constraint/enabler, not as a replacement for legitimate organizational purpose.</td><td></td><td></td></tr>
+<tr><td>Pages distinguish evidence, contradiction, weak support, and supportable states where needed.</td><td></td><td></td></tr>
+<tr><td>Action controls show selected-item context before writes.</td><td></td><td></td></tr>
+<tr><td>Review pages provide refresh/freshness controls where cached summaries are used.</td><td></td><td></td></tr>
+<tr><td>Missing fixture states are classified as not exercised, not treated as failure.</td><td></td><td></td></tr>
+<tr><td>Residual risks are explicitly recorded.</td><td></td><td></td></tr>
+<tr><td>Ordinary staff are not assigned hidden-state validation tasks.</td><td></td><td></td></tr>
+</tbody></table>
+<p>---</p>
+<h2>Project Owner fixture-classification check</h2>
+<p>Use this when reviewing fixture validation.</p>
+<table><thead><tr><th>Fixture question</th><th>Answer</th></tr></thead><tbody>
+<tr><td>Can the exact state be named before testing?</td><td></td></tr>
+<tr><td>Can the expected result be named before testing?</td><td></td></tr>
+<tr><td>Can the required data be named before testing?</td><td></td></tr>
+<tr><td>Is the tester role appropriate?</td><td></td></tr>
+<tr><td>If data is missing, is it recorded as not exercised?</td><td></td></tr>
+<tr><td>If UI result is wrong despite valid fixture data, is it recorded as material defect?</td><td></td></tr>
+</tbody></table>
+<p>---</p>
+<h1>Script 4 — Developer / Fixture Tester Check</h1>
+<h2>Tester role</h2>
+<p>Developer or trained fixture tester.</p>
+<h2>Purpose</h2>
+<p>Check rare branches and technical states that ordinary staff and most governance users should not be asked to discover.</p>
+<h2>Developer / fixture tester checks</h2>
+<table><thead><tr><th>Fixture / branch</th><th>Required condition</th><th>Result</th><th>Notes</th></tr></thead><tbody>
+<tr><td>S3 supportable-under-current-evidence scenario</td><td>Prepared supportable scenario fixture exists</td><td></td><td></td></tr>
+<tr><td>Carry-forward / predecessor continuity</td><td>Known prior/current recommendation pair and eligible predecessor</td><td></td><td></td></tr>
+<tr><td>Threshold below governance floor</td><td>KPI and threshold rule create below-floor state</td><td></td><td></td></tr>
+<tr><td>Threshold below alert floor</td><td>KPI and threshold rule create alert-floor breach</td><td></td><td></td></tr>
+<tr><td>Complete lineage path</td><td>recommendation → decision → pilot → KPI → evidence chain exists</td><td></td><td></td></tr>
+<tr><td>Broken lineage path</td><td>known missing stage exists</td><td></td><td></td></tr>
+<tr><td>Cache refresh resilience</td><td>page-local refresh clears relevant cached context without clearing unrelated state</td><td></td><td></td></tr>
+<tr><td>Controlled write action</td><td>safe disposable row used for write-action test</td><td></td><td></td></tr>
+</tbody></table>
+<h2>Developer stop rule</h2>
+<p>Do not create broad refactors while testing fixtures.</p>
+<p>If a defect is found, classify it narrowly and create a bounded defect patch.</p>
+<p>---</p>
+<h1>Rollup Results Page</h1>
+<p>Use this table to summarize smoke-test outcomes.</p>
+<table><thead><tr><th>Role</th><th>Script completed?</th><th>Pass count</th><th>Minor issues</th><th>Material defects</th><th>Not applicable</th><th>Summary</th></tr></thead><tbody>
+<tr><td>Ordinary staff</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Trained governance user</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Project Owner</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Developer / fixture tester</td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+</tbody></table>
+<p>---</p>
+<h2>Closure rule for Stage 6N</h2>
+<p>Stage 6N can be closed when:</p>
+<ul>
+<li>role-based smoke-test scripts exist;</li>
+<li>ordinary staff checks are limited to readability/navigation/context;</li>
+<li>trained governance checks cover the main workflows;</li>
+<li>Project Owner checks cover governance fit and residual-risk discipline;</li>
+<li>developer/fixture checks cover rare branches and controlled defect checks;</li>
+<li>no ordinary staff script asks users to discover hidden prerequisite states or validate advanced governance logic by exploration.</li>
+</ul>
+<p>This document meets those requirements.</p>
+</body>
+</html>

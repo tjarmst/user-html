@@ -1,0 +1,164 @@
+<!doctype html>
+<html><head><meta charset=utf-8>
+<title>project_owner_user_resources_validation_handout</title>
+<style>
+
+body { font-family: Segoe UI, Arial, sans-serif; line-height: 1.45; color: #202124; margin: 42px; max-width: 980px; }
+h1, h2, h3 { color: #17324d; margin-top: 1.35em; }
+h1 { border-bottom: 2px solid #d9e2ec; padding-bottom: 8px; }
+table { border-collapse: collapse; width: 100%; margin: 18px 0; font-size: 0.94rem; }
+th, td { border: 1px solid #cfd8e3; padding: 7px 9px; vertical-align: top; }
+th { background: #eef3f8; text-align: left; }
+code, pre { background: #f4f6f8; border-radius: 4px; }
+code { padding: 1px 4px; }
+pre { padding: 12px; overflow-x: auto; }
+.document-meta { color: #5f6b7a; font-size: 0.9rem; margin-bottom: 22px; }
+
+</style></head><body>
+<div class=document-meta>Source: user/project_owner_user_resources_validation_handout.md</div>
+<h1>How the Project Owner Should Use the <code>/user</code> Resources</h1>
+<h2>1. Start with <code>TRAINING_RESOURCE_INDEX.md</code></h2>
+<p>This should be the Project Owner’s first stop.</p>
+<h3>Purpose</h3>
+<p>&gt; Which resource do I use, for which audience, and in what order?</p>
+<p>The Project Owner should use it to decide:</p>
+<ul>
+<li>what management needs to read</li>
+<li>what ordinary staff can reasonably test</li>
+<li>what trained governance users must learn</li>
+<li>what requires fixture-based validation</li>
+<li>which page guide applies to the current question</li>
+</ul>
+<p>For the current validation problem, the most important rule from this resource is:</p>
+<p>&gt; Do not ask a user to test a workflow whose prerequisites they have not been trained to recognize.</p>
+<p>That rule directly applies to:</p>
+<ul>
+<li>scenario trigger states</li>
+<li>predecessor selection</li>
+<li>carry-forward</li>
+<li>continuity correction</li>
+<li>threshold-version testing</li>
+</ul>
+<hr>
+<h2>2. Use <code>PROJECT_OWNER_ORIENTATION_AND_TESTING_BOUNDARIES.md</code> to Answer Management</h2>
+<p>This is the management-facing defence of the system.</p>
+<p>The Project Owner should use it to say:</p>
+<p>&gt; Staff difficulty testing the system is real, but it does not prove that the system is defective. It proves that advanced workflows need role-based testing and prepared examples.</p>
+<p>This resource should help the Project Owner distinguish four testing roles.</p>
+<table><thead><tr><th>Role</th><th>What they should test</th></tr></thead><tbody>
+<tr><td>Ordinary staff</td><td>Readability, navigation, obvious labels, visible selected item</td></tr>
+<tr><td>Trained governance user</td><td>Recommendation, KPI, pilot, lineage, evidence, learning workflows</td></tr>
+<tr><td>Project Owner</td><td>Whether the workflow supports the intended governance model</td></tr>
+<tr><td>Developer / fixture tester</td><td>Rare branches, scenario trigger states, predecessor/carry-forward logic</td></tr>
+</tbody></table>
+<p>This is the most important management message:</p>
+<p>&gt; Ordinary staff should not be asked to discover scenario trigger states by trial and error.</p>
+<hr>
+<h2>3. Use <code>GOVERNANCE_ACTION_CONCEPT_PRIMER.md</code> Before Touching Complex Pages</h2>
+<p>This is the vocabulary bridge.</p>
+<p>The Project Owner should use it before attempting to understand:</p>
+<ul>
+<li>recommendation series</li>
+<li>predecessor recommendation</li>
+<li>carry-forward</li>
+<li>evidence relinking</li>
+<li>structural decision conversion</li>
+<li>scenario pressure</li>
+<li>learning state</li>
+<li>lineage drop-off</li>
+<li>threshold rules</li>
+</ul>
+<p>For the current validation problem, the primer should be used to clarify:</p>
+<pre><code>A fixture is not a user-discovered state.
+A fixture is a prepared data condition with an expected result.</code></pre>
+<p>That distinction is essential.</p>
+<p>Without it, the Project Owner is still being asked to behave like a developer.</p>
+<hr>
+<h2>4. Use <code>TRAINING_MANUAL.md</code> as the Operating Map, Not as the Detailed Instruction Book</h2>
+<p>The Training Manual should now be used to understand the whole operating loop:</p>
+<pre><code>diagnose → recommend → decide → execute → measure → review → learn</code></pre>
+<p>For fixture validation, the Project Owner should use the manual to ask:</p>
+<ul>
+<li>Which part of the loop is being tested?</li>
+<li>What page owns that part?</li>
+<li>What upstream data must already exist?</li>
+<li>What role should test it?</li>
+<li>Is the expected state visible?</li>
+<li>If the expected state is not visible, is it a defect or simply missing fixture data?</li>
+</ul>
+<p>The Training Manual helps the Project Owner avoid the wrong conclusion:</p>
+<p>&gt; I cannot find the state, so the UI is broken.</p>
+<p>The better conclusion may be:</p>
+<p>&gt; The fixture does not exist yet, so this branch is not exercised.</p>
+<hr>
+<h2>5. Use Page Guides Only After the Concept Is Known</h2>
+<p>The page guides should be used when the Project Owner has a specific page or test path.</p>
+<p>The Project Owner should not start by clicking through the app. The Project Owner should first define:</p>
+<ul>
+<li>the required state</li>
+<li>the expected evidence condition</li>
+<li>the expected UI result</li>
+</ul>
+<hr>
+<h2>5A. Use Metric Resources Before Validating Score-Heavy Pages</h2>
+<p>Before validating Diagnostic Input, Score Dashboard, Score Component Details, Alignment Dashboard, KPI Dashboard, Lineage View, Governance Summary, or exports, the Project Owner should read:</p>
+<ul>
+<li><code>user/metrics/Metrics explained.md</code></li>
+<li><code>user/metrics/Metric Definitions.md</code></li>
+<li><code>user/metrics/Comprehensive Metric Reference.md</code></li>
+<li><code>user/metrics/Diagnostic Input Data Collection and Scoring.md</code></li>
+<li><code>user/metrics/Score Component Details Page User Guide.md</code></li>
+</ul>
+<p>Validation question:</p>
+<p>&gt; Can the tester distinguish Stage A diagnosis, Stage B execution evidence, and Bridge / governance interpretation?</p>
+<p>If not, the test should be limited to readability and navigation rather than interpretation accuracy.</p>
+<ul>
+<li>the role allowed to test it</li>
+<li>the fixture data required</li>
+</ul>
+<hr>
+<h2>Scenario Trigger-State Validation</h2>
+<p>Use:</p>
+<pre><code>SCENARIO_EFFECTIVENESS_REVIEW_PAGE_LEARNING_RESOURCE.md
+GOVERNANCE_ACTION_CONCEPT_PRIMER.md
+TRAINING_MANUAL.md</code></pre>
+<p>Before testing, the Project Owner should define:</p>
+<ul>
+<li>required scenario state</li>
+<li>expected evidence condition</li>
+<li>expected UI result</li>
+<li>role allowed to test it</li>
+<li>fixture data required</li>
+</ul>
+<hr>
+<h2>Carry-Forward / Predecessor Testing</h2>
+<p>Use:</p>
+<pre><code>RECOMMENDATIONS_PAGE_LEARNING_RESOURCE.md
+GOVERNANCE_ACTION_CONCEPT_PRIMER.md
+TRAINING_MANUAL.md</code></pre>
+<p>The Project Owner should define the fixture before testing.</p>
+<p>A valid carry-forward / predecessor fixture requires:</p>
+<pre><code>Prior-cycle recommendation exists.
+Current-cycle recommendation exists.
+Both represent the same continuing issue.
+A recommendation series exists.
+The prior recommendation is eligible as predecessor.
+Expected result: predecessor appears.</code></pre>
+<p>If those conditions are not known, the test should be recorded as:</p>
+<pre><code>Not exercised — fixture not available.</code></pre>
+<hr>
+<h1>What Is Still Missing for the Project Owner</h1>
+<p>The learning resources now explain the system, but the Project Owner still needs a fixture-validation guide.</p>
+<p>That guide should not be long. It should be a practical bridge from training to testing.</p>
+<p>It should answer:</p>
+<ul>
+<li>What branch are we trying to validate?</li>
+<li>What data must exist before the UI can show it?</li>
+<li>Which page should show it?</li>
+<li>What result do we expect?</li>
+<li>Who is qualified to test it?</li>
+<li>What do we record if the data is missing?</li>
+</ul>
+<p>Without this, the Project Owner still has to translate complex concepts into test cases manually.</p>
+<p>That is the remaining cognitive-load problem.</p>
+</body></html>

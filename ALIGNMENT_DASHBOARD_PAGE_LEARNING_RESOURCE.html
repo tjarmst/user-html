@@ -1,0 +1,80 @@
+<!doctype html>
+<html><head><meta charset=utf-8>
+<title>ALIGNMENT_DASHBOARD_PAGE_LEARNING_RESOURCE</title>
+<style>
+
+body { font-family: Segoe UI, Arial, sans-serif; line-height: 1.45; color: #202124; margin: 42px; max-width: 980px; }
+h1, h2, h3 { color: #17324d; margin-top: 1.35em; }
+h1 { border-bottom: 2px solid #d9e2ec; padding-bottom: 8px; }
+table { border-collapse: collapse; width: 100%; margin: 18px 0; font-size: 0.94rem; }
+th, td { border: 1px solid #cfd8e3; padding: 7px 9px; vertical-align: top; }
+th { background: #eef3f8; text-align: left; }
+code, pre { background: #f4f6f8; border-radius: 4px; }
+code { padding: 1px 4px; }
+pre { padding: 12px; overflow-x: auto; }
+.document-meta { color: #5f6b7a; font-size: 0.9rem; margin-bottom: 22px; }
+
+</style></head><body>
+<div class=document-meta>Source: user/ALIGNMENT_DASHBOARD_PAGE_LEARNING_RESOURCE.md</div>
+<h1>Alignment Dashboard Page Learning Resource</h1>
+<p>This guide teaches users how the <strong>Alignment Dashboard</strong> exposes gaps between what the organization signals and what its structures support.</p>
+<h2>Purpose</h2>
+<p>The Alignment Dashboard reviews alignment pairs, integrity gaps, unresolved contradictions, and evidence linked to alignment analysis.</p>
+<p>Use it to:</p>
+<ul>
+<li>inspect alignment overview charts</li>
+<li>review alignment metric pairs</li>
+<li>compare alignment-side and target-side values</li>
+<li>inspect survey contributors</li>
+<li>review unresolved contradiction components</li>
+<li>update contradiction review status and notes</li>
+<li>inspect evidence linked to alignment contradictions</li>
+</ul>
+<p>Alignment review is where symbolic claims meet structural reality.</p>
+<h2>Bridge Metric Role</h2>
+<p>Alignment Dashboard is a Bridge surface. It helps users test whether Stage A diagnostic reality and symbolic interpretation are coherent before the system moves into Stage B decisions or governance claims.</p>
+<p>The key bridge signal is <code>SYMBOLIC_STRUCTURAL_INTEGRITY_GAP</code>. A large gap is not just a visual warning. It can mean:</p>
+<ul>
+<li>symbolic legitimacy is stronger than the supporting structures;</li>
+<li>structures may be stronger than people believe;</li>
+<li>evidence sources are contradicting each other;</li>
+<li>governance should qualify recommendations, summaries, and board-pack claims.</li>
+</ul>
+<p>Use <code>user/metrics/Metrics explained.md</code> and <code>user/metrics/Comprehensive Metric Reference.md</code> for the Stage A / Stage B / Bridge metric classification.</p>
+<h2>Alignment Pairs</h2>
+<p>An alignment pair connects an alignment metric to a target structural or symbolic metric.</p>
+<p>The gap shows how far the stated or perceived alignment differs from the supporting condition.</p>
+<p>Large gaps should prompt questions such as:</p>
+<ul>
+<li>Is the organization claiming progress that structures do not support?</li>
+<li>Are employees reporting a different reality than leadership describes?</li>
+<li>Is the evidence strong enough to explain the gap?</li>
+</ul>
+<h2>Contradiction Review</h2>
+<p>The unresolved contradictions section lets users update review status and notes for integrity-gap components.</p>
+<p>Use review notes to explain:</p>
+<ul>
+<li>what is contradicted</li>
+<li>what evidence supports the contradiction</li>
+<li>what evidence is missing</li>
+<li>what follow-up is needed</li>
+</ul>
+<h2>Downstream Impact</h2>
+<p>Alignment Dashboard feeds:</p>
+<ul>
+<li>Score Dashboard interpretation</li>
+<li>Score Component Details</li>
+<li>Evidence Notes</li>
+<li>Recommendations</li>
+<li>Governance Summary</li>
+<li>board-pack qualification</li>
+</ul>
+<h2>Common Mistakes</h2>
+<p>Avoid treating alignment gaps as cosmetic.</p>
+<p>Avoid resolving contradictions without evidence.</p>
+<p>Avoid assuming survey contributors explain a gap by themselves.</p>
+<p>Avoid hiding contradiction inside narrative text only.</p>
+<h2>Training Prompt</h2>
+<p>Ask the trainee to open one high-gap alignment pair, identify linked evidence, and write a contradiction review note explaining what must be re-tested.</p>
+<p>Completion standard: the user can explain how alignment gaps qualify governance claims.</p>
+</body></html>

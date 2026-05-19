@@ -1,0 +1,238 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>SURVEY_INPUT_PAGE_LEARNING_RESOURCE</title>
+<style>
+
+@page {
+  size: A4;
+  margin: 18mm 16mm 18mm 16mm;
+  @bottom-center {
+    content: "Page " counter(page) " of " counter(pages);
+    font-size: 8pt;
+    color: #666;
+  }
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.38;
+  color: #1f2933;
+}
+h1 {
+  font-size: 20pt;
+  border-bottom: 2px solid #1f2933;
+  padding-bottom: 6px;
+  margin-top: 0;
+}
+h2 {
+  font-size: 15pt;
+  border-bottom: 1px solid #c9d1d9;
+  padding-bottom: 4px;
+  margin-top: 24px;
+}
+h3 {
+  font-size: 12.5pt;
+  margin-top: 18px;
+}
+h4 {
+  font-size: 11pt;
+  margin-top: 14px;
+}
+p {
+  margin: 0 0 8px 0;
+}
+ul, ol {
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+li {
+  margin-bottom: 3px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0 14px 0;
+  font-size: 8.6pt;
+  page-break-inside: auto;
+}
+thead {
+  display: table-header-group;
+}
+tr {
+  page-break-inside: avoid;
+}
+th, td {
+  border: 1px solid #aab2bd;
+  padding: 4px 5px;
+  vertical-align: top;
+  word-break: break-word;
+}
+th {
+  background: #eef2f6;
+  font-weight: bold;
+}
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 8.6pt;
+  line-height: 1.28;
+}
+code {
+  font-family: Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.92em;
+  background: #f6f8fa;
+  padding: 1px 3px;
+  border-radius: 3px;
+}
+pre code {
+  padding: 0;
+  background: transparent;
+}
+blockquote {
+  border-left: 4px solid #c9d1d9;
+  margin-left: 0;
+  padding-left: 10px;
+  color: #4b5563;
+}
+hr {
+  border: none;
+  border-top: 1px solid #c9d1d9;
+  margin: 18px 0;
+}
+.document-meta {
+  font-size: 8.5pt;
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+</style>
+</head>
+<body>
+<div class="document-meta">Source: user/SURVEY_INPUT_PAGE_LEARNING_RESOURCE.md</div>
+<h1>Survey Input Page Learning Resource</h1>
+<p>This guide teaches users how the **Survey Input** page records perception and experience signals for the selected cycle.</p>
+<h2>Purpose</h2>
+<p>Survey Input captures structured survey responses that complement diagnostic metric observations.</p>
+<p>Use it to:</p>
+<ul>
+<li>enter responses to seeded or configured survey questions</li>
+<li>distinguish structural, symbolic, and alignment perception signals</li>
+<li>save survey responses for the active cycle</li>
+<li>support scorecard and contradiction review where survey and diagnostic signals diverge</li>
+<li>contribute to the later Score Dashboard export/print report after the scorecard is computed</li>
+</ul>
+<p>Survey responses are evidence signals. They are not automatically the whole truth.</p>
+<h2>Question Groups</h2>
+<p>Questions may be grouped by mode or category. Each question can include a cognition-stage cue so users understand what kind of signal the question is gathering.</p>
+<p>Typical signals include:</p>
+<ul>
+<li>experienced workload</li>
+<li>trust and legitimacy</li>
+<li>agency and dignity</li>
+<li>alignment between stated values and actual structures</li>
+<li>technology experience</li>
+</ul>
+<h2>Workflow</h2>
+<p>The user should:</p>
+<ol>
+<li>Confirm organization and cycle context.</li>
+<li>Read each question group.</li>
+<li>Enter response values consistently for the same population and assessment period.</li>
+<li>Save survey responses.</li>
+<li>Review score and alignment pages for resulting interpretation.</li>
+</ol>
+<h2>Downstream Impact</h2>
+<p>Survey Input feeds:</p>
+<ul>
+<li>Score Dashboard</li>
+<li>Alignment Dashboard</li>
+<li>contradiction detection</li>
+<li>Score Component Details</li>
+<li>Comparative Cycle Review when scorecards are persisted across cycles</li>
+</ul>
+<p>The feed matters because Survey Input captures perception and experience signals that may confirm, qualify, or challenge diagnostic observations. Survey responses are aggregated into metric values, then combined with diagnostic metric observations during scorecard computation. Depending on the metric type, the app may weight survey and diagnostic inputs differently, preserve survey provenance, and surface material divergence as contradiction.</p>
+<h3>Score Dashboard</h3>
+<p>Survey Input affects Score Dashboard when saved survey responses are included in the combined metrics bundle used for scorecard computation.</p>
+<p>Survey responses can influence:</p>
+<ul>
+<li>structural, symbolic, and alignment score inputs</li>
+<li>confidence labels</li>
+<li>contradiction counts</li>
+<li>integrity-gap explanations</li>
+<li>score component values</li>
+<li>scorecard recommendations after the scorecard is persisted</li>
+</ul>
+<p>The practical downstream impact is that Score Dashboard becomes more sensitive to lived experience, not only formal diagnostic observations. If diagnostic data says a structure is healthy but survey respondents report a different experience, the scorecard may reflect a blended value and may also surface contradiction.</p>
+<p>After survey responses are changed, the user should recompute and persist the scorecard. Until then, downstream pages may still be reading the previous scorecard interpretation.</p>
+<p>Score Dashboard also includes an **Export / print saved score data** facility. Once survey responses are saved and the scorecard is computed/persisted, that export can include the score outputs and component records that were influenced by survey input. Users who need a local copy should save Survey Input first, compute/persist the scorecard, then use Score Dashboard to download the scorecard CSV, score components CSV, or printable HTML report.</p>
+<h3>Alignment Dashboard</h3>
+<p>Survey Input affects Alignment Dashboard because many alignment signals come from perception, experience, or stated-versus-lived reality.</p>
+<p>Survey responses can affect:</p>
+<ul>
+<li>alignment-side values</li>
+<li>target-side comparisons where survey-derived metrics are involved</li>
+<li>alignment gap severity</li>
+<li>survey contributor context</li>
+<li>contradiction review prompts</li>
+<li>evidence needs for alignment interpretation</li>
+</ul>
+<p>Alignment Dashboard uses these signals to ask whether symbolic claims, stated values, or perceived conditions match the structural conditions that should support them. For example, survey responses may show low trust or low dignity even when diagnostic observations suggest formal processes exist.</p>
+<p>The downstream impact is that alignment gaps become more humanly grounded. The dashboard can reveal where policy, structure, or leadership narrative is not being experienced as real by the assessed population.</p>
+<h3>Contradiction Detection</h3>
+<p>Survey Input directly contributes to contradiction detection when survey-derived values diverge materially from diagnostic observations.</p>
+<p>In the combined metric flow, the app compares manual diagnostic values and survey-derived values for the same metric. When both exist and the difference is large enough, the system can surface a contradiction requiring re-test.</p>
+<p>Contradiction detection can indicate:</p>
+<ul>
+<li>diagnostic observations and employee experience disagree</li>
+<li>formal structures exist but are not experienced as effective</li>
+<li>survey perception is revealing hidden strain, distrust, or misalignment</li>
+<li>the survey population or diagnostic scope may not match</li>
+<li>more evidence is needed before the score should be trusted</li>
+</ul>
+<p>The practical impact is caution. A contradiction is not an error to hide. It is a governance signal that the organization may need evidence notes, score component review, alignment review, or follow-up inquiry before relying on the score.</p>
+<h3>Score Component Details</h3>
+<p>Survey Input affects Score Component Details because persisted scorecards create component records that can include survey-derived or survey-combined values.</p>
+<p>Score Component Details can later show:</p>
+<ul>
+<li>component raw and normalized values</li>
+<li>rationale notes</li>
+<li>score group and component name</li>
+<li>review status</li>
+<li>evidence linked to the component</li>
+<li>whether component interpretation needs validation or contradiction evidence</li>
+</ul>
+<p>Survey provenance helps users understand why a component landed where it did. If a component looks surprising, Score Component Details is where the user should inspect the score group, component value, notes, and linked evidence. If the survey signal contradicts diagnostic input, the user can create or relink evidence explaining the divergence.</p>
+<p>The downstream impact is explainability. Survey Input gives the component a perception-based signal; Score Component Details helps reviewers decide whether that signal validates the score, qualifies it, or challenges it.</p>
+<h3>Comparative Cycle Review</h3>
+<p>Survey Input affects Comparative Cycle Review only after scorecards are computed and persisted across cycles.</p>
+<p>Survey responses can influence cross-cycle interpretation through:</p>
+<ul>
+<li>persisted scorecard movement</li>
+<li>alignment and integrity-gap trends</li>
+<li>trust, burnout, dignity, agency, and technology experience signals</li>
+<li>contradiction counts</li>
+<li>confidence and evidence completeness</li>
+<li>comparative confidence when scorecards are available in both cycles</li>
+</ul>
+<p>The practical downstream impact is that survey changes can become part of the story of whether governance is improving over time. If survey responses improve and scorecards are persisted consistently, Comparative Cycle Review may show stronger evidence of improvement. If survey responses worsen while diagnostic observations improve, the comparison may reveal that formal action is not yet being experienced as real improvement.</p>
+<p>Comparative Cycle Review depends on consistent cycle discipline. Survey responses should refer to the same assessment window and population scope within each cycle, otherwise cross-cycle comparison becomes weaker.</p>
+<h3>Practical Feed Interpretation</h3>
+<p>When reviewing downstream impact, use this rule:</p>
+<p>Survey Input feeds downstream pages with **perception and experience evidence**, not a standalone verdict.</p>
+<p>That evidence can confirm diagnostic observations, expose alignment gaps, create contradictions, explain score components, or qualify cross-cycle improvement. The most important downstream signal is whether survey experience agrees with, complicates, or challenges the formal diagnostic picture.</p>
+<h2>Common Mistakes</h2>
+<p>Avoid treating survey perception as less real than structural data.</p>
+<p>Avoid treating survey perception as sufficient by itself.</p>
+<p>Avoid mixing division or segment filters without explaining the scope.</p>
+<p>Avoid changing interpretation because the survey is uncomfortable; instead, record contradiction or validation evidence.</p>
+<h2>Training Prompt</h2>
+<p>Ask the trainee to enter survey responses, then explain how survey signals can confirm, qualify, or contradict diagnostic observations.</p>
+<p>Completion standard: the user can explain why survey input and diagnostic input should be read together.</p>
+</body>
+</html>

@@ -1,0 +1,289 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>REVIEW_HISTORY_PAGE_LEARNING_RESOURCE</title>
+<style>
+
+@page {
+  size: A4;
+  margin: 18mm 16mm 18mm 16mm;
+  @bottom-center {
+    content: "Page " counter(page) " of " counter(pages);
+    font-size: 8pt;
+    color: #666;
+  }
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.38;
+  color: #1f2933;
+}
+h1 {
+  font-size: 20pt;
+  border-bottom: 2px solid #1f2933;
+  padding-bottom: 6px;
+  margin-top: 0;
+}
+h2 {
+  font-size: 15pt;
+  border-bottom: 1px solid #c9d1d9;
+  padding-bottom: 4px;
+  margin-top: 24px;
+}
+h3 {
+  font-size: 12.5pt;
+  margin-top: 18px;
+}
+h4 {
+  font-size: 11pt;
+  margin-top: 14px;
+}
+p {
+  margin: 0 0 8px 0;
+}
+ul, ol {
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+li {
+  margin-bottom: 3px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0 14px 0;
+  font-size: 8.6pt;
+  page-break-inside: auto;
+}
+thead {
+  display: table-header-group;
+}
+tr {
+  page-break-inside: avoid;
+}
+th, td {
+  border: 1px solid #aab2bd;
+  padding: 4px 5px;
+  vertical-align: top;
+  word-break: break-word;
+}
+th {
+  background: #eef2f6;
+  font-weight: bold;
+}
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 8.6pt;
+  line-height: 1.28;
+}
+code {
+  font-family: Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.92em;
+  background: #f6f8fa;
+  padding: 1px 3px;
+  border-radius: 3px;
+}
+pre code {
+  padding: 0;
+  background: transparent;
+}
+blockquote {
+  border-left: 4px solid #c9d1d9;
+  margin-left: 0;
+  padding-left: 10px;
+  color: #4b5563;
+}
+hr {
+  border: none;
+  border-top: 1px solid #c9d1d9;
+  margin: 18px 0;
+}
+.document-meta {
+  font-size: 8.5pt;
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+</style>
+</head>
+<body>
+<div class="document-meta">Source: user/REVIEW_HISTORY_PAGE_LEARNING_RESOURCE.md</div>
+<h1>Review History Page Learning Resource</h1>
+<p>This guide teaches users how the **Review History** page provides auditability across the governance workflow.</p>
+<h2>Purpose</h2>
+<p>Review History records important changes made across the app.</p>
+<p>Use it to:</p>
+<ul>
+<li>filter events by entity type</li>
+<li>filter by actor</li>
+<li>inspect event tables</li>
+<li>open entity detail</li>
+<li>inspect all review history for a selected entity</li>
+</ul>
+<p>Review History is the app&#x27;s memory of governance decisions and corrections.</p>
+<h2>Entity Types</h2>
+<p>The page can show events for entities such as:</p>
+<ul>
+<li>recommendation</li>
+<li>recommendation series</li>
+<li>recommendation cycle link</li>
+<li>decision</li>
+<li>pilot</li>
+<li>governance action</li>
+<li>governance gate</li>
+<li>KPI</li>
+<li>scenario</li>
+<li>scorecard</li>
+<li>conclusion challenge</li>
+</ul>
+<p>After the lifecycle and continuity-correction passes, it also helps verify regeneration and correction events.</p>
+<h2>What To Look For</h2>
+<p>Useful event types include:</p>
+<ul>
+<li>workflow status changes</li>
+<li>learning-state changes</li>
+<li>recommendation generation/refresh events</li>
+<li>continuity series creation and linking</li>
+<li>continuity predecessor or series corrections</li>
+<li>governance action creation and resolution</li>
+<li>human validation challenge updates</li>
+</ul>
+<p>Good notes, change summaries, and rationales make the history readable.</p>
+<h2>Entity Detail</h2>
+<p>Entity detail lets users inspect the current state of the selected entity alongside its history.</p>
+<p>This helps answer:</p>
+<ul>
+<li>what changed?</li>
+<li>who changed it?</li>
+<li>what was the prior state?</li>
+<li>what was the new state?</li>
+<li>what rationale or note was recorded?</li>
+</ul>
+<h2>Downstream Impact</h2>
+<p>Review History supports:</p>
+<ul>
+<li>auditability</li>
+<li>training review</li>
+<li>lifecycle classification</li>
+<li>regeneration-retirement provenance</li>
+<li>continuity correction traceability</li>
+<li>challenge-state traceability</li>
+<li>board-pack confidence</li>
+</ul>
+<p>The support matters because Review History is the app&#x27;s internal provenance layer. It records who changed governance records, what changed, the prior and new state where available, and the note or rationale attached to the change. Downstream pages use this history to distinguish a current record from an explainable governance record.</p>
+<h3>Auditability</h3>
+<p>Review History supports auditability by preserving a timeline of important workflow events.</p>
+<p>Auditable events can include:</p>
+<ul>
+<li>recommendation creation, refresh, retirement, reactivation, and status changes</li>
+<li>structural decision creation, conversion, and status changes</li>
+<li>pilot creation, learning updates, status changes, and outcome recomputation</li>
+<li>KPI creation, update, reassessment, and threshold-related changes</li>
+<li>evidence creation and linkage updates</li>
+<li>governance action creation, refresh, assignment, status updates, and resolution</li>
+<li>governance gate updates and scenario acknowledgments</li>
+<li>conclusion challenge creation, updates, closure, and revision</li>
+</ul>
+<p>The practical impact is that users can reconstruct how a governance claim moved from one state to another. A board reviewer, trainer, or governance lead can ask what changed, when it changed, who changed it, and what note was recorded.</p>
+<p>Auditability does not mean the recorded decision was correct. It means the decision path is visible enough to review.</p>
+<h3>Training Review</h3>
+<p>Review History supports training review because it shows how users actually applied the workflow.</p>
+<p>Training reviewers can inspect:</p>
+<ul>
+<li>whether users added notes when status changes needed explanation</li>
+<li>whether evidence was linked before conclusions were treated as supported</li>
+<li>whether pilots were recomputed before learning actions were logged</li>
+<li>whether governance actions were resolved with meaningful resolution summaries</li>
+<li>whether challenge states were closed, revised, or left unresolved appropriately</li>
+<li>whether continuity links were created with rationale rather than guessed from title similarity</li>
+</ul>
+<p>The downstream training benefit is practical coaching. Instead of asking only whether a trainee reached the right page, trainers can inspect whether the trainee left an interpretable trail of decisions and corrections.</p>
+<h3>Lifecycle Classification</h3>
+<p>Review History supports recommendation lifecycle classification because the app uses lifecycle events to distinguish live recommendations from audit rows.</p>
+<p>Lifecycle interpretation can depend on events such as:</p>
+<ul>
+<li>recommendation generation</li>
+<li>recommendation refresh</li>
+<li>regeneration preserved in place</li>
+<li>regeneration updated in place</li>
+<li>regeneration retired unmatched</li>
+<li>reactivation after regeneration</li>
+<li>status updates and learning-state updates</li>
+</ul>
+<p>The practical impact is that lifecycle status is not based only on the recommendation&#x27;s current text or timestamp. Review History helps the app decide whether a recommendation is current, preserved, updated, retired by regeneration, or reactivated.</p>
+<p>This matters because retired-by-regeneration recommendations may remain visible for audit and link traceability, but they should not be treated the same as live working recommendations.</p>
+<h3>Regeneration-Retirement Provenance</h3>
+<p>Review History supports regeneration-retirement provenance by showing why a recommendation left or re-entered the live working list.</p>
+<p>Regeneration can:</p>
+<ul>
+<li>preserve a recommendation in place</li>
+<li>update a recommendation in place</li>
+<li>create a new recommendation</li>
+<li>retire an unmatched recommendation</li>
+<li>reactivate a recommendation that returns in a later generation pass</li>
+</ul>
+<p>The downstream impact is identity preservation. If a recommendation is retired by regeneration, Review History explains that the row was retained for audit rather than deleted. If it is later reactivated, Review History helps prove that the same governance identity and downstream links were preserved.</p>
+<p>Without this provenance, users may mistake a retired audit row for an active recommendation, or mistake a reactivated recommendation for a brand-new item.</p>
+<h3>Continuity Correction Traceability</h3>
+<p>Review History supports continuity correction traceability when users create, link, or correct recommendation series and cycle links.</p>
+<p>Continuity-related history can show:</p>
+<ul>
+<li>recommendation series creation</li>
+<li>recommendation-to-series linking</li>
+<li>predecessor correction</li>
+<li>series correction</li>
+<li>continuity status changes</li>
+<li>change summaries</li>
+<li>continuity rationales</li>
+</ul>
+<p>The practical impact is that cross-cycle continuity can be reviewed rather than assumed. Comparative Cycle Review and Governance Summary rely on explicit continuity links. Review History helps users verify how those links were created or corrected, especially when a recommendation was revised, carried forward, split, merged, superseded, validated, or contradicted across cycles.</p>
+<p>This prevents a common error: treating similar wording as proof of continuity. In this app, continuity should be explicit and traceable.</p>
+<h3>Challenge-State Traceability</h3>
+<p>Review History supports challenge-state traceability by recording human validation challenge events.</p>
+<p>Challenge events can include:</p>
+<ul>
+<li>challenge status creation</li>
+<li>challenge status update</li>
+<li>challenged conclusion follow-up</li>
+<li>unresolved conclusion follow-up</li>
+<li>challenge review closure</li>
+<li>revised conclusion reissue</li>
+<li>revision rationale</li>
+</ul>
+<p>The downstream impact is interpretive accountability. Comparative Cycle Review and Governance Summary use challenge states to qualify conclusions. Review History helps users see whether a conclusion was corroborated, challenged, unresolved, or revised after challenge, and why.</p>
+<p>This matters because a dashboard conclusion can look plausible while a human reviewer knows the evidence is incomplete, contradicted, or too narrow. Challenge-state traceability keeps that qualification visible.</p>
+<h3>Board-Pack Confidence</h3>
+<p>Review History supports board-pack confidence by giving exported governance summaries a provenance basis.</p>
+<p>Board-pack confidence can be strengthened when Review History shows:</p>
+<ul>
+<li>scorecards were recomputed after input changes</li>
+<li>recommendations were generated or refreshed intentionally</li>
+<li>evidence links were updated before review</li>
+<li>governance gates were reviewed with notes</li>
+<li>watchpoints were acknowledged without being falsely treated as mitigated</li>
+<li>governance actions were created, refreshed, or resolved with clear outcomes</li>
+<li>challenged conclusions were reviewed, revised, or left visibly unresolved</li>
+<li>continuity links were explicitly created or corrected</li>
+</ul>
+<p>The practical impact is that a board pack can be read as a governed artifact rather than a static dashboard export. Review History does not prove external reality, but it shows whether the internal governance process was disciplined, traceable, and reviewable.</p>
+<p>If review history is thin, board-pack confidence should be lower. A board pack with scores, recommendations, or claims but little event provenance may be harder to trust.</p>
+<h3>Practical Feed Interpretation</h3>
+<p>When reviewing downstream impact, use this rule:</p>
+<p>Review History supports downstream pages with **provenance and audit meaning**, not external evidence by itself.</p>
+<p>That meaning can strengthen auditability, support training, classify lifecycle state, explain regeneration outcomes, trace continuity corrections, preserve challenge-state accountability, and qualify board-pack confidence. The most important downstream signal is whether important governance claims have an event trail that explains how they became current.</p>
+<h2>Common Mistakes</h2>
+<p>Avoid making status or learning changes without notes when the reason matters.</p>
+<p>Avoid using Review History as the only evidence source. It records app actions, not external reality by itself.</p>
+<p>Avoid assuming timestamps alone explain reactivation or retirement; lifecycle classification uses event provenance.</p>
+<h2>Training Prompt</h2>
+<p>Ask the trainee to find one recommendation lifecycle event, one continuity correction event, and one human validation challenge event.</p>
+<p>Completion standard: the user can use Review History to reconstruct how a governance record changed.</p>
+</body>
+</html>

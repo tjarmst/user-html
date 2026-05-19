@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>HOME_PAGE_LEARNING_RESOURCE</title>
+<style>
+
+@page {
+  size: A4;
+  margin: 18mm 16mm 18mm 16mm;
+  @bottom-center {
+    content: "Page " counter(page) " of " counter(pages);
+    font-size: 8pt;
+    color: #666;
+  }
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.38;
+  color: #1f2933;
+}
+h1 {
+  font-size: 20pt;
+  border-bottom: 2px solid #1f2933;
+  padding-bottom: 6px;
+  margin-top: 0;
+}
+h2 {
+  font-size: 15pt;
+  border-bottom: 1px solid #c9d1d9;
+  padding-bottom: 4px;
+  margin-top: 24px;
+}
+h3 {
+  font-size: 12.5pt;
+  margin-top: 18px;
+}
+h4 {
+  font-size: 11pt;
+  margin-top: 14px;
+}
+p {
+  margin: 0 0 8px 0;
+}
+ul, ol {
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+li {
+  margin-bottom: 3px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0 14px 0;
+  font-size: 8.6pt;
+  page-break-inside: auto;
+}
+thead {
+  display: table-header-group;
+}
+tr {
+  page-break-inside: avoid;
+}
+th, td {
+  border: 1px solid #aab2bd;
+  padding: 4px 5px;
+  vertical-align: top;
+  word-break: break-word;
+}
+th {
+  background: #eef2f6;
+  font-weight: bold;
+}
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 8.6pt;
+  line-height: 1.28;
+}
+code {
+  font-family: Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.92em;
+  background: #f6f8fa;
+  padding: 1px 3px;
+  border-radius: 3px;
+}
+pre code {
+  padding: 0;
+  background: transparent;
+}
+blockquote {
+  border-left: 4px solid #c9d1d9;
+  margin-left: 0;
+  padding-left: 10px;
+  color: #4b5563;
+}
+hr {
+  border: none;
+  border-top: 1px solid #c9d1d9;
+  margin: 18px 0;
+}
+.document-meta {
+  font-size: 8.5pt;
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+</style>
+</head>
+<body>
+<div class="document-meta">Source: user/HOME_PAGE_LEARNING_RESOURCE.md</div>
+<h1>Home Page Learning Resource</h1>
+<p>This guide teaches users how the **Home** page works and how to use it as the safe starting point for a training or demo workspace.</p>
+<h2>Purpose</h2>
+<p>The Home page orients the user before they begin entering or reviewing governance data.</p>
+<p>Use it to:</p>
+<ul>
+<li>confirm the app is running against the intended local database</li>
+<li>review the recommended startup sequence</li>
+<li>initialize framework definitions when a real organization needs the metric and survey catalog</li>
+<li>load sample data when a demo or training dataset is needed</li>
+<li>understand the difference between framework definitions and the sample workspace before moving into Setup and Assessment Cycle</li>
+</ul>
+<p>The page is not a governance review page. It is a launch point.</p>
+<h2>What The User Should Notice</h2>
+<p>The user should first inspect:</p>
+<ul>
+<li>the current workspace context in the sidebar and context panel</li>
+<li>the local database path shown in technical details</li>
+<li>the recommended startup sequence</li>
+<li>the explanation of the two data setup options</li>
+</ul>
+<p>If the workspace context is empty, the next page should usually be **Setup**.</p>
+<h2>Data Setup Options</h2>
+<p>The Home page has two separate data setup actions.</p>
+<h3>Initialize Framework Definitions</h3>
+<p>Use this for a real organization workflow when Diagnostic Input or Survey Input needs the framework catalog.</p>
+<p>This action creates or confirms:</p>
+<ul>
+<li>metric definitions</li>
+<li>survey questions</li>
+</ul>
+<p>It does not create:</p>
+<ul>
+<li>an organization</li>
+<li>an assessment cycle</li>
+<li>metric observations</li>
+<li>survey responses</li>
+<li>evidence notes</li>
+<li>recommendations, decisions, pilots, KPIs, or governance records</li>
+</ul>
+<p>It should not move the user out of their real organization context.</p>
+<h3>Load Sample Data</h3>
+<p>Use this for demos, training, and smoke-test walkthroughs.</p>
+<p>The **Load sample data** button is available only before a user organization exists. Once the database contains any organization marked as user data, Home disables **Load sample data** and shows a message directing users to **Initialize framework definitions** for real organization workflows. This prevents a real workspace from being accidentally switched into the sample workflow.</p>
+<p>This action creates or refreshes:</p>
+<ul>
+<li>one sample organization: **Southern Horizon Health Services**</li>
+<li>attribution users</li>
+<li>active and prior assessment cycles</li>
+<li>metric observations and survey responses</li>
+<li>evidence notes and scorecards</li>
+<li>recommendations, structural decisions, pilots, KPIs, and lineage links</li>
+<li>governance review gates, action queue items, foresight mitigation, review history, and human validation challenges</li>
+</ul>
+<p>The sample workspace is marked as sample data. Do not use it as real organizational evidence.</p>
+<h2>Safe Use</h2>
+<p>Before loading sample data:</p>
+<ul>
+<li>confirm you are in the intended local workspace</li>
+<li>confirm this is a demo or training run</li>
+<li>confirm no user organization has already been created in this database</li>
+<li>avoid mixing seeded examples with real organizational review unless the trainer clearly explains the difference</li>
+</ul>
+<p>Sample data is useful because it gives users something to inspect, but it is not proof of real workplace conditions.</p>
+<h2>Downstream Impact</h2>
+<p>Home affects later pages by preparing the reference data they depend on:</p>
+<ul>
+<li>Diagnostic Input and Survey Input can use framework metric and question definitions.</li>
+<li>Setup can select the sample organization and users if sample data is loaded.</li>
+<li>Assessment Cycle can select sample cycles if sample data is loaded.</li>
+<li>Foresight Execution can use sample scenarios and watchpoints if sample data is loaded.</li>
+</ul>
+<p>Once a user organization exists, Home should be used for framework definitions only. The sample workflow remains available in a fresh training database before real organization creation.</p>
+<h2>Training Prompt</h2>
+<p>Ask the trainee to explain the difference between:</p>
+<ul>
+<li>the app being ready to use</li>
+<li>framework definitions being available</li>
+<li>sample data being available</li>
+<li>a real organization/cycle being selected</li>
+<li>real evidence being entered</li>
+</ul>
+<p>Completion standard: the user can start from Home without mistaking framework definitions, sample examples, and real governance findings for one another.</p>
+</body>
+</html>

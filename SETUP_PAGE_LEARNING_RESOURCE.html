@@ -1,0 +1,177 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>SETUP_PAGE_LEARNING_RESOURCE</title>
+<style>
+
+@page {
+  size: A4;
+  margin: 18mm 16mm 18mm 16mm;
+  @bottom-center {
+    content: "Page " counter(page) " of " counter(pages);
+    font-size: 8pt;
+    color: #666;
+  }
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.38;
+  color: #1f2933;
+}
+h1 {
+  font-size: 20pt;
+  border-bottom: 2px solid #1f2933;
+  padding-bottom: 6px;
+  margin-top: 0;
+}
+h2 {
+  font-size: 15pt;
+  border-bottom: 1px solid #c9d1d9;
+  padding-bottom: 4px;
+  margin-top: 24px;
+}
+h3 {
+  font-size: 12.5pt;
+  margin-top: 18px;
+}
+h4 {
+  font-size: 11pt;
+  margin-top: 14px;
+}
+p {
+  margin: 0 0 8px 0;
+}
+ul, ol {
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+li {
+  margin-bottom: 3px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0 14px 0;
+  font-size: 8.6pt;
+  page-break-inside: auto;
+}
+thead {
+  display: table-header-group;
+}
+tr {
+  page-break-inside: avoid;
+}
+th, td {
+  border: 1px solid #aab2bd;
+  padding: 4px 5px;
+  vertical-align: top;
+  word-break: break-word;
+}
+th {
+  background: #eef2f6;
+  font-weight: bold;
+}
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 8.6pt;
+  line-height: 1.28;
+}
+code {
+  font-family: Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.92em;
+  background: #f6f8fa;
+  padding: 1px 3px;
+  border-radius: 3px;
+}
+pre code {
+  padding: 0;
+  background: transparent;
+}
+blockquote {
+  border-left: 4px solid #c9d1d9;
+  margin-left: 0;
+  padding-left: 10px;
+  color: #4b5563;
+}
+hr {
+  border: none;
+  border-top: 1px solid #c9d1d9;
+  margin: 18px 0;
+}
+.document-meta {
+  font-size: 8.5pt;
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+</style>
+</head>
+<body>
+<div class="document-meta">Source: user/SETUP_PAGE_LEARNING_RESOURCE.md</div>
+<h1>Setup Page Learning Resource</h1>
+<p>This guide teaches users how the **Setup** page works and why organization and attribution context matter before any governance interpretation begins.</p>
+<h2>Purpose</h2>
+<p>The Setup page creates and selects the organization workspace and the users who will be used for attribution.</p>
+<p>Use it to:</p>
+<ul>
+<li>create a new organization</li>
+<li>select an existing organization</li>
+<li>inspect stored organization fields</li>
+<li>edit organization details</li>
+<li>create or edit attribution users</li>
+<li>select the active attribution user</li>
+</ul>
+<p>The page establishes the workspace boundary. Most later records belong to the selected organization.</p>
+<h2>Organization Workspace</h2>
+<p>An organization is the main container for cycles, users, metrics, evidence, recommendations, decisions, pilots, KPIs, scenarios, and review history.</p>
+<p>Create a new organization only when the workplace or training example is genuinely new. Existing names are blocked to protect continuity.</p>
+<p>Select an existing organization when continuing prior work.</p>
+<p>Sample data, when loaded from Home, is stored under the sample organization **Southern Horizon Health Services** and marked as sample data. A real organization created in Setup is separate from that sample workspace.</p>
+<h2>Attribution Users</h2>
+<p>Attribution users record who is acting in the system. They are used by evidence notes, review history, governance actions, continuity corrections, and learning workflows.</p>
+<p>Common roles include:</p>
+<ul>
+<li>analyst</li>
+<li>transformation lead</li>
+<li>executive sponsor</li>
+<li>reviewer</li>
+</ul>
+<p>The active attribution user is not just a display setting. It helps later reviewers understand who created or changed records.</p>
+<h2>What The User Should Notice</h2>
+<p>Ask the user to identify:</p>
+<ul>
+<li>selected organization</li>
+<li>whether the selected organization is sample data or user data</li>
+<li>sector and geography</li>
+<li>active attribution user</li>
+<li>role</li>
+<li>local database path</li>
+<li>persisted organizations list</li>
+</ul>
+<p>If no organization is selected, most downstream pages cannot behave meaningfully.</p>
+<h2>Downstream Impact</h2>
+<p>Setup affects:</p>
+<ul>
+<li>Assessment Cycle: cycles are attached to the selected organization.</li>
+<li>Evidence Notes: evidence is attributed to a user.</li>
+<li>Recommendations and decisions: ownership and history are organization-scoped.</li>
+<li>Review History: actor names make changes auditable.</li>
+<li>Sidebar filters: division and segment options depend on organization context.</li>
+</ul>
+<h2>Common Mistakes</h2>
+<p>Avoid creating duplicate organizations for the same workplace.</p>
+<p>Avoid entering real evidence into the sample organization.</p>
+<p>Avoid entering evidence before selecting the correct attribution user.</p>
+<p>Avoid treating a user role as a permission model. It is primarily attribution and review context unless a workflow explicitly uses it.</p>
+<h2>Training Prompt</h2>
+<p>Ask the trainee to create or select an organization, create or select an attribution user, and then explain how those selections will affect evidence and review history.</p>
+<p>Completion standard: the user can explain the selected workspace and actor before entering data.</p>
+</body>
+</html>

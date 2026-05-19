@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+
+<html><head><meta charset="utf-8"/>
+<title>TRAINING_RESOURCE_INDEX</title>
+<style>
+
+body { font-family: Segoe UI, Arial, sans-serif; line-height: 1.45; color: #202124; margin: 42px; max-width: 980px; }
+h1, h2, h3 { color: #17324d; margin-top: 1.35em; }
+h1 { border-bottom: 2px solid #d9e2ec; padding-bottom: 8px; }
+table { border-collapse: collapse; width: 100%; margin: 18px 0; font-size: 0.94rem; }
+th, td { border: 1px solid #cfd8e3; padding: 7px 9px; vertical-align: top; }
+th { background: #eef3f8; text-align: left; }
+code, pre { background: #f4f6f8; border-radius: 4px; }
+code { padding: 1px 4px; }
+pre { padding: 12px; overflow-x: auto; }
+.document-meta { color: #5f6b7a; font-size: 0.9rem; margin-bottom: 22px; }
+a { color: #1d4ed8; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code a { color: inherit; }
+</style></head><body>
+<div class="document-meta">Source: <a href="TRAINING_RESOURCE_INDEX.html">user/TRAINING_RESOURCE_INDEX.md</a></div>
+<h1>Training Resource Index and Rollout Sequence</h1>
+<h2>Purpose</h2>
+<p>This index gives the Project Owner a compact map of the Workplace Conditions Governance training resources after the Stage 6C training-resource update sequence.</p>
+<p>Use it to decide:</p>
+<ul>
+<li>which resource to give to which audience</li>
+<li>what should be read first</li>
+<li>what ordinary staff should and should not be asked to test</li>
+<li>what trained governance users need before using advanced pages</li>
+<li>what still requires fixture-based validation</li>
+<li>what remaining older resources may need later review</li>
+</ul>
+<p>The central rollout message is:</p>
+<p>&gt; The Workplace Conditions Governance platform is a specialist governance-control-room application. It is not a casual self-service dashboard. Training should be role-based, staged, and supported by prepared examples.</p>
+<hr/>
+<h2>Current training architecture</h2>
+<p>The training set is organized into five layers.</p>
+<table><thead><tr><th>Layer</th><th>Purpose</th><th>Primary audience</th><th>Main resource</th></tr></thead><tbody>
+<tr><td>1. Management and Project Owner orientation</td><td>Explain why the system is complex, what value it creates, and what testing boundaries are reasonable</td><td>Management, Project Owner, implementation lead</td><td><code><a href="PROJECT_OWNER_ORIENTATION_AND_TESTING_BOUNDARIES.html">PROJECT_OWNER_ORIENTATION_AND_TESTING_BOUNDARIES.md</a></code></td></tr>
+<tr><td>2. Core concept primer</td><td>Explain unfamiliar terms and decision-flow concepts before page use</td><td>Project Owner, trained governance users, testers</td><td><code><a href="GOVERNANCE_ACTION_CONCEPT_PRIMER.html">GOVERNANCE_ACTION_CONCEPT_PRIMER.md</a></code></td></tr>
+<tr><td>3. Training hub</td><td>Integrate the operating loop, role boundaries, page map, and safe testing classifications</td><td>All trained users</td><td><code><a href="TRAINING_MANUAL.html">TRAINING_MANUAL.md</a></code></td></tr>
+<tr><td>4. Metric interpretation resources</td><td>Teach Stage A, Stage B, and Bridge metric meaning before users rely on scores or exports</td><td>Project Owner, Transformation Leads, analysts, trained governance users</td><td><code><a href="Metrics%20explained.html">user/metrics/Metrics explained.md</a></code></td></tr>
+<tr><td>5. Page operating guides</td><td>Teach how to use the major Governance Action pages in their current selected-workspace form</td><td>Trained governance users, Project Owner</td><td>Page-specific learning resources</td></tr>
+<tr><td>6. Fixture/test scripts</td><td>Validate rare or state-dependent branches with prepared data</td><td>Developer, Project Owner, advanced tester</td><td>To be prepared later if required</td></tr>
+</tbody></table>
+<p>Metric resources now sit between the concept primer and page operating guides. They explain why a score is not the same as improvement, why KPI evidence is not automatic proof, and why Bridge signals such as integrity gap, lineage drop-off, and execution feedback matter.</p>
+<hr/>
+<h2>Recommended reading order by role</h2>
+<h2>1. Management / sponsor</h2>
+<p>Management does not need to learn every page.</p>
+<p>Recommended reading:</p>
+<ol>
+<li><code><a href="PROJECT_OWNER_ORIENTATION_AND_TESTING_BOUNDARIES.html">PROJECT_OWNER_ORIENTATION_AND_TESTING_BOUNDARIES.md</a></code></li>
+<li>Executive extracts from <code><a href="TRAINING_MANUAL.html">TRAINING_MANUAL.md</a></code>, especially:</li>
+</ol>
+<ul>
+<li>Core management message</li>
+<li>The operating loop</li>
+<li>User roles and testing boundaries</li>
+<li>Completion standard for training readiness</li>
+</ul>
+<p>Management should understand:</p>
+<ul>
+<li>why ordinary staff found the system difficult to test</li>
+<li>why that difficulty does not invalidate the system</li>
+<li>why advanced testing must be role-specific</li>
+<li>why prepared fixtures are needed for some validation paths</li>
+<li>why the product should be positioned as a governance-control-room application, not a casual HR dashboard</li>
+</ul>
+<p>Management should not be asked to validate:</p>
+<ul>
+<li>continuity correction</li>
+<li>predecessor/carry-forward paths</li>
+<li>threshold-version effects</li>
+<li>scenario trigger-state branches</li>
+<li>lineage edge cases</li>
+<li>detailed evidence relinking consequences</li>
+</ul>
+<hr/>
+<h2>2. Project Owner / implementation lead</h2>
+<p>The Project Owner needs the full training architecture.</p>
+<p>Recommended reading:</p>
+<ol>
+<li><code><a href="PROJECT_OWNER_ORIENTATION_AND_TESTING_BOUNDARIES.html">PROJECT_OWNER_ORIENTATION_AND_TESTING_BOUNDARIES.md</a></code></li>
+<li><code><a href="GOVERNANCE_ACTION_CONCEPT_PRIMER.html">GOVERNANCE_ACTION_CONCEPT_PRIMER.md</a></code></li>
+<li><code><a href="TRAINING_MANUAL.html">TRAINING_MANUAL.md</a></code></li>
+<li>Metric interpretation resources:</li>
+</ol>
+<ul>
+<li><code><a href="Metrics%20explained.html">user/metrics/Metrics explained.md</a></code></li>
+<li><code><a href="Metric%20Definitions.html">user/metrics/Metric Definitions.md</a></code></li>
+<li><code><a href="Comprehensive%20Metric%20Reference.html">user/metrics/Comprehensive Metric Reference.md</a></code></li>
+<li><code><a href="Diagnostic%20Input%20Data%20Collection%20and%20Scoring.html">user/metrics/Diagnostic Input Data Collection and Scoring.md</a></code></li>
+<li><code><a href="Score%20Component%20Details%20Page%20User%20Guide.html">user/metrics/Score Component Details Page User Guide.md</a></code></li>
+</ul>
+<ol>
+<li>Page operating guides for any area being validated:</li>
+</ol>
+<ul>
+<li><code><a href="RECOMMENDATIONS_PAGE_LEARNING_RESOURCE.html">RECOMMENDATIONS_PAGE_LEARNING_RESOURCE.md</a></code></li>
+<li><code><a href="KPI_DASHBOARD_PAGE_LEARNING_RESOURCE.html">KPI_DASHBOARD_PAGE_LEARNING_RESOURCE.md</a></code></li>
+<li><code><a href="LINEAGE_VIEW_PAGE_LEARNING_RESOURCE.html">LINEAGE_VIEW_PAGE_LEARNING_RESOURCE.md</a></code></li>
+<li><code><a href="PILOT_TRACKER_PAGE_LEARNING_RESOURCE.html">PILOT_TRACKER_PAGE_LEARNING_RESOURCE.md</a></code></li>
+</ul>
+<p>The Project Owner should be able to explain:</p>
+<ul>
+<li>what the system is for</li>
+<li>why it is complex</li>
+<li>how the operating loop works</li>
+<li>which roles can test which parts</li>
+<li>when a missing workflow is a valid empty state rather than a defect</li>
+<li>which checks require prepared fixture data</li>
+<li>where training materials must be updated before user rollout</li>
+</ul>
+<hr/>
+<h2>3. Ordinary staff / general user reviewer</h2>
+<p>Ordinary staff should receive a limited orientation.</p>
+<p>Recommended reading:</p>
+<ol>
+<li>selected extracts from <code><a href="PROJECT_OWNER_ORIENTATION_AND_TESTING_BOUNDARIES.html">PROJECT_OWNER_ORIENTATION_AND_TESTING_BOUNDARIES.md</a></code></li>
+<li>selected extracts from <code><a href="TRAINING_MANUAL.html">TRAINING_MANUAL.md</a></code></li>
+<li>only the page guide for the specific page they are asked to review</li>
+</ol>
+<p>Ordinary staff can reasonably test:</p>
+<ul>
+<li>page opens</li>
+<li>page purpose is broadly understandable</li>
+<li>selected item is visible</li>
+<li>obvious labels are understandable</li>
+<li>empty states are not alarming</li>
+<li>navigation feels coherent after basic orientation</li>
+</ul>
+<p>Ordinary staff should not be asked to test:</p>
+<ul>
+<li>predecessor/carry-forward eligibility</li>
+<li>continuity series correction</li>
+<li>recommendation regeneration identity preservation</li>
+<li>threshold-rule versioning effects</li>
+<li>scenario trigger branches</li>
+<li>conversion-to-decision semantics</li>
+<li>lineage completeness across cycles</li>
+<li>evidence relinking consequences</li>
+<li>precise classification or scoring edge cases</li>
+</ul>
+<p>If ordinary staff cannot validate those advanced paths, record the result as:</p>
+<pre><code>Out of ordinary-staff testing scope.</code></pre>
+<p>Do not treat that as a product failure.</p>
+<hr/>
+<h2>4. Trained governance user</h2>
+<p>Trained governance users need the concept primer and relevant page guides.</p>
+<p>Recommended reading:</p>
+<ol>
+<li><code><a href="GOVERNANCE_ACTION_CONCEPT_PRIMER.html">GOVERNANCE_ACTION_CONCEPT_PRIMER.md</a></code></li>
+<li><code><a href="TRAINING_MANUAL.html">TRAINING_MANUAL.md</a></code></li>
+<li>the relevant page operating guide</li>
+</ol>
+<p>For Recommendations work:</p>
+<pre><code><a href="RECOMMENDATIONS_PAGE_LEARNING_RESOURCE.html">RECOMMENDATIONS_PAGE_LEARNING_RESOURCE.md</a></code></pre>
+<p>For KPI work:</p>
+<pre><code><a href="KPI_DASHBOARD_PAGE_LEARNING_RESOURCE.html">KPI_DASHBOARD_PAGE_LEARNING_RESOURCE.md</a></code></pre>
+<p>For lineage work:</p>
+<pre><code><a href="LINEAGE_VIEW_PAGE_LEARNING_RESOURCE.html">LINEAGE_VIEW_PAGE_LEARNING_RESOURCE.md</a></code></pre>
+<p>For pilot work:</p>
+<pre><code><a href="PILOT_TRACKER_PAGE_LEARNING_RESOURCE.html">PILOT_TRACKER_PAGE_LEARNING_RESOURCE.md</a></code></pre>
+<p>Trained governance users can test:</p>
+<ul>
+<li>selected-item context</li>
+<li>evidence interpretation</li>
+<li>recommendation workflow updates</li>
+<li>continuity actions where data is valid</li>
+<li>conversion to structural decision</li>
+<li>KPI creation and reassessment</li>
+<li>evidence relinking</li>
+<li>pilot metrics and linked KPIs</li>
+<li>pilot outcome recomputation</li>
+<li>lineage and drop-off interpretation</li>
+<li>review-history implications</li>
+</ul>
+<p>They should still use prepared examples for advanced branches.</p>
+<hr/>
+<h2>5. Developer / fixture-based validator</h2>
+<p>Developer or fixture-based validation is required for rare or data-dependent paths.</p>
+<p>Needed later if the Project Owner wants formal closure of:</p>
+<ul>
+<li>scenario trigger-state branches</li>
+<li>insufficient evidence</li>
+<li>weakly evidenced / weak support</li>
+<li>supportable under current evidence</li>
+<li>predecessor/carry-forward eligibility</li>
+<li>recommendation series correction states</li>
+<li>threshold-rule version comparison and reassessment edge cases</li>
+<li>broken lineage states</li>
+<li>mixed pilot signal states</li>
+<li>contradicted evidence states</li>
+<li>no-data and partial-data combinations</li>
+</ul>
+<p>The correct testing form is not ordinary exploratory smoke testing. It is prepared fixture testing with known expected states.</p>
+<hr/>
+<h2>Current training-resource inventory</h2>
+<table><thead><tr><th>Resource</th><th>Current status after Stage 6C</th><th>Main use</th></tr></thead><tbody>
+<tr><td><code><a href="PROJECT_OWNER_ORIENTATION_AND_TESTING_BOUNDARIES.html">PROJECT_OWNER_ORIENTATION_AND_TESTING_BOUNDARIES.md</a></code></td><td>Current</td><td>Management-facing complexity and testing-boundary explanation</td></tr>
+<tr><td><code><a href="GOVERNANCE_ACTION_CONCEPT_PRIMER.html">GOVERNANCE_ACTION_CONCEPT_PRIMER.md</a></code></td><td>Current</td><td>Core terminology and decision-flow primer</td></tr>
+<tr><td><code><a href="TRAINING_MANUAL.html">TRAINING_MANUAL.md</a></code></td><td>Current after restructure</td><td>Training hub and role-based operating model</td></tr>
+<tr><td><code><a href="Metrics%20explained.html">user/metrics/Metrics explained.md</a></code></td><td>Current after metric refactor</td><td>Owner-facing metric value and Stage A / Stage B / Bridge framing</td></tr>
+<tr><td><code><a href="Metric%20Definitions.html">user/metrics/Metric Definitions.md</a></code></td><td>Current after metric refactor</td><td>Concise metric definitions and product-role classification</td></tr>
+<tr><td><code><a href="Comprehensive%20Metric%20Reference.html">user/metrics/Comprehensive Metric Reference.md</a></code></td><td>Current after metric refactor</td><td>Detailed metric interpretation and owner decision support</td></tr>
+<tr><td><code><a href="Diagnostic%20Input%20Data%20Collection%20and%20Scoring.html">user/metrics/Diagnostic Input Data Collection and Scoring.md</a></code></td><td>Current after metric refactor</td><td>Stage A evidence collection and scoring method</td></tr>
+<tr><td><code><a href="Score%20Component%20Details%20Page%20User%20Guide.html">user/metrics/Score Component Details Page User Guide.md</a></code></td><td>Current after metric refactor</td><td>Bridge guide for score component evidence and traceability</td></tr>
+<tr><td><code><a href="RECOMMENDATIONS_PAGE_LEARNING_RESOURCE.html">RECOMMENDATIONS_PAGE_LEARNING_RESOURCE.md</a></code></td><td>Current after rewrite</td><td>Recommendations page operating guide</td></tr>
+<tr><td><code><a href="KPI_DASHBOARD_PAGE_LEARNING_RESOURCE.html">KPI_DASHBOARD_PAGE_LEARNING_RESOURCE.md</a></code></td><td>Current after amendment</td><td>KPI Dashboard operating guide</td></tr>
+<tr><td><code><a href="LINEAGE_VIEW_PAGE_LEARNING_RESOURCE.html">LINEAGE_VIEW_PAGE_LEARNING_RESOURCE.md</a></code></td><td>Current after rewrite</td><td>Lineage View operating guide</td></tr>
+<tr><td><code><a href="PILOT_TRACKER_PAGE_LEARNING_RESOURCE.html">PILOT_TRACKER_PAGE_LEARNING_RESOURCE.md</a></code></td><td>Current after amendment/rewrite</td><td>Pilot Tracker operating guide</td></tr>
+</tbody></table>
+<hr/>
+<h2>Suggested rollout sequence</h2>
+<h2>Phase 1 — Management alignment</h2>
+<p>Audience:</p>
+<ul>
+<li>sponsor</li>
+<li>management</li>
+<li>Project Owner</li>
+<li>implementation lead</li>
+</ul>
+<p>Resources:</p>
+<ul>
+<li><code><a href="PROJECT_OWNER_ORIENTATION_AND_TESTING_BOUNDARIES.html">PROJECT_OWNER_ORIENTATION_AND_TESTING_BOUNDARIES.md</a></code></li>
+<li>selected sections of <code><a href="TRAINING_MANUAL.html">TRAINING_MANUAL.md</a></code></li>
+<li><code><a href="Metrics%20explained.html">user/metrics/Metrics explained.md</a></code></li>
+</ul>
+<p>Goal:</p>
+<ul>
+<li>agree that the product is a specialist governance-control-room application</li>
+<li>agree that ordinary staff cannot validate advanced workflows unaided</li>
+<li>agree that role-based testing is the correct rollout model</li>
+<li>agree that prepared examples are required for advanced validation</li>
+</ul>
+<p>Success criterion:</p>
+<p>Management stops asking ordinary staff to prove specialist governance logic through exploratory testing.</p>
+<hr/>
+<h2>Phase 2 — Project Owner training</h2>
+<p>Audience:</p>
+<ul>
+<li>Project Owner</li>
+<li>implementation lead</li>
+<li>system steward</li>
+</ul>
+<p>Resources:</p>
+<ul>
+<li><code><a href="PROJECT_OWNER_ORIENTATION_AND_TESTING_BOUNDARIES.html">PROJECT_OWNER_ORIENTATION_AND_TESTING_BOUNDARIES.md</a></code></li>
+<li><code><a href="GOVERNANCE_ACTION_CONCEPT_PRIMER.html">GOVERNANCE_ACTION_CONCEPT_PRIMER.md</a></code></li>
+<li><code><a href="TRAINING_MANUAL.html">TRAINING_MANUAL.md</a></code></li>
+<li>all current page operating guides</li>
+</ul>
+<p>Goal:</p>
+<ul>
+<li>enable the Project Owner to explain the system</li>
+<li>identify which users need which training</li>
+<li>identify which tests require prepared fixtures</li>
+<li>decide which pages are ready for trained-user walkthroughs</li>
+</ul>
+<p>Success criterion:</p>
+<p>The Project Owner can distinguish:</p>
+<ul>
+<li>usability concern</li>
+<li>training gap</li>
+<li>valid empty state</li>
+<li>missing fixture</li>
+<li>actual defect</li>
+</ul>
+<hr/>
+<h2>Phase 3 — Trained governance-user walkthrough</h2>
+<p>Audience:</p>
+<ul>
+<li>governance users</li>
+<li>HR/governance analysts</li>
+<li>risk/compliance users where relevant</li>
+<li>implementation team members responsible for action follow-up</li>
+</ul>
+<p>Resources:</p>
+<ul>
+<li><code><a href="GOVERNANCE_ACTION_CONCEPT_PRIMER.html">GOVERNANCE_ACTION_CONCEPT_PRIMER.md</a></code></li>
+<li><code><a href="TRAINING_MANUAL.html">TRAINING_MANUAL.md</a></code></li>
+<li>relevant page operating guides</li>
+</ul>
+<p>Goal:</p>
+<ul>
+<li>teach selected-workspace navigation</li>
+<li>teach evidence, recommendation, decision, pilot, KPI, lineage, and review concepts</li>
+<li>walk through one complete operating loop:</li>
+<li>diagnose → recommend → decide → execute → measure → review → learn</li>
+</ul>
+<p>Success criterion:</p>
+<p>Trained users can safely identify:</p>
+<ul>
+<li>selected item/path</li>
+<li>current workspace area</li>
+<li>action consequence</li>
+<li>missing-data meaning</li>
+<li>whether an action requires more evidence or a fixture state</li>
+</ul>
+<hr/>
+<h2>Phase 4 — Ordinary staff readability check</h2>
+<p>Audience:</p>
+<ul>
+<li>ordinary staff</li>
+<li>representative staff reviewers</li>
+<li>non-specialist users</li>
+</ul>
+<p>Resources:</p>
+<ul>
+<li>brief orientation excerpt only</li>
+<li>selected page or screenshot walkthrough</li>
+</ul>
+<p>Goal:</p>
+<ul>
+<li>test readability and confidence boundaries, not advanced governance logic</li>
+</ul>
+<p>Ask ordinary staff:</p>
+<ul>
+<li>Can you tell what this page is about?</li>
+<li>Can you identify the selected item?</li>
+<li>Can you tell whether the page is asking you to review, act, or inspect?</li>
+<li>Can you identify when something is missing or unavailable?</li>
+<li>Which terms are unfamiliar?</li>
+</ul>
+<p>Do not ask ordinary staff to validate:</p>
+<ul>
+<li>predecessor linkage</li>
+<li>continuity correction</li>
+<li>threshold version effects</li>
+<li>scenario trigger states</li>
+<li>detailed lineage completeness</li>
+<li>structural decision conversion consequences</li>
+</ul>
+<p>Success criterion:</p>
+<p>Ordinary staff feedback is used to improve wording and orientation, not to invalidate specialist governance functionality they were not trained to test.</p>
+<hr/>
+<h2>Phase 5 — Fixture-based closure testing</h2>
+<p>Audience:</p>
+<ul>
+<li>developer</li>
+<li>advanced tester</li>
+<li>Project Owner</li>
+</ul>
+<p>Resources:</p>
+<ul>
+<li>training manual</li>
+<li>page guides</li>
+<li>prepared fixture/test data</li>
+</ul>
+<p>Goal:</p>
+<ul>
+<li>close rare or state-dependent validation items</li>
+</ul>
+<p>Priority fixture tests:</p>
+<ol>
+<li>scenario trigger-state validation:</li>
+</ol>
+<ul>
+<li>insufficient evidence</li>
+<li>weakly evidenced / weak support</li>
+<li>supportable under current evidence</li>
+</ul>
+<ol>
+<li>carry-forward predecessor recommendation path</li>
+<li>linked recommendation series update/remove/correction states</li>
+<li>threshold-rule version and reassessment interactions</li>
+<li>pilot mixed-signal outcome</li>
+<li>lineage broken/complete path comparison</li>
+</ol>
+<p>Success criterion:</p>
+<p>Each advanced path is classified as:</p>
+<ul>
+<li>pass</li>
+<li>minor issue</li>
+<li>material defect</li>
+<li>not exercised because fixture not available</li>
+</ul>
+<hr/>
+<h2>Practical rollout rule</h2>
+<p>Use this rule when assigning training or testing:</p>
+<p>&gt; Do not ask a user to test a workflow whose prerequisites they have not been trained to recognize.</p>
+<p>Examples:</p>
+<ul>
+<li>Do not ask ordinary staff to test predecessor selection if they do not understand assessment cycles, recommendation series, and carry-forward.</li>
+<li>Do not ask staff to test threshold versioning if they do not understand governance floors, alert floors, reassessment triggers, and rule versions.</li>
+<li>Do not ask staff to test scenario effectiveness if they do not understand scenario pressure, execution evidence, and governance consequence.</li>
+<li>Do not ask staff to test evidence relinking if they do not understand that evidence links change downstream interpretation.</li>
+</ul>
+<hr/>
+<h2>Minimum training by page</h2>
+<table><thead><tr><th>Page</th><th>Minimum prerequisite resource</th></tr></thead><tbody>
+<tr><td>Recommendations</td><td>Concept Primer + Recommendations Guide</td></tr>
+<tr><td>KPI Dashboard</td><td>Concept Primer + KPI Dashboard Guide</td></tr>
+<tr><td>Lineage View</td><td>Concept Primer + Lineage View Guide</td></tr>
+<tr><td>Pilot Tracker</td><td>Concept Primer + Pilot Tracker Guide</td></tr>
+<tr><td>Governance Summary</td><td>Training Manual + relevant upstream page guides</td></tr>
+<tr><td>Comparative Cycle Review</td><td>Training Manual + Concept Primer</td></tr>
+<tr><td>Scenario Effectiveness Review</td><td>Concept Primer + Scenario sections in Training Manual</td></tr>
+<tr><td>Governance Action Queue</td><td>Training Manual + Governance Summary context</td></tr>
+<tr><td>Review History</td><td>Training Manual + page-specific action context</td></tr>
+</tbody></table>
+<hr/>
+<h2>Remaining training-resource backlog</h2>
+<p>The Stage 6C sequence has updated the major training resources needed for the Governance Action Pages.</p>
+<p>Remaining possible future work:</p>
+<ol>
+<li><strong>Review-page operating guides</strong></li>
+</ol>
+<ul>
+<li>Governance Summary</li>
+<li>Governance Execution Review</li>
+<li>Comparative Cycle Review</li>
+<li>Scenario Effectiveness Review</li>
+<li>Governance Action Queue</li>
+<li>Review History</li>
+</ul>
+<ol>
+<li><strong>Role-based smoke-test scripts</strong></li>
+</ol>
+<ul>
+<li>ordinary staff readability script</li>
+<li>trained governance-user walkthrough script</li>
+<li>Project Owner validation script</li>
+<li>developer fixture-test checklist</li>
+</ul>
+<ol>
+<li><strong>Fixture map</strong></li>
+</ol>
+<ul>
+<li>list of required seeded states for advanced validation</li>
+<li>expected page/action behavior for each fixture</li>
+</ul>
+<ol>
+<li><strong>One-page management briefing</strong></li>
+</ol>
+<ul>
+<li>short extract for sponsors explaining why the system is high-value but not low-training</li>
+</ul>
+<p>These are not required before closing Stage 6C unless the Project Owner wants a more formal rollout pack.</p>
+<hr/>
+<h2>Closure standard for Stage 6C training resources</h2>
+<p>Stage 6C training resources are sufficient for current closure when:</p>
+<ul>
+<li>management has a clear complexity/value explanation</li>
+<li>the Project Owner has role and testing-boundary guidance</li>
+<li>users have a core concept primer</li>
+<li>the main manual acts as a training hub</li>
+<li>the four major Governance Action page guides match the current selected-workspace UI</li>
+<li>advanced validation is separated from ordinary staff readability testing</li>
+<li>remaining fixture-dependent tests are not treated as casual smoke-test failures</li>
+</ul>
+<p>This standard is now substantially met.</p>
+<hr/>
+<h2>Recommended next step</h2>
+<p>Proceed to:</p>
+<pre><code>Fiftysixth_pass Stage 6C.10 — Stage 6C closure review and updated backlog/continuation package</code></pre>
+<p>Purpose:</p>
+<ul>
+<li>summarize Stage 6C training-resource work completed</li>
+<li>classify remaining training-resource backlog</li>
+<li>update continuation primer and backlog status</li>
+<li>prepare the next session for either:</li>
+<li>limited runtime confirmation of Stage 6B patched areas,</li>
+<li>final scenario trigger-state fixture validation,</li>
+<li>or optional review-page training guides</li>
+</ul>
+<hr/>
+<h2>Transformation Lead Training</h2>
+<p>Use:</p>
+<pre><code><a href="TRANSFORMATION_LEAD_TRAINING.html">user/TRANSFORMATION_LEAD_TRAINING.md</a></code></pre>
+<p>Purpose:</p>
+<ul>
+<li>train Transformation Leads who coordinate the full operating loop from diagnosis to governance review;</li>
+<li>cover recommendation workflow, continuity/carry-forward, structural decision conversion, pilot and KPI linkage, scenario pressure, governance action ownership, closure, and review-pack preparation;</li>
+<li>support one half-day foundation session, one half-day applied workflow session, and supervised use through at least one complete assessment cycle.</li>
+</ul>
+<p>Audience:</p>
+<ul>
+<li>Transformation Leads</li>
+<li>Project Owner</li>
+<li>trained governance users who coordinate workflow execution</li>
+</ul>
+<hr/>
+<h2>Diversity, Respect, Trust, and Mission Integrity Module</h2>
+<p>Use:</p>
+<pre><code><a href="DIVERSITY_RESPECT_TRUST_MISSION_INTEGRITY_MODULE.html">user/DIVERSITY_RESPECT_TRUST_MISSION_INTEGRITY_MODULE.md</a></code></pre>
+<p>Purpose:</p>
+<ul>
+<li>support Transformation Lead Training;</li>
+<li>teach human diversity, reciprocal recognition, respect, fair contestation, trust, cooperation, collaboration, and mission integrity;</li>
+<li>distinguish presentational performance from value-realising performance;</li>
+<li>warn against fragmentation failure, false harmony failure, compliance substitution failure, managerial compliance engineering failure, and presentational performance failure.</li>
+</ul>
+<hr/>
+<h2>Transformation Lead Training Facilitator Guide</h2>
+<p>Use:</p>
+<pre><code><a href="TRANSFORMATION_LEAD_TRAINING_FACILITATOR_GUIDE.html">user/TRANSFORMATION_LEAD_TRAINING_FACILITATOR_GUIDE.md</a></code></pre>
+<p>Purpose:</p>
+<ul>
+<li>support delivery of Transformation Lead Training;</li>
+<li>provide trainer preparation notes;</li>
+<li>provide run sheets for the half-day foundation and applied sessions;</li>
+<li>provide teaching notes for Diversity, Respect, Trust, Mission Integrity, and performance ambiguity;</li>
+<li>provide discussion prompts, exercises, debrief prompts, and supervised-cycle guidance.</li>
+</ul>
+<hr/>
+<h2>Transformation Lead Training Participant Workbook</h2>
+<p>Use:</p>
+<pre><code><a href="TRANSFORMATION_LEAD_TRAINING_PARTICIPANT_WORKBOOK.html">user/TRANSFORMATION_LEAD_TRAINING_PARTICIPANT_WORKBOOK.md</a></code></pre>
+<p>Purpose:</p>
+<ul>
+<li>provide learner-facing worksheets for Transformation Lead Training;</li>
+<li>support the foundation session, applied workflow session, review-pack preparation, supervised-cycle log, and readiness reflection;</li>
+<li>help participants practise terminology, role boundaries, evidence states, fixture discipline, diversity/respect/trust doctrine, and performance ambiguity.</li>
+</ul>
+<p>Audience:</p>
+<ul>
+<li>Transformation Lead training participants.</li>
+</ul>
+<hr/>
+<h2>Transformation Lead Training Competency Assessment</h2>
+<p>Use:</p>
+<pre><code><a href="TRANSFORMATION_LEAD_TRAINING_COMPETENCY_ASSESSMENT.html">user/TRANSFORMATION_LEAD_TRAINING_COMPETENCY_ASSESSMENT.md</a></code></pre>
+<p>Purpose:</p>
+<ul>
+<li>assess readiness for supervised practice, further supported practice, limited independent coordination, or independent coordination;</li>
+<li>assess operating-loop knowledge, applied workflow competence, fixture discipline, review-pack preparation, diversity/respect/trust doctrine, and performance ambiguity.</li>
+</ul>
+<hr/>
+<h2>Six Management Intentions and Four-Cycle Operating Pattern</h2>
+<p>Use:</p>
+<pre><code><a href="SIX_MANAGEMENT_INTENTIONS_AND_FOUR_CYCLE_OPERATING_PATTERN.html">user/SIX_MANAGEMENT_INTENTIONS_AND_FOUR_CYCLE_OPERATING_PATTERN.md</a></code></pre>
+<p>Purpose:</p>
+<ul>
+<li>teach the management-purpose architecture of WorkPlace Conditions Governance;</li>
+<li>connect the six management-intention questions to seven value-adding activities and a repeatable four-cycle operating pattern;</li>
+<li>teach recommendation and governance gating as major judgment points;</li>
+<li>preserve the doctrine that governance must remain servant of mission and value-realising performance.</li>
+</ul>
+<hr/>
+<h2>Worked Training Example Assessment Cycle</h2>
+<p>Use:</p>
+<pre><code><a href="WORKED_TRAINING_EXAMPLE_ASSESSMENT_CYCLE.html">user/WORKED_TRAINING_EXAMPLE_ASSESSMENT_CYCLE.md</a></code></pre>
+<p>Purpose:</p>
+<ul>
+<li>show Transformation Leads how to apply the whole operating architecture through an illustrative assessment-cycle example;</li>
+<li>organize practical reasoning around the six management-intention questions;</li>
+<li>connect evidence, recommendation gates, governance gates, pilots, KPIs, review-pack preparation, learning, and reopening.</li>
+</ul>
+<p>Audience:</p>
+<ul>
+<li>Transformation Leads;</li>
+<li>facilitators;</li>
+<li>Project Owner;</li>
+<li>trained governance users who need an end-to-end example.</li>
+</ul>
+<hr/>
+<h2>Transformation Lead Training Resource Closure Guide</h2>
+<p>Use:</p>
+<pre><code><a href="TRANSFORMATION_LEAD_TRAINING_RESOURCE_CLOSURE_GUIDE.html">user/TRANSFORMATION_LEAD_TRAINING_RESOURCE_CLOSURE_GUIDE.md</a></code></pre>
+<p>Purpose:</p>
+<ul>
+<li>map the complete Transformation Lead Training resource set;</li>
+<li>confirm the recommended teaching sequence;</li>
+<li>record doctrine preservation, role boundaries, residual optional improvements, and closure status.</li>
+</ul>
+<p>Audience:</p>
+<ul>
+<li>facilitator;</li>
+<li>Project Owner;</li>
+<li>Transformation Lead training owner;</li>
+<li>future session owner.</li>
+</ul>
+</body></html>

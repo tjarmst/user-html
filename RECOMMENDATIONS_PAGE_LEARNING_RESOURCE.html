@@ -1,0 +1,565 @@
+<!doctype html>
+<html><head><meta charset=utf-8>
+<title>RECOMMENDATIONS_PAGE_LEARNING_RESOURCE</title>
+<style>
+
+body { font-family: Segoe UI, Arial, sans-serif; line-height: 1.45; color: #202124; margin: 42px; max-width: 980px; }
+h1, h2, h3 { color: #17324d; margin-top: 1.35em; }
+h1 { border-bottom: 2px solid #d9e2ec; padding-bottom: 8px; }
+table { border-collapse: collapse; width: 100%; margin: 18px 0; font-size: 0.94rem; }
+th, td { border: 1px solid #cfd8e3; padding: 7px 9px; vertical-align: top; }
+th { background: #eef3f8; text-align: left; }
+code, pre { background: #f4f6f8; border-radius: 4px; }
+code { padding: 1px 4px; }
+pre { padding: 12px; overflow-x: auto; }
+.document-meta { color: #5f6b7a; font-size: 0.9rem; margin-bottom: 22px; }
+
+</style></head><body>
+<div class=document-meta>Source: user/RECOMMENDATIONS_PAGE_LEARNING_RESOURCE.md</div>
+<h1>Recommendations Page Operating Guide</h1>
+<h2>Workplace Conditions Governance</h2>
+<h2>Fiftysixth_pass Stage 6C.4 rewrite</h2>
+<h2>Purpose of this guide</h2>
+<p>This guide explains how to use the <strong>Recommendations</strong> page after the Governance Action Pages refactor.</p>
+<p>The page is no longer best understood as a long set of recommendation cards where every control appears in a single vertical stream. It is now a selected-workspace page.</p>
+<p>The user first selects one recommendation from a worklist. The page then shows the selected recommendation and lets the user choose the relevant workspace area:</p>
+<ul>
+<li>Overview</li>
+<li>Evidence</li>
+<li>Workflow</li>
+<li>Continuity</li>
+<li>Learning</li>
+<li>Convert</li>
+</ul>
+<p>This guide is written for trained governance users, Project Owners, and implementation leads. It also helps management understand why ordinary staff should not be asked to test every advanced action path without training or prepared data.</p>
+<p>The Recommendations page sits inside the system operating loop:</p>
+<p>&gt; diagnose -&gt; recommend -&gt; decide -&gt; execute -&gt; measure -&gt; review -&gt; learn</p>
+<p>A recommendation is the bridge between diagnosis and governed action. It is not proof that action has worked. It is a structured claim that governance can accept, defer, test, convert, link to evidence, carry forward, or close.</p>
+<p>In metric terms, Recommendations translates Stage A diagnosis into candidate Stage B action. A recommendation can be triggered by structural health, symbolic legitimacy, integrity gap, change readiness, burnout risk, trust, AI capture risk, contradiction count, or execution feedback. It remains a governed prompt until downstream decision, pilot, KPI, evidence, and learning signals support it.</p>
+<p>For the metric framing behind recommendations, use <code>user/metrics/Metrics explained.md</code> and <code>user/metrics/Comprehensive Metric Reference.md</code>.</p>
+<hr>
+<h2>Before using this guide</h2>
+<p>Users should first read:</p>
+<ol>
+<li><code>PROJECT_OWNER_ORIENTATION_AND_TESTING_BOUNDARIES.md</code></li>
+<li><code>GOVERNANCE_ACTION_CONCEPT_PRIMER.md</code></li>
+</ol>
+<p>Those two documents explain why the system requires training, why management&#x27;s concern about complexity is valid, and which users should test which parts of the system.</p>
+<p>This page guide assumes the user already understands these basic terms:</p>
+<ul>
+<li>assessment cycle</li>
+<li>recommendation</li>
+<li>evidence note</li>
+<li>workflow status</li>
+<li>learning state</li>
+<li>structural decision</li>
+<li>conversion</li>
+<li>recommendation series</li>
+<li>predecessor recommendation</li>
+<li>carry-forward</li>
+<li>continuity correction</li>
+</ul>
+<hr>
+<h2>What the Recommendations page is for</h2>
+<p>Use the Recommendations page to:</p>
+<ul>
+<li>generate or refresh recommendations for the selected assessment cycle;</li>
+<li>inspect active recommendations for that cycle;</li>
+<li>review rationale, priority, domain, evidence count, decision count, owner, due date, learning state, and continuity state;</li>
+<li>link existing evidence notes to a recommendation;</li>
+<li>update workflow status, owner, and due date;</li>
+<li>connect recommendations across assessment cycles through recommendation series;</li>
+<li>record learning actions after monitoring, testing, validating, contradicting, or superseding a recommendation;</li>
+<li>create or link a structural decision from the selected recommendation;</li>
+<li>preserve review history and audit traceability.</li>
+</ul>
+<p>The page is for governance work. It is not merely a task list and not merely an HR recommendation list.</p>
+<hr>
+<h2>What the page is not for</h2>
+<p>The Recommendations page is not for:</p>
+<ul>
+<li>casual staff testing of every advanced workflow;</li>
+<li>proving cross-cycle predecessor logic without prepared data;</li>
+<li>changing KPI threshold rules;</li>
+<li>editing pilots or pilot metrics;</li>
+<li>performing full lineage diagnosis;</li>
+<li>replacing governance judgment with automatic system output;</li>
+<li>treating a generated recommendation as proof that the proposed action is correct.</li>
+</ul>
+<p>A recommendation should be treated as a governance proposal. It becomes stronger only when evidence, decisions, execution, KPIs, review, and learning support it.</p>
+<hr>
+<h2>The page pattern</h2>
+<p>The current page follows this pattern:</p>
+<ol>
+<li>Readiness panel</li>
+<li>Recommendation lifecycle summary</li>
+<li>Audit-visible retired recommendations, where present</li>
+<li>Recommendation worklist</li>
+<li>Selected recommendation header</li>
+<li>Workspace selector</li>
+<li>Workspace-specific content and actions</li>
+</ol>
+<p>This pattern means users should not expect every action to be visible at once.</p>
+<p>The safe sequence is:</p>
+<ol>
+<li>Confirm the current organization and assessment cycle.</li>
+<li>Review whether there are live/current recommendations.</li>
+<li>Use the worklist to choose one recommendation.</li>
+<li>Confirm the selected recommendation header.</li>
+<li>Choose the workspace area that matches the task.</li>
+<li>Read the local context before using any write action.</li>
+</ol>
+<hr>
+<h2>Readiness and empty states</h2>
+<p>At the top of the page, the readiness panel checks whether the required workspace context exists.</p>
+<p>If no organization or assessment cycle is selected, the page should not proceed into recommendation actions.</p>
+<p>If the selected cycle has no recommendations, the page may explain that no repository-backed recommendations are attached to the cycle yet. Depending on the scorecard state, it may show potential recommendations that can be generated from the current scorecard.</p>
+<p>A blank or limited page is not automatically a defect. Ask:</p>
+<ul>
+<li>Is an organization selected?</li>
+<li>Is an assessment cycle selected?</li>
+<li>Has a scorecard been generated for the cycle?</li>
+<li>Did recommendation rules trigger recommendations?</li>
+<li>Were recommendations retired by regeneration?</li>
+<li>Does this cycle need recommendations to be generated or carried forward?</li>
+</ul>
+<hr>
+<h2>Lifecycle summary and retired recommendations</h2>
+<p>The page shows lifecycle metrics such as:</p>
+<ul>
+<li>Live/current</li>
+<li>Retired by regeneration</li>
+<li>Preserved/updated</li>
+<li>Reactivated</li>
+</ul>
+<p>These metrics help the user distinguish active work from audit history.</p>
+<h3>Live/current recommendations</h3>
+<p>Live/current recommendations are the recommendations the user can actively work with in the selected cycle.</p>
+<h3>Retired by regeneration</h3>
+<p>Retired-by-regeneration records preserve audit history when recommendation regeneration replaced or retired a previous recommendation. They are not ordinary current work items.</p>
+<p>Do not treat a retired audit row as a recommendation that should be edited in the normal workflow. Its purpose is traceability.</p>
+<hr>
+<h2>Recommendation worklist</h2>
+<p>The worklist is the user&#x27;s entry point into the page.</p>
+<p>It summarizes recommendations so users can choose one item for detailed work. Typical fields include:</p>
+<ul>
+<li>recommendation title;</li>
+<li>domain;</li>
+<li>priority;</li>
+<li>workflow status;</li>
+<li>owner;</li>
+<li>due date;</li>
+<li>learning state;</li>
+<li>continuity status;</li>
+<li>linked evidence count;</li>
+<li>linked decision count;</li>
+<li>escalation or scenario state;</li>
+<li>rationale snippet;</li>
+<li>cycle label.</li>
+</ul>
+<p>Use the worklist to decide which recommendation needs attention first.</p>
+<p>The worklist is for triage and selection. It is not the place where most advanced actions are performed.</p>
+<hr>
+<h2>Selected recommendation header</h2>
+<p>After the user selects a recommendation, the page shows a selected recommendation header.</p>
+<p>Before taking action, confirm:</p>
+<ul>
+<li>recommendation title;</li>
+<li>priority;</li>
+<li>workflow status;</li>
+<li>continuity state;</li>
+<li>owner;</li>
+<li>due date;</li>
+<li>evidence count;</li>
+<li>linked decision count;</li>
+<li>cycle;</li>
+<li>domain;</li>
+<li>category;</li>
+<li>learning state.</li>
+</ul>
+<p>This header is the anchor for all workspace actions. If the user cannot tell which recommendation is selected, they should not use action controls.</p>
+<hr>
+<h2>Workspace selector</h2>
+<p>The Recommendations page has six workspace areas:</p>
+<table><thead><tr><th>Workspace</th><th>Main question</th><th>Typical action</th></tr></thead><tbody>
+<tr><td>Overview</td><td>Why does this recommendation exist?</td><td>Inspect rationale and linked decision context.</td></tr>
+<tr><td>Evidence</td><td>What evidence is linked or should be linked?</td><td>Relink existing evidence.</td></tr>
+<tr><td>Workflow</td><td>How is governance handling this recommendation operationally?</td><td>Update status, owner, and due date.</td></tr>
+<tr><td>Continuity</td><td>How does this recommendation relate to earlier or later cycles?</td><td>Create/link/update series and predecessor context.</td></tr>
+<tr><td>Learning</td><td>What has been learned from action, testing, or review?</td><td>Apply learning action and review learning history.</td></tr>
+<tr><td>Convert</td><td>Should this recommendation become a formal structural decision?</td><td>Create/link structural decision and evidence.</td></tr>
+</tbody></table>
+<p>Users should choose the workspace that matches the task. They should not try to infer every hidden data-flow rule from the page alone.</p>
+<hr>
+<h1>Workspace guide</h1>
+<h2>1. Overview</h2>
+<h3>Purpose</h3>
+<p>Use <strong>Overview</strong> to understand why the selected recommendation exists.</p>
+<p>The area may show:</p>
+<ul>
+<li>rationale;</li>
+<li>escalation state;</li>
+<li>scenario state;</li>
+<li>structural health, symbolic legitimacy, and integrity-gap values where available;</li>
+<li>mitigation-aware domain state;</li>
+<li>linked structural decisions, if any.</li>
+</ul>
+<h3>How to use it</h3>
+<p>Ask:</p>
+<ul>
+<li>What problem or governance condition is this recommendation responding to?</li>
+<li>Is the recommendation based on scorecard conditions, evidence, mitigation state, scenario pressure, or a combination?</li>
+<li>Is this a strong action candidate, a monitoring candidate, or a recommendation needing more evidence?</li>
+<li>Does it already have linked structural decisions?</li>
+</ul>
+<h3>User caution</h3>
+<p>The rationale is not proof. It is the recommendation&#x27;s testable logic. Later evidence, decisions, pilots, KPIs, and learning review may support, qualify, contradict, or supersede it.</p>
+<hr>
+<h2>2. Evidence</h2>
+<h3>Purpose</h3>
+<p>Use <strong>Evidence</strong> to inspect evidence already linked to the selected recommendation and, where appropriate, relink an existing evidence note.</p>
+<p>The area may show:</p>
+<ul>
+<li>linked evidence notes;</li>
+<li>evidence role;</li>
+<li>confidence level;</li>
+<li>evidence narrative snippet;</li>
+<li>selector for existing evidence notes;</li>
+<li>action to apply recommendation evidence relink.</li>
+</ul>
+<h3>What evidence relinking means</h3>
+<p>Evidence relinking attaches an existing evidence note to the selected recommendation. It does not create a new evidence note. It changes the recommendation&#x27;s evidence traceability.</p>
+<p>This matters because later review surfaces may use linked evidence to qualify recommendation confidence, conversion, decision rationale, governance review, and board-pack interpretation.</p>
+<h3>Before relinking evidence</h3>
+<p>Confirm:</p>
+<ul>
+<li>the selected recommendation is correct;</li>
+<li>the evidence note genuinely supports, explains, qualifies, or contradicts this recommendation;</li>
+<li>the evidence is not being attached merely because it sounds related;</li>
+<li>a later reviewer would understand why the evidence was linked.</li>
+</ul>
+<h3>Safe-use rule</h3>
+<p>Relink evidence only when the evidence relationship is clear. If the relationship is uncertain, add or revise an evidence note first rather than forcing a linkage.</p>
+<hr>
+<h2>3. Workflow</h2>
+<h3>Purpose</h3>
+<p>Use <strong>Workflow</strong> to update the operational handling of the selected recommendation.</p>
+<p>The area may include:</p>
+<ul>
+<li>status selector;</li>
+<li>owner selector;</li>
+<li>due date field;</li>
+<li>Save Recommendation button.</li>
+</ul>
+<h3>Workflow status is not learning proof</h3>
+<p>Workflow status records governance handling. It does not prove that the recommendation worked.</p>
+<p>For example:</p>
+<ul>
+<li><code>accepted</code> means governance accepts that the recommendation should be pursued or considered.</li>
+<li><code>implemented</code> means action may have occurred.</li>
+<li>Neither status proves that conditions improved.</li>
+</ul>
+<p>Learning state and evidence are needed to judge whether the recommendation has been validated, contradicted, superseded, or reopened.</p>
+<h3>Before saving workflow changes</h3>
+<p>Confirm:</p>
+<ul>
+<li>selected recommendation;</li>
+<li>current status;</li>
+<li>new status;</li>
+<li>owner;</li>
+<li>due date;</li>
+<li>whether the status change will make the recommendation appear more mature than the evidence supports.</li>
+</ul>
+<h3>Safe-use rule</h3>
+<p>Do not use workflow status to create an appearance of progress. Use it to record actual governance handling.</p>
+<hr>
+<h2>4. Continuity</h2>
+<h3>Purpose</h3>
+<p>Use <strong>Continuity</strong> to connect the selected recommendation to its cross-cycle history.</p>
+<p>Continuity helps governance answer:</p>
+<ul>
+<li>Is this recommendation new?</li>
+<li>Is it carried forward from a prior cycle?</li>
+<li>Is it a revision of an earlier recommendation?</li>
+<li>Is it split from or merged from prior work?</li>
+<li>Has it been superseded, contradicted, validated, or closed?</li>
+</ul>
+<h3>Why continuity is difficult</h3>
+<p>Continuity depends on assessment cycles, recommendation series, predecessor recommendations, and data eligibility. An ordinary user may not be able to validate these relationships by exploration.</p>
+<p>This is expected. Continuity is an advanced governance function.</p>
+<h3>Recommendation series</h3>
+<p>A recommendation series is a cross-cycle thread linking related recommendations over time.</p>
+<p>Create a new series when this is the first occurrence of the issue.</p>
+<p>Link to an existing series when the selected recommendation continues, revises, splits, merges, or closes an existing thread.</p>
+<h3>Predecessor recommendation</h3>
+<p>A predecessor is the earlier-cycle recommendation that the current recommendation follows from.</p>
+<p>A predecessor can only be selected if eligible prior-cycle recommendation data exists. If no predecessor appears, that does not automatically mean the UI is broken.</p>
+<h3>Continuity actions</h3>
+<p>Depending on current state, the area may allow:</p>
+<ul>
+<li>create a new series and link the recommendation;</li>
+<li>link the recommendation to an existing series;</li>
+<li>update a continuity link;</li>
+<li>select or change predecessor recommendation;</li>
+<li>add change summary;</li>
+<li>add continuity rationale;</li>
+<li>use bounded continuity correction controls;</li>
+<li>remove a series link.</li>
+</ul>
+<h3>Warning before action</h3>
+<p>The page now warns that continuity actions change cross-cycle lineage and governance interpretation.</p>
+<p>Take that warning seriously. Continuity is not just a label. It affects how future review understands whether the organization is learning, repeating, fragmenting, validating, contradicting, or closing issues across cycles.</p>
+<h3>Before saving continuity changes</h3>
+<p>Confirm:</p>
+<ul>
+<li>selected recommendation;</li>
+<li>current cycle;</li>
+<li>selected series;</li>
+<li>continuity status;</li>
+<li>predecessor recommendation, if required;</li>
+<li>change summary;</li>
+<li>continuity rationale;</li>
+<li>whether the relationship is genuinely historical and not merely similar wording.</li>
+</ul>
+<h3>When to use continuity correction</h3>
+<p>Use continuity correction only when an existing link is wrong. Examples:</p>
+<ul>
+<li>wrong predecessor;</li>
+<li>wrong series;</li>
+<li>recommendation should be detached from a series;</li>
+<li>predecessor should be removed.</li>
+</ul>
+<p>Continuity correction is not ordinary page use. It is trained governance-administrator or Project Owner work.</p>
+<h3>Smoke-test boundary</h3>
+<p>Do not ask ordinary staff to prove predecessor/carry-forward behavior by exploration. Use prepared fixture data if this needs to be tested.</p>
+<hr>
+<h2>5. Learning</h2>
+<h3>Purpose</h3>
+<p>Use <strong>Learning</strong> to record what has been learned about the selected recommendation after action, testing, monitoring, or review.</p>
+<p>The area may show:</p>
+<ul>
+<li>selected recommendation context;</li>
+<li>current learning state;</li>
+<li>current learning note;</li>
+<li>learning action selector;</li>
+<li>learning note field;</li>
+<li>recommendation learning/workflow history.</li>
+</ul>
+<h3>Learning state is different from workflow status</h3>
+<p>Workflow status asks:</p>
+<p>&gt; What is governance doing with this recommendation?</p>
+<p>Learning state asks:</p>
+<p>&gt; What has evidence and implementation experience shown about this recommendation?</p>
+<p>A recommendation can be accepted but untested. It can be implemented but contradicted. It can be deferred but still important. It can be closed because it was superseded by a better formulation.</p>
+<h3>Learning action options</h3>
+<p>The current UI may include actions such as:</p>
+<ul>
+<li>Mark in test</li>
+<li>Mark validated</li>
+<li>Mark contradicted / reopen</li>
+<li>Mark superseded</li>
+</ul>
+<p>These actions correspond to service-level learning transitions. The exact internal action names are less important than the governance meaning.</p>
+<h3>Before applying a learning action</h3>
+<p>Confirm:</p>
+<ul>
+<li>selected recommendation;</li>
+<li>current learning state;</li>
+<li>evidence or implementation experience supporting the new state;</li>
+<li>whether the change should also affect workflow, continuity, decision status, pilot status, or governance review;</li>
+<li>whether the learning note explains the reason clearly enough for later review.</li>
+</ul>
+<h3>Safe-use rule</h3>
+<p>Do not mark a recommendation validated simply because work has started. Validation requires evidence that the expected effect is supported.</p>
+<p>Do not mark contradicted simply because implementation is hard. Contradiction means evidence conflicts with the expected claim or mechanism.</p>
+<hr>
+<h2>6. Convert</h2>
+<h3>Purpose</h3>
+<p>Use <strong>Convert</strong> when the selected recommendation should become, or be linked to, a formal structural decision.</p>
+<p>A structural decision is a governed choice about an organizational structure, mechanism, practice, role, pathway, accountability arrangement, or operating condition.</p>
+<p>Conversion moves the recommendation from advisory direction toward formal governance action.</p>
+<h3>What the Convert area shows</h3>
+<p>The Convert area now provides a context panel before conversion controls. It should show:</p>
+<ul>
+<li>selected recommendation;</li>
+<li>domain;</li>
+<li>current status;</li>
+<li>linked structural decision state, if any;</li>
+<li>explanation that conversion creates or links a structural decision from the selected recommendation.</li>
+</ul>
+<p>It may also allow the user to choose an evidence note to link on conversion.</p>
+<h3>Before converting</h3>
+<p>Confirm:</p>
+<ul>
+<li>selected recommendation;</li>
+<li>whether governance is ready to make a structural decision;</li>
+<li>whether the recommendation has enough evidence or rationale for formal decision-making;</li>
+<li>whether a linked structural decision already exists;</li>
+<li>whether the selected evidence note is the right support for conversion;</li>
+<li>whether conversion is premature.</li>
+</ul>
+<h3>Safe-use rule</h3>
+<p>Do not convert every recommendation. Convert when the organization is ready to make a governed structural choice or create a formal decision record.</p>
+<hr>
+<h1>Common user scenarios</h1>
+<h2>Scenario A — No recommendations appear</h2>
+<p>Possible explanations:</p>
+<ul>
+<li>no active assessment cycle;</li>
+<li>no scorecard for the cycle;</li>
+<li>no recommendation rules triggered;</li>
+<li>recommendations have not been generated;</li>
+<li>live recommendations were retired by regeneration;</li>
+<li>the selected cycle is not the cycle you expected.</li>
+</ul>
+<p>What to do:</p>
+<ol>
+<li>Confirm organization and assessment cycle.</li>
+<li>Confirm scorecard exists.</li>
+<li>Read any page message about generated preview recommendations.</li>
+<li>Use Generate / refresh only when appropriate.</li>
+</ol>
+<h2>Scenario B — A recommendation has no linked evidence</h2>
+<p>This is not automatically a defect.</p>
+<p>Ask:</p>
+<ul>
+<li>Is there an existing evidence note that should be linked?</li>
+<li>Is the recommendation still only a score-triggered proposal?</li>
+<li>Should evidence be created first on the Evidence Notes page?</li>
+</ul>
+<h2>Scenario C — No predecessor recommendation is available</h2>
+<p>This is not automatically a defect.</p>
+<p>A predecessor requires valid prior-cycle recommendation data. The selected series and selected recommendation must make historical sense together.</p>
+<p>If no valid predecessor exists in the current data, record the path as not exercised, not failed.</p>
+<h2>Scenario D — Convert appears unavailable or sparse</h2>
+<p>The current Stage 6B patch added selected recommendation and conversion context before conversion controls. If that context is not visible, treat it as a defect.</p>
+<p>If context is visible but conversion does not proceed, check whether evidence, decision, or selected-cycle prerequisites exist.</p>
+<h2>Scenario E — Learning history is present but confusing</h2>
+<p>Learning/workflow history may include status updates, regeneration events, preserved identity events, or learning actions.</p>
+<p>Read the history as audit traceability, not as a simple user-friendly story. If management needs a clearer story, use governance review and summary pages rather than expecting this area to be a complete narrative.</p>
+<hr>
+<h1>Role-based testing boundaries</h1>
+<h2>Ordinary staff can test</h2>
+<p>Ordinary staff can reasonably test whether:</p>
+<ul>
+<li>the page purpose is understandable;</li>
+<li>the selected recommendation is visible;</li>
+<li>workspace labels make sense;</li>
+<li>obvious empty states are understandable;</li>
+<li>they can tell which areas are for trained governance users;</li>
+<li>basic inspection is possible without changing data.</li>
+</ul>
+<p>Ordinary staff should not be asked to validate:</p>
+<ul>
+<li>predecessor eligibility;</li>
+<li>continuity correction;</li>
+<li>carry-forward logic;</li>
+<li>conversion integrity;</li>
+<li>evidence-linking correctness;</li>
+<li>regeneration identity preservation;</li>
+<li>scenario-trigger consequences.</li>
+</ul>
+<h2>Trained governance users can test</h2>
+<p>Trained governance users can test:</p>
+<ul>
+<li>evidence relinking;</li>
+<li>workflow status update;</li>
+<li>ordinary continuity linking when valid data exists;</li>
+<li>learning action updates;</li>
+<li>conversion to structural decision;</li>
+<li>interpretation of lifecycle and worklist fields.</li>
+</ul>
+<h2>Project Owner or implementation lead can test</h2>
+<p>The Project Owner can test:</p>
+<ul>
+<li>whether the page supports the operating loop;</li>
+<li>whether action contexts are visible before write controls;</li>
+<li>whether management can understand why training is required;</li>
+<li>whether user roles are clearly bounded;</li>
+<li>whether a future page guide or smoke script is needed.</li>
+</ul>
+<h2>Developer or fixture-based validation should test</h2>
+<p>Developer or fixture validation should test:</p>
+<ul>
+<li>predecessor/carry-forward eligibility;</li>
+<li>continuity correction edge cases;</li>
+<li>regeneration preserve/update/reactivate behavior;</li>
+<li>conversion persistence edge cases;</li>
+<li>evidence-link integrity;</li>
+<li>cross-cycle series timeline correctness.</li>
+</ul>
+<hr>
+<h1>Governance interpretation rules</h1>
+<h2>Recommendations are not proof</h2>
+<p>A recommendation is a structured governance claim. It still needs evidence, decision, execution, measurement, review, and learning.</p>
+<h2>Evidence is not decoration</h2>
+<p>Evidence linkage changes what later review can see and rely on.</p>
+<h2>Workflow is not learning</h2>
+<p>A recommendation can be accepted or implemented without being validated.</p>
+<h2>Continuity is not a filing label</h2>
+<p>Continuity determines how cross-cycle learning is interpreted.</p>
+<h2>Conversion is a governance action</h2>
+<p>Converting a recommendation creates or links a structural decision. It should not be treated as a convenience button.</p>
+<h2>Learning state is a claim about evidence</h2>
+<p>Learning state should reflect what has actually been learned, not what the user hopes will be true.</p>
+<hr>
+<h1>Recommended operating sequence for trained users</h1>
+<ol>
+<li>Confirm the organization and assessment cycle.</li>
+<li>Review lifecycle summary.</li>
+<li>Scan the recommendation worklist.</li>
+<li>Select one recommendation.</li>
+<li>Read the selected recommendation header.</li>
+<li>Open Overview to understand rationale and context.</li>
+<li>Open Evidence to inspect or relink evidence.</li>
+<li>Open Workflow only when operational handling should be updated.</li>
+<li>Open Continuity only when cross-cycle linkage is being reviewed or maintained.</li>
+<li>Open Learning only when evidence or implementation experience supports a learning-state update.</li>
+<li>Open Convert only when governance is ready to create or link a structural decision.</li>
+<li>Record notes and rationale clearly enough for later review.</li>
+</ol>
+<hr>
+<h1>Quick checklist before pressing a write-action button</h1>
+<p>Before using any save, apply, link, convert, or correction button, ask:</p>
+<ul>
+<li>What recommendation is selected?</li>
+<li>What workspace am I in?</li>
+<li>What will this action change?</li>
+<li>Is the required evidence or prerequisite data present?</li>
+<li>Would a later reviewer understand why this action was taken?</li>
+<li>Is this action appropriate for my role?</li>
+</ul>
+<p>If any answer is unclear, stop and seek clarification.</p>
+<hr>
+<h1>Glossary for this page</h1>
+<table><thead><tr><th>Term</th><th>Meaning on the Recommendations page</th></tr></thead><tbody>
+<tr><td>Recommendation</td><td>A proposed governance response to a diagnosed condition.</td></tr>
+<tr><td>Selected recommendation</td><td>The one recommendation currently being worked on.</td></tr>
+<tr><td>Worklist</td><td>The table/list used to select the recommendation for detailed work.</td></tr>
+<tr><td>Rationale</td><td>The reason the recommendation exists.</td></tr>
+<tr><td>Evidence relinking</td><td>Attaching an existing evidence note to the recommendation.</td></tr>
+<tr><td>Workflow status</td><td>Operational handling state, such as proposed, accepted, deferred, or implemented.</td></tr>
+<tr><td>Learning state</td><td>What evidence or implementation experience has shown so far.</td></tr>
+<tr><td>Structural decision</td><td>Formal governance decision created or linked from a recommendation.</td></tr>
+<tr><td>Convert</td><td>Create or link a structural decision from the selected recommendation.</td></tr>
+<tr><td>Recommendation series</td><td>Cross-cycle thread for related recommendations.</td></tr>
+<tr><td>Predecessor</td><td>Earlier-cycle recommendation that the current recommendation follows from.</td></tr>
+<tr><td>Carry-forward</td><td>Continuing an unresolved recommendation issue into a later cycle.</td></tr>
+<tr><td>Continuity status</td><td>How the recommendation relates to the series and prior cycles.</td></tr>
+<tr><td>Continuity correction</td><td>Advanced repair of wrong series or predecessor linkage.</td></tr>
+<tr><td>Retired by regeneration</td><td>Audit-visible record retired during recommendation regeneration.</td></tr>
+<tr><td>Reactivated</td><td>Previously retired recommendation identity restored because it reappeared.</td></tr>
+</tbody></table>
+<hr>
+<h1>Management-facing summary</h1>
+<p>The Recommendations page is powerful because it preserves the path from diagnosis to recommendation, evidence, decision, execution, review, and learning. That same power makes the page unsuitable for untrained exploratory testing of every feature.</p>
+<p>Management should not conclude that the system lacks value because staff cannot intuit every continuity or conversion rule. The correct conclusion is that the system requires:</p>
+<ul>
+<li>concept training;</li>
+<li>role-specific operating guides;</li>
+<li>prepared smoke-test scripts;</li>
+<li>fixture-based validation for advanced cross-cycle behavior;</li>
+<li>clear distinction between ordinary staff inspection and trained governance action.</li>
+</ul>
+<p>The page is fit for trained governance use when users understand the selected-workspace model and the consequences of evidence, workflow, continuity, learning, and conversion actions.</p>
+</body></html>

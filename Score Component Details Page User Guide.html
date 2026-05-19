@@ -1,0 +1,119 @@
+<!doctype html>
+<html><head><meta charset=utf-8>
+<title>Score Component Details Page User Guide</title>
+<style>
+
+body { font-family: Segoe UI, Arial, sans-serif; line-height: 1.45; color: #202124; margin: 42px; max-width: 980px; }
+h1, h2, h3 { color: #17324d; margin-top: 1.35em; }
+h1 { border-bottom: 2px solid #d9e2ec; padding-bottom: 8px; }
+table { border-collapse: collapse; width: 100%; margin: 18px 0; font-size: 0.94rem; }
+th, td { border: 1px solid #cfd8e3; padding: 7px 9px; vertical-align: top; }
+th { background: #eef3f8; text-align: left; }
+code, pre { background: #f4f6f8; border-radius: 4px; }
+code { padding: 1px 4px; }
+pre { padding: 12px; overflow-x: auto; }
+.document-meta { color: #5f6b7a; font-size: 0.9rem; margin-bottom: 22px; }
+
+</style></head><body>
+<div class=document-meta>Source: user/metrics/Score Component Details Page User Guide.md</div>
+<h1>Score Component Details Page User Guide</h1>
+<h2>Purpose</h2>
+<p>The Score Component Details page is the bridge between a computed score and defensible governance interpretation.</p>
+<p>It helps users inspect how Stage A diagnostic inputs contributed to the scorecard, link evidence to score components, and record review notes for contradictions or confidence concerns.</p>
+<p>In the operating model:</p>
+<ul>
+<li>Stage A asks: <strong>What is really happening?</strong></li>
+<li>Stage B asks: <strong>Is our response working?</strong></li>
+<li>Score Component Details asks: <strong>Can we defend the interpretation of the score before we act on it?</strong></li>
+</ul>
+<h2>How This Page Creates Value</h2>
+<p>The page prevents scorecard results from becoming unexplained numbers. It lets users:</p>
+<ul>
+<li>inspect component values and score groups;</li>
+<li>see which evidence is already linked;</li>
+<li>add or relink evidence;</li>
+<li>review contradictions;</li>
+<li>add review notes;</li>
+<li>improve traceability before recommendations, governance summaries, or later review pages rely on the score.</li>
+</ul>
+<h2>Workflow Fit</h2>
+<table><thead><tr><th>Step</th><th>Page</th><th>Purpose</th></tr></thead><tbody>
+<tr><td>1</td><td>Diagnostic Input / Survey Input</td><td>Record Stage A metric observations and perception signals.</td></tr>
+<tr><td>2</td><td>Score Dashboard</td><td>Compute and persist a scorecard.</td></tr>
+<tr><td>3</td><td>Score Component Details</td><td>Inspect components, link evidence, and review score basis.</td></tr>
+<tr><td>4</td><td>Recommendations / Preserve / Reform / Replace</td><td>Use score interpretation to guide action.</td></tr>
+<tr><td>5</td><td>Governance Summary / Review pages</td><td>Reassess whether the interpretation remains supportable.</td></tr>
+</tbody></table>
+<h2>Readiness Requirements</h2>
+<p>The page requires:</p>
+<ul>
+<li>selected organization context;</li>
+<li>selected assessment cycle;</li>
+<li>a computed and persisted scorecard.</li>
+</ul>
+<p>If no scorecard exists, compute one in Score Dashboard first.</p>
+<h2>Score Groups</h2>
+<p>Score groups can include ordinary metric-input groups and contradiction groups. Use the selected group to understand what kind of evidence you are reviewing.</p>
+<p>Common review questions:</p>
+<ul>
+<li>Is this a structural input, symbolic input, or alignment signal?</li>
+<li>Is the value low because the condition is weak, or because the metric is negative and high values are risky?</li>
+<li>Is the component supported by evidence?</li>
+<li>Is the component contradicted by survey or qualitative evidence?</li>
+<li>Does the component affect recommendations or governance posture?</li>
+</ul>
+<h2>Component Details</h2>
+<p>Each component can show:</p>
+<ul>
+<li>component name;</li>
+<li>raw value;</li>
+<li>normalized value;</li>
+<li>weight;</li>
+<li>source notes;</li>
+<li>review status;</li>
+<li>review note;</li>
+<li>linked evidence.</li>
+</ul>
+<p>Use these details to decide whether the score is ready to support interpretation or whether more evidence is needed.</p>
+<h2>Evidence Roles</h2>
+<p>When creating or linking evidence, choose the role carefully:</p>
+<table><thead><tr><th>Evidence role</th><th>Meaning</th></tr></thead><tbody>
+<tr><td>Mechanism</td><td>Explains how a structural condition is produced.</td></tr>
+<tr><td>Interpretation</td><td>Helps explain meaning, trust, dignity, legitimacy, or perception.</td></tr>
+<tr><td>Contradiction</td><td>Challenges or complicates the current conclusion.</td></tr>
+<tr><td>Validation</td><td>Supports or tests a conclusion.</td></tr>
+</tbody></table>
+<p>Mechanism evidence is especially important for structural primacy. Interpretation evidence is also valuable, but it should not be used to compensate for severe structural weakness.</p>
+<h2>Relinking Existing Evidence</h2>
+<p>Use evidence relinking when an existing note better belongs with a score component than where it was first attached. This preserves the evidence trail and avoids duplicate notes.</p>
+<p>Relink when:</p>
+<ul>
+<li>a note explains a low or high component value;</li>
+<li>a note contradicts the current score interpretation;</li>
+<li>a note validates a component after further review;</li>
+<li>governance users need traceability before acting on a recommendation.</li>
+</ul>
+<h2>Creating Linked Evidence</h2>
+<p>When creating evidence from this page, include:</p>
+<ul>
+<li>clear title;</li>
+<li>evidence excerpt or observation;</li>
+<li>evidence role;</li>
+<li>confidence level;</li>
+<li>source type;</li>
+<li>enough context for a later reviewer to understand the basis.</li>
+</ul>
+<p>Good evidence should make the score more reviewable, not merely repeat the score.</p>
+<h2>Practical Review Pattern</h2>
+<p>Use this sequence:</p>
+<ol>
+<li>Select the score group.</li>
+<li>Inspect the lowest, highest, or most governance-relevant components.</li>
+<li>Check whether the component has evidence.</li>
+<li>Add or relink evidence where the basis is missing or unclear.</li>
+<li>Record review notes for contradictions, uncertainty, or caveats.</li>
+<li>Return to Recommendations or Governance Summary only after the important score basis is defensible.</li>
+</ol>
+<h2>Owner Summary</h2>
+<p>Score Component Details is a Bridge page. It helps owners trust the movement from Stage A diagnosis to Stage B action by showing whether scores have evidence, whether contradictions are visible, and whether interpretation can be defended before recommendations or governance decisions are made.</p>
+</body></html>

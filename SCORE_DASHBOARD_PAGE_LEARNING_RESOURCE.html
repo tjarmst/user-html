@@ -1,0 +1,200 @@
+<!doctype html>
+<html><head><meta charset=utf-8>
+<title>SCORE_DASHBOARD_PAGE_LEARNING_RESOURCE</title>
+<style>
+
+body { font-family: Segoe UI, Arial, sans-serif; line-height: 1.45; color: #202124; margin: 42px; max-width: 980px; }
+h1, h2, h3 { color: #17324d; margin-top: 1.35em; }
+h1 { border-bottom: 2px solid #d9e2ec; padding-bottom: 8px; }
+table { border-collapse: collapse; width: 100%; margin: 18px 0; font-size: 0.94rem; }
+th, td { border: 1px solid #cfd8e3; padding: 7px 9px; vertical-align: top; }
+th { background: #eef3f8; text-align: left; }
+code, pre { background: #f4f6f8; border-radius: 4px; }
+code { padding: 1px 4px; }
+pre { padding: 12px; overflow-x: auto; }
+.document-meta { color: #5f6b7a; font-size: 0.9rem; margin-bottom: 22px; }
+
+</style></head><body>
+<div class=document-meta>Source: user/SCORE_DASHBOARD_PAGE_LEARNING_RESOURCE.md</div>
+<h1>Score Dashboard Page Learning Resource</h1>
+<p>This guide teaches users how the <strong>Score Dashboard</strong> computes and explains persisted scorecards.</p>
+<h2>Purpose</h2>
+<p>The Score Dashboard converts saved diagnostic and survey inputs into scorecard outputs for the current cycle.</p>
+<p>Use it to:</p>
+<ul>
+<li>compute and persist a scorecard</li>
+<li>inspect major score fields</li>
+<li>review confidence labels and contradiction counts</li>
+<li>inspect execution feedback reassessment</li>
+<li>review KPI threshold alerts and threshold rules</li>
+<li>inspect rich integrity-gap explanations</li>
+<li>review score components by taxonomy</li>
+<li>export or print persisted scorecard values, score components, and the combined numeric input report</li>
+</ul>
+<p>The dashboard is a structured interpretation surface, not final proof of improvement.</p>
+<h2>Stage A, Stage B, And Bridge Scores</h2>
+<p>Read the Score Dashboard through three metric roles:</p>
+<table><thead><tr><th>Product role</th><th>Score fields</th><th>Governance meaning</th></tr></thead><tbody>
+<tr><td>Stage A: Understand reality</td><td>Structural Health Index, Incentive Integrity, Human Sustainability, Cultural Health, Capability Realism, Technology Alignment, Symbolic Legitimacy, Trust Health, Burnout Risk, AI Capture Risk</td><td>These diagnose current workplace conditions.</td></tr>
+<tr><td>Stage B: Change reality intelligently</td><td>Execution Feedback Index and KPI or pilot-driven reassessment effects</td><td>These test whether action is producing evidence of movement.</td></tr>
+<tr><td>Bridge / governance</td><td>Overall Flourishing Score, Integrity Gap, Change Readiness, confidence labels, contradiction count</td><td>These connect diagnosis, action readiness, evidence quality, and governance interpretation.</td></tr>
+</tbody></table>
+<p>For deeper metric interpretation, use <code>user/metrics/Metrics explained.md</code> and <code>user/metrics/Comprehensive Metric Reference.md</code>.</p>
+<h2>Compute And Persist Scorecard</h2>
+<p>Click <strong>Compute and Persist Scorecard</strong> after diagnostic and survey inputs have been saved.</p>
+<p>Persisted scorecards are needed for:</p>
+<ul>
+<li>Recommendations</li>
+<li>Comparative Cycle Review</li>
+<li>Governance Summary</li>
+<li>board-pack outputs</li>
+<li>cross-cycle score movement</li>
+</ul>
+<p>If inputs change, compute again so downstream pages reflect the current cycle state.</p>
+<h2>Export And Print</h2>
+<p>The <strong>Export / print saved score data</strong> expander appears once Score Dashboard has metric or survey data available for the selected cycle.</p>
+<p>Available outputs:</p>
+<ul>
+<li>Scorecard CSV</li>
+<li>Score components CSV</li>
+<li>Printable HTML report combining saved diagnostic inputs, persisted scorecard values, and score components</li>
+</ul>
+<p>If no scorecard has been persisted yet, the export section still appears but score export buttons are disabled. The page tells the user to compute and persist a scorecard before downloading score exports.</p>
+<p>Exports include persisted records for the current cycle, division, and segment. If the user has just edited Diagnostic Input or Survey Input, they should save those inputs and compute/persist the scorecard again before exporting.</p>
+<h2>Score Interpretation</h2>
+<p>Important fields include:</p>
+<ul>
+<li>Structural Health Index</li>
+<li>Symbolic Legitimacy Index</li>
+<li>Integrity Gap</li>
+<li>Change Readiness</li>
+<li>Execution Feedback Index</li>
+<li>Overall Flourishing Score</li>
+<li>Trust Health</li>
+<li>Burnout Risk</li>
+<li>AI Capture Risk</li>
+</ul>
+<p>Read the confidence labels and contradiction counts before treating a score as strong.</p>
+<p>The Overall Flourishing Score is a bridge score. It combines structural health, symbolic legitimacy, and execution feedback where available, while preserving the rule that symbolic strength cannot compensate for severe structural weakness.</p>
+<h2>Integrity Gap And Contradictions</h2>
+<p>The dashboard highlights where alignment-side claims diverge from structural or symbolic realities.</p>
+<p>Contradictions requiring re-test should lead to:</p>
+<ul>
+<li>evidence notes</li>
+<li>score component review</li>
+<li>alignment review</li>
+<li>cautious recommendation interpretation</li>
+</ul>
+<h2>Downstream Impact</h2>
+<p>Score Dashboard feeds:</p>
+<ul>
+<li>Recommendations generation</li>
+<li>Alignment Dashboard</li>
+<li>Score Component Details</li>
+<li>Governance Summary</li>
+<li>Comparative Cycle Review</li>
+<li>board-pack exports</li>
+</ul>
+<p>The feed matters because Score Dashboard is the point where saved diagnostic and survey inputs become a persisted scorecard. Until a scorecard is computed and persisted, many downstream pages either have no current score basis or are working from an older interpretation. Recomputing after input changes keeps downstream recommendations, explanations, summaries, comparisons, and exports aligned with the current cycle.</p>
+<h3>Recommendations Generation</h3>
+<p>Score Dashboard feeds Recommendations generation when the user clicks <strong>Compute and Persist Scorecard</strong>.</p>
+<p>The persisted scorecard can trigger recommendation rules based on:</p>
+<ul>
+<li>structural health</li>
+<li>symbolic legitimacy</li>
+<li>integrity gap</li>
+<li>change readiness</li>
+<li>burnout risk</li>
+<li>trust health</li>
+<li>AI capture risk</li>
+<li>contradiction count</li>
+<li>execution feedback where KPI or pilot outcome evidence exists</li>
+</ul>
+<p>The practical downstream impact is that recommendations inherit their initial rationale from the score profile. If the scorecard is stale, generated recommendations may respond to old inputs. If confidence labels are weak or contradictions are present, recommendations should be interpreted cautiously and reviewed against evidence before being accepted or converted into structural decisions.</p>
+<p>Recommendations are not automatic truth. They are governed prompts created from the current score interpretation.</p>
+<h3>Alignment Dashboard</h3>
+<p>Score Dashboard feeds Alignment Dashboard by surfacing integrity-gap and contradiction signals.</p>
+<p>The dashboard highlights:</p>
+<ul>
+<li>alignment-side values</li>
+<li>target-side values</li>
+<li>gap severity</li>
+<li>contradictions requiring re-test</li>
+<li>confidence labels</li>
+<li>linked evidence for alignment components where available</li>
+</ul>
+<p>Alignment Dashboard uses this material to help users inspect where symbolic or perceived alignment diverges from structural reality. A large integrity gap can indicate that an organization is claiming or experiencing one thing while its structures support something else.</p>
+<p>The downstream impact is contradiction review. Alignment Dashboard should not treat an improved score as enough if alignment gaps or contradiction components remain unresolved. Score Dashboard tells users where the gap appears; Alignment Dashboard helps them review what the gap means and whether evidence supports, qualifies, or contradicts the interpretation.</p>
+<h3>Score Component Details</h3>
+<p>Score Dashboard feeds Score Component Details by persisting the component records behind the scorecard.</p>
+<p>When a scorecard is persisted, the app stores component-level explanations including:</p>
+<ul>
+<li>score group</li>
+<li>component name</li>
+<li>raw value</li>
+<li>normalized value</li>
+<li>weight</li>
+<li>notes or rationale</li>
+<li>review status fields</li>
+</ul>
+<p>Score Component Details then lets users inspect those components, review linked evidence, relink existing evidence, or create new evidence directly attached to a component.</p>
+<p>The practical impact is explainability. Score Dashboard provides the high-level scorecard; Score Component Details explains which component is driving the score and whether that component has enough evidence to support the interpretation. If a top-level score looks surprising, too strong, too weak, or contradicted, Score Component Details is the next review surface.</p>
+<h3>Governance Summary</h3>
+<p>Governance Summary uses Score Dashboard outputs as part of the current cycle&#x27;s executive review.</p>
+<p>Score Dashboard can affect Governance Summary through:</p>
+<ul>
+<li>persisted scorecard values</li>
+<li>confidence labels</li>
+<li>contradiction counts</li>
+<li>score component explanations</li>
+<li>execution feedback interpretation</li>
+<li>KPI threshold alerts shown through score reassessment</li>
+<li>evidence excerpts linked to score components</li>
+<li>integrity-gap and alignment qualifications</li>
+</ul>
+<p>The downstream impact is that Governance Summary can present a cycle-level score profile with qualifications. A strong score with low confidence, unresolved contradictions, or missing component evidence should not be summarized as unqualified progress. A weaker score with strong evidence may be a more reliable governance signal than a stronger score with thin evidence.</p>
+<p>Governance Summary depends on the scorecard being current. If diagnostic or survey inputs changed but the scorecard was not recomputed, summary conclusions and board-pack sections may be stale.</p>
+<h3>Comparative Cycle Review</h3>
+<p>Comparative Cycle Review uses persisted scorecards to compare the selected cycle against prior cycles.</p>
+<p>Score Dashboard affects Comparative Cycle Review through:</p>
+<ul>
+<li>cross-cycle score movement</li>
+<li>score coverage and comparable score fields</li>
+<li>confidence in current and previous scorecards</li>
+<li>structural, symbolic, alignment, and execution feedback trends</li>
+<li>contradiction counts and scorecard availability</li>
+<li>threshold and interpretation stability context when connected to KPI rules</li>
+</ul>
+<p>The practical downstream impact is comparative confidence. If a current or previous cycle lacks a persisted scorecard, comparative conclusions are weaker. If the scorecard exists but confidence is low or contradictions are unresolved, cross-cycle improvement should be qualified. If scorecards are current, comparable, and evidence-backed, Comparative Cycle Review can more credibly ask whether governance is improving conditions rather than just producing activity.</p>
+<h3>Board-Pack Exports</h3>
+<p>Score Dashboard feeds board-pack exports by supplying the score profile and related qualifications that appear in governance reporting.</p>
+<p>Board-pack exports can use Score Dashboard material such as:</p>
+<ul>
+<li>Structural Health Index</li>
+<li>Symbolic Legitimacy Index</li>
+<li>Integrity Gap</li>
+<li>Execution Feedback Index</li>
+<li>Overall Flourishing Score</li>
+<li>trust, burnout, and AI capture risk scores</li>
+<li>confidence labels</li>
+<li>contradiction counts</li>
+<li>score component explanations</li>
+<li>KPI and pilot-driven execution feedback qualifications</li>
+</ul>
+<p>The board-pack impact is significant because exported readers may see only the summarized score narrative. The export should therefore preserve the difference between a score, the confidence behind it, and any contradiction or evidence limitation that qualifies it.</p>
+<p>A board pack should not present score movement as proof of improvement by itself. It should explain whether the score is supported by current inputs, whether execution evidence is present, whether contradictions require re-test, and whether downstream recommendations are based on a current persisted scorecard.</p>
+<p>Score Dashboard&#x27;s local printable HTML report is different from a Governance Summary board pack. It is a local record of numeric inputs and score outputs for checking, saving, or printing. It does not replace governance interpretation.</p>
+<h3>Practical Feed Interpretation</h3>
+<p>When reviewing downstream impact, use this rule:</p>
+<p>Score Dashboard feeds downstream pages with <strong>persisted score interpretation</strong>, not final proof.</p>
+<p>That interpretation can generate recommendations, expose alignment contradictions, create component-level evidence trails, qualify executive summaries, support or weaken cross-cycle comparison, and shape board-pack score narratives. The most important downstream signal is whether the scorecard is current, evidence-aware, and interpreted alongside confidence and contradiction context.</p>
+<h2>Common Mistakes</h2>
+<p>Avoid reading an improved score as proof by itself.</p>
+<p>Avoid ignoring confidence labels.</p>
+<p>Avoid treating missing evidence as support.</p>
+<p>Avoid generating recommendations before the scorecard reflects current inputs.</p>
+<p>Avoid exporting score data before computing and persisting the current scorecard.</p>
+<h2>Training Prompt</h2>
+<p>Ask the trainee to compute a scorecard, identify one strong-looking score and one qualified score, download the scorecard CSV or printable HTML report, then explain which evidence or contradiction should be reviewed next.</p>
+<p>Completion standard: the user can interpret the scorecard as a governed signal, not an automatic verdict, and can export the saved score data for local review.</p>
+</body></html>

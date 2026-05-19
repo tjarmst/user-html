@@ -1,0 +1,365 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>COMPARATIVE_CYCLE_REVIEW_LEARNING_RESOURCE</title>
+<style>
+
+@page {
+  size: A4;
+  margin: 18mm 16mm 18mm 16mm;
+  @bottom-center {
+    content: "Page " counter(page) " of " counter(pages);
+    font-size: 8pt;
+    color: #666;
+  }
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.38;
+  color: #1f2933;
+}
+h1 {
+  font-size: 20pt;
+  border-bottom: 2px solid #1f2933;
+  padding-bottom: 6px;
+  margin-top: 0;
+}
+h2 {
+  font-size: 15pt;
+  border-bottom: 1px solid #c9d1d9;
+  padding-bottom: 4px;
+  margin-top: 24px;
+}
+h3 {
+  font-size: 12.5pt;
+  margin-top: 18px;
+}
+h4 {
+  font-size: 11pt;
+  margin-top: 14px;
+}
+p {
+  margin: 0 0 8px 0;
+}
+ul, ol {
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+li {
+  margin-bottom: 3px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0 14px 0;
+  font-size: 8.6pt;
+  page-break-inside: auto;
+}
+thead {
+  display: table-header-group;
+}
+tr {
+  page-break-inside: avoid;
+}
+th, td {
+  border: 1px solid #aab2bd;
+  padding: 4px 5px;
+  vertical-align: top;
+  word-break: break-word;
+}
+th {
+  background: #eef2f6;
+  font-weight: bold;
+}
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 8.6pt;
+  line-height: 1.28;
+}
+code {
+  font-family: Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.92em;
+  background: #f6f8fa;
+  padding: 1px 3px;
+  border-radius: 3px;
+}
+pre code {
+  padding: 0;
+  background: transparent;
+}
+blockquote {
+  border-left: 4px solid #c9d1d9;
+  margin-left: 0;
+  padding-left: 10px;
+  color: #4b5563;
+}
+hr {
+  border: none;
+  border-top: 1px solid #c9d1d9;
+  margin: 18px 0;
+}
+.document-meta {
+  font-size: 8.5pt;
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+</style>
+</head>
+<body>
+<div class="document-meta">Source: user/COMPARATIVE_CYCLE_REVIEW_LEARNING_RESOURCE.md</div>
+<h1>Comparative Cycle Review Learning Resource</h1>
+<p>This guide teaches users how the **Comparative Cycle Review** page is organized around comparative review focus buttons. The page asks a disciplined question:</p>
+<p>&gt; Is governance action improving conditions across assessment cycles, or is the organization only generating activity?</p>
+<p>The page compares the currently selected assessment cycle with the immediately prior dated cycle. It is not a prediction engine, a proof of improvement, or an automatic action generator. It is a qualified review surface for judging whether later-cycle evidence is stronger, weaker, incomplete, challenged, or fragmenting.</p>
+<h2>Purpose</h2>
+<p>Use Comparative Cycle Review to answer five practical governance questions:</p>
+<ul>
+<li>**Judge Comparative Strength:** Is the current-vs-prior comparison strong enough to support a governance interpretation?</li>
+<li>**Diagnose Cross-Cycle Change:** Are conditions improving, holding, reverting, or degrading, and are threshold rules qualifying that movement?</li>
+<li>**Review Integrity and Technology Signals:** Is apparent improvement distorted by mission drift, symbolic substitution, human-constraint pressure, or technology misalignment?</li>
+<li>**Inspect Movement Evidence:** What score, learning, action, and review-throughput movement supports the comparison?</li>
+<li>**Close Challenges and Continuity:** Which comparative conclusions are challenged, and which recommendation threads carried forward, revised, fragmented, validated, contradicted, or disappeared?</li>
+</ul>
+<p>The page caches the base comparison for the selected cycle, then prepares each focus area only when selected. Users should move through the focus buttons intentionally instead of treating the page as one continuous report.</p>
+<h2>Required Starting Point</h2>
+<p>The page needs a selected assessment cycle. It uses that cycle as the current cycle and compares it against the prior dated cycle.</p>
+<p>If no assessment cycle is selected, the page asks the user to select one first.</p>
+<p>If no comparison is available, the page explains that Comparative Cycle Review is not yet available. This usually means the selected cycle does not yet have enough prior-cycle context.</p>
+<p>Cycle comparison is date-based, not a simple ID-number comparison. This matters when cycles have been deleted, recreated, or entered out of chronological order.</p>
+<h2>Comparative Review Focus Buttons</h2>
+<p>The top-level **Comparative review focus** selector contains:</p>
+<ul>
+<li>Judge Comparative Strength</li>
+<li>Diagnose Cross-Cycle Change</li>
+<li>Review Integrity and Technology Signals</li>
+<li>Inspect Movement Evidence</li>
+<li>Close Challenges and Continuity</li>
+</ul>
+<p>Each button is a task area with a different review purpose.</p>
+<h2>Judge Comparative Strength</h2>
+<p>Use **Judge Comparative Strength** when the first question is whether the comparison can be trusted enough to use.</p>
+<p>This area shows:</p>
+<ul>
+<li>current cycle</li>
+<li>previous cycle</li>
+<li>effectiveness status</li>
+<li>closure ratio delta</li>
+<li>comparative confidence</li>
+<li>governance effectiveness semantic classification</li>
+<li>review context for the effectiveness reading</li>
+<li>comparative confidence and sufficiency</li>
+<li>next useful interpretation</li>
+</ul>
+<p>Comparative confidence checks whether the comparison has enough evidence to support a strong claim. It looks at comparable score fields, score coverage, learning evidence, review evidence, semantic meaning, interpretive snapshot, review context, and reasons for qualification.</p>
+<p>If comparative confidence is insufficient, users should avoid strong cycle-to-cycle conclusions. If it is partially sufficient or sufficient with qualifications, the comparison may be usable, but the wording should stay bounded.</p>
+<p>The **Next useful interpretation** panel translates the strongest available signal into the next review step. It can point users toward technology alignment, trajectory durability, governance effectiveness, unresolved pressure, or evidence strengthening.</p>
+<h2>Diagnose Cross-Cycle Change</h2>
+<p>Use **Diagnose Cross-Cycle Change** when the question is what kind of movement is happening across cycles.</p>
+<p>This area shows:</p>
+<ul>
+<li>multi-cycle trajectory and institutionalization review</li>
+<li>threshold-rule interpretive stability</li>
+<li>governance effectiveness review</li>
+</ul>
+<p>The trajectory review looks beyond a single current-vs-prior movement when enough cycles exist. It asks whether improvement appears durable, fragile, reverting, persistently weak, mixed, or not yet assessable.</p>
+<p>Threshold-rule interpretive stability checks whether KPI threshold rules changed enough to qualify the interpretation. A governance state can look better or worse partly because the rule changed, not only because conditions changed.</p>
+<p>Governance effectiveness review separates positive signals from risk signals. Positive signals do not automatically prove improvement, and risk signals do not automatically prove failure. The user should read both columns together with confidence, threshold stability, and movement evidence.</p>
+<h2>Review Integrity and Technology Signals</h2>
+<p>Use **Review Integrity and Technology Signals** when apparent improvement needs doctrinal and structural qualification.</p>
+<p>This area shows:</p>
+<ul>
+<li>mission-flourishing integrity safeguard</li>
+<li>technology structural alignment across cycles</li>
+</ul>
+<p>The mission-flourishing integrity safeguard asks whether cross-cycle improvement remains connected to the organization&#x27;s legitimate value-creating objective while preserving non-violable human constraints.</p>
+<p>The safeguard shows:</p>
+<ul>
+<li>integrity state</li>
+<li>corrective direction</li>
+<li>response mode</li>
+<li>red flag</li>
+<li>semantic classification</li>
+<li>interpretive snapshot</li>
+<li>routing and review context</li>
+<li>confidence qualification</li>
+<li>challenge qualification</li>
+<li>reasons</li>
+<li>doctrinal captions</li>
+</ul>
+<p>Read this safeguard conservatively. Trust, belonging, safety, alignment, dignity, and symbolic legitimacy are enablers of truthful coordination and contribution. They are not substitute objectives. Symbolic strength must not compensate for severe structural weakness.</p>
+<p>Productive difficulty, accountability, and demanding standards are not treated as structural harm by themselves. The concern is structural harm, depletion, capture pressure, loss of agency, objective obscurity, or symbolic substitution.</p>
+<p>Technology structural alignment distinguishes stated technology intent from cross-cycle deployment patterns. It uses technology trajectory, institutionalization, cycles reviewed, semantic classification, snapshot captions, table rows, and reasons. Use it to ask whether technology choices are becoming more agency-preserving and structurally aligned, or whether they are drifting toward extraction, surveillance, capture risk, or weak follow-through.</p>
+<h2>Inspect Movement Evidence</h2>
+<p>Use **Inspect Movement Evidence** when the user needs the raw comparative material behind the interpretation.</p>
+<p>This area shows:</p>
+<ul>
+<li>core score movement</li>
+<li>learning-state movement</li>
+<li>governance action movement</li>
+<li>review throughput movement</li>
+</ul>
+<p>Core score movement compares persisted scorecard fields across the previous and current cycle and may show a bar chart of score deltas.</p>
+<p>Learning-state movement compares validation, contradiction, reopen, supersession, and related learning counts. Use it to decide whether the organization is learning from execution or only recording activity.</p>
+<p>Governance action movement compares open, overdue, resolved, contradicted-open, and related action counts. A larger queue is not automatically improvement.</p>
+<p>Review throughput movement shows review-history and governance-event movement. Thin review history weakens comparative confidence because it means the comparison has less recorded evidence of actual governance work.</p>
+<h2>Close Challenges and Continuity</h2>
+<p>Use **Close Challenges and Continuity** when the question is whether conclusions and recommendation threads are sufficiently closed, challenged, or carried forward.</p>
+<p>This area shows top-level metrics for:</p>
+<ul>
+<li>continuity rows</li>
+<li>continuity warnings</li>
+<li>unresolved challenges</li>
+<li>follow-up flagged</li>
+</ul>
+<p>It then exposes a nested **Closure focus** selector:</p>
+<ul>
+<li>Closure Summary</li>
+<li>Human Validation Challenges</li>
+<li>Recommendation Continuity</li>
+</ul>
+<h3>Closure Summary</h3>
+<p>Use **Closure Summary** for orientation. It tells users when to move into Human Validation Challenges or Recommendation Continuity.</p>
+<p>If continuity warnings exist, it also shows the top continuity prompt. This prompt is not automatic proof of a duplicate or failure. It is a signal that continuity evidence should be inspected.</p>
+<h3>Human Validation Challenges</h3>
+<p>Use **Human Validation Challenges** when comparative conclusions need human review.</p>
+<p>This area shows:</p>
+<ul>
+<li>comparative conclusion candidates</li>
+<li>current challenge status</li>
+<li>follow-up requirement</li>
+<li>reviewed-at timestamp</li>
+<li>governance context</li>
+<li>evidence basis</li>
+<li>judgment kind</li>
+<li>governance consequence</li>
+<li>conclusion selector</li>
+<li>human validation status selector</li>
+<li>challenge note</li>
+<li>linked evidence selector</li>
+<li>follow-up required checkbox</li>
+<li>follow-up note</li>
+<li>original conclusion text</li>
+<li>revised conclusion text</li>
+<li>revision rationale</li>
+<li>**Save human validation status** action</li>
+</ul>
+<p>Challenge statuses include corroborated, challenged, unresolved, and revised after challenge.</p>
+<p>Saving human validation status records or updates the challenge, clears the cached comparative contexts for the cycle, and reloads the page. Use this when local evidence qualifies, disputes, narrows, or revises a comparative conclusion.</p>
+<p>Human validation is not a way to override the system casually. It is a way to make comparative conclusions more honest when local evidence, reviewer judgment, or linked evidence changes the interpretation.</p>
+<h3>Recommendation Continuity</h3>
+<p>Use **Recommendation Continuity** when the question is what happened to recommendation threads across cycles.</p>
+<p>This area compares explicit recommendation series links across cycles. It does not infer continuity from similar titles.</p>
+<p>It shows metrics for:</p>
+<ul>
+<li>series reviewed</li>
+<li>carried forward</li>
+<li>revised</li>
+<li>validated</li>
+<li>contradicted</li>
+<li>no current continuation</li>
+</ul>
+<p>The main continuity table includes:</p>
+<ul>
+<li>series</li>
+<li>domain</li>
+<li>prior cycle</li>
+<li>prior recommendation</li>
+<li>prior status</li>
+<li>prior learning</li>
+<li>current cycle</li>
+<li>current recommendation</li>
+<li>current status</li>
+<li>current learning</li>
+<li>continuity</li>
+<li>interpretation</li>
+<li>change summary</li>
+<li>review context</li>
+<li>evidence basis</li>
+<li>judgment kind</li>
+<li>governance consequence</li>
+</ul>
+<p>The **Downstream continuity detail** expander shows:</p>
+<ul>
+<li>decisions</li>
+<li>pilots</li>
+<li>KPIs</li>
+<li>evidence</li>
+<li>challenges</li>
+<li>continuity rationale</li>
+<li>review context</li>
+<li>semantic columns</li>
+</ul>
+<p>Continuity warnings and governance prompts show severity, reason, suggested action, governance consequence, and review context. High warnings deserve careful review, but monitor-only warnings should remain visible without becoming heavy follow-up work by default.</p>
+<h2>Semantic, Review Context, And Snapshot Cues</h2>
+<p>Across the page, semantic labels classify:</p>
+<ul>
+<li>evidence basis</li>
+<li>judgment kind</li>
+<li>governance consequence</li>
+</ul>
+<p>These cues help distinguish direct findings, downstream signals, mixed judgments, monitor-only rows, supportable claims, caution prompts, reassessment needs, blocked claims, and redesign-required items.</p>
+<p>Review context lines combine subject, review state, semantic meaning, and handling into a compact governance interpretation.</p>
+<p>Interpretive snapshot captions identify the bounded interpretation family, rule set, and major status attached to a review line. They are consistency markers, not new evidence.</p>
+<h2>Information Flow Into The Page</h2>
+<p>Comparative Cycle Review reads data already created elsewhere in the app:</p>
+<ul>
+<li>persisted scorecards from Score Dashboard</li>
+<li>recommendation and recommendation-series continuity data</li>
+<li>structural decisions</li>
+<li>pilots</li>
+<li>KPIs and KPI threshold rules</li>
+<li>governance actions</li>
+<li>review history</li>
+<li>learning closure states</li>
+<li>conclusion challenge records</li>
+<li>linked evidence notes</li>
+<li>mission-flourishing integrity and technology alignment summaries from comparative services</li>
+</ul>
+<p>The page does not create diagnostic scores, regenerate recommendations, edit recommendation lifecycle state, or infer recommendation continuity from title similarity.</p>
+<h2>Downstream Impact</h2>
+<p>Comparative Cycle Review feeds downstream interpretation with qualified cross-cycle evidence.</p>
+<p>It connects to:</p>
+<ul>
+<li>Governance Summary, through comparative confidence, mission-flourishing integrity, challenge status, threshold stability, trajectory, technology alignment, and continuity summaries</li>
+<li>Governance Action Queue, when challenge or continuity findings reveal ownerable follow-up work elsewhere</li>
+<li>Recommendations, through explicit recommendation series and continuity links</li>
+<li>Evidence Notes, through linked evidence used in human validation challenges</li>
+<li>Review History, through the audit trail supporting comparative confidence</li>
+<li>board-pack output, through comparative and continuity lines surfaced by Governance Summary exports</li>
+</ul>
+<p>The page should help users decide what can be carried forward, what must be qualified, what needs review, and what is too thin to claim.</p>
+<h2>Common Mistakes</h2>
+<p>Avoid treating more activity as better governance.</p>
+<p>Avoid treating a positive score delta as improvement without checking confidence, learning, actions, review history, and threshold stability.</p>
+<p>Avoid treating symbolic legitimacy, trust, belonging, or cohesion as substitutes for structural strength or legitimate value creation.</p>
+<p>Avoid using technology intent as proof of technology alignment.</p>
+<p>Avoid treating a continuity warning as an inferred duplicate.</p>
+<p>Avoid assuming recommendation continuity from similar titles.</p>
+<p>Avoid treating human validation as decorative. Challenged, unresolved, or revised conclusions should qualify later use.</p>
+<p>Avoid treating snapshot captions as evidence.</p>
+<p>Avoid turning every warning into an action item. Use governance consequence and review context first.</p>
+<h2>Best-Practice Review Pattern</h2>
+<ol>
+<li>Select the intended current assessment cycle.</li>
+<li>Open **Judge Comparative Strength** and read confidence before making claims.</li>
+<li>Open **Diagnose Cross-Cycle Change** to inspect trajectory, threshold drift, and effectiveness signals.</li>
+<li>Open **Review Integrity and Technology Signals** to check mission-flourishing integrity and technology alignment.</li>
+<li>Open **Inspect Movement Evidence** to verify the score, learning, action, and review-throughput rows.</li>
+<li>Open **Close Challenges and Continuity** and choose the needed closure focus.</li>
+<li>Use **Human Validation Challenges** when a conclusion needs corroboration, challenge, unresolved status, or revision.</li>
+<li>Use **Recommendation Continuity** when recommendation threads need carry-forward, revision, validation, contradiction, or missing-continuation review.</li>
+<li>Carry only qualified conclusions into Governance Summary, board packs, and downstream action.</li>
+</ol>
+<h2>Training Prompt</h2>
+<p>Ask the trainee to select one **Comparative review focus** button and explain the task it supports. Then ask them to inspect one visible comparative row or conclusion and identify its confidence, semantic meaning, review context, and whether it should be used as supportable evidence, a caution prompt, a reassessment item, a blocked claim, or a continuity follow-up.</p>
+<p>Completion standard: the user can use Comparative Cycle Review as a qualified cross-cycle governance review surface, not as a simple trend dashboard.</p>
+</body>
+</html>

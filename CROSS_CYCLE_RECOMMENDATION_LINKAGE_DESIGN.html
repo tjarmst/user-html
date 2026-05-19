@@ -1,0 +1,1000 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>CROSS_CYCLE_RECOMMENDATION_LINKAGE_DESIGN</title>
+<style>
+
+@page {
+  size: A4;
+  margin: 18mm 16mm 18mm 16mm;
+  @bottom-center {
+    content: "Page " counter(page) " of " counter(pages);
+    font-size: 8pt;
+    color: #666;
+  }
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.38;
+  color: #1f2933;
+}
+h1 {
+  font-size: 20pt;
+  border-bottom: 2px solid #1f2933;
+  padding-bottom: 6px;
+  margin-top: 0;
+}
+h2 {
+  font-size: 15pt;
+  border-bottom: 1px solid #c9d1d9;
+  padding-bottom: 4px;
+  margin-top: 24px;
+}
+h3 {
+  font-size: 12.5pt;
+  margin-top: 18px;
+}
+h4 {
+  font-size: 11pt;
+  margin-top: 14px;
+}
+p {
+  margin: 0 0 8px 0;
+}
+ul, ol {
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+li {
+  margin-bottom: 3px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0 14px 0;
+  font-size: 8.6pt;
+  page-break-inside: auto;
+}
+thead {
+  display: table-header-group;
+}
+tr {
+  page-break-inside: avoid;
+}
+th, td {
+  border: 1px solid #aab2bd;
+  padding: 4px 5px;
+  vertical-align: top;
+  word-break: break-word;
+}
+th {
+  background: #eef2f6;
+  font-weight: bold;
+}
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 8.6pt;
+  line-height: 1.28;
+}
+code {
+  font-family: Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.92em;
+  background: #f6f8fa;
+  padding: 1px 3px;
+  border-radius: 3px;
+}
+pre code {
+  padding: 0;
+  background: transparent;
+}
+blockquote {
+  border-left: 4px solid #c9d1d9;
+  margin-left: 0;
+  padding-left: 10px;
+  color: #4b5563;
+}
+hr {
+  border: none;
+  border-top: 1px solid #c9d1d9;
+  margin: 18px 0;
+}
+.document-meta {
+  font-size: 8.5pt;
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+</style>
+</head>
+<body>
+<div class="document-meta">Source: user/CROSS_CYCLE_RECOMMENDATION_LINKAGE_DESIGN.md</div>
+<h1>Cross-Cycle Recommendation Linkage Design Specification</h1>
+<h2>Purpose</h2>
+<p>Add first-class persisted cross-cycle recommendation linkage so Comparative Cycle Review can track the progress of the same governance recommendation across multiple assessment cycles.</p>
+<p>The app already preserves strong within-cycle lineage:</p>
+<pre><code>Recommendation -&gt; Structural Decision -&gt; Pilot -&gt; KPI -&gt; Evidence / Review History / Governance Action</code></pre>
+<p>This specification adds the missing cross-cycle continuity layer:</p>
+<pre><code>Recommendation Series
+  -&gt; Cycle 1 recommendation
+  -&gt; Cycle 2 carried-forward or revised recommendation
+  -&gt; Cycle 3 challenged recommendation
+  -&gt; Cycle 4 revised, validated, contradicted, or superseded recommendation</code></pre>
+<p>The goal is to prevent user input from becoming fragmented across cycles and to make cycle-to-cycle progress review explicit, auditable, and governed.</p>
+<h2>Goals</h2>
+<ul>
+<li>Persist recommendation continuity across assessment cycles.</li>
+<li>Let users explicitly carry forward, revise, supersede, merge, or split recommendations.</li>
+<li>Allow Comparative Cycle Review to compare recommendation progress by stable series, not only aggregate counts.</li>
+<li>Preserve downstream lineage for each cycle while also showing multi-cycle continuity.</li>
+<li>Connect recommendation continuity to human validation challenge states.</li>
+<li>Support governance reporting and board-pack export.</li>
+</ul>
+<h2>Non-Goals</h2>
+<ul>
+<li>Do not automatically assume two recommendations are the same because titles are similar.</li>
+<li>Do not collapse all cycle-specific recommendations into one mutable record.</li>
+<li>Do not remove the existing `Recommendation` table.</li>
+<li>Do not force every recommendation into a series before it can be used.</li>
+<li>Do not infer progress solely from learning states; continuity must be explicit.</li>
+</ul>
+<h2>Current State</h2>
+<p>Current `Recommendation` records are cycle-scoped:</p>
+<pre><code>recommendations.assessment_cycle_id</code></pre>
+<p>Downstream entities link to a specific recommendation:</p>
+<ul>
+<li>`StructuralDecisionItem.linked_recommendation_id`</li>
+<li>`Pilot.linked_recommendation_id`</li>
+<li>`KPIItem.linked_recommendation_id`</li>
+<li>`EvidenceNote.linked_recommendation_id`</li>
+<li>`ConclusionChallenge.linked_recommendation_id`</li>
+</ul>
+<p>Comparative Cycle Review currently compares cycle-level signals:</p>
+<ul>
+<li>scorecard deltas</li>
+<li>learning-state count movement</li>
+<li>governance action count movement</li>
+<li>review history throughput</li>
+<li>KPI threshold stability</li>
+<li>trajectory and technology alignment summaries</li>
+</ul>
+<p>It does not yet persist stable recommendation identity across cycles.</p>
+<h2>Design Summary</h2>
+<p>Introduce two new first-class structures:</p>
+<ol>
+<li>`RecommendationSeries`</li>
+</ol>
+<ul>
+<li>Represents the durable governance issue or recommendation thread across cycles.</li>
+</ul>
+<ol>
+<li>`RecommendationCycleLink`</li>
+</ol>
+<ul>
+<li>Connects one cycle-specific `Recommendation` to a `RecommendationSeries`.</li>
+<li>Stores continuity status, carry-forward status, reviewer notes, and predecessor/successor relationships.</li>
+</ul>
+<p>This keeps each cycle&#x27;s recommendation immutable enough for historical review, while allowing the app to show continuity across cycles.</p>
+<h2>Data Model</h2>
+<h3>RecommendationSeries</h3>
+<p>Suggested file:</p>
+<p>`models/recommendation_series.py`</p>
+<p>Suggested table:</p>
+<p>`recommendation_series`</p>
+<p>Fields:</p>
+<pre><code>id: int primary key
+organization_id: int foreign key -&gt; organizations.id
+
+series_key: str
+series_title: str
+domain: str
+category: str | None
+description: str | None
+
+origin_recommendation_id: int | None foreign key -&gt; recommendations.id
+origin_assessment_cycle_id: int | None foreign key -&gt; assessment_cycles.id
+
+status: str
+owner_user_id: int | None foreign key -&gt; users.id
+
+created_at / updated_at via TimestampMixin</code></pre>
+<p>Recommended `status` values:</p>
+<ul>
+<li>`active`</li>
+<li>`validated`</li>
+<li>`superseded`</li>
+<li>`closed`</li>
+<li>`archived`</li>
+</ul>
+<p>`series_key` should be stable and human-readable where possible:</p>
+<pre><code>technology_governance
+workload_sustainability
+trust_repair
+capability_pathways</code></pre>
+<p>It should be unique per organization.</p>
+<h3>RecommendationCycleLink</h3>
+<p>Suggested file:</p>
+<p>`models/recommendation_series.py`</p>
+<p>Suggested table:</p>
+<p>`recommendation_cycle_links`</p>
+<p>Fields:</p>
+<pre><code>id: int primary key
+series_id: int foreign key -&gt; recommendation_series.id
+assessment_cycle_id: int foreign key -&gt; assessment_cycles.id
+recommendation_id: int foreign key -&gt; recommendations.id
+
+continuity_status: str
+cycle_position: int | None
+
+carried_forward_from_recommendation_id: int | None foreign key -&gt; recommendations.id
+predecessor_link_id: int | None foreign key -&gt; recommendation_cycle_links.id
+
+change_summary: str | None
+continuity_rationale: str | None
+human_validation_summary: str | None
+
+reviewed_by_user_id: int | None foreign key -&gt; users.id
+reviewed_at: datetime | None
+
+created_at / updated_at via TimestampMixin</code></pre>
+<p>Recommended `continuity_status` values:</p>
+<ul>
+<li>`new`</li>
+<li>`carried_forward`</li>
+<li>`revised`</li>
+<li>`split_from_prior`</li>
+<li>`merged_from_prior`</li>
+<li>`superseded`</li>
+<li>`validated`</li>
+<li>`contradicted`</li>
+<li>`closed_no_action`</li>
+</ul>
+<p>Uniqueness:</p>
+<ul>
+<li>One recommendation can have only one `RecommendationCycleLink`.</li>
+<li>A series can have at most one primary link per cycle unless split/merge behavior is explicitly enabled.</li>
+</ul>
+<p>Recommended constraints:</p>
+<pre><code>unique(recommendation_id)
+unique(series_id, assessment_cycle_id, recommendation_id)</code></pre>
+<p>Optional later constraint:</p>
+<pre><code>unique(series_id, assessment_cycle_id, primary_flag)</code></pre>
+<p>if a `primary_flag` is added for split/merge cases.</p>
+<h2>Relationship to Existing Recommendation</h2>
+<p>Do **not** move cycle-specific fields off `Recommendation`.</p>
+<p>Keep these on `Recommendation`:</p>
+<ul>
+<li>`assessment_cycle_id`</li>
+<li>`category`</li>
+<li>`domain`</li>
+<li>`title`</li>
+<li>`rationale`</li>
+<li>`priority`</li>
+<li>`status`</li>
+<li>`owner_user_id`</li>
+<li>`due_date`</li>
+<li>`learning_state`</li>
+<li>`learning_note`</li>
+</ul>
+<p>Add optional helper fields only if needed later:</p>
+<pre><code>series_id: int | None</code></pre>
+<p>But first pass should prefer the separate link table to avoid touching existing recommendation behavior.</p>
+<h2>Constants</h2>
+<p>Add:</p>
+<p>`config/recommendation_continuity.py`</p>
+<pre><code>RECOMMENDATION_SERIES_STATUS_OPTIONS = [
+    &quot;active&quot;,
+    &quot;validated&quot;,
+    &quot;superseded&quot;,
+    &quot;closed&quot;,
+    &quot;archived&quot;,
+]
+
+RECOMMENDATION_CONTINUITY_STATUS_OPTIONS = [
+    &quot;new&quot;,
+    &quot;carried_forward&quot;,
+    &quot;revised&quot;,
+    &quot;split_from_prior&quot;,
+    &quot;merged_from_prior&quot;,
+    &quot;superseded&quot;,
+    &quot;validated&quot;,
+    &quot;contradicted&quot;,
+    &quot;closed_no_action&quot;,
+]
+
+CONTINUITY_STATUSES_REQUIRING_NOTE = {
+    &quot;revised&quot;,
+    &quot;split_from_prior&quot;,
+    &quot;merged_from_prior&quot;,
+    &quot;superseded&quot;,
+    &quot;contradicted&quot;,
+    &quot;closed_no_action&quot;,
+}</code></pre>
+<h2>Schemas</h2>
+<p>Add:</p>
+<p>`schemas/recommendation_series.py`</p>
+<p>Classes:</p>
+<ul>
+<li>`RecommendationSeriesCreate`</li>
+<li>`RecommendationSeriesUpdate`</li>
+<li>`RecommendationSeriesRead`</li>
+<li>`RecommendationCycleLinkCreate`</li>
+<li>`RecommendationCycleLinkUpdate`</li>
+<li>`RecommendationCycleLinkRead`</li>
+</ul>
+<p>Validation rules:</p>
+<ul>
+<li>`series_title`, `series_key`, and `domain` are required for series creation.</li>
+<li>`continuity_status` must be in allowed options.</li>
+<li>If continuity status is in `CONTINUITY_STATUSES_REQUIRING_NOTE`, require `change_summary` or `continuity_rationale`.</li>
+<li>If continuity status is `carried_forward`, `revised`, `split_from_prior`, or `merged_from_prior`, require either:</li>
+<li>`carried_forward_from_recommendation_id`, or</li>
+<li>`predecessor_link_id`.</li>
+</ul>
+<h2>Repository</h2>
+<p>Add:</p>
+<p>`data/repositories/recommendation_series_repository.py`</p>
+<h3>RecommendationSeriesRepository</h3>
+<p>Methods:</p>
+<pre><code>get_by_key(organization_id: int, series_key: str) -&gt; RecommendationSeries | None
+list_for_organization(organization_id: int) -&gt; list[RecommendationSeries]
+list_active_for_organization(organization_id: int) -&gt; list[RecommendationSeries]</code></pre>
+<h3>RecommendationCycleLinkRepository</h3>
+<p>Methods:</p>
+<pre><code>get_for_recommendation(recommendation_id: int) -&gt; RecommendationCycleLink | None
+list_for_series(series_id: int) -&gt; list[RecommendationCycleLink]
+list_for_cycle(assessment_cycle_id: int) -&gt; list[RecommendationCycleLink]
+list_for_organization(organization_id: int) -&gt; list[RecommendationCycleLink]
+get_series_cycle_link(series_id: int, assessment_cycle_id: int) -&gt; RecommendationCycleLink | None</code></pre>
+<p>Sort order:</p>
+<ol>
+<li>organization</li>
+<li>series title</li>
+<li>cycle start date</li>
+<li>link id</li>
+</ol>
+<h2>Service</h2>
+<p>Add:</p>
+<p>`services/recommendation_series_service.py`</p>
+<p>Responsibilities:</p>
+<ul>
+<li>Create series.</li>
+<li>Link recommendation to series.</li>
+<li>Carry forward recommendations into a new cycle.</li>
+<li>Build cross-cycle continuity rows.</li>
+<li>Summarize progress for Comparative Cycle Review and Governance Summary.</li>
+<li>Log Review History events.</li>
+</ul>
+<p>Suggested methods:</p>
+<pre><code>class RecommendationSeriesService:
+    def create_series(self, payload: RecommendationSeriesCreate, actor_user_id: int | None = None) -&gt; RecommendationSeries: ...
+
+    def link_recommendation(
+        self,
+        payload: RecommendationCycleLinkCreate,
+        actor_user_id: int | None = None,
+    ) -&gt; RecommendationCycleLink: ...
+
+    def upsert_link(
+        self,
+        payload: RecommendationCycleLinkCreate | RecommendationCycleLinkUpdate,
+        actor_user_id: int | None = None,
+    ) -&gt; RecommendationCycleLink: ...
+
+    def carry_forward_series_to_cycle(
+        self,
+        series_id: int,
+        target_cycle_id: int,
+        actor_user_id: int | None = None,
+        continuity_status: str = &quot;carried_forward&quot;,
+    ) -&gt; Recommendation: ...
+
+    def build_series_timeline(self, series_id: int) -&gt; list[dict[str, object]]: ...
+
+    def build_cycle_continuity_summary(self, assessment_cycle_id: int) -&gt; dict[str, object]: ...
+
+    def build_comparative_recommendation_rows(self, current_cycle_id: int) -&gt; list[dict[str, object]]: ...
+
+    def build_board_pack_lines(self, assessment_cycle_id: int) -&gt; list[str]: ...</code></pre>
+<h3>Carry-Forward Behavior</h3>
+<p>When a recommendation is carried forward:</p>
+<ol>
+<li>User selects prior recommendation or series.</li>
+<li>Service creates a new `Recommendation` in the target cycle.</li>
+<li>New recommendation copies:</li>
+</ol>
+<ul>
+<li>domain</li>
+<li>category</li>
+<li>title</li>
+<li>rationale</li>
+<li>priority</li>
+<li>owner if still active</li>
+</ul>
+<ol>
+<li>New recommendation resets:</li>
+</ol>
+<ul>
+<li>status to `proposed` or selected status</li>
+<li>due date to null or selected due date</li>
+<li>learning state to `untested` or `in_test`</li>
+</ul>
+<ol>
+<li>Service creates `RecommendationCycleLink`:</li>
+</ol>
+<ul>
+<li>same `series_id`</li>
+<li>target cycle</li>
+<li>new recommendation id</li>
+<li>`continuity_status = carried_forward` or `revised`</li>
+<li>predecessor link or prior recommendation id</li>
+</ul>
+<ol>
+<li>Review History records both:</li>
+</ol>
+<ul>
+<li>recommendation creation</li>
+<li>series carry-forward</li>
+</ul>
+<h2>Review History Events</h2>
+<p>Use existing `ReviewHistory`.</p>
+<p>Recommended events:</p>
+<pre><code>entity_type = &quot;recommendation_series&quot;
+action_type = &quot;series_create&quot; | &quot;series_status_update&quot;
+
+entity_type = &quot;recommendation_cycle_link&quot;
+action_type = &quot;recommendation_linked_to_series&quot; | &quot;recommendation_carried_forward&quot; | &quot;continuity_status_update&quot;</code></pre>
+<p>Example:</p>
+<pre><code>recommendation_cycle_link #12:
+recommendation_carried_forward
+from Cycle 2 recommendation #8 to Cycle 3 recommendation #15</code></pre>
+<h2>User Interface</h2>
+<h3>Recommendations Page</h3>
+<p>File:</p>
+<p>`views/recommendations.py`</p>
+<p>Add a section per recommendation:</p>
+<p>`Cross-cycle continuity`</p>
+<p>Display:</p>
+<ul>
+<li>current series, if linked</li>
+<li>continuity status</li>
+<li>prior cycle recommendation, if any</li>
+<li>change summary</li>
+<li>timeline count</li>
+</ul>
+<p>Actions:</p>
+<ul>
+<li>Create new series from this recommendation.</li>
+<li>Link this recommendation to an existing series.</li>
+<li>Mark as carried forward from previous cycle.</li>
+<li>Mark as revised from previous cycle.</li>
+<li>Mark as superseded/validated/contradicted in the series.</li>
+</ul>
+<p>UI controls:</p>
+<ul>
+<li>selectbox: existing series</li>
+<li>selectbox: continuity status</li>
+<li>selectbox: predecessor recommendation from prior cycle</li>
+<li>text area: change summary</li>
+<li>text area: continuity rationale</li>
+<li>save button</li>
+</ul>
+<h3>Assessment Cycle Page</h3>
+<p>File:</p>
+<p>`views/assessment_cycle.py`</p>
+<p>Add optional workflow:</p>
+<p>`Prepare next cycle`</p>
+<p>User can:</p>
+<ul>
+<li>choose prior cycle</li>
+<li>choose target cycle</li>
+<li>select active recommendation series to carry forward</li>
+<li>create target-cycle recommendation records in one pass</li>
+</ul>
+<p>This reduces fragmentation because users start a new cycle from existing continuity threads rather than manually recreating recommendations.</p>
+<h3>Comparative Cycle Review</h3>
+<p>File:</p>
+<p>`views/comparative_cycle_review.py`</p>
+<p>Add section:</p>
+<p>`### Recommendation continuity across cycles`</p>
+<p>Show rows from:</p>
+<p>`RecommendationSeriesService.build_comparative_recommendation_rows(current_cycle_id)`</p>
+<p>Columns:</p>
+<ul>
+<li>series title</li>
+<li>domain</li>
+<li>previous recommendation title</li>
+<li>previous status</li>
+<li>previous learning state</li>
+<li>current recommendation title</li>
+<li>current status</li>
+<li>current learning state</li>
+<li>continuity status</li>
+<li>change summary</li>
+<li>downstream continuity:</li>
+<li>decision count</li>
+<li>pilot count</li>
+<li>KPI count</li>
+<li>evidence count</li>
+<li>challenge status count</li>
+<li>interpretation:</li>
+<li>progressing</li>
+<li>revised after challenge</li>
+<li>stalled</li>
+<li>fragmented</li>
+<li>closed</li>
+</ul>
+<p>The comparative review should warn when:</p>
+<ul>
+<li>a prior-cycle accepted recommendation has no current-cycle link</li>
+<li>a current-cycle recommendation appears similar to a prior one but is not linked</li>
+<li>a series has no active current-cycle recommendation but remains `active`</li>
+<li>a challenged conclusion refers to an unlinked recommendation</li>
+</ul>
+<h3>Governance Summary</h3>
+<p>File:</p>
+<p>`views/governance_summary.py`</p>
+<p>Add section:</p>
+<p>`### Cross-cycle recommendation continuity`</p>
+<p>Show:</p>
+<ul>
+<li>active series count</li>
+<li>carried-forward count</li>
+<li>revised count</li>
+<li>validated count</li>
+<li>contradicted count</li>
+<li>fragmented/unlinked prior recommendations count</li>
+</ul>
+<p>Board-pack lines:</p>
+<pre><code>Technology governance: Cycle 2 accepted -&gt; Cycle 3 challenged -&gt; Cycle 4 revised/in test.
+Workload sustainability: Cycle 1 proposed -&gt; Cycle 2 accepted -&gt; Cycle 3 pilot active -&gt; Cycle 4 validated.
+Trust repair: prior recommendation has no current-cycle continuation; review needed.</code></pre>
+<h3>Lineage View</h3>
+<p>File:</p>
+<p>`views/lineage_view.py`</p>
+<p>Add optional series column:</p>
+<ul>
+<li>`series_title`</li>
+<li>`continuity_status`</li>
+<li>`prior_cycle_status`</li>
+</ul>
+<p>This lets users see whether the within-cycle lineage is part of a cross-cycle thread.</p>
+<h3>Governance Action Queue</h3>
+<p>Existing generic linked entity fields support:</p>
+<pre><code>linked_entity_type = &quot;recommendation_series&quot;
+linked_entity_id = series_id</code></pre>
+<p>Create actions when:</p>
+<ul>
+<li>active series has no current-cycle recommendation</li>
+<li>prior challenged recommendation has not been revised</li>
+<li>continuity status is unresolved or fragmented</li>
+</ul>
+<h2>Fragmentation Detection</h2>
+<p>Add service method:</p>
+<pre><code>detect_recommendation_fragmentation(current_cycle_id: int) -&gt; list[dict[str, object]]</code></pre>
+<p>Detection rules:</p>
+<ol>
+<li>Prior accepted or implemented recommendations without current-cycle link.</li>
+<li>Current recommendations with same normalized title/domain as prior recommendations but no shared series.</li>
+<li>Active series without current-cycle link.</li>
+<li>Series with challenged/unresolved human validation records but no revised recommendation in later cycle.</li>
+<li>Current recommendations linked to downstream decisions/pilots/KPIs but not linked to a series.</li>
+</ol>
+<p>Each result should include:</p>
+<ul>
+<li>severity</li>
+<li>reason</li>
+<li>prior recommendation id</li>
+<li>current recommendation id</li>
+<li>series id, if any</li>
+<li>recommended action</li>
+</ul>
+<p>Recommended severity:</p>
+<ul>
+<li>`high`: accepted prior recommendation not carried forward</li>
+<li>`medium`: similar unlinked recommendation found</li>
+<li>`medium`: active series missing current cycle</li>
+<li>`low`: proposed recommendation unlinked</li>
+</ul>
+<h2>Interaction With Human Validation Challenge States</h2>
+<p>The new `ConclusionChallenge` records can link to a recommendation.</p>
+<p>With recommendation series added, governance review should be able to answer:</p>
+<ul>
+<li>Was a challenged recommendation revised in the next cycle?</li>
+<li>Did an unresolved conclusion get carried forward as an explicit open issue?</li>
+<li>Was a revised-after-challenge conclusion connected to a revised recommendation?</li>
+<li>Did a corroborated conclusion lead to validation or closure of a recommendation series?</li>
+</ul>
+<p>Optional later model extension:</p>
+<p>Add to `ConclusionChallenge`:</p>
+<pre><code>linked_recommendation_series_id: int | None
+linked_recommendation_cycle_link_id: int | None</code></pre>
+<p>Recommended first pass:</p>
+<ul>
+<li>Link challenge records to cycle-specific recommendations as already implemented.</li>
+<li>Let `RecommendationSeriesService` infer series linkage through `RecommendationCycleLink`.</li>
+</ul>
+<h2>Test Data Builder</h2>
+<p>Update:</p>
+<p>`scripts/test_data_builder.py`</p>
+<p>Add:</p>
+<ul>
+<li>one `RecommendationSeries` for workload sustainability</li>
+<li>one series for technology governance</li>
+<li>one series for trust repair</li>
+<li>links from current recommendations to series</li>
+<li>previous-cycle recommendation links where records exist</li>
+<li>one fragmented/unlinked recommendation for testing warnings</li>
+</ul>
+<p>Printed output should include:</p>
+<pre><code>Recommendation series:
+- Workload sustainability: Cycle 1 proposed -&gt; Cycle 2 accepted -&gt; Cycle 3 in_test
+- Technology governance: Cycle 2 accepted -&gt; Cycle 3 challenged -&gt; Cycle 4 revised_after_challenge</code></pre>
+<h2>Smoke Test</h2>
+<p>Update:</p>
+<p>`scripts/smoke_test_seeded_workflow.py`</p>
+<p>Assertions:</p>
+<pre><code>series = recommendation_series_service.list_for_organization(org_id)
+assert series
+
+rows = recommendation_series_service.build_comparative_recommendation_rows(cycle_id)
+assert rows
+assert any(row[&quot;continuity_status&quot;] in {&quot;carried_forward&quot;, &quot;revised&quot;} for row in rows)
+
+fragmentation = recommendation_series_service.detect_recommendation_fragmentation(cycle_id)
+assert isinstance(fragmentation, list)</code></pre>
+<h2>Board-Pack Acceptance Criteria</h2>
+<ul>
+<li>[ ] Board pack includes cross-cycle recommendation continuity section.</li>
+<li>[ ] Each active series shows prior and current cycle state when available.</li>
+<li>[ ] Revised recommendations after challenge appear.</li>
+<li>[ ] Unlinked active prior recommendations are flagged.</li>
+<li>[ ] Fragmentation warnings are visible as governance review prompts.</li>
+</ul>
+<h2>Comparative Cycle Review Acceptance Criteria</h2>
+<ul>
+<li>[ ] User can see recommendation continuity rows.</li>
+<li>[ ] User can distinguish new vs carried-forward vs revised recommendations.</li>
+<li>[ ] User can see when a recommendation was superseded, validated, contradicted, or closed.</li>
+<li>[ ] User can see prior-cycle accepted recommendations that lack current-cycle continuation.</li>
+<li>[ ] User can see current-cycle recommendations that are not linked to a series.</li>
+<li>[ ] Human validation challenge states can be interpreted alongside recommendation continuity.</li>
+</ul>
+<h2>Data Integrity Acceptance Criteria</h2>
+<ul>
+<li>[ ] A recommendation can be linked to only one series.</li>
+<li>[ ] A series can span multiple cycles.</li>
+<li>[ ] Carry-forward creates a new cycle-specific recommendation rather than mutating the prior one.</li>
+<li>[ ] Review History records series creation and continuity updates.</li>
+<li>[ ] Existing recommendation, decision, pilot, KPI, evidence, and challenge flows continue to work.</li>
+</ul>
+<h2>Implementation Pass Plan</h2>
+<p>The target architecture should be implemented in six passes. Each pass should leave the app runnable, preserve existing data, and add tests or smoke checks for the behavior introduced in that pass.</p>
+<h3>Pass 1: Persistence Foundation</h3>
+<p>Purpose:</p>
+<p>Create the durable cross-cycle identity layer without changing user workflow yet.</p>
+<p>Files likely touched:</p>
+<ul>
+<li>`config/recommendation_continuity.py`</li>
+<li>`models/recommendation_series.py`</li>
+<li>`models/__init__.py`</li>
+<li>`schemas/recommendation_series.py`</li>
+<li>`data/repositories/recommendation_series_repository.py`</li>
+<li>`services/recommendation_series_service.py`</li>
+<li>`data/db.py`, only if SQLite migration helpers are needed beyond `create_all`</li>
+<li>`scripts/smoke_test_seeded_workflow.py`</li>
+</ul>
+<p>Behavior added:</p>
+<ul>
+<li>Create `RecommendationSeries`.</li>
+<li>Create `RecommendationCycleLink`.</li>
+<li>Link an existing recommendation to a series through service methods.</li>
+<li>List series by organization.</li>
+<li>List cycle links by cycle and by series.</li>
+<li>Build a basic series timeline.</li>
+<li>Log Review History for series creation and recommendation linking.</li>
+</ul>
+<p>Acceptance criteria:</p>
+<ul>
+<li>[ ] New tables are created on startup without destructive migration.</li>
+<li>[ ] A recommendation can be linked to one series.</li>
+<li>[ ] A series can include links from multiple cycles.</li>
+<li>[ ] Service methods can create, read, and update links.</li>
+<li>[ ] Review History records series creation and link creation.</li>
+<li>[ ] Existing recommendation, decision, pilot, KPI, evidence, and challenge flows still run.</li>
+</ul>
+<p>Tests and verification:</p>
+<ul>
+<li>Add smoke-test assertions that create or find one series.</li>
+<li>Assert at least one recommendation can be linked to that series.</li>
+<li>Assert `build_series_timeline(series_id)` returns rows.</li>
+<li>Run `scripts/test_data_builder.py`.</li>
+<li>Run `scripts/smoke_test_seeded_workflow.py`.</li>
+</ul>
+<p>Explicitly deferred:</p>
+<ul>
+<li>Recommendation page UI.</li>
+<li>Carry-forward workflow.</li>
+<li>Comparative Cycle Review display.</li>
+<li>Board-pack export.</li>
+<li>Advanced fragmentation detection.</li>
+</ul>
+<h3>Pass 2: Recommendation Linking UI</h3>
+<p>Purpose:</p>
+<p>Let users create and manage cross-cycle recommendation identity from the Recommendations page.</p>
+<p>Files likely touched:</p>
+<ul>
+<li>`views/recommendations.py`</li>
+<li>`services/recommendation_series_service.py`</li>
+<li>`views/review_history_view.py`</li>
+<li>`scripts/smoke_test_seeded_workflow.py`</li>
+</ul>
+<p>Behavior added:</p>
+<ul>
+<li>Show each recommendation&#x27;s series link, if present.</li>
+<li>Create a new series from a recommendation.</li>
+<li>Link a recommendation to an existing series.</li>
+<li>Set or update continuity status.</li>
+<li>Select predecessor recommendation or predecessor link when applicable.</li>
+<li>Record change summary and continuity rationale.</li>
+<li>Show a compact series timeline inside the recommendation expander.</li>
+<li>Show `recommendation_series` and `recommendation_cycle_link` details in Review History.</li>
+</ul>
+<p>Acceptance criteria:</p>
+<ul>
+<li>[ ] User can create a series from a recommendation.</li>
+<li>[ ] User can link an unlinked recommendation to an existing series.</li>
+<li>[ ] User can set continuity status such as `new`, `carried_forward`, or `revised`.</li>
+<li>[ ] User can add continuity rationale.</li>
+<li>[ ] Existing linked recommendation displays its series and timeline.</li>
+<li>[ ] Review History shows link updates.</li>
+</ul>
+<p>Tests and verification:</p>
+<ul>
+<li>Smoke test should verify at least one current-cycle recommendation is linked.</li>
+<li>Service-level check should verify updating continuity status persists.</li>
+<li>Manual UI check on Recommendations page.</li>
+</ul>
+<p>Explicitly deferred:</p>
+<ul>
+<li>Bulk carry-forward into a new cycle.</li>
+<li>Comparative review interpretation.</li>
+<li>Governance Summary reporting.</li>
+<li>Similarity-based suggestions.</li>
+</ul>
+<h3>Pass 3: Carry-Forward Workflow</h3>
+<p>Purpose:</p>
+<p>Prevent fragmentation at the moment a new cycle is prepared by carrying forward active recommendation series instead of asking users to recreate recommendations manually.</p>
+<p>Files likely touched:</p>
+<ul>
+<li>`views/assessment_cycle.py`</li>
+<li>`services/recommendation_series_service.py`</li>
+<li>`schemas/recommendation.py`, only if helper payloads are needed</li>
+<li>`scripts/test_data_builder.py`</li>
+<li>`scripts/smoke_test_seeded_workflow.py`</li>
+</ul>
+<p>Behavior added:</p>
+<ul>
+<li>Add a **Prepare next cycle** panel.</li>
+<li>Select source cycle and target cycle.</li>
+<li>List active recommendation series from the source organization.</li>
+<li>Select one or more series to carry forward.</li>
+<li>Create new target-cycle `Recommendation` records.</li>
+<li>Create `RecommendationCycleLink` records with `continuity_status = carried_forward` or `revised`.</li>
+<li>Set predecessor link or carried-forward-from recommendation id.</li>
+<li>Reset target-cycle operational fields appropriately:</li>
+<li>status</li>
+<li>due date</li>
+<li>learning state</li>
+<li>owner, if desired</li>
+</ul>
+<p>Acceptance criteria:</p>
+<ul>
+<li>[ ] Carry-forward creates a new recommendation in the target cycle.</li>
+<li>[ ] Prior-cycle recommendation is not mutated.</li>
+<li>[ ] New recommendation is linked to the same series.</li>
+<li>[ ] Link records preserve predecessor relationship.</li>
+<li>[ ] Review History records carry-forward.</li>
+<li>[ ] User can provide change summary during carry-forward.</li>
+</ul>
+<p>Tests and verification:</p>
+<ul>
+<li>Extend `test_data_builder.py` to create at least two linked cycles for one series.</li>
+<li>Smoke test should assert a carried-forward recommendation exists.</li>
+<li>Smoke test should assert prior and current recommendations are different records in the same series.</li>
+</ul>
+<p>Explicitly deferred:</p>
+<ul>
+<li>Split and merge carry-forward UI.</li>
+<li>Bulk reconciliation of old unlinked recommendations.</li>
+<li>Board-pack reporting.</li>
+</ul>
+<h3>Pass 4: Comparative Review Integration</h3>
+<p>Purpose:</p>
+<p>Make Comparative Cycle Review compare recommendation progress by stable series rather than only by aggregate counts.</p>
+<p>Files likely touched:</p>
+<ul>
+<li>`services/recommendation_series_service.py`</li>
+<li>`services/comparative_cycle_service.py`</li>
+<li>`views/comparative_cycle_review.py`</li>
+<li>`scripts/smoke_test_seeded_workflow.py`</li>
+</ul>
+<p>Behavior added:</p>
+<ul>
+<li>Add `build_comparative_recommendation_rows(current_cycle_id)`.</li>
+<li>Add `detect_recommendation_fragmentation(current_cycle_id)`.</li>
+<li>Display **Recommendation continuity across cycles** in Comparative Cycle Review.</li>
+<li>Show prior and current recommendation status, learning state, continuity status, and change summary.</li>
+<li>Show downstream counts for decisions, pilots, KPIs, evidence, governance actions, and human validation records.</li>
+<li>Flag fragmentation warnings:</li>
+<li>accepted prior recommendation not carried forward</li>
+<li>active series missing current-cycle recommendation</li>
+<li>current recommendation with downstream work but no series</li>
+<li>similar title/domain without shared series</li>
+<li>challenged or unresolved recommendation without revised continuation</li>
+</ul>
+<p>Acceptance criteria:</p>
+<ul>
+<li>[ ] Comparative Cycle Review shows recommendation continuity rows.</li>
+<li>[ ] User can distinguish `new`, `carried_forward`, and `revised` recommendations.</li>
+<li>[ ] Prior-cycle accepted recommendations missing current continuation are visible.</li>
+<li>[ ] Current-cycle unlinked recommendations are visible.</li>
+<li>[ ] Human validation challenge states are interpretable alongside recommendation continuity.</li>
+<li>[ ] Fragmentation warnings are shown as governance review prompts.</li>
+</ul>
+<p>Tests and verification:</p>
+<ul>
+<li>Smoke test should assert `build_comparative_recommendation_rows(cycle_id)` returns rows.</li>
+<li>Smoke test should assert fragmentation detection returns a list.</li>
+<li>Test data should include at least one clean carried-forward series and one intentional unlinked/fragmented recommendation.</li>
+</ul>
+<p>Explicitly deferred:</p>
+<ul>
+<li>Governance Summary board-pack export.</li>
+<li>Lineage View series overlay.</li>
+<li>Advanced similarity matching beyond conservative normalized title/domain checks.</li>
+</ul>
+<h3>Pass 5: Governance Reporting</h3>
+<p>Purpose:</p>
+<p>Make cross-cycle recommendation continuity visible in board-facing governance outputs.</p>
+<p>Files likely touched:</p>
+<ul>
+<li>`views/governance_summary.py`</li>
+<li>`views/lineage_view.py`</li>
+<li>`views/governance_action_queue.py`</li>
+<li>`services/recommendation_series_service.py`</li>
+<li>`services/governance_action_service.py`, only if helper generation is added</li>
+<li>`scripts/smoke_test_seeded_workflow.py`</li>
+</ul>
+<p>Behavior added:</p>
+<ul>
+<li>Add **Cross-cycle recommendation continuity** section to Governance Summary.</li>
+<li>Add board-pack section for recommendation continuity.</li>
+<li>Show continuity counts:</li>
+<li>active series</li>
+<li>carried forward</li>
+<li>revised</li>
+<li>validated</li>
+<li>contradicted</li>
+<li>superseded</li>
+<li>fragmented/unlinked</li>
+<li>Add continuity lines to board-pack exports.</li>
+<li>Add optional series columns to Lineage View:</li>
+<li>series title</li>
+<li>continuity status</li>
+<li>prior-cycle status</li>
+<li>Add Governance Action Queue labels for `recommendation_series` or continuity-related actions.</li>
+<li>Optionally create governance actions for active series missing current-cycle continuation.</li>
+</ul>
+<p>Acceptance criteria:</p>
+<ul>
+<li>[ ] Governance Summary includes cross-cycle recommendation continuity.</li>
+<li>[ ] Board pack includes cross-cycle recommendation continuity section.</li>
+<li>[ ] Revised recommendations after challenge appear.</li>
+<li>[ ] Unlinked active prior recommendations are flagged.</li>
+<li>[ ] Fragmentation warnings are visible as governance prompts.</li>
+<li>[ ] Lineage View can show whether a within-cycle row belongs to a cross-cycle series.</li>
+</ul>
+<p>Tests and verification:</p>
+<ul>
+<li>Smoke test should assert board-pack continuity lines contain at least one active series.</li>
+<li>Manual check Governance Summary export.</li>
+<li>Manual check Lineage View for series columns.</li>
+</ul>
+<p>Explicitly deferred:</p>
+<ul>
+<li>Graph visualization.</li>
+<li>Bulk correction wizard.</li>
+<li>Split/merge visual workflows.</li>
+</ul>
+<h3>Pass 6: Training And Test Data</h3>
+<p>Purpose:</p>
+<p>Make the feature teachable, repeatable, and safe for future validation.</p>
+<p>Files likely touched:</p>
+<ul>
+<li>`scripts/test_data_builder.py`</li>
+<li>`scripts/smoke_test_seeded_workflow.py`</li>
+<li>`TRAINING_MANUAL.md`</li>
+<li>`CROSS_CYCLE_RECOMMENDATION_LINKAGE_DESIGN.md`, if implementation discoveries require updates</li>
+<li>`README.md`, optional</li>
+</ul>
+<p>Behavior added:</p>
+<ul>
+<li>Seed realistic recommendation series across multiple cycles.</li>
+<li>Print recommendation series and continuity timelines in `test_data_builder.py`.</li>
+<li>Include one clean carried-forward case.</li>
+<li>Include one revised-after-challenge case.</li>
+<li>Include one unresolved/challenged case.</li>
+<li>Include one intentional fragmentation case for warning validation.</li>
+<li>Update training manual with user steps for:</li>
+<li>creating a series</li>
+<li>linking recommendations</li>
+<li>preparing a next cycle</li>
+<li>reviewing continuity</li>
+<li>resolving fragmentation</li>
+</ul>
+<p>Acceptance criteria:</p>
+<ul>
+<li>[ ] Training data includes linked recommendation series.</li>
+<li>[ ] Training data includes a fragmentation warning case.</li>
+<li>[ ] Smoke test validates series, links, comparative rows, and board-pack lines.</li>
+<li>[ ] Training manual explains cross-cycle continuity in the four-cycle workflow.</li>
+<li>[ ] User can follow training data without manually inventing cross-cycle links.</li>
+</ul>
+<p>Tests and verification:</p>
+<ul>
+<li>Run `python .\scripts\test_data_builder.py`.</li>
+<li>Run `python .\scripts\smoke_test_seeded_workflow.py`.</li>
+<li>Start app and check Recommendations, Assessment Cycle, Comparative Cycle Review, Governance Summary, and Lineage View.</li>
+</ul>
+<p>Explicitly deferred:</p>
+<ul>
+<li>Nothing required for MVP continuity once this pass is complete.</li>
+<li>Future enhancements can include split/merge UI, similarity suggestions, and graph visualization.</li>
+</ul>
+<h2>Migration Approach</h2>
+<p>This app uses SQLAlchemy `create_all()` plus SQLite-safe migration helpers.</p>
+<p>First-pass migration should be additive:</p>
+<ul>
+<li>new `recommendation_series` table</li>
+<li>new `recommendation_cycle_links` table</li>
+<li>no destructive changes to `recommendations`</li>
+</ul>
+<p>Existing SQLite databases should continue to open. New tables should be created by `Base.metadata.create_all(bind=engine)` after the models are imported.</p>
+<h2>Recommended First-Pass Scope</h2>
+<p>Keep first implementation narrow:</p>
+<ul>
+<li>one series per recommendation thread</li>
+<li>one link per recommendation</li>
+<li>carry forward from previous cycle</li>
+<li>revise from previous cycle</li>
+<li>detect missing continuity</li>
+<li>show continuity in Comparative Cycle Review and Governance Summary</li>
+</ul>
+<p>Defer:</p>
+<ul>
+<li>true split/merge UI</li>
+<li>advanced similarity matching</li>
+<li>bulk reconciliation wizard</li>
+<li>graph visualization</li>
+<li>series-level ownership workflows beyond simple owner field</li>
+</ul>
+<h2>Why This Prevents Fragmentation</h2>
+<p>Without this feature, users can recreate similar recommendations in each cycle and the app can only compare aggregate movement.</p>
+<p>With this feature:</p>
+<ul>
+<li>the same governance issue has a stable `RecommendationSeries`</li>
+<li>each cycle keeps its own historical recommendation record</li>
+<li>carry-forward and revision are explicit user actions</li>
+<li>downstream decisions, pilots, KPIs, evidence, and challenge records remain cycle-specific</li>
+<li>Comparative Cycle Review can compare progress across the same recommendation thread</li>
+<li>Governance Summary can flag unlinked or dropped recommendations before they disappear from institutional memory</li>
+</ul>
+</body>
+</html>

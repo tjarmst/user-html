@@ -1,0 +1,327 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>GOVERNANCE_ACTION_QUEUE_PAGE_LEARNING_RESOURCE</title>
+<style>
+
+@page {
+  size: A4;
+  margin: 18mm 16mm 18mm 16mm;
+  @bottom-center {
+    content: "Page " counter(page) " of " counter(pages);
+    font-size: 8pt;
+    color: #666;
+  }
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.38;
+  color: #1f2933;
+}
+h1 {
+  font-size: 20pt;
+  border-bottom: 2px solid #1f2933;
+  padding-bottom: 6px;
+  margin-top: 0;
+}
+h2 {
+  font-size: 15pt;
+  border-bottom: 1px solid #c9d1d9;
+  padding-bottom: 4px;
+  margin-top: 24px;
+}
+h3 {
+  font-size: 12.5pt;
+  margin-top: 18px;
+}
+h4 {
+  font-size: 11pt;
+  margin-top: 14px;
+}
+p {
+  margin: 0 0 8px 0;
+}
+ul, ol {
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+li {
+  margin-bottom: 3px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0 14px 0;
+  font-size: 8.6pt;
+  page-break-inside: auto;
+}
+thead {
+  display: table-header-group;
+}
+tr {
+  page-break-inside: avoid;
+}
+th, td {
+  border: 1px solid #aab2bd;
+  padding: 4px 5px;
+  vertical-align: top;
+  word-break: break-word;
+}
+th {
+  background: #eef2f6;
+  font-weight: bold;
+}
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 8.6pt;
+  line-height: 1.28;
+}
+code {
+  font-family: Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.92em;
+  background: #f6f8fa;
+  padding: 1px 3px;
+  border-radius: 3px;
+}
+pre code {
+  padding: 0;
+  background: transparent;
+}
+blockquote {
+  border-left: 4px solid #c9d1d9;
+  margin-left: 0;
+  padding-left: 10px;
+  color: #4b5563;
+}
+hr {
+  border: none;
+  border-top: 1px solid #c9d1d9;
+  margin: 18px 0;
+}
+.document-meta {
+  font-size: 8.5pt;
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+</style>
+</head>
+<body>
+<div class="document-meta">Source: user/GOVERNANCE_ACTION_QUEUE_PAGE_LEARNING_RESOURCE.md</div>
+<h1>Governance Action Queue Page Learning Resource</h1>
+<p>This guide teaches users how the **Governance Action Queue** page is now organized around queue posture, selected-action inspection, ownership management, and closure handling.</p>
+<p>The page asks a practical governance question:</p>
+<p>&gt; Which review findings have become ownerable governance work, and what is their current ownership, progress, and resolution state?</p>
+<p>The queue is for accountable follow-up work. It is not a list of every visible warning.</p>
+<h2>Purpose</h2>
+<p>Use Governance Action Queue to answer four queue-management questions:</p>
+<ul>
+<li>**Review Queue Posture:** What actions are currently queued, and what do their routing, context, and board-attention signals show?</li>
+<li>**Inspect Selected Action:** What does one queued action mean before changing ownership or resolution state?</li>
+<li>**Manage Ownership and Progress:** Who owns the action, when is it due, and what workflow status should it have?</li>
+<li>**Resolve and Close Action:** What closure outcome applies, and what resolution summary explains it?</li>
+</ul>
+<p>The page begins with cycle-level metrics before showing the queue-focus controls.</p>
+<h2>Required Starting Point</h2>
+<p>The page requires a selected assessment cycle.</p>
+<p>If no cycle is selected, the page asks the user to select one first.</p>
+<p>The page reads governance action summary rows for the current cycle. It also reads organization users for owner labels and challenge records so challenge-linked actions can display clearer linked-entity context.</p>
+<h2>Top Summary Metrics</h2>
+<p>The top of the page shows:</p>
+<ul>
+<li>open actions</li>
+<li>overdue actions</li>
+<li>resolved actions</li>
+<li>contradicted open actions</li>
+<li>board attention actions</li>
+<li>interpretive snapshot caption when available</li>
+</ul>
+<p>These metrics describe the queue&#x27;s current posture. They do not by themselves prove that governance is healthy or unsafe.</p>
+<p>An empty queue can be legitimate when there is no ownerable follow-up work. It can also mean upstream review work is incomplete. Treat an empty queue as something to verify, not something to celebrate automatically.</p>
+<h2>Empty Queue Behavior</h2>
+<p>If there are no governance action rows, the page shows **Queue posture** directly and does not show the queue-focus selector.</p>
+<p>The empty-state message explains that the queue is populated only when learning-driven follow-up work is created, such as contradiction, reopen or revise requests, or generated actions from current learning signals.</p>
+<p>The page also reminds users that monitor-only and supportable semantic consequences do not create governance queue items by default.</p>
+<h2>Queue Focus Buttons</h2>
+<p>When queue rows exist, the **Queue focus** selector contains:</p>
+<ul>
+<li>Review Queue Posture</li>
+<li>Inspect Selected Action</li>
+<li>Manage Ownership and Progress</li>
+<li>Resolve and Close Action</li>
+</ul>
+<p>Each focus area serves a different task.</p>
+<h2>Review Queue Posture</h2>
+<p>Use **Review Queue Posture** when the question is what the queue currently contains.</p>
+<p>This area shows the full queue table after display cleanup. Rows can include:</p>
+<ul>
+<li>action ID</li>
+<li>title</li>
+<li>status</li>
+<li>priority</li>
+<li>owner</li>
+<li>due date</li>
+<li>linked entity type and ID</li>
+<li>linked challenge label when available</li>
+<li>handling</li>
+<li>routing</li>
+<li>review context</li>
+<li>interpretive snapshot line</li>
+<li>resolution summary when present</li>
+</ul>
+<p>Use this area before row-level work. It helps users see whether the queue is dominated by overdue work, board-attention items, contradiction-linked work, reassessment items, or closure-ready items.</p>
+<h2>Inspect Selected Action</h2>
+<p>Use **Inspect Selected Action** when the user needs to understand one queue item without changing it.</p>
+<p>This area shows:</p>
+<ul>
+<li>**Select governance action** control</li>
+<li>selected action summary</li>
+<li>action ID</li>
+<li>status</li>
+<li>priority</li>
+<li>owner</li>
+<li>title</li>
+<li>linked entity reference</li>
+<li>handling</li>
+<li>routing</li>
+<li>review context</li>
+<li>interpretive snapshot line</li>
+<li>resolution summary if one exists</li>
+</ul>
+<p>Use this area before assigning, updating, or resolving an action. The goal is to understand what the action is accountable for and how the system has classified its handling.</p>
+<h2>Manage Ownership and Progress</h2>
+<p>Use **Manage Ownership and Progress** when the question is who owns the work and what its workflow state is.</p>
+<p>This area shows:</p>
+<ul>
+<li>**Select governance action** control</li>
+<li>**Assign owner** selector</li>
+<li>**Due date** input</li>
+<li>**Workflow status** selector</li>
+<li>**Save assignment / status** button</li>
+<li>**Mark in progress** button</li>
+</ul>
+<p>Workflow status options are:</p>
+<ul>
+<li>open</li>
+<li>in_progress</li>
+<li>deferred</li>
+<li>resolved</li>
+<li>cancelled</li>
+</ul>
+<p>**Save assignment / status** updates the selected action&#x27;s owner, due date, and workflow status.</p>
+<p>**Mark in progress** moves the selected action directly to in-progress with a work-started note.</p>
+<p>Use this area to keep ownership and due-date discipline current. Do not use it to explain closure; closure belongs in Resolve and Close Action.</p>
+<h2>Resolve and Close Action</h2>
+<p>Use **Resolve and Close Action** when the governance work is ready for a closure outcome.</p>
+<p>This area shows:</p>
+<ul>
+<li>**Select governance action** control</li>
+<li>selected action summary</li>
+<li>**Resolution outcome** selector</li>
+<li>**Resolution summary** text area</li>
+<li>**Resolve action** button</li>
+</ul>
+<p>Resolution outcomes are:</p>
+<ul>
+<li>confirmed_closed</li>
+<li>revised_reissued</li>
+<li>superseded</li>
+<li>deferred</li>
+<li>escalated</li>
+<li>converted_to_pilot</li>
+<li>converted_to_recommendation</li>
+<li>no_action_required</li>
+</ul>
+<p>The page requires a resolution outcome before resolving. If the user clicks **Resolve action** without choosing an outcome, the page asks them to choose one first.</p>
+<p>The resolution summary should explain what happened. It should not merely repeat that the action was closed.</p>
+<h2>Routing, Context, And Snapshot Cues</h2>
+<p>Queue rows may show:</p>
+<ul>
+<li>handling label</li>
+<li>routing line</li>
+<li>review context</li>
+<li>interpretive snapshot line</li>
+</ul>
+<p>Use these cues to distinguish:</p>
+<ul>
+<li>monitor-only visibility</li>
+<li>caution prompts</li>
+<li>reassessment work</li>
+<li>blocked evidence work</li>
+<li>redesign-required work</li>
+<li>board-attention work</li>
+<li>challenge-linked follow-up</li>
+</ul>
+<p>Semantic routing guides the queue, but it does not mean every warning becomes an action. Monitor-only and supportable findings should not create queue items by default.</p>
+<h2>When Work Belongs In The Queue</h2>
+<p>Queue work is appropriate when the row is both consequential and ownerable.</p>
+<p>Look for:</p>
+<ul>
+<li>reassessment handling where a conclusion, recommendation, decision, pilot, KPI, scenario, or continuity row needs review</li>
+<li>blocked-pending-stronger-evidence handling where progression should pause until evidence improves</li>
+<li>redesign-required handling where the current approach appears misaligned or contradicted</li>
+<li>unresolved or challenged human validation records with follow-up required</li>
+<li>contradiction or incompleteness that affects a live governance decision</li>
+<li>weak execution paths where a named owner can strengthen evidence, mitigation, or workflow state</li>
+<li>scenario pressure where mitigation is unplanned, ownerless, overdue, or contradicted by execution evidence</li>
+</ul>
+<p>The practical test is:</p>
+<p>&gt; Can a specific person do a specific review, evidence, mitigation, decision, pilot, KPI, or correction task?</p>
+<p>If the answer is no, the item may be monitoring context rather than queue work.</p>
+<h2>When Work Should Not Become Queue Work</h2>
+<p>Do not create queue work merely because:</p>
+<ul>
+<li>a warning is visible</li>
+<li>a board-pack line mentions caution</li>
+<li>a score moved unfavorably</li>
+<li>evidence is low confidence but does not imply a concrete follow-up task</li>
+<li>a recommendation is proposed but has no unresolved challenge or blockage</li>
+<li>a monitor-only continuity warning is visible</li>
+<li>the item is supportable under current evidence</li>
+</ul>
+<p>These cases may still need visibility, monitoring, evidence collection, or ordinary workflow discipline. They do not automatically need a governance action.</p>
+<h2>Downstream Impact</h2>
+<p>Governance Action Queue feeds downstream interpretation by showing whether governance follow-up has ownership, due dates, status, and closure outcomes.</p>
+<p>It connects to:</p>
+<ul>
+<li>Governance Summary, through tasking and resolution discipline</li>
+<li>Comparative Cycle Review, through governance action movement</li>
+<li>Review History, through ownership, status, and resolution events</li>
+<li>board-pack governance tasking sections</li>
+<li>upstream review pages that generate or justify ownerable work, including Governance Summary, Governance Execution Review, Comparative Cycle Review, Scenario Effectiveness Review, and human validation challenge review</li>
+</ul>
+<p>The queue should help users distinguish visible governance concerns from accountable work.</p>
+<h2>Common Mistakes</h2>
+<p>Avoid creating queue actions for every warning.</p>
+<p>Avoid assuming an empty queue proves the cycle is safe.</p>
+<p>Avoid leaving high-priority actions unassigned.</p>
+<p>Avoid updating workflow status when the real need is a resolution outcome.</p>
+<p>Avoid resolving actions without a meaningful resolution summary.</p>
+<p>Avoid treating board attention as the same as ownership.</p>
+<p>Avoid using vague action titles or summaries when the action should name the specific claim, evidence gap, mitigation, decision, pilot, KPI, challenge, or continuity issue.</p>
+<p>Avoid creating duplicate follow-up when an existing action already covers the issue. Update the existing action instead.</p>
+<h2>Best-Practice Review Pattern</h2>
+<ol>
+<li>Select the intended assessment cycle.</li>
+<li>Read the top summary metrics and snapshot caption.</li>
+<li>If the queue is empty, verify upstream review pages before assuming no work is needed.</li>
+<li>Open **Review Queue Posture** to scan all active rows.</li>
+<li>Open **Inspect Selected Action** to understand a row before changing it.</li>
+<li>Open **Manage Ownership and Progress** to assign owner, due date, and workflow status.</li>
+<li>Use **Mark in progress** only when work has actually started.</li>
+<li>Open **Resolve and Close Action** when a closure outcome is ready.</li>
+<li>Choose the resolution outcome and write a resolution summary that explains what changed.</li>
+</ol>
+<h2>Training Prompt</h2>
+<p>If the queue has actions, ask the trainee to select one governance action, inspect its handling, routing, review context, owner, status, and due date, then decide whether to assign it, mark it in progress, defer it, cancel it, or resolve it with a specific outcome.</p>
+<p>If the queue is empty, ask the trainee to inspect Governance Summary, Comparative Cycle Review, Governance Execution Review, Scenario Effectiveness Review, and human validation challenge states, then explain why no ownerable follow-up is currently needed.</p>
+<p>Completion standard: the user can distinguish visibility from accountable governance tasking and can manage ownership, progress, and closure without over-escalating monitor-only findings.</p>
+</body>
+</html>

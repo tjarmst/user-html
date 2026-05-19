@@ -1,0 +1,174 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>FORESIGHT_EXECUTION_PAGE_LEARNING_RESOURCE</title>
+<style>
+
+@page {
+  size: A4;
+  margin: 18mm 16mm 18mm 16mm;
+  @bottom-center {
+    content: "Page " counter(page) " of " counter(pages);
+    font-size: 8pt;
+    color: #666;
+  }
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.38;
+  color: #1f2933;
+}
+h1 {
+  font-size: 20pt;
+  border-bottom: 2px solid #1f2933;
+  padding-bottom: 6px;
+  margin-top: 0;
+}
+h2 {
+  font-size: 15pt;
+  border-bottom: 1px solid #c9d1d9;
+  padding-bottom: 4px;
+  margin-top: 24px;
+}
+h3 {
+  font-size: 12.5pt;
+  margin-top: 18px;
+}
+h4 {
+  font-size: 11pt;
+  margin-top: 14px;
+}
+p {
+  margin: 0 0 8px 0;
+}
+ul, ol {
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+li {
+  margin-bottom: 3px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0 14px 0;
+  font-size: 8.6pt;
+  page-break-inside: auto;
+}
+thead {
+  display: table-header-group;
+}
+tr {
+  page-break-inside: avoid;
+}
+th, td {
+  border: 1px solid #aab2bd;
+  padding: 4px 5px;
+  vertical-align: top;
+  word-break: break-word;
+}
+th {
+  background: #eef2f6;
+  font-weight: bold;
+}
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 8.6pt;
+  line-height: 1.28;
+}
+code {
+  font-family: Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.92em;
+  background: #f6f8fa;
+  padding: 1px 3px;
+  border-radius: 3px;
+}
+pre code {
+  padding: 0;
+  background: transparent;
+}
+blockquote {
+  border-left: 4px solid #c9d1d9;
+  margin-left: 0;
+  padding-left: 10px;
+  color: #4b5563;
+}
+hr {
+  border: none;
+  border-top: 1px solid #c9d1d9;
+  margin: 18px 0;
+}
+.document-meta {
+  font-size: 8.5pt;
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+</style>
+</head>
+<body>
+<div class="document-meta">Source: user/FORESIGHT_EXECUTION_PAGE_LEARNING_RESOURCE.md</div>
+<h1>Foresight Execution Page Learning Resource</h1>
+<p>This guide teaches users how the **Foresight Execution** page connects scenarios, signals, watchpoints, alerts, and mitigation tracking.</p>
+<h2>Purpose</h2>
+<p>Foresight Execution turns scenario monitoring into execution-aware governance review.</p>
+<p>Use it to:</p>
+<ul>
+<li>inspect seeded or configured scenarios</li>
+<li>review scenario-to-execution effectiveness</li>
+<li>inspect scenario execution review context</li>
+<li>maintain the signal register</li>
+<li>record signal direction and watchpoint status</li>
+<li>review alert detail</li>
+<li>update mitigation status, owner, due date, and notes</li>
+</ul>
+<p>Scenario monitoring is only useful when it connects to mitigation and execution evidence.</p>
+<h2>Signal Register</h2>
+<p>Signals record observed scenario movement.</p>
+<p>Key fields include:</p>
+<ul>
+<li>linked scenario</li>
+<li>signal direction</li>
+<li>watchpoint status</li>
+<li>note</li>
+</ul>
+<p>Watchpoint statuses include watch, triggered, critical, and cleared.</p>
+<h2>Alerts And Mitigation</h2>
+<p>Alerts surface watchpoint-triggered governance pressure.</p>
+<p>Mitigation tracking records:</p>
+<ul>
+<li>mitigation status</li>
+<li>owner</li>
+<li>due date</li>
+<li>mitigation note</li>
+</ul>
+<p>Mitigation statuses include unplanned, planned, in progress, mitigated, and accepted.</p>
+<h2>Review Context</h2>
+<p>The page can display scenario execution review context with semantic and handling meaning. Use it to distinguish supported mitigation from weak, incomplete, or blocked claims.</p>
+<h2>Downstream Impact</h2>
+<p>Foresight Execution feeds:</p>
+<ul>
+<li>Recommendations trigger basis</li>
+<li>Preserve / Reform / Replace scenario escalation</li>
+<li>Governance Summary watchpoint alerts and gates</li>
+<li>Governance Execution Review</li>
+<li>Scenario Effectiveness Review</li>
+<li>Lineage View scenario overlay</li>
+</ul>
+<h2>Common Mistakes</h2>
+<p>Avoid treating a watchpoint as mitigated because it was acknowledged.</p>
+<p>Avoid treating default seeded technology watchpoint context as strong proof by itself.</p>
+<p>Avoid recording mitigation without an owner when action is expected.</p>
+<p>Avoid ignoring critical alerts when accepting decisions.</p>
+<h2>Training Prompt</h2>
+<p>Ask the trainee to save a scenario signal, inspect the resulting alert, update mitigation tracking, and explain whether the alert should block, caution, or simply monitor governance action.</p>
+<p>Completion standard: the user can connect scenario pressure to accountable mitigation review.</p>
+</body>
+</html>

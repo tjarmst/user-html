@@ -1,0 +1,427 @@
+<!doctype html>
+<html><head><meta charset=utf-8>
+<title>PROJECT_OWNER_ORIENTATION_AND_TESTING_BOUNDARIES</title>
+<style>
+
+body { font-family: Segoe UI, Arial, sans-serif; line-height: 1.45; color: #202124; margin: 42px; max-width: 980px; }
+h1, h2, h3 { color: #17324d; margin-top: 1.35em; }
+h1 { border-bottom: 2px solid #d9e2ec; padding-bottom: 8px; }
+table { border-collapse: collapse; width: 100%; margin: 18px 0; font-size: 0.94rem; }
+th, td { border: 1px solid #cfd8e3; padding: 7px 9px; vertical-align: top; }
+th { background: #eef3f8; text-align: left; }
+code, pre { background: #f4f6f8; border-radius: 4px; }
+code { padding: 1px 4px; }
+pre { padding: 12px; overflow-x: auto; }
+.document-meta { color: #5f6b7a; font-size: 0.9rem; margin-bottom: 22px; }
+
+</style></head><body>
+<div class=document-meta>Source: user/PROJECT_OWNER_ORIENTATION_AND_TESTING_BOUNDARIES.md</div>
+<h1>Project Owner Orientation and Testing Boundaries</h1>
+<h2>Workplace Conditions Governance Platform</h2>
+<h2>Fiftysixth_pass Stage 6C.2</h2>
+<h2>Purpose</h2>
+<p>This resource is for the Project Owner who has been told by management that the system is too complicated for staff to test properly.</p>
+<p>That concern is valid. It should be acknowledged directly.</p>
+<p>The Workplace Conditions Governance platform is not a casual self-service dashboard. It is a specialist governance-control-room application. It supports diagnosis, recommendation, decision, execution, measurement, review, and learning across assessment cycles. Because it links evidence, recommendations, structural decisions, pilots, KPIs, lineage, scenario pressure, review history, and cross-cycle continuity, it necessarily uses concepts and workflows that require training.</p>
+<p>The correct response is not to pretend the system is simple. The correct response is to define:</p>
+<ol>
+<li>what the system is for;</li>
+<li>why its complexity exists;</li>
+<li>what different staff groups should and should not be asked to test;</li>
+<li>what requires trained governance users;</li>
+<li>what requires seeded fixtures or technical validation;</li>
+<li>what training resources must be completed before wider rollout.</li>
+</ol>
+<p>This document gives the Project Owner a management-facing frame for those decisions.</p>
+<hr>
+<h2>Executive message for management</h2>
+<p>Management&#x27;s concern can be answered as follows:</p>
+<p>&gt; Staff difficulty testing the system does not, by itself, show that the system lacks value. It shows that the system is no longer a simple dashboard or survey tool. It is a governed transformation and learning environment. Its value depends on disciplined use, role-specific training, and guided testing.</p>
+<p>The current version is strategically valuable because it can help management answer questions that a simple dashboard cannot answer:</p>
+<ul>
+<li>What is structurally happening in the organization?</li>
+<li>Where do experience, evidence, and organizational claims diverge?</li>
+<li>Which recommendations are supported, weakly evidenced, contradicted, or ready for governance action?</li>
+<li>Which recommendations have become decisions, pilots, KPIs, and measurable learning?</li>
+<li>Which issues are new, carried forward, revised, fragmented, superseded, validated, or unresolved across cycles?</li>
+<li>Where is scenario pressure changing the governance meaning of a recommendation or execution path?</li>
+<li>What should governance approve, block, qualify, reopen, defer, or escalate?</li>
+</ul>
+<p>Those questions are management and governance questions. They cannot be tested properly by asking untrained staff to explore advanced pages unaided.</p>
+<hr>
+<h2>Metric value explanation for owners</h2>
+<p>The metric system should be explained to owners through the same product structure:</p>
+<table><thead><tr><th>Metric role</th><th>Plain-language value</th></tr></thead><tbody>
+<tr><td>Stage A diagnostic metrics</td><td>Help the owner understand current workplace reality before action is proposed.</td></tr>
+<tr><td>Stage A / Stage B readiness metrics</td><td>Show whether the organization has the trust, data, stakeholder support, learning culture, and pilot capacity to act responsibly.</td></tr>
+<tr><td>Stage B execution signals</td><td>Test whether recommendations, pilots, KPIs, governance actions, and learning states show real movement.</td></tr>
+<tr><td>Bridge / governance metrics</td><td>Connect diagnosis to action, evidence, scenario pressure, continuity, and review.</td></tr>
+</tbody></table>
+<p>This is the simplest owner-facing explanation:</p>
+<pre><code>Stage A metrics tell us what is happening.
+Stage B signals tell us whether our response is working.
+Bridge metrics tell us whether understanding has become accountable action and learning.</code></pre>
+<p>Owners should use <code>user/metrics/Metrics explained.md</code> before reviewing score-heavy pages or exports.</p>
+<hr>
+<h2>The simple operating loop</h2>
+<p>For management and training purposes, explain the system using this operating loop:</p>
+<p>&gt; diagnose → recommend → decide → execute → measure → review → learn</p>
+<p>This loop is the simplest way to explain the product without flattening its meaning.</p>
+<table><thead><tr><th>Step</th><th>Plain-language purpose</th><th>Typical system areas</th></tr></thead><tbody>
+<tr><td>Diagnose</td><td>Establish what is happening in work conditions.</td><td>Diagnostic Input, Survey Input, Evidence Notes, Score Dashboard, Alignment Dashboard</td></tr>
+<tr><td>Recommend</td><td>Identify what should be preserved, changed, watched, or tested.</td><td>Recommendations, Score Dashboard, Alignment Dashboard</td></tr>
+<tr><td>Decide</td><td>Convert selected recommendations into governed structural choices.</td><td>Preserve / Reform / Replace, Recommendations Convert</td></tr>
+<tr><td>Execute</td><td>Turn decisions into pilots, actions, and implementation work.</td><td>Pilot Tracker, Governance Action Queue, Foresight Execution</td></tr>
+<tr><td>Measure</td><td>Track whether the intervention is changing real conditions.</td><td>KPI Dashboard, Pilot Tracker, Score Dashboard</td></tr>
+<tr><td>Review</td><td>Examine evidence sufficiency, scenario pressure, lineage, and governance consequence.</td><td>Lineage View, Governance Execution Review, Scenario Effectiveness Review, Governance Summary</td></tr>
+<tr><td>Learn</td><td>Carry forward, revise, validate, contradict, reopen, or retire conclusions across cycles.</td><td>Comparative Cycle Review, Recommendations Continuity/Learning, Review History</td></tr>
+</tbody></table>
+<p>This operating loop should be the management-facing spine of the training program.</p>
+<hr>
+<h2>What the system is</h2>
+<p>The system is a governed transformation and learning platform for Workplace Conditions Governance.</p>
+<p>It helps an organization:</p>
+<ul>
+<li>capture structural, symbolic, alignment, survey, and evidence signals;</li>
+<li>turn diagnostic findings into recommendations;</li>
+<li>govern recommendations through workflow status, evidence, continuity, and learning;</li>
+<li>convert accepted recommendations into structural decisions;</li>
+<li>test decisions through pilots and KPIs;</li>
+<li>review whether execution evidence supports or contradicts the intended change;</li>
+<li>preserve institutional memory across assessment cycles;</li>
+<li>keep conclusions open to human review, challenge, and revision.</li>
+</ul>
+<p>Its distinctive value is not that it gives a simple score. Its distinctive value is that it preserves the chain from diagnosis to governed action and learning.</p>
+<hr>
+<h2>What the system is not</h2>
+<p>The system should not be described to management or staff as:</p>
+<ul>
+<li>a simple HR dashboard;</li>
+<li>a casual survey reporting tool;</li>
+<li>a fully self-explanatory staff self-service system;</li>
+<li>a sentiment or engagement app;</li>
+<li>a generic assurance checklist;</li>
+<li>an automatic decision engine;</li>
+<li>a replacement for governance judgment;</li>
+<li>a tool all staff can test equally without role-specific preparation.</li>
+</ul>
+<p>If it is positioned as a low-training dashboard, staff testing will appear to fail even where the product is functioning correctly.</p>
+<hr>
+<h2>Why the system feels complex</h2>
+<p>The system feels complex because it is preserving several different kinds of meaning at the same time:</p>
+<ol>
+<li><strong>Diagnosis</strong> — what the data and evidence suggest about workplace conditions.</li>
+<li><strong>Governance action</strong> — what should be accepted, deferred, watched, escalated, or converted into structural work.</li>
+<li><strong>Execution traceability</strong> — whether recommendations become decisions, pilots, KPIs, and measurable change.</li>
+<li><strong>Evidence discipline</strong> — whether claims are supported, contradicted, incomplete, or weakly evidenced.</li>
+<li><strong>Cross-cycle memory</strong> — whether an issue is new, carried forward, revised, fragmented, superseded, validated, or reopened.</li>
+<li><strong>Scenario pressure</strong> — whether external or future-facing conditions change the interpretation of a recommendation or execution path.</li>
+<li><strong>Human judgment</strong> — whether reviewers challenge, qualify, revise, or confirm system-generated conclusions.</li>
+</ol>
+<p>Each layer adds value. Each layer also adds vocabulary and testing complexity.</p>
+<hr>
+<h2>The central adoption risk</h2>
+<p>The main risk is not that the system has no value. The main risk is that users are asked to test or use it at the wrong level of training.</p>
+<p>A user who has not been trained in recommendation series, predecessor relationships, continuity states, evidence relinking, structural decision conversion, or learning states should not be asked to validate those workflows unaided.</p>
+<p>If that happens, the user will experience the system as confusing even when the system is behaving correctly.</p>
+<hr>
+<h2>Testing should be role-based</h2>
+<p>Different users should test different things.</p>
+<p>Do not ask every staff tester to validate every page or every action path.</p>
+<h2>Level 1 — Ordinary staff orientation testing</h2>
+<p>Audience:</p>
+<ul>
+<li>staff invited to provide broad usability feedback;</li>
+<li>managers unfamiliar with the governance model;</li>
+<li>pilot participants or occasional users.</li>
+</ul>
+<p>Appropriate testing questions:</p>
+<ul>
+<li>Can I understand the broad purpose of the page?</li>
+<li>Can I tell what organization and assessment cycle I am looking at?</li>
+<li>Can I identify the selected item, pilot, KPI, recommendation, or lineage path?</li>
+<li>Can I tell whether the page is asking me to inspect, decide, act, or review?</li>
+<li>Are empty states understandable?</li>
+<li>Does the page explain when data is missing?</li>
+<li>Are advanced actions clearly signposted as requiring trained use?</li>
+</ul>
+<p>Ordinary staff should not be asked to validate:</p>
+<ul>
+<li>carry-forward predecessor selection;</li>
+<li>recommendation-series correctness;</li>
+<li>continuity correction;</li>
+<li>structural-decision conversion logic;</li>
+<li>scenario mitigation sufficiency;</li>
+<li>governance consequence routing;</li>
+<li>threshold-rule versioning;</li>
+<li>seeded fixture adequacy;</li>
+<li>cross-cycle lineage integrity.</li>
+</ul>
+<p>Expected output from ordinary staff testing:</p>
+<ul>
+<li>comprehension feedback;</li>
+<li>wording confusion;</li>
+<li>missing context cues;</li>
+<li>unclear empty-state feedback;</li>
+<li>whether the page purpose is apparent.</li>
+</ul>
+<p>Ordinary staff testing is not a full functional validation pass.</p>
+<hr>
+<h2>Level 2 — Trained governance user testing</h2>
+<p>Audience:</p>
+<ul>
+<li>transformation leads;</li>
+<li>governance analysts;</li>
+<li>project owner;</li>
+<li>steering committee support staff;</li>
+<li>trained page operators.</li>
+</ul>
+<p>Appropriate testing questions:</p>
+<ul>
+<li>Can I follow the operating loop from diagnosis to recommendation, decision, execution, measurement, review, and learning?</li>
+<li>Can I use the selected-workspace pages safely?</li>
+<li>Can I see selected-item context before write actions?</li>
+<li>Can I tell which actions change workflow status, learning state, continuity, evidence links, or conversion status?</li>
+<li>Can I distinguish an unavailable action from a missing prerequisite data state?</li>
+<li>Can I interpret evidence sufficiency and contradiction cues?</li>
+<li>Can I explain why a recommendation is new, carried forward, revised, watched, validated, contradicted, or reopened?</li>
+</ul>
+<p>Trained governance users may validate:</p>
+<ul>
+<li>recommendation workflow updates;</li>
+<li>evidence relinking when valid evidence exists;</li>
+<li>learning-state actions;</li>
+<li>ordinary continuity creation/linking when valid data exists;</li>
+<li>pilot outcome interpretation;</li>
+<li>KPI outcome and reassessment workflows;</li>
+<li>lineage interpretation;</li>
+<li>governance action queue handling.</li>
+</ul>
+<p>They should still not be expected to invent missing fixture data or prove hidden service eligibility rules by exploration.</p>
+<hr>
+<h2>Level 3 — Project Owner acceptance testing</h2>
+<p>Audience:</p>
+<ul>
+<li>Project Owner;</li>
+<li>implementation lead;</li>
+<li>product owner;</li>
+<li>senior governance sponsor with system training.</li>
+</ul>
+<p>Appropriate testing questions:</p>
+<ul>
+<li>Does the system support the intended management operating loop?</li>
+<li>Is the page grouping coherent with training and governance use?</li>
+<li>Are the major user groups clear?</li>
+<li>Are the page resources sufficient for trained operation?</li>
+<li>Are advanced actions sufficiently warned and contextualized?</li>
+<li>Are management-facing outputs credible and bounded?</li>
+<li>Are unsupported or weakly evidenced states clearly qualified?</li>
+<li>Are the remaining limitations recorded honestly?</li>
+</ul>
+<p>The Project Owner should validate product fitness at the operating-model level, not every low-level data precondition.</p>
+<hr>
+<h2>Level 4 — Admin/developer fixture validation</h2>
+<p>Audience:</p>
+<ul>
+<li>developer;</li>
+<li>technical project owner;</li>
+<li>admin tester;</li>
+<li>data seeding/fixture maintainer.</li>
+</ul>
+<p>Appropriate validation questions:</p>
+<ul>
+<li>Does seeded data contain the required prior-cycle/current-cycle recommendation pairs?</li>
+<li>Is predecessor eligibility correctly represented?</li>
+<li>Are continuity correction actions available in valid linked states?</li>
+<li>Are no-action states caused by missing data rather than UI failure?</li>
+<li>Do threshold-rule versions and reassessment triggers behave under edge cases?</li>
+<li>Do scenario trigger states render correctly under insufficient, weak, supportable, and contradicted evidence?</li>
+<li>Does lineage integrity hold across recommendation, decision, pilot, KPI, and evidence records?</li>
+</ul>
+<p>These tests should use known fixture conditions. They should not be assigned to ordinary staff testers.</p>
+<hr>
+<h2>Staff testing boundaries</h2>
+<p>Use the following boundary when planning staff testing:</p>
+<table><thead><tr><th>Test area</th><th>Ordinary staff</th><th>Trained governance user</th><th>Project Owner</th><th>Admin/developer fixture</th></tr></thead><tbody>
+<tr><td>Page purpose and wording</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Optional</td></tr>
+<tr><td>Selected item/path clarity</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Optional</td></tr>
+<tr><td>Empty-state clarity</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Basic page navigation</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Optional</td></tr>
+<tr><td>Recommendation workflow status</td><td>No</td><td>Yes</td><td>Yes</td><td>Optional</td></tr>
+<tr><td>Evidence relinking</td><td>No</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Recommendation continuity</td><td>No</td><td>Trained only</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Carry-forward predecessor selection</td><td>No</td><td>Only with prepared data</td><td>Yes, with fixture</td><td>Yes</td></tr>
+<tr><td>Continuity correction</td><td>No</td><td>Advanced only</td><td>Yes, with fixture</td><td>Yes</td></tr>
+<tr><td>Convert recommendation to decision</td><td>No</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Pilot outcome interpretation</td><td>Basic only</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>KPI thresholds and versioning</td><td>No</td><td>Advanced only</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Scenario trigger-state validation</td><td>No</td><td>Advanced only</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Governance routing semantics</td><td>No</td><td>Advanced only</td><td>Yes</td><td>Yes</td></tr>
+<tr><td>Export/board-pack credibility</td><td>No</td><td>Optional</td><td>Yes</td><td>Optional</td></tr>
+</tbody></table>
+<hr>
+<h2>What management should expect from a staff test</h2>
+<p>A staff test can reasonably answer:</p>
+<ul>
+<li>Is the system intimidating?</li>
+<li>Are terms unfamiliar?</li>
+<li>Does the page make clear what it is for?</li>
+<li>Can a user see the selected item before acting?</li>
+<li>Are warnings and explanations sufficient?</li>
+<li>Are some actions clearly advanced?</li>
+<li>Are training resources needed before confident use?</li>
+</ul>
+<p>A staff test cannot reasonably answer, unless staff are trained and given scripted data:</p>
+<ul>
+<li>whether predecessor eligibility logic is correct;</li>
+<li>whether continuity series are complete;</li>
+<li>whether scenario sufficiency logic is correct;</li>
+<li>whether recommendation regeneration preserved identity correctly;</li>
+<li>whether threshold rules are semantically optimal;</li>
+<li>whether governance consequence routing is fully valid;</li>
+<li>whether cross-cycle lineage is complete.</li>
+</ul>
+<hr>
+<h2>What should be tested before wider rollout</h2>
+<p>Before wider rollout, use four validation streams.</p>
+<h3>1. Orientation comprehension test</h3>
+<p>Audience:</p>
+<ul>
+<li>ordinary staff or managers new to the system.</li>
+</ul>
+<p>Test:</p>
+<ul>
+<li>Can they explain the operating loop after reading a short orientation?</li>
+<li>Can they identify what each page group is for?</li>
+<li>Can they distinguish ordinary review from advanced governance actions?</li>
+</ul>
+<p>Output:</p>
+<ul>
+<li>wording and training feedback.</li>
+</ul>
+<h3>2. Trained governance user smoke test</h3>
+<p>Audience:</p>
+<ul>
+<li>users who have completed the concept primer and page guides.</li>
+</ul>
+<p>Test:</p>
+<ul>
+<li>selected item/path context;</li>
+<li>basic write-action reachability;</li>
+<li>evidence and learning workflows;</li>
+<li>pilot and KPI workflows;</li>
+<li>page-level empty states.</li>
+</ul>
+<p>Output:</p>
+<ul>
+<li>usability and action-safety feedback.</li>
+</ul>
+<h3>3. Project Owner acceptance test</h3>
+<p>Audience:</p>
+<ul>
+<li>Project Owner and implementation lead.</li>
+</ul>
+<p>Test:</p>
+<ul>
+<li>whether the operating loop is coherent;</li>
+<li>whether management-facing pages support governance review;</li>
+<li>whether training materials and role boundaries are adequate;</li>
+<li>whether remaining limitations are acceptable.</li>
+</ul>
+<p>Output:</p>
+<ul>
+<li>go/no-go or further bounded closure decisions.</li>
+</ul>
+<h3>4. Admin/developer fixture test</h3>
+<p>Audience:</p>
+<ul>
+<li>technical tester.</li>
+</ul>
+<p>Test:</p>
+<ul>
+<li>predecessor/carry-forward fixture;</li>
+<li>continuity correction fixture;</li>
+<li>scenario trigger-state fixture;</li>
+<li>sparse-data edge cases;</li>
+<li>threshold/reassessment edge cases.</li>
+</ul>
+<p>Output:</p>
+<ul>
+<li>defect-only patches or fixture/training notes.</li>
+</ul>
+<hr>
+<h2>Minimum training package before staff testing resumes</h2>
+<p>Before asking staff to resume broad testing, complete at least these resources:</p>
+<ol>
+<li><strong>Project Owner Orientation and Testing Boundaries</strong> — this document.</li>
+<li><strong>Governance Action Concept Primer</strong> — shared vocabulary and system logic.</li>
+<li><strong>Recommendations Page Learning Resource rewrite</strong> — because Recommendations carries the highest continuity/conversion/learning complexity.</li>
+<li><strong>Role-Based Smoke Test Guide</strong> — so staff are not asked to infer hidden prerequisites.</li>
+</ol>
+<p>Other page resources can follow in priority order.</p>
+<hr>
+<h2>How to explain complexity without apologizing for it</h2>
+<p>Use this management wording:</p>
+<p>&gt; The system is complex because it preserves governance meaning that a simple dashboard would discard. It tracks not only scores, but evidence, contradiction, recommendation identity, continuity across cycles, decisions, pilots, KPIs, scenario pressure, and learning states. That complexity is the source of its management value, but it means the product must be rolled out as a trained governance tool rather than as a casual self-service dashboard.</p>
+<p>This framing acknowledges the burden without undermining the product.</p>
+<hr>
+<h2>Where the UI should help and where training should help</h2>
+<p>The UI should help by showing:</p>
+<ul>
+<li>selected item or path;</li>
+<li>current state;</li>
+<li>action area;</li>
+<li>consequence warning;</li>
+<li>missing prerequisite explanation;</li>
+<li>compact local context before write actions.</li>
+</ul>
+<p>Training should help by explaining:</p>
+<ul>
+<li>what the terms mean;</li>
+<li>why the operating loop matters;</li>
+<li>how pages relate to one another;</li>
+<li>what prerequisites are needed;</li>
+<li>which actions are advanced;</li>
+<li>which states require seeded fixture data;</li>
+<li>why absence of an option may be expected.</li>
+</ul>
+<p>Do not try to put the entire training manual into the UI. That would make the pages heavier and less usable.</p>
+<hr>
+<h2>Immediate implications for the backlog</h2>
+<p>The next training/documentation priorities should be:</p>
+<ol>
+<li>Create <code>user/GOVERNANCE_ACTION_CONCEPT_PRIMER.md</code>.</li>
+<li>Rewrite <code>user/RECOMMENDATIONS_PAGE_LEARNING_RESOURCE.md</code> around the selected-recommendation workspace model.</li>
+<li>Create <code>user/ROLE_BASED_SMOKE_TEST_GUIDE.md</code>.</li>
+<li>Rewrite <code>user/LINEAGE_VIEW_PAGE_LEARNING_RESOURCE.md</code> around the selected-path workspace model.</li>
+<li>Amend <code>user/PILOT_TRACKER_PAGE_LEARNING_RESOURCE.md</code> for the selected-pilot workspace and Stage 5.2 lineage visibility.</li>
+<li>Amend <code>user/KPI_DASHBOARD_PAGE_LEARNING_RESOURCE.md</code> for role boundaries and threshold-rule training.</li>
+<li>Restructure <code>user/TRAINING_MANUAL.md</code> as an index and guided pathway rather than the main conceptual burden.</li>
+</ol>
+<hr>
+<h2>Project Owner decision rule</h2>
+<p>When management says the system is too complicated, do not immediately ask for another UI refactor.</p>
+<p>First ask:</p>
+<ol>
+<li>Is the complexity intrinsic to the governance task?</li>
+<li>Is the user being asked to test outside their role or training level?</li>
+<li>Is the page missing local selected-item or consequence context?</li>
+<li>Is a training resource stale or absent?</li>
+<li>Is a fixture-dependent workflow being tested without fixture data?</li>
+</ol>
+<p>Only item 3 should normally trigger a UI patch.</p>
+<p>Items 1, 2, 4, and 5 should trigger training, role-boundary, or fixture-work responses.</p>
+<hr>
+<h2>Closing position</h2>
+<p>The Workplace Conditions Governance platform should now be positioned as:</p>
+<p>&gt; a trained governance and transformation-learning environment for assessing whether workplace conditions are improving under legitimate value-creation constraints.</p>
+<p>It is not ready for unstructured casual staff testing of advanced workflows.</p>
+<p>It is ready for a managed training and validation program that separates:</p>
+<ul>
+<li>ordinary comprehension testing;</li>
+<li>trained governance operation;</li>
+<li>Project Owner acceptance;</li>
+<li>admin/developer fixture validation.</li>
+</ul>
+<p>That is the correct boundary for the next phase of adoption.</p>
+</body></html>

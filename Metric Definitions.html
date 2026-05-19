@@ -1,0 +1,93 @@
+<!doctype html>
+<html><head><meta charset=utf-8>
+<title>Metric Definitions</title>
+<style>
+
+body { font-family: Segoe UI, Arial, sans-serif; line-height: 1.45; color: #202124; margin: 42px; max-width: 980px; }
+h1, h2, h3 { color: #17324d; margin-top: 1.35em; }
+h1 { border-bottom: 2px solid #d9e2ec; padding-bottom: 8px; }
+table { border-collapse: collapse; width: 100%; margin: 18px 0; font-size: 0.94rem; }
+th, td { border: 1px solid #cfd8e3; padding: 7px 9px; vertical-align: top; }
+th { background: #eef3f8; text-align: left; }
+code, pre { background: #f4f6f8; border-radius: 4px; }
+code { padding: 1px 4px; }
+pre { padding: 12px; overflow-x: auto; }
+.document-meta { color: #5f6b7a; font-size: 0.9rem; margin-bottom: 22px; }
+
+</style></head><body>
+<div class=document-meta>Source: user/metrics/Metric Definitions.md</div>
+<h1>Metric Definitions</h1>
+<h2>Purpose</h2>
+<p>This document is a concise reference for the diagnostic metrics used by the Diagnostic Input page and the scorecard. It defines each metric and places it inside the product operating model:</p>
+<ul>
+<li><strong>Stage A diagnostic:</strong> helps the organization understand current reality.</li>
+<li><strong>Stage A / Stage B readiness:</strong> diagnoses whether the organization is ready to act and learn.</li>
+<li><strong>Stage B execution:</strong> tests whether action is producing movement.</li>
+<li><strong>Bridge / governance:</strong> connects diagnosis, action, evidence, and review.</li>
+</ul>
+<p>Most rows below are Stage A diagnostic inputs. Stage B execution signals such as pilot outcomes, KPI progress, governance action status, recommendation lifecycle state, and learning state are produced on later workflow pages rather than entered as ordinary Diagnostic Input metrics.</p>
+<h2>Stage A Diagnostic Metrics</h2>
+<table><thead><tr><th>Metric code</th><th>Product role</th><th>Direction</th><th>Definition</th></tr></thead><tbody>
+<tr><td><code>POLITICAL_REWARD_BIAS</code></td><td>Stage A diagnostic</td><td>Lower is healthier</td><td>Extent to which rewards, promotions, and recognition are shaped by politics, favoritism, or visibility rather than contribution and capability.</td></tr>
+<tr><td><code>SHORT_TERM_TARGET_PRESSURE</code></td><td>Stage A diagnostic</td><td>Lower is healthier</td><td>Degree to which short-term targets distort long-term stewardship, ethical judgment, workload sustainability, or mission integrity.</td></tr>
+<tr><td><code>STEWARDSHIP_INCENTIVE_PRESENCE</code></td><td>Stage A diagnostic</td><td>Higher is healthier</td><td>Extent to which incentives reward mentoring, long-term thinking, capability building, and responsible stewardship.</td></tr>
+<tr><td><code>PROMOTION_TRANSPARENCY</code></td><td>Bridge / governance</td><td>Higher is healthier</td><td>Clarity and fairness of advancement criteria. It bridges formal structure and employee perception of fairness.</td></tr>
+<tr><td><code>HIDDEN_EXIT_PRESSURE</code></td><td>Stage A diagnostic</td><td>Lower is healthier</td><td>Extent to which people are indirectly pressured to leave through exclusion, loss of opportunity, reputational harm, or intolerable conditions.</td></tr>
+<tr><td><code>RECOVERY_ADEQUACY</code></td><td>Stage A diagnostic</td><td>Higher is healthier</td><td>Whether people have sufficient time and conditions to recover from work demands.</td></tr>
+<tr><td><code>DIGNITY_AT_WORK</code></td><td>Stage A diagnostic</td><td>Higher is healthier</td><td>Whether people experience respect, fairness, and human dignity in daily work.</td></tr>
+<tr><td><code>PSYCHOLOGICAL_SAFETY</code></td><td>Stage A diagnostic</td><td>Higher is healthier</td><td>Whether people can speak honestly, admit mistakes, ask for help, and raise concerns without fear.</td></tr>
+<tr><td><code>SUSTAINABLE_WORKLOAD_SCORE</code></td><td>Stage A diagnostic</td><td>Higher is healthier</td><td>Whether workload can be sustained without degrading quality, recovery, or human conditions.</td></tr>
+<tr><td><code>OVERTIME_HOURS_NORM</code></td><td>Stage A diagnostic</td><td>Lower is healthier</td><td>Normalized level of overtime. High values indicate unsustainable workload pressure.</td></tr>
+<tr><td><code>STRESS_LEAVE_RATE</code></td><td>Stage A diagnostic</td><td>Lower is healthier</td><td>Rate of leave associated with stress, mental health strain, or burnout.</td></tr>
+<tr><td><code>BURNOUT_RISK_SCORE</code></td><td>Stage A diagnostic</td><td>Lower is healthier</td><td>Composite risk that workload, stress, recovery, and work design are producing burnout.</td></tr>
+<tr><td><code>INTERGEN_RESPECT</code></td><td>Bridge / governance</td><td>Higher is healthier</td><td>Whether different age groups and life stages are respected and valued. It bridges cultural meaning and workforce structure.</td></tr>
+<tr><td><code>AUTHENTICITY_SAFETY</code></td><td>Stage A diagnostic</td><td>Higher is healthier</td><td>Whether people can participate without excessive identity defence, humiliation risk, or forced conformity.</td></tr>
+<tr><td><code>LEARNING_CULTURE</code></td><td>Stage A / Stage B readiness</td><td>Higher is healthier</td><td>Whether the organization learns from evidence, mistakes, pilots, and dissent rather than punishing inconvenient feedback.</td></tr>
+<tr><td><code>COMPETENCE_OVER_POLITICS</code></td><td>Stage A diagnostic</td><td>Higher is healthier</td><td>Degree to which capability and contribution matter more than internal politics.</td></tr>
+<tr><td><code>PRESENTEEISM_PRESTIGE</code></td><td>Stage A diagnostic</td><td>Lower is healthier</td><td>Extent to which visible busyness or physical presence is rewarded over real contribution.</td></tr>
+<tr><td><code>CAPABILITY_RECOGNITION</code></td><td>Stage A diagnostic</td><td>Higher is healthier</td><td>Whether skills, judgment, knowledge, and contribution potential are recognized accurately.</td></tr>
+<tr><td><code>AGE_PROXY_DEPENDENCE</code></td><td>Stage A diagnostic</td><td>Lower is healthier</td><td>Extent to which age or life stage substitutes for real capability assessment.</td></tr>
+<tr><td><code>LATER_CAREER_OPPORTUNITY</code></td><td>Bridge / governance</td><td>Higher is healthier</td><td>Availability and credibility of contribution, development, and advancement pathways for later-career workers.</td></tr>
+<tr><td><code>KNOWLEDGE_UTILIZATION</code></td><td>Stage A diagnostic</td><td>Higher is healthier</td><td>Whether institutional knowledge and employee expertise are captured, shared, and used.</td></tr>
+<tr><td><code>RESKILLING_EQUITY</code></td><td>Stage A diagnostic</td><td>Higher is healthier</td><td>Fairness of access to reskilling and development across groups and life stages.</td></tr>
+<tr><td><code>AI_AUGMENTATION_RATIO</code></td><td>Stage A diagnostic</td><td>Higher is healthier</td><td>Degree to which AI and technology augment human capability rather than replacing, controlling, or monitoring people.</td></tr>
+<tr><td><code>SURVEILLANCE_DRIFT_SCORE</code></td><td>Stage A diagnostic</td><td>Lower is healthier</td><td>Degree to which technology use is drifting toward surveillance, monitoring, or behavioural control.</td></tr>
+<tr><td><code>ROLE_REDESIGN_RATE</code></td><td>Stage A / Stage B readiness</td><td>Higher is healthier</td><td>Extent to which roles are redesigned around technology so human agency and contribution are preserved.</td></tr>
+<tr><td><code>HUMAN_AGENCY_IMPACT</code></td><td>Stage A diagnostic</td><td>Higher is healthier</td><td>Whether technology maintains or strengthens human judgment, discretion, and agency.</td></tr>
+<tr><td><code>HEADCOUNT_REPLACEMENT_BIAS</code></td><td>Stage A diagnostic</td><td>Lower is healthier</td><td>Degree to which technology is primarily used to reduce headcount rather than improve contribution.</td></tr>
+<tr><td><code>WORKER_VOICE_IN_TECH</code></td><td>Stage A diagnostic</td><td>Higher is healthier</td><td>Whether workers influence technology decisions that affect their work.</td></tr>
+<tr><td><code>AI_USE_TRANSPARENCY</code></td><td>Stage A diagnostic</td><td>Higher is healthier</td><td>Whether people know where AI is used, how it affects decisions, and how to question it.</td></tr>
+<tr><td><code>LEADERSHIP_SUPPORT</code></td><td>Stage A / Stage B readiness</td><td>Higher is healthier</td><td>Whether leaders are experienced as truthful, supportive, and willing to face difficult reality.</td></tr>
+<tr><td><code>STAKEHOLDER_SUPPORT_AVG</code></td><td>Stage A / Stage B readiness</td><td>Higher is healthier</td><td>Average support from key stakeholders needed to act, including leaders, workforce representatives, boards, or regulators.</td></tr>
+<tr><td><code>DATA_QUALITY_SCORE</code></td><td>Stage A / Stage B readiness</td><td>Higher is healthier</td><td>Reliability and completeness of data used for diagnosis and governance decisions.</td></tr>
+<tr><td><code>PILOT_CAPACITY</code></td><td>Stage A / Stage B readiness</td><td>Higher is healthier</td><td>Capacity to design, resource, run, and learn from bounded pilots before broad rollout.</td></tr>
+<tr><td><code>TRUST_HEALTH_SCORE</code></td><td>Stage A diagnostic</td><td>Higher is healthier</td><td>Overall health of trust relationships across leadership, peers, and institutions.</td></tr>
+<tr><td><code>SYMBOLIC_LEGITIMACY_INDEX</code></td><td>Stage A diagnostic</td><td>Higher is healthier</td><td>Whether authority, language, stated values, dignity, and leadership claims are experienced as credible.</td></tr>
+<tr><td><code>SYMBOLIC_STRUCTURAL_INTEGRITY_GAP</code></td><td>Bridge / governance</td><td>Lower is healthier</td><td>Gap between symbolic commitments and structural reality. Large gaps require careful governance interpretation.</td></tr>
+</tbody></table>
+<h2>Computed Score Indices</h2>
+<table><thead><tr><th>Score / index</th><th>Product role</th><th>Meaning</th></tr></thead><tbody>
+<tr><td><code>incentive_integrity_score</code></td><td>Stage A diagnostic</td><td>Whether reward systems support legitimate, sustainable contribution.</td></tr>
+<tr><td><code>human_sustainability_score</code></td><td>Stage A diagnostic</td><td>Whether workload, recovery, dignity, and safety conditions are viable.</td></tr>
+<tr><td><code>cultural_health_score</code></td><td>Stage A diagnostic</td><td>Whether norms support learning, respect, authenticity, and competence.</td></tr>
+<tr><td><code>capability_realism_score</code></td><td>Stage A diagnostic</td><td>Whether capability is assessed by real contribution rather than crude proxies.</td></tr>
+<tr><td><code>technology_alignment_score</code></td><td>Stage A diagnostic</td><td>Whether technology supports augmentation, agency, and role redesign.</td></tr>
+<tr><td><code>change_readiness_score</code></td><td>Stage A / Stage B readiness</td><td>Whether the organization has leadership, trust, data, stakeholder, and pilot conditions to act responsibly.</td></tr>
+<tr><td><code>structural_health_index</code></td><td>Stage A diagnostic</td><td>Composite view of structural conditions. Structural weakness cannot be offset by symbolic strength.</td></tr>
+<tr><td><code>symbolic_legitimacy_index</code></td><td>Stage A diagnostic</td><td>Composite view of credibility, dignity, trust, leadership support, and transparent meaning.</td></tr>
+<tr><td><code>symbolic_structural_integrity_gap</code></td><td>Bridge / governance</td><td>Difference between symbolic legitimacy and structural health.</td></tr>
+<tr><td><code>execution_feedback_index</code></td><td>Stage B execution</td><td>Evidence from pilots and KPIs that action is affecting conditions.</td></tr>
+<tr><td><code>overall_flourishing_score</code></td><td>Bridge / governance</td><td>Combined view of structural health, symbolic legitimacy, and execution feedback where available.</td></tr>
+<tr><td><code>burnout_risk_score</code></td><td>Stage A diagnostic</td><td>Composite view of burnout risk. Lower is healthier.</td></tr>
+<tr><td><code>trust_health_score</code></td><td>Stage A diagnostic</td><td>Composite view of trust conditions.</td></tr>
+<tr><td><code>ai_capture_risk_score</code></td><td>Stage A diagnostic</td><td>Composite risk that technology is being captured by control, surveillance, or replacement logic. Lower is healthier.</td></tr>
+</tbody></table>
+<h2>Notes</h2>
+<ul>
+<li>All ordinary diagnostic metric observations use a 0-100 scale.</li>
+<li>For positive metrics, higher values indicate healthier conditions.</li>
+<li>For negative metrics, lower values indicate healthier conditions.</li>
+<li>Diagnostic Input mainly supports Stage A. Pilot outcomes, KPI progress, recommendation lifecycle, governance action status, and learning state are Stage B or Bridge signals managed on later workflow pages.</li>
+<li>For deeper interpretation, use <code>Comprehensive Metric Reference.md</code>.</li>
+</ul>
+</body></html>

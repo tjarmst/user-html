@@ -1,0 +1,619 @@
+<!doctype html>
+<html><head><meta charset=utf-8>
+<title>PROJECT_OWNER_FIXTURE_VALIDATION_GUIDE</title>
+<style>
+
+body { font-family: Segoe UI, Arial, sans-serif; line-height: 1.45; color: #202124; margin: 42px; max-width: 980px; }
+h1, h2, h3 { color: #17324d; margin-top: 1.35em; }
+h1 { border-bottom: 2px solid #d9e2ec; padding-bottom: 8px; }
+table { border-collapse: collapse; width: 100%; margin: 18px 0; font-size: 0.94rem; }
+th, td { border: 1px solid #cfd8e3; padding: 7px 9px; vertical-align: top; }
+th { background: #eef3f8; text-align: left; }
+code, pre { background: #f4f6f8; border-radius: 4px; }
+code { padding: 1px 4px; }
+pre { padding: 12px; overflow-x: auto; }
+.document-meta { color: #5f6b7a; font-size: 0.9rem; margin-bottom: 22px; }
+
+</style></head><body>
+<div class=document-meta>Source: user/PROJECT_OWNER_FIXTURE_VALIDATION_GUIDE.md</div>
+<h1>Project Owner Fixture Validation Guide</h1>
+<p>Explanation:</p>
+<p>A fixture means the prepared conditions a test needs in order to run predictably.</p>
+<p>That usually includes one or more of:</p>
+<p>specific test data</p>
+<p>database records</p>
+<p>files</p>
+<p>objects created before the test</p>
+<p>mocked services or API responses</p>
+<p>configuration values</p>
+<p>initial application state</p>
+<p>setup and cleanup steps</p>
+<p>So a test fixture is not the test itself. It is the known setup that lets the test exercise a specific behavior and know what result to expect.</p>
+<h2>Purpose</h2>
+<p>This guide helps the Project Owner turn advanced validation questions into prepared fixture tests.</p>
+<p>It exists because some parts of the Workplace Conditions Governance platform are too conceptually and data-flow dependent for ordinary staff to validate by exploration.</p>
+<p>The goal is to prevent this situation:</p>
+<p>&gt; A staff member is asked to click around until they discover whether a complex state exists, without knowing the required predecessor data, expected result, or governance meaning.</p>
+<p>Instead, the Project Owner should define:</p>
+<ol>
+<li>the fixture state,</li>
+<li>the prerequisite data,</li>
+<li>the expected UI result,</li>
+<li>the role allowed to test it,</li>
+<li>the pass/fail/not-exercised rule.</li>
+</ol>
+<p>This turns advanced testing from exploratory confusion into controlled validation.</p>
+<hr>
+<h2>Core rule</h2>
+<p>Use this rule for all advanced validation:</p>
+<p>&gt; If the expected prerequisite data cannot be named in advance, the test is not ready for ordinary staff or general smoke testing.</p>
+<p>For example, do not ask an ordinary user to test carry-forward if nobody can name:</p>
+<ul>
+<li>the prior-cycle recommendation,</li>
+<li>the current-cycle recommendation,</li>
+<li>the recommendation series,</li>
+<li>the expected predecessor,</li>
+<li>the expected continuity state.</li>
+</ul>
+<p>If those are unknown, the correct classification is:</p>
+<pre><code>Not ready for user testing — fixture not defined.</code></pre>
+<hr>
+<h2>Difference between smoke testing and fixture validation</h2>
+<h2>Smoke testing</h2>
+<p>Smoke testing asks:</p>
+<ul>
+<li>does the page open?</li>
+<li>is the selected item visible?</li>
+<li>are labels understandable?</li>
+<li>is an obvious empty state explained?</li>
+<li>does a basic action appear in the expected area?</li>
+</ul>
+<p>Smoke testing is suitable for ordinary staff only when the task is simple and visible.</p>
+<h2>Fixture validation</h2>
+<p>Fixture validation asks:</p>
+<ul>
+<li>does the system render the correct state when a known data condition exists?</li>
+<li>does a specific predecessor appear?</li>
+<li>does a scenario branch classify correctly?</li>
+<li>does a threshold-version case behave as expected?</li>
+<li>does lineage show a complete or broken path as designed?</li>
+</ul>
+<p>Fixture validation is not ordinary exploration. It requires prepared data and expected outcomes.</p>
+<hr>
+<h2>User-role boundary</h2>
+<table><thead><tr><th>Role</th><th>Suitable validation</th></tr></thead><tbody>
+<tr><td>Ordinary staff</td><td>readability, navigation, selected-item visibility, obvious empty states</td></tr>
+<tr><td>Trained governance user</td><td>evidence, recommendation, KPI, pilot, lineage, and learning workflows where data is prepared</td></tr>
+<tr><td>Project Owner</td><td>define validation questions, approve expected outcomes, classify not-exercised states</td></tr>
+<tr><td>Developer / fixture tester</td><td>create or confirm data states, inspect database/export evidence, validate rare branches</td></tr>
+</tbody></table>
+<p>Ordinary staff should not be asked to discover hidden prerequisite states.</p>
+<hr>
+<h2>Metric-role fixture prompts</h2>
+<p>Some validation cases should now explicitly test whether users can distinguish Stage A, Stage B, and Bridge signals.</p>
+<p>Use these fixture prompts when validating score-heavy workflows:</p>
+<table><thead><tr><th>Fixture question</th><th>Required prepared state</th><th>Expected user interpretation</th></tr></thead><tbody>
+<tr><td>Can the user identify a Stage A diagnostic signal?</td><td>A scorecard with visible <code>structural_health_index</code> or <code>symbolic_legitimacy_index</code>.</td><td>The user says this diagnoses current reality, not proof that change worked.</td></tr>
+<tr><td>Can the user identify a Stage B execution signal?</td><td>A pilot or KPI with outcome/progress evidence.</td><td>The user says this tests whether action is working.</td></tr>
+<tr><td>Can the user identify a Bridge signal?</td><td>An integrity gap, lineage drop-off, scenario pressure, contradiction, or confidence qualifier.</td><td>The user says this qualifies governance interpretation.</td></tr>
+<tr><td>Can the user avoid overclaiming?</td><td>A positive score with weak evidence or missing lineage.</td><td>The user qualifies the claim rather than treating the number as assurance.</td></tr>
+</tbody></table>
+<p>If the required scorecard, pilot, KPI, lineage, or evidence state is not prepared, classify the case as:</p>
+<pre><code>Not exercised - metric-role fixture unavailable.</code></pre>
+<hr>
+<h2>Fixture-test classification</h2>
+<p>Use only these classifications.</p>
+<h2>Pass</h2>
+<p>Use when:</p>
+<ul>
+<li>the required fixture data exists,</li>
+<li>the expected UI state is visible,</li>
+<li>the result matches the expected outcome.</li>
+</ul>
+<p>Example:</p>
+<pre><code>Expected: predecessor recommendation appears.
+Actual: predecessor recommendation appears.
+Classification: Pass.</code></pre>
+<h2>Minor issue</h2>
+<p>Use when:</p>
+<ul>
+<li>the expected state appears,</li>
+<li>the workflow is usable,</li>
+<li>but wording or signposting could be clearer.</li>
+</ul>
+<p>Example:</p>
+<pre><code>Expected: continuity warning appears.
+Actual: warning appears, but wording may be too terse.
+Classification: Minor issue.</code></pre>
+<h2>Material defect</h2>
+<p>Use when:</p>
+<ul>
+<li>the required fixture data exists,</li>
+<li>the expected UI state should appear,</li>
+<li>but the UI gives the wrong result, hides the action, or allows an unsafe action.</li>
+</ul>
+<p>Example:</p>
+<pre><code>Expected: carry-forward requires predecessor.
+Actual: UI allows carried-forward save without predecessor.
+Classification: Material defect.</code></pre>
+<h2>Not exercised</h2>
+<p>Use when:</p>
+<ul>
+<li>the required fixture data does not exist,</li>
+<li>the tester cannot name the required prerequisite state,</li>
+<li>the current demo data does not contain the branch.</li>
+</ul>
+<p>Example:</p>
+<pre><code>Expected: weakly evidenced scenario branch.
+Actual: no known demo scenario produces this state.
+Classification: Not exercised — fixture unavailable.</code></pre>
+<p>Do not convert <code>not exercised</code> into failure.</p>
+<hr>
+<h2>Project Owner fixture worksheet</h2>
+<p>Use this worksheet before asking anyone to test an advanced branch.</p>
+<pre><code>## Fixture ID
+
+## Validation question
+What exact system behavior are we testing?
+
+## Page / area
+Which page and workspace area should show the result?
+
+## Required data
+What records must exist before this state can appear?
+
+## Known source
+Which export, seeded data row, database row, or UI state proves the data exists?
+
+## Expected UI result
+What should the user see?
+
+## Who should test it?
+Ordinary staff / trained governance user / Project Owner / developer-fixture tester.
+
+## Pass condition
+
+## Minor issue condition
+
+## Material defect condition
+
+## Not-exercised condition
+
+## Result
+
+## Notes</code></pre>
+<hr>
+<h1>Fixture class 1 — Scenario trigger-state validation</h1>
+<h2>Purpose</h2>
+<p>Scenario trigger-state validation checks whether the Scenario Effectiveness Review can distinguish different levels of scenario support.</p>
+<p>In this guide, a <strong>fixture</strong> means a prepared, known test setup used to exercise a specific expected state. A scenario trigger-state fixture is not the validation itself; it is the scenario, recommendation, decision, pilot, KPI, evidence, and execution context that should cause the Scenario Effectiveness Review to display one expected result.</p>
+<p>An <strong>execution fixture state</strong> means the prepared execution-side condition of that fixture: for example, whether a scenario-linked item has no downstream evidence, only partial decision support, or enough linked pilot/KPI/evidence support to make the mitigation claim supportable. <strong>Fixture requirements</strong> are the data elements that must exist before the state can be tested reliably.</p>
+<p>The remaining target states are:</p>
+<pre><code>insufficient evidence
+weakly evidenced / weak support
+supportable under current evidence</code></pre>
+<p>These should not be discovered by ordinary staff clicking through the app.</p>
+<p>They require known scenario/evidence/execution fixture states.</p>
+<hr>
+<h2>Scenario fixture requirements</h2>
+<p>For each scenario fixture, define:</p>
+<ul>
+<li>scenario label or scenario pressure,</li>
+<li>relevant domain,</li>
+<li>linked recommendation, if any,</li>
+<li>linked structural decision, if any,</li>
+<li>linked pilot, if any,</li>
+<li>linked KPI, if any,</li>
+<li>linked evidence note, if any,</li>
+<li>expected scenario-effectiveness state.</li>
+</ul>
+<hr>
+<h2>Scenario fixture template</h2>
+<pre><code>## Fixture ID
+S1
+
+## Required state
+Insufficient evidence / weak support / supportable under current evidence
+
+## Scenario / domain
+
+## Candidate recommendation
+
+## Linked structural decision
+
+## Linked pilot
+
+## Linked KPI
+
+## Linked evidence
+
+## Expected UI result
+
+## UI path
+Scenario Effectiveness Review → select relevant cycle/scenario/domain
+
+## Tester role
+Project Owner or trained governance user. Developer/fixture tester if fixture must be constructed.
+
+## Pass condition
+The expected scenario state is displayed.
+
+## Material defect condition
+The fixture data exists but the UI displays the wrong scenario state.
+
+## Not-exercised condition
+The required linked recommendation/decision/pilot/KPI/evidence state does not exist.</code></pre>
+<hr>
+<h2>Scenario validation decision rule</h2>
+<p>Use this rule:</p>
+<pre><code>If the existing seeded/demo data produces all three states, validate them directly.
+If one or more states cannot be located, create fixture requirements and mark those branches not exercised.</code></pre>
+<p>Do not ask ordinary staff to find these states by trial and error.</p>
+<hr>
+<h1>Fixture class 2 — Carry-forward / predecessor validation</h1>
+<h2>Purpose</h2>
+<p>Carry-forward validation checks whether a current-cycle recommendation can be connected to a prior-cycle recommendation through a recommendation series.</p>
+<p>This is one of the most advanced workflows in the system.</p>
+<p>It requires known cross-cycle data.</p>
+<hr>
+<h2>Carry-forward requires</h2>
+<p>A valid carry-forward fixture needs:</p>
+<ol>
+<li>a prior assessment cycle,</li>
+<li>a current assessment cycle,</li>
+<li>a prior-cycle recommendation,</li>
+<li>a current-cycle recommendation continuing the same issue,</li>
+<li>a recommendation series,</li>
+<li>an expected predecessor recommendation,</li>
+<li>an expected continuity state.</li>
+</ol>
+<p>If these cannot be named, the test is not ready.</p>
+<hr>
+<h2>Carry-forward fixture template</h2>
+<pre><code>## Fixture ID
+C1
+
+## Validation question
+Does the current-cycle recommendation correctly show its prior-cycle predecessor?
+
+## Prior cycle
+
+## Current cycle
+
+## Prior-cycle recommendation
+
+## Current-cycle recommendation
+
+## Recommendation series
+
+## Expected predecessor
+
+## Expected continuity status
+
+## UI path
+Recommendations → select current-cycle recommendation → Continuity
+
+## Tester role
+Project Owner, trained governance user, or developer/fixture tester.
+
+## Pass condition
+Expected predecessor appears and carry-forward status is coherent.
+
+## Material defect condition
+Expected predecessor exists but does not appear, or carry-forward can be saved without a required predecessor.
+
+## Not-exercised condition
+No known valid prior/current recommendation pair exists.</code></pre>
+<hr>
+<h2>Common carry-forward cases</h2>
+<table><thead><tr><th>Case</th><th>Expected result</th></tr></thead><tbody>
+<tr><td>Series originates in current cycle</td><td>Recommendation should normally be New; no predecessor expected</td></tr>
+<tr><td>Prior and current recommendation exist but are not linked</td><td>Link/create continuity may be possible, depending on series state</td></tr>
+<tr><td>Current recommendation is already carried forward</td><td>UI should show coherent series and predecessor context</td></tr>
+<tr><td>Duplicate titles exist</td><td>UI should distinguish records by identity/state, not title alone</td></tr>
+</tbody></table>
+<hr>
+<h1>Fixture class 3 — Threshold-rule / reassessment validation</h1>
+<h2>Purpose</h2>
+<p>Threshold validation checks whether KPI threshold rules and reassessment triggers behave as expected.</p>
+<p>This is not ordinary KPI reading. It is trained-user or fixture validation.</p>
+<hr>
+<h2>Threshold fixture requirements</h2>
+<p>Define:</p>
+<ul>
+<li>KPI,</li>
+<li>domain,</li>
+<li>current KPI value,</li>
+<li>applicable threshold rule,</li>
+<li>threshold version,</li>
+<li>governance floor,</li>
+<li>alert floor,</li>
+<li>expected alert or reassessment state,</li>
+<li>expected effect of changing threshold version.</li>
+</ul>
+<hr>
+<h2>Threshold fixture template</h2>
+<pre><code>## Fixture ID
+T1
+
+## Validation question
+Does this KPI trigger reassessment under the selected threshold rule?
+
+## KPI
+
+## Domain
+
+## Current KPI value
+
+## Threshold rule
+
+## Rule version
+
+## Governance floor
+
+## Alert floor
+
+## Expected state
+No alert / governance concern / reassessment required
+
+## UI path
+KPI Dashboard → Reassessment or Threshold Rules
+
+## Tester role
+Trained governance user or developer/fixture tester.
+
+## Pass condition
+The expected threshold/reassessment state appears.
+
+## Material defect condition
+The expected state is wrong even though the KPI and threshold fixture are known.
+
+## Not-exercised condition
+The required KPI/threshold rule combination does not exist.</code></pre>
+<hr>
+<h2>Threshold validation caution</h2>
+<p>Do not ask ordinary staff to validate threshold-version logic.</p>
+<p>They can check whether the threshold rule area is readable. They should not be expected to prove rule-version effects.</p>
+<hr>
+<h1>Fixture class 4 — Pilot mixed-signal validation</h1>
+<h2>Purpose</h2>
+<p>Pilot mixed-signal validation checks whether the system can interpret pilots that have both improvement and deterioration signals.</p>
+<p>This prevents simplistic pilot-success interpretation.</p>
+<hr>
+<h2>Mixed-signal fixture requirements</h2>
+<p>Define:</p>
+<ul>
+<li>selected pilot,</li>
+<li>pilot hypothesis,</li>
+<li>improvement metric,</li>
+<li>deterioration metric,</li>
+<li>linked KPI, if any,</li>
+<li>evidence note, if any,</li>
+<li>expected learning state,</li>
+<li>expected outcome explanation.</li>
+</ul>
+<hr>
+<h2>Pilot fixture template</h2>
+<pre><code>## Fixture ID
+P1
+
+## Validation question
+Does the selected pilot show an inconclusive or qualified outcome when improvement and deterioration signals coexist?
+
+## Selected pilot
+
+## Hypothesis
+
+## Improvement signal
+
+## Deterioration signal
+
+## Linked KPI
+
+## Linked evidence
+
+## Expected learning state
+
+## Expected outcome explanation
+
+## UI path
+Pilot Tracker → select pilot → Outcome
+
+## Tester role
+Trained governance user or developer/fixture tester.
+
+## Pass condition
+The expected mixed-signal state appears.
+
+## Material defect condition
+The pilot is incorrectly shown as validated or contradicted contrary to the fixture evidence.
+
+## Not-exercised condition
+No pilot with both improvement and deterioration signals exists.</code></pre>
+<hr>
+<h1>Fixture class 5 — Lineage complete / broken path validation</h1>
+<h2>Purpose</h2>
+<p>Lineage validation checks whether the system correctly shows complete and broken pathways.</p>
+<p>Lineage is not proof of effectiveness. It shows whether the governance chain is visible and where it drops off.</p>
+<hr>
+<h2>Lineage fixture requirements</h2>
+<p>Define:</p>
+<ul>
+<li>recommendation,</li>
+<li>structural decision,</li>
+<li>pilot,</li>
+<li>KPI,</li>
+<li>evidence note,</li>
+<li>expected complete or broken point.</li>
+</ul>
+<hr>
+<h2>Lineage fixture template</h2>
+<pre><code>## Fixture ID
+L1
+
+## Validation question
+Does the UI show the expected complete or broken governance pathway?
+
+## Recommendation
+
+## Structural decision
+
+## Pilot
+
+## KPI
+
+## Evidence note
+
+## Expected lineage state
+Complete / broken at decision / broken at pilot / broken at KPI / broken at evidence
+
+## UI path
+Lineage View → select relevant path
+
+## Tester role
+Trained governance user or developer/fixture tester.
+
+## Pass condition
+The expected lineage state/drop-off appears.
+
+## Material defect condition
+The known pathway is shown incorrectly.
+
+## Not-exercised condition
+The required complete or broken pathway fixture does not exist.</code></pre>
+<hr>
+<h2>How to use exports as fixture evidence</h2>
+<p>Exports are useful because they help identify candidate fixture rows before opening the UI.</p>
+<p>For each uploaded/exported CSV, the Project Owner should ask:</p>
+<ol>
+<li>What cycle is this?</li>
+<li>What entity type is exported?</li>
+<li>Which row looks like the candidate fixture?</li>
+<li>Does it contain enough fields to prove the prerequisite state?</li>
+<li>What additional data is needed from the UI or database?</li>
+</ol>
+<p>Example:</p>
+<pre><code>A recommendation export can show title, domain, cycle, continuity, evidence count, decision count, and scenario label.
+
+It may support continuity fixture planning.
+
+It usually cannot by itself prove scenario-effectiveness state, because scenario validation may also depend on linked pilot, KPI, lineage, and evidence data outside the recommendation export.</code></pre>
+<hr>
+<h2>How to avoid Project Owner overload</h2>
+<p>Use this three-question shortcut.</p>
+<p>Before testing an advanced state, ask:</p>
+<pre><code>1. Can I name the exact row/entity we are testing?
+2. Can I name the expected UI result?
+3. Can I name the data required for the result to appear?</code></pre>
+<p>If the answer to any question is no, do not test yet.</p>
+<p>Record:</p>
+<pre><code>Fixture not defined — not ready for validation.</code></pre>
+<hr>
+<h2>Example: current-cycle new recommendation cannot be carried forward</h2>
+<h3>Fixture</h3>
+<pre><code>Current recommendation: Introduce augmentation-first AI governance review
+Current cycle: 2026 Workplace Baseline (2026-Q2)
+Series origin: 2026 Workplace Baseline (2026-Q2)
+Continuity status: New
+Predecessor: none</code></pre>
+<h3>Expected result</h3>
+<pre><code>No predecessor should be available.
+Carry-forward should not be completed unless a prior-cycle predecessor exists.</code></pre>
+<h3>Classification</h3>
+<pre><code>Pass if no predecessor appears and the system does not save invalid carry-forward.
+Not exercised if no save attempt is made.
+Material defect only if the system permits invalid carried-forward state without predecessor.</code></pre>
+<p>This is a fixture test. It should not be assigned to ordinary staff.</p>
+<hr>
+<h2>Example: scenario trigger-state validation</h2>
+<h3>Fixture not yet ready</h3>
+<p>If the Project Owner can say only:</p>
+<pre><code>There are scenario_high recommendations in the export.</code></pre>
+<p>that is not yet a scenario fixture.</p>
+<p>A valid scenario fixture must say:</p>
+<pre><code>This scenario pressure has this recommendation, this decision, this pilot, this KPI, and this evidence pattern, and therefore should display weak support.</code></pre>
+<p>If that cannot be said, record:</p>
+<pre><code>Scenario fixture not defined — data insufficient.</code></pre>
+<hr>
+<h2>Project Owner validation workflow</h2>
+<p>Use this workflow for every remaining advanced branch.</p>
+<h3>Step 1 — State the branch</h3>
+<p>Example:</p>
+<pre><code>Scenario Effectiveness Review should show weak support.</code></pre>
+<h3>Step 2 — Name the fixture</h3>
+<p>Example:</p>
+<pre><code>Scenario fixture S2 — AI governance recommendation with decision but no pilot/KPI/evidence closure.</code></pre>
+<h3>Step 3 — Name the required data</h3>
+<p>Example:</p>
+<pre><code>scenario_high technology recommendation
+linked decision exists
+no linked pilot evidence
+no linked KPI evidence</code></pre>
+<h3>Step 4 — Predict the UI result</h3>
+<p>Example:</p>
+<pre><code>Expected result: weak support or insufficient evidence, depending on rule threshold.</code></pre>
+<p>If the expected result cannot be predicted, the fixture is not ready.</p>
+<h3>Step 5 — Assign the tester</h3>
+<p>Example:</p>
+<pre><code>Project Owner or trained governance user.
+Not ordinary staff.</code></pre>
+<h3>Step 6 — Test and classify</h3>
+<p>Use only:</p>
+<ul>
+<li>Pass</li>
+<li>Minor issue</li>
+<li>Material defect</li>
+<li>Not exercised</li>
+</ul>
+<hr>
+<h2>When to create a developer fixture</h2>
+<p>Create a developer fixture when:</p>
+<ul>
+<li>the state is rare,</li>
+<li>the state is important for closure,</li>
+<li>seeded data does not contain it,</li>
+<li>ordinary users cannot reasonably construct it,</li>
+<li>the expected result is clear enough to test.</li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li>weak support scenario branch,</li>
+<li>supportable scenario branch,</li>
+<li>valid predecessor/carry-forward pair,</li>
+<li>threshold-version edge case,</li>
+<li>pilot mixed-signal outcome,</li>
+<li>broken lineage path.</li>
+</ul>
+<hr>
+<h2>Minimum fixture plan for Stage 6D</h2>
+<p>For Stage 6D closure, the Project Owner should aim to create or confirm at least this table.</p>
+<pre><code>| Fixture ID | Class | Required state | Candidate data exists? | Expected result known? | Validation status |
+|---|---|---|---:|---:|---|
+| S1 | Scenario | insufficient evidence |  |  |  |
+| S2 | Scenario | weak support |  |  |  |
+| S3 | Scenario | supportable under current evidence |  |  |  |
+| C1 | Continuity | current-cycle new / no predecessor |  |  |  |
+| C2 | Continuity | valid carried-forward predecessor |  |  |  |
+| T1 | Threshold | reassessment trigger |  |  |  |
+| P1 | Pilot | mixed improvement/deterioration |  |  |  |
+| L1 | Lineage | complete path |  |  |  |
+| L2 | Lineage | broken path/drop-off |  |  |  |</code></pre>
+<p>Do not require all fixtures to be completed before continuing development. The important closure discipline is to classify untested branches honestly.</p>
+<hr>
+<h2>What to tell management</h2>
+<p>Use this statement:</p>
+<p>&gt; We are no longer asking staff to discover complex hidden data states by exploration. We are converting advanced validation into fixture-based tests. Ordinary staff will test readability and navigation. Trained governance users will test prepared workflows. Developer or fixture-based validation will test rare scenario, predecessor, threshold, pilot, and lineage branches.</p>
+<p>This is the correct response to the concern that the system is too complicated for staff to test properly.</p>
+<hr>
+<h2>Completion standard</h2>
+<p>The Project Owner is ready to proceed when they can:</p>
+<ol>
+<li>distinguish smoke testing from fixture validation,</li>
+<li>name which role should perform each kind of test,</li>
+<li>classify missing data as <code>not exercised</code> rather than failure,</li>
+<li>define expected results before testing,</li>
+<li>avoid asking ordinary staff to discover hidden prerequisite states,</li>
+<li>identify when developer fixture creation is required.</li>
+</ol>
+<p>The Project Owner does not need to memorize every system rule. They need to control the validation method.</p>
+</body></html>

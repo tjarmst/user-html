@@ -1,0 +1,506 @@
+<!doctype html>
+<html><head><meta charset=utf-8>
+<title>PILOT_TRACKER_PAGE_LEARNING_RESOURCE</title>
+<style>
+
+body { font-family: Segoe UI, Arial, sans-serif; line-height: 1.45; color: #202124; margin: 42px; max-width: 980px; }
+h1, h2, h3 { color: #17324d; margin-top: 1.35em; }
+h1 { border-bottom: 2px solid #d9e2ec; padding-bottom: 8px; }
+table { border-collapse: collapse; width: 100%; margin: 18px 0; font-size: 0.94rem; }
+th, td { border: 1px solid #cfd8e3; padding: 7px 9px; vertical-align: top; }
+th { background: #eef3f8; text-align: left; }
+code, pre { background: #f4f6f8; border-radius: 4px; }
+code { padding: 1px 4px; }
+pre { padding: 12px; overflow-x: auto; }
+.document-meta { color: #5f6b7a; font-size: 0.9rem; margin-bottom: 22px; }
+
+</style></head><body>
+<div class=document-meta>Source: user/PILOT_TRACKER_PAGE_LEARNING_RESOURCE.md</div>
+<h1>Pilot Tracker Page Operating Guide</h1>
+<h2>Purpose</h2>
+<p>The <strong>Pilot Tracker</strong> page helps trained governance users turn structural decisions into tested learning.</p>
+<p>It is not a generic project-status page. It is the place where the system asks:</p>
+<p>&gt; Did the pilot actually test the decision, produce evidence, connect to KPIs, and create learning that should affect future governance judgment?</p>
+<p>The page sits in the operating loop:</p>
+<pre><code>diagnose → recommend → decide → execute → measure → review → learn</code></pre>
+<p>Pilot Tracker mainly covers the <strong>execute → measure → review → learn</strong> part of that loop.</p>
+<p>In the Stage A / Stage B / Bridge framing, Pilot Tracker is primarily <strong>Stage B: Change reality intelligently</strong>. A pilot is execution evidence. It tests whether a recommendation or structural decision changes real conditions, and it can later inform <code>execution_feedback_index</code>, learning state, lineage review, and governance summary interpretation.</p>
+<p>Pilot activity is not the same as pilot evidence. A pilot becomes valuable when its hypothesis, metrics, evidence notes, linked KPIs, and learning state show what was actually learned.</p>
+<p>Use it to:</p>
+<ul>
+<li>inspect pilots created from governed decisions</li>
+<li>review the pilot outcome and learning state</li>
+<li>record pilot learning actions</li>
+<li>add or update pilot metrics</li>
+<li>create linked KPI items</li>
+<li>link evidence notes to a pilot</li>
+<li>recompute pilot outcomes after meaningful measurement changes</li>
+<li>inspect recommendation → decision → pilot lineage</li>
+</ul>
+<p>The page is designed for trained governance users, Project Owners, or implementation leads. Ordinary staff may help confirm whether the page is readable, but they should not be expected to validate every metric, KPI, evidence, lineage, or outcome dependency without prepared training and seeded examples.</p>
+<hr>
+<h2>Why this page may feel complex</h2>
+<p>Pilot Tracker is complex because it does not merely ask whether a pilot happened.</p>
+<p>It asks whether the pilot has become usable governance evidence.</p>
+<p>That requires the user to understand several linked ideas:</p>
+<ul>
+<li>the original recommendation</li>
+<li>the structural decision made in response</li>
+<li>the pilot created to test that decision</li>
+<li>the pilot hypothesis</li>
+<li>the metric evidence collected</li>
+<li>the linked KPI pathway</li>
+<li>the evidence notes that support, qualify, or contradict the numbers</li>
+<li>the learning state created from that evidence</li>
+<li>the downstream pages that will use the pilot outcome</li>
+</ul>
+<p>A pilot can be active and still be weak from a governance perspective. A pilot can be completed and still be untested. A pilot can show improvement on one metric and deterioration on another. The page is designed to preserve those distinctions rather than collapse them into a simple success/failure status.</p>
+<hr>
+<h2>Current page model</h2>
+<p>The current Pilot Tracker page uses a selected-pilot workspace model.</p>
+<p>The broad structure is:</p>
+<ol>
+<li>readiness panel</li>
+<li>pilot outcome summary</li>
+<li>pilot worklist</li>
+<li>selected pilot context</li>
+<li>selected workspace area</li>
+<li>area-specific action or supporting detail</li>
+</ol>
+<p>The accepted workspace areas are:</p>
+<pre><code>Outcome | Metrics | Linked KPIs | Evidence | Lineage</code></pre>
+<p>The selected pilot context appears before the workspace areas. It is intended to anchor all later actions so that the user knows which pilot the action affects.</p>
+<p>Typical selected-pilot context includes:</p>
+<ul>
+<li>pilot title</li>
+<li>outcome explanation</li>
+<li>status</li>
+<li>owner</li>
+<li>scenario</li>
+<li>learning state</li>
+<li>outcome score</li>
+</ul>
+<p>If the selected-pilot context is not visible before a write action, the action should be treated as unsafe or insufficiently anchored.</p>
+<hr>
+<h2>User roles and testing boundaries</h2>
+<h3>Ordinary staff</h3>
+<p>Ordinary staff can reasonably test:</p>
+<ul>
+<li>whether the page opens</li>
+<li>whether the selected pilot is visible</li>
+<li>whether labels are understandable</li>
+<li>whether the page makes clear that pilot activity is not the same as pilot success</li>
+<li>whether they can identify the selected pilot before reading workspace areas</li>
+</ul>
+<p>Ordinary staff should not be expected to validate:</p>
+<ul>
+<li>whether a pilot outcome calculation is correct</li>
+<li>whether a linked KPI is the right governance KPI</li>
+<li>whether lineage is complete across recommendation, decision, pilot, KPI, and evidence</li>
+<li>whether evidence relinking is appropriate</li>
+<li>whether a pilot should be scaled, redesigned, or stopped</li>
+</ul>
+<h3>Trained governance users</h3>
+<p>Trained governance users can test:</p>
+<ul>
+<li>metric choice and metric values</li>
+<li>linked KPI creation</li>
+<li>evidence relinking</li>
+<li>outcome recomputation</li>
+<li>learning action selection</li>
+<li>lineage interpretation</li>
+<li>downstream implications for KPI Dashboard, Lineage View, Governance Execution Review, Scenario Effectiveness Review, Governance Summary, and Review History</li>
+</ul>
+<h3>Project Owner / implementation lead</h3>
+<p>The Project Owner should test whether the page:</p>
+<ul>
+<li>supports the intended governance workflow</li>
+<li>keeps selected-pilot context visible before actions</li>
+<li>prevents pilot activity from being mistaken for evidence of success</li>
+<li>explains why missing metrics, KPIs, evidence, or lineage matter</li>
+<li>fits the broader training model for staff and governance users</li>
+</ul>
+<h3>Developer or fixture-based validation</h3>
+<p>Developer or fixture-based testing is required for:</p>
+<ul>
+<li>precise outcome-calculation edge cases</li>
+<li>seeded partial-data states</li>
+<li>all downstream lineage combinations</li>
+<li>scenario-linked pilot pathways</li>
+<li>unusual missing-data or contradiction states</li>
+</ul>
+<hr>
+<h2>Pilot outcome summary</h2>
+<p>The top of the page summarizes the pilot outcome population.</p>
+<p>It may show counts such as:</p>
+<ul>
+<li>total pilots</li>
+<li>validated</li>
+<li>contradicted</li>
+<li>in test</li>
+<li>untested</li>
+</ul>
+<p>Use this summary to understand the overall learning posture of the current cycle.</p>
+<p>Do not treat the count of pilots as proof of progress. A cycle with many pilots may still have weak learning if most pilots are untested, inconclusive, or poorly linked to metrics and evidence.</p>
+<p>Useful questions:</p>
+<ul>
+<li>How many pilots exist?</li>
+<li>How many have moved beyond activity into evidence-based learning?</li>
+<li>Are there contradicted or inconclusive pilots requiring review?</li>
+<li>Are most pilots still untested?</li>
+<li>Does the summary suggest execution is outpacing measurement?</li>
+</ul>
+<hr>
+<h2>Pilot worklist and selected pilot</h2>
+<p>The pilot worklist lets the user select one pilot for detailed work.</p>
+<p>Before using any workspace area, confirm:</p>
+<ul>
+<li>which pilot is selected</li>
+<li>what the pilot is trying to test</li>
+<li>what status it is in</li>
+<li>whether an outcome explanation is visible</li>
+<li>whether the learning state is already known</li>
+<li>whether the pilot has an owner or scenario context</li>
+</ul>
+<p>The selected pilot is the anchor for the page. Metric entry, linked KPI creation, evidence relinking, outcome actions, and lineage review should all be interpreted as acting on or explaining this selected pilot.</p>
+<p>If the user cannot identify the selected pilot before taking an action, the page should not be treated as safe for that action.</p>
+<hr>
+<h2>Outcome workspace</h2>
+<p>Use <strong>Outcome</strong> to review and act on the selected pilot&#x27;s learning state.</p>
+<p>The outcome area may show:</p>
+<ul>
+<li>selected pilot summary</li>
+<li>current outcome status</li>
+<li>learning state</li>
+<li>outcome score</li>
+<li>outcome explanation</li>
+<li>outcome action controls</li>
+<li>learning note</li>
+</ul>
+<h3>What outcome means</h3>
+<p>Pilot outcome is not the same as pilot status.</p>
+<ul>
+<li><strong>Status</strong> says where the pilot is operationally: planned, active, paused, completed, cancelled, or similar.</li>
+<li><strong>Outcome</strong> says what has been learned from evidence.</li>
+<li><strong>Learning state</strong> says how the pilot should be interpreted for governance purposes.</li>
+</ul>
+<p>A planned or active pilot may still be untested. A completed pilot may still be inconclusive. A pilot with one positive measure may still be contradicted if another measure deteriorates or evidence shows harm.</p>
+<h3>Common learning states</h3>
+<p>The page may classify pilots using states such as:</p>
+<ul>
+<li><strong>validated</strong> — the evidence supports the pilot&#x27;s intended effect strongly enough to consider scaling or adoption</li>
+<li><strong>in test</strong> — there is some support, but not enough closure</li>
+<li><strong>inconclusive</strong> — signals are mixed or too weak for a firm conclusion</li>
+<li><strong>contradicted</strong> — evidence challenges the pilot hypothesis or shows deterioration</li>
+<li><strong>untested</strong> — there is not enough measurement evidence to interpret the pilot</li>
+</ul>
+<h3>How to review outcome safely</h3>
+<p>Before logging an outcome action, ask:</p>
+<ul>
+<li>Does the selected pilot have meaningful metric evidence?</li>
+<li>Are linked KPIs present where broader governance interpretation is needed?</li>
+<li>Does evidence support, qualify, or contradict the metric result?</li>
+<li>Is the outcome explanation consistent with the numbers and evidence?</li>
+<li>Is the proposed action proportionate to the evidence?</li>
+</ul>
+<p>Outcome actions should not be used as cosmetic labels. They create review-history records and influence later governance interpretation.</p>
+<hr>
+<h2>Metrics workspace</h2>
+<p>Use <strong>Metrics</strong> to record or review measures for the selected pilot.</p>
+<p>Pilot metrics answer:</p>
+<p>&gt; What changed inside the pilot?</p>
+<p>They should test the pilot hypothesis, not merely record that activity occurred.</p>
+<p>A useful metric may include:</p>
+<ul>
+<li>baseline value</li>
+<li>current value</li>
+<li>target value</li>
+<li>notes explaining timing, limitations, or context</li>
+</ul>
+<h3>Choosing pilot metrics</h3>
+<p>Choose metrics that directly test the pilot claim.</p>
+<p>Examples:</p>
+<ul>
+<li>If the pilot aims to reduce workload strain, use workload, overtime, burnout, rework, or sustainability indicators.</li>
+<li>If the pilot aims to improve capability pathways, use progression, contribution, skill-use, or retention indicators.</li>
+<li>If the pilot aims to improve governance discipline, use decision quality, evidence completeness, review timeliness, or threshold adherence.</li>
+<li>If the pilot aims to improve trust or participation, use participation quality, escalation quality, psychological safety, or confidence indicators.</li>
+</ul>
+<p>Avoid metrics that are easy to collect but disconnected from the hypothesis.</p>
+<h3>Detached-form warning</h3>
+<p>Metric action controls should not appear as detached generic forms.</p>
+<p>Before saving a metric, the user should be able to see or clearly infer:</p>
+<ul>
+<li>selected pilot</li>
+<li>why the metric belongs to that pilot</li>
+<li>what the metric is intended to test</li>
+<li>whether existing metric evidence already exists</li>
+</ul>
+<p>If the metric form appears only as a generic set of fields without selected-pilot context nearby, treat that as a user-context problem.</p>
+<h3>Metric review discipline</h3>
+<p>Before recomputing an outcome, confirm:</p>
+<ul>
+<li>the metric definition matches the hypothesis</li>
+<li>the baseline is meaningful</li>
+<li>the target is realistic and relevant</li>
+<li>the current value is recent enough to interpret</li>
+<li>notes explain measurement limitations</li>
+<li>deterioration is not being hidden by one favourable metric</li>
+</ul>
+<p>Do not recompute the outcome simply because the pilot status changed. Recompute when measurement evidence has materially changed or been corrected.</p>
+<hr>
+<h2>Linked KPIs workspace</h2>
+<p>Use <strong>Linked KPIs</strong> to connect the pilot to broader governance measurement.</p>
+<p>Pilot metrics are local to the pilot. Linked KPIs make the pilot visible to the wider governance system.</p>
+<p>Linked KPIs may later affect:</p>
+<ul>
+<li>KPI Dashboard</li>
+<li>Lineage View</li>
+<li>Governance Execution Review</li>
+<li>Scenario Effectiveness Review</li>
+<li>Governance Summary</li>
+<li>Review History</li>
+</ul>
+<h3>Why linked KPIs matter</h3>
+<p>A pilot can improve locally without proving a broader governance change. Linked KPIs help test whether the pilot matters beyond its immediate activity.</p>
+<p>Use linked KPIs to ask:</p>
+<ul>
+<li>Is the pilot creating measurable improvement?</li>
+<li>Is the structural decision producing the intended outcome?</li>
+<li>Should the recommendation be validated, revised, or reopened?</li>
+<li>Has the pilot created movement that matters beyond the pilot team?</li>
+<li>Does the KPI support threshold or reassessment interpretation?</li>
+</ul>
+<h3>Creating linked KPIs safely</h3>
+<p>Before saving a linked KPI, confirm:</p>
+<ul>
+<li>the selected pilot is visible or clearly established</li>
+<li>the KPI describes an outcome, not just activity</li>
+<li>the domain matches the governance question</li>
+<li>baseline, current, and target values are meaningful</li>
+<li>the status reflects evidence, not optimism</li>
+<li>the note explains interpretation limits</li>
+</ul>
+<p>A poor linked KPI can make downstream governance interpretation look stronger than the evidence actually supports.</p>
+<hr>
+<h2>Evidence workspace</h2>
+<p>Use <strong>Evidence</strong> to attach existing evidence notes to the selected pilot.</p>
+<p>Evidence relinking is audit-significant. It affects how downstream pages interpret the selected pilot.</p>
+<p>Evidence helps explain whether pilot metrics should be:</p>
+<ul>
+<li>trusted</li>
+<li>qualified</li>
+<li>challenged</li>
+<li>treated as incomplete</li>
+<li>treated as showing harm or contradiction</li>
+</ul>
+<h3>When to relink evidence</h3>
+<p>Use evidence relinking when an evidence note already exists and belongs with the selected pilot.</p>
+<p>Before relinking, ask:</p>
+<ul>
+<li>Is this note about the selected pilot?</li>
+<li>Does it support, qualify, or contradict the pilot outcome?</li>
+<li>Is the confidence level suitable for the conclusion being drawn?</li>
+<li>Should the evidence also be linked to a KPI or recommendation?</li>
+<li>Could relinking this note distort the interpretation of the pilot?</li>
+</ul>
+<h3>Evidence interpretation rules</h3>
+<p>Use these rules:</p>
+<ul>
+<li>Supporting evidence can strengthen a positive pilot outcome.</li>
+<li>Contradictory evidence can downgrade a favourable metric result.</li>
+<li>Low-confidence evidence should qualify the conclusion.</li>
+<li>Incomplete evidence should lead to monitoring or evidence strengthening.</li>
+<li>Evidence of harm should trigger redesign or stop/review even if some metrics improved.</li>
+</ul>
+<p>Do not ignore contradictory evidence because a KPI or metric looks favourable.</p>
+<hr>
+<h2>Lineage workspace</h2>
+<p>Use <strong>Lineage</strong> to inspect how the selected pilot connects back to the governance pathway.</p>
+<p>The current Lineage area is designed to preserve selected-pilot focus while also showing broader cross-pilot lineage context.</p>
+<p>It may show:</p>
+<ul>
+<li>broader lineage summary metrics</li>
+<li>compact cross-pilot lineage overview</li>
+<li>selected-pilot lineage detail</li>
+<li>recommendation → decision → pilot relationships</li>
+<li>linked KPI and evidence state</li>
+<li>drop-off points where execution or measurement is incomplete</li>
+</ul>
+<h3>What lineage proves and does not prove</h3>
+<p>Lineage proves that a pathway is visible.</p>
+<p>It does not prove that the pathway worked.</p>
+<p>A visible chain is useful because it shows whether a recommendation became a decision, whether the decision produced a pilot, whether the pilot has KPIs, and whether evidence exists. But the governance conclusion still depends on the quality of the metrics, KPI movement, evidence, and learning state.</p>
+<h3>How to interpret lineage</h3>
+<p>Ask:</p>
+<ul>
+<li>Which recommendation created the pilot pathway?</li>
+<li>Which structural decision is being tested?</li>
+<li>Is the pilot attached to that decision?</li>
+<li>Are KPIs attached to the pilot?</li>
+<li>Is there evidence attached to the pilot?</li>
+<li>Is there a learning outcome?</li>
+<li>Is there a drop-off between decision, pilot, KPI, and evidence?</li>
+<li>Does the broader lineage overview show other pilots with related gaps?</li>
+</ul>
+<p>Lineage gaps are not merely administrative defects. They may indicate that the organization has acted without proving whether the action worked.</p>
+<hr>
+<h2>Recomputing pilot outcomes</h2>
+<p>The <strong>Recompute pilot outcome</strong> action updates the selected pilot&#x27;s outcome interpretation from its metric evidence and logs a review-history event.</p>
+<p>Use recomputation after:</p>
+<ul>
+<li>adding a meaningful metric</li>
+<li>correcting a metric value</li>
+<li>adding enough measurement evidence to interpret the pilot</li>
+<li>resolving an evidence issue that changes interpretation</li>
+<li>reviewing whether the current outcome is stale</li>
+</ul>
+<p>Avoid recomputing when:</p>
+<ul>
+<li>no meaningful metrics exist</li>
+<li>the pilot has only activity evidence</li>
+<li>the selected metrics do not test the hypothesis</li>
+<li>evidence is still contradictory or insufficient and no learning note explains the limitation</li>
+</ul>
+<p>Recomputation does not make weak evidence strong. It only updates the system&#x27;s interpretation from the evidence currently available.</p>
+<hr>
+<h2>Learning actions</h2>
+<p>Pilot learning actions record governance meaning.</p>
+<p>Common learning actions may include:</p>
+<ul>
+<li>scale candidate</li>
+<li>redesign required</li>
+<li>stop/review required</li>
+<li>continue monitoring</li>
+</ul>
+<p>Use learning actions when the pilot evidence justifies a governance posture.</p>
+<p>Examples:</p>
+<ul>
+<li>Use <strong>scale candidate</strong> only when metrics and evidence support the pilot strongly enough to consider expansion.</li>
+<li>Use <strong>continue monitoring</strong> when there are early signals but not enough closure.</li>
+<li>Use <strong>redesign required</strong> when the pilot shows a design weakness or does not test the intended hypothesis.</li>
+<li>Use <strong>stop/review required</strong> when the pilot is contradicted, harmful, or no longer legitimate to continue as designed.</li>
+</ul>
+<p>Learning actions are not ordinary status updates. They become part of the review history and can influence later governance interpretation.</p>
+<hr>
+<h2>Downstream impact</h2>
+<p>Pilot Tracker feeds several downstream surfaces:</p>
+<ul>
+<li><strong>KPI Dashboard</strong> uses linked KPIs to interpret threshold progress and reassessment triggers.</li>
+<li><strong>Lineage View</strong> uses pilots to trace recommendation → decision → pilot → KPI movement and expose drop-off.</li>
+<li><strong>Governance Execution Review</strong> uses pilot outcomes, KPI linkage, evidence, and scenario context to judge execution strength.</li>
+<li><strong>Scenario Effectiveness Review</strong> uses scenario-linked pilots to test whether mitigation claims have execution support.</li>
+<li><strong>Governance Summary</strong> uses pilot learning closure to surface validated pilots, contradicted pilots, and required review prompts.</li>
+<li><strong>Review History</strong> records pilot creation, recomputation events, evidence relinks, and learning actions.</li>
+</ul>
+<p>A well-reviewed pilot can strengthen confidence in a structural decision. A contradicted pilot can reopen review. An untested pilot can show that execution happened without learning closure.</p>
+<hr>
+<h2>Empty states and partial data</h2>
+<p>Pilot Tracker must be interpreted carefully when data is missing.</p>
+<h3>No pilots</h3>
+<p>If no pilots exist, this usually means no structural decision has yet produced a pilot or pilot data has not been entered.</p>
+<p>This is not necessarily a page error. It may be a workflow state.</p>
+<h3>Pilot exists but no metrics</h3>
+<p>The pilot may be operationally real but untested.</p>
+<p>Do not treat the pilot as validated.</p>
+<h3>Pilot exists but no linked KPIs</h3>
+<p>The pilot may have local metric evidence but may not yet influence broader governance interpretation.</p>
+<h3>Pilot exists but no evidence</h3>
+<p>The pilot may have numbers but weak interpretive support.</p>
+<h3>Pilot exists but no lineage</h3>
+<p>The pilot may not be properly connected to the recommendation and structural decision path.</p>
+<h3>Mixed improvement and deterioration</h3>
+<p>The pilot should be treated as inconclusive or requiring careful review rather than forced into a success label.</p>
+<hr>
+<h2>What good use looks like</h2>
+<p>A strong Pilot Tracker workflow looks like this:</p>
+<ol>
+<li>A recommendation leads to a structural decision.</li>
+<li>The structural decision creates or justifies a pilot.</li>
+<li>The pilot has a clear hypothesis.</li>
+<li>The selected pilot is reviewed in Pilot Tracker.</li>
+<li>Metrics are chosen because they test the hypothesis.</li>
+<li>Linked KPIs connect the pilot to broader governance interpretation.</li>
+<li>Evidence notes are linked to support, qualify, or challenge the result.</li>
+<li>The pilot outcome is recomputed after meaningful data changes.</li>
+<li>A learning action is logged only when evidence justifies it.</li>
+<li>Downstream pages use the pilot&#x27;s outcome, KPI movement, evidence, and lineage to qualify governance decisions.</li>
+</ol>
+<p>This workflow helps the organization avoid symbolic execution. The pilot becomes a tested claim, not merely a reported activity.</p>
+<hr>
+<h2>Common mistakes</h2>
+<p>Avoid:</p>
+<ul>
+<li>treating pilot launch as pilot success</li>
+<li>treating pilot status as pilot outcome</li>
+<li>choosing metrics because they are convenient rather than meaningful</li>
+<li>creating KPIs that describe activity instead of outcome</li>
+<li>ignoring contradictory evidence because one metric improved</li>
+<li>relinking evidence without checking whether it belongs to the selected pilot</li>
+<li>recomputing outcomes before metric evidence exists</li>
+<li>scaling a pilot that is only in test or inconclusive</li>
+<li>treating scenario linkage as mitigation evidence by itself</li>
+<li>treating lineage visibility as proof of effectiveness</li>
+<li>expecting ordinary staff to test advanced lineage and evidence states without training</li>
+</ul>
+<hr>
+<h2>Review questions for trained users</h2>
+<p>Use these questions when reviewing a selected pilot:</p>
+<ol>
+<li>What is this pilot trying to test?</li>
+<li>Which recommendation and structural decision does it come from?</li>
+<li>What is the current learning state?</li>
+<li>What metrics test the hypothesis?</li>
+<li>Are the baseline, current, and target values meaningful?</li>
+<li>Are linked KPIs present and appropriate?</li>
+<li>What evidence supports, qualifies, or contradicts the outcome?</li>
+<li>Is the outcome explanation consistent with the evidence?</li>
+<li>Has the pilot been recomputed after meaningful evidence changes?</li>
+<li>What learning action is justified?</li>
+<li>What downstream pages will be affected?</li>
+<li>Should the pilot scale, continue monitoring, be redesigned, stop, or reopen review?</li>
+</ol>
+<hr>
+<h2>Smoke-test guidance</h2>
+<p>For ordinary staff, smoke testing should be limited to:</p>
+<ul>
+<li>page opens</li>
+<li>pilot summary is visible</li>
+<li>selected pilot is identifiable</li>
+<li>workspace areas are understandable</li>
+<li>obvious empty states are understandable</li>
+</ul>
+<p>For trained governance users, smoke testing may include:</p>
+<ul>
+<li>adding a pilot metric to a disposable/test pilot</li>
+<li>creating a linked KPI</li>
+<li>relinking an evidence note</li>
+<li>recomputing the pilot outcome</li>
+<li>recording a learning action</li>
+<li>checking lineage context</li>
+</ul>
+<p>For developers or fixture-based validation, smoke testing should include:</p>
+<ul>
+<li>no-pilot state</li>
+<li>pilot-without-metrics state</li>
+<li>pilot-with-mixed-signals state</li>
+<li>pilot-with-linked-KPI state</li>
+<li>pilot-with-evidence state</li>
+<li>pilot-with-complete lineage state</li>
+<li>pilot-with-broken lineage state</li>
+</ul>
+<p>Do not ask ordinary staff to infer hidden data prerequisites from exploratory testing.</p>
+<hr>
+<h2>Completion standard</h2>
+<p>A trained user understands this page when they can explain:</p>
+<ul>
+<li>why a pilot is not automatically successful because it exists</li>
+<li>how metrics test the pilot hypothesis</li>
+<li>how linked KPIs carry pilot learning into broader governance interpretation</li>
+<li>why evidence can support, qualify, or challenge pilot outcome</li>
+<li>why recomputation should follow meaningful data changes</li>
+<li>how learning actions affect review history</li>
+<li>how lineage connects the pilot to recommendation and structural decision pathways</li>
+<li>why untested, inconclusive, contradicted, and validated pilots require different governance responses</li>
+</ul>
+</body></html>

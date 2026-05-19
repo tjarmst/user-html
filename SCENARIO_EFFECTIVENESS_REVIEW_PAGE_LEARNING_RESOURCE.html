@@ -1,0 +1,268 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>SCENARIO_EFFECTIVENESS_REVIEW_PAGE_LEARNING_RESOURCE</title>
+<style>
+
+@page {
+  size: A4;
+  margin: 18mm 16mm 18mm 16mm;
+  @bottom-center {
+    content: "Page " counter(page) " of " counter(pages);
+    font-size: 8pt;
+    color: #666;
+  }
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.38;
+  color: #1f2933;
+}
+h1 {
+  font-size: 20pt;
+  border-bottom: 2px solid #1f2933;
+  padding-bottom: 6px;
+  margin-top: 0;
+}
+h2 {
+  font-size: 15pt;
+  border-bottom: 1px solid #c9d1d9;
+  padding-bottom: 4px;
+  margin-top: 24px;
+}
+h3 {
+  font-size: 12.5pt;
+  margin-top: 18px;
+}
+h4 {
+  font-size: 11pt;
+  margin-top: 14px;
+}
+p {
+  margin: 0 0 8px 0;
+}
+ul, ol {
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+li {
+  margin-bottom: 3px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0 14px 0;
+  font-size: 8.6pt;
+  page-break-inside: auto;
+}
+thead {
+  display: table-header-group;
+}
+tr {
+  page-break-inside: avoid;
+}
+th, td {
+  border: 1px solid #aab2bd;
+  padding: 4px 5px;
+  vertical-align: top;
+  word-break: break-word;
+}
+th {
+  background: #eef2f6;
+  font-weight: bold;
+}
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 8.6pt;
+  line-height: 1.28;
+}
+code {
+  font-family: Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.92em;
+  background: #f6f8fa;
+  padding: 1px 3px;
+  border-radius: 3px;
+}
+pre code {
+  padding: 0;
+  background: transparent;
+}
+blockquote {
+  border-left: 4px solid #c9d1d9;
+  margin-left: 0;
+  padding-left: 10px;
+  color: #4b5563;
+}
+hr {
+  border: none;
+  border-top: 1px solid #c9d1d9;
+  margin: 18px 0;
+}
+.document-meta {
+  font-size: 8.5pt;
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+</style>
+</head>
+<body>
+<div class="document-meta">Source: user/SCENARIO_EFFECTIVENESS_REVIEW_PAGE_LEARNING_RESOURCE.md</div>
+<h1>Scenario Effectiveness Review Page Learning Resource</h1>
+<p>This guide teaches users how the **Scenario-to-Execution Effectiveness Review** page is now organized around review-focus buttons.</p>
+<p>The page asks a practical governance question:</p>
+<p>&gt; Are scenario-linked decisions and pilots producing execution evidence consistent with the claimed mitigation posture, or is mitigation being inferred from linkage and narrative alone?</p>
+<p>This page does not maintain scenario signals directly. It tests whether scenario-linked execution supports the mitigation claim.</p>
+<h2>Purpose</h2>
+<p>Use Scenario Effectiveness Review to answer four scenario-governance questions:</p>
+<ul>
+<li>**Review Scenario Posture:** What is the overall scenario-linked execution posture for the selected cycle?</li>
+<li>**Inspect Linked Entity Evidence:** Which scenario-linked decisions and pilots have evidence, KPI support, and execution strength?</li>
+<li>**Diagnose Contradiction and Incompleteness:** Where are mitigation claims weakly evidenced, insufficiently evidenced, contradicted, or under blocking pressure?</li>
+<li>**Surface Governance Attention:** Which high-priority scenario-linked rows need governance review prompts?</li>
+</ul>
+<p>The page prepares each review focus lazily when selected and caches the result for the current cycle.</p>
+<h2>Required Starting Point</h2>
+<p>The page requires:</p>
+<ul>
+<li>a selected assessment cycle</li>
+<li>Foresight Execution readiness</li>
+<li>scenario-linked decisions or pilots for row-level review</li>
+<li>execution evidence, KPI links, or pilot outcomes if users want stronger mitigation claims</li>
+</ul>
+<p>If no assessment cycle is selected, the page asks the user to select one first.</p>
+<p>If scenario-linked rows are not available, the page explains that no scenario-linked review rows are available yet.</p>
+<h2>Review Focus Buttons</h2>
+<p>The **Review focus** selector contains:</p>
+<ul>
+<li>Review Scenario Posture</li>
+<li>Inspect Linked Entity Evidence</li>
+<li>Diagnose Contradiction and Incompleteness</li>
+<li>Surface Governance Attention</li>
+</ul>
+<p>Each button is a task area with a different review purpose.</p>
+<h2>Review Scenario Posture</h2>
+<p>Use **Review Scenario Posture** when the user needs the cycle-level scenario execution picture.</p>
+<p>This area shows:</p>
+<ul>
+<li>scenario-linked entities reviewed</li>
+<li>claimed but weakly evidenced count</li>
+<li>not yet evidenced count</li>
+<li>strongly supported count</li>
+<li>interpretive snapshot caption for the summary</li>
+<li>scenario summary judgments</li>
+<li>scenario-level effectiveness chart</li>
+</ul>
+<p>If scenario-linked entities have been reviewed, the page warns that scenario-linked execution evidence may not yet support the claimed mitigation posture. This is intentional. Linkage, activity, or acknowledgment alone should not be treated as mitigation success.</p>
+<p>Scenario summary judgment rows include review context, semantic classification, routing, and snapshot fields. Use these columns to understand whether a scenario-level effectiveness reading is supportable, cautionary, blocked, or still evidence-thin.</p>
+<h2>Inspect Linked Entity Evidence</h2>
+<p>Use **Inspect Linked Entity Evidence** when the user needs row-level review of scenario-linked decisions and pilots.</p>
+<p>This area shows:</p>
+<ul>
+<li>scenario-linked decision and pilot review table</li>
+<li>decision and pilot effectiveness chart</li>
+<li>review context</li>
+<li>semantic classification</li>
+<li>routing</li>
+<li>interpretive snapshot line</li>
+</ul>
+<p>The table helps users inspect whether a scenario-linked entity has enough execution support to make the mitigation claim credible. A linked decision or pilot is not enough by itself. Users should look for evidence, KPI linkage, pilot outcomes, mitigation status, weak execution flags, and the service-generated effectiveness judgment.</p>
+<p>Use this area before relying on a scenario-linked decision or pilot in Governance Summary, Governance Execution Review, Lineage View, or a board pack.</p>
+<h2>Diagnose Contradiction and Incompleteness</h2>
+<p>Use **Diagnose Contradiction and Incompleteness** when the question is where mitigation claims break down.</p>
+<p>This area shows:</p>
+<ul>
+<li>insufficient evidence count</li>
+<li>weakly evidenced claims count</li>
+<li>blocking pressure count</li>
+<li>supportable entities count</li>
+<li>contradiction and incompleteness guidance</li>
+<li>mitigation claim vs execution reality table</li>
+</ul>
+<p>The mitigation claim vs execution reality table filters for rows whose review state indicates:</p>
+<ul>
+<li>weakly evidenced claim</li>
+<li>insufficient evidence</li>
+<li>contradiction or blocking pressure</li>
+</ul>
+<p>Use this area to distinguish planned or claimed mitigation from demonstrated mitigation effectiveness.</p>
+<p>A weak mitigation claim means the app can see scenario linkage or mitigation posture, but not enough downstream execution evidence to support the claim. A blocking-pressure row means governance should be especially careful before treating the scenario path as progressing.</p>
+<h2>Surface Governance Attention</h2>
+<p>Use **Surface Governance Attention** when the user needs the highest-priority review prompts.</p>
+<p>This area shows:</p>
+<ul>
+<li>scenario</li>
+<li>entity type</li>
+<li>entity title</li>
+<li>mitigation status</li>
+<li>mitigation claim state</li>
+<li>effectiveness judgment</li>
+<li>review context</li>
+<li>semantic classification</li>
+<li>routing</li>
+<li>prompt</li>
+</ul>
+<p>The prompt currently directs governance to reassess mitigation claims, strengthen execution evidence, or reopen scenario-linked governance paths.</p>
+<p>If no high-priority prompts are generated, the page says so. That does not prove all scenario mitigation is complete; it only means the current summary did not produce critical prompt rows.</p>
+<h2>Semantic, Routing, Context, And Snapshot Fields</h2>
+<p>Scenario effectiveness rows can display:</p>
+<ul>
+<li>review context</li>
+<li>semantic line</li>
+<li>routing line</li>
+<li>interpretive snapshot line</li>
+</ul>
+<p>Use these fields to distinguish:</p>
+<ul>
+<li>supportable mitigation evidence</li>
+<li>monitor-only rows</li>
+<li>weakly evidenced claims</li>
+<li>insufficient evidence</li>
+<li>contradiction or blocking pressure</li>
+<li>rows that need reassessment or stronger evidence</li>
+</ul>
+<p>These fields guide bounded governance interpretation. They do not create automatic decision authority.</p>
+<p>Snapshot lines identify the bounded interpretation bundle attached to the visible review state. They are not separate evidence notes.</p>
+<h2>Downstream Impact</h2>
+<p>Scenario Effectiveness Review feeds downstream pages with **qualified mitigation meaning**, not just scenario data.</p>
+<p>It connects to:</p>
+<ul>
+<li>Governance Summary, through scenario-to-execution effectiveness lines, mitigation gap sections, and board-pack qualifications</li>
+<li>Governance Execution Review, through scenario pressure, mitigation dependency, and evidence-strengthening prompts</li>
+<li>Lineage View, through scenario overlays on recommendation-to-decision-to-pilot-to-KPI chains</li>
+<li>Foresight Execution, where users maintain scenario signals, mitigation status, owners, due dates, and mitigation notes</li>
+<li>Governance Action Queue, when a scenario finding becomes ownerable follow-up work elsewhere</li>
+<li>board-pack outputs, where mitigation claims should be qualified by evidence strength</li>
+</ul>
+<p>The most important downstream distinction is the gap between mitigation intent and demonstrated mitigation effectiveness.</p>
+<h2>Common Mistakes</h2>
+<p>Avoid assuming planned mitigation equals effective mitigation.</p>
+<p>Avoid treating scenario linkage as mitigation proof.</p>
+<p>Avoid treating a watchpoint acknowledgment as completed mitigation.</p>
+<p>Avoid treating a scenario-linked decision or pilot as supportable without execution evidence, KPI support, or pilot outcome context.</p>
+<p>Avoid ignoring contradiction or blocking pressure because mitigation status is marked in progress.</p>
+<p>Avoid escalating every prompt without reading semantic and routing meaning.</p>
+<p>Avoid reading snapshot fields as standalone evidence.</p>
+<h2>Best-Practice Review Pattern</h2>
+<ol>
+<li>Select the intended assessment cycle.</li>
+<li>Open **Review Scenario Posture** to understand the overall mitigation-evidence posture.</li>
+<li>Open **Inspect Linked Entity Evidence** to review scenario-linked decisions and pilots.</li>
+<li>Open **Diagnose Contradiction and Incompleteness** to find weakly evidenced, insufficient, or blocked mitigation claims.</li>
+<li>Open **Surface Governance Attention** to see whether high-priority governance prompts were generated.</li>
+<li>Return to Foresight Execution if scenario mitigation status, owner, due date, or mitigation notes need correction.</li>
+<li>Use Governance Execution Review if a scenario-linked execution path needs progression, mitigation-first handling, evidence strengthening, reopening, or blockage.</li>
+<li>Carry only qualified mitigation claims into Governance Summary and board-pack exports.</li>
+</ol>
+<h2>Training Prompt</h2>
+<p>Ask the trainee to select one review focus, inspect one scenario-linked decision or pilot, and explain whether the mitigation claim is strongly supported, weakly evidenced, insufficiently evidenced, contradicted, or under blocking pressure.</p>
+<p>Completion standard: the user can separate scenario mitigation intent from demonstrated scenario mitigation effectiveness.</p>
+</body>
+</html>

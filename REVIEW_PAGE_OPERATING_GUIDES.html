@@ -1,0 +1,431 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>REVIEW_PAGE_OPERATING_GUIDES</title>
+<style>
+
+@page {
+  size: A4;
+  margin: 18mm 16mm 18mm 16mm;
+  @bottom-center {
+    content: "Page " counter(page) " of " counter(pages);
+    font-size: 8pt;
+    color: #666;
+  }
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 10.5pt;
+  line-height: 1.38;
+  color: #1f2933;
+}
+h1 {
+  font-size: 20pt;
+  border-bottom: 2px solid #1f2933;
+  padding-bottom: 6px;
+  margin-top: 0;
+}
+h2 {
+  font-size: 15pt;
+  border-bottom: 1px solid #c9d1d9;
+  padding-bottom: 4px;
+  margin-top: 24px;
+}
+h3 {
+  font-size: 12.5pt;
+  margin-top: 18px;
+}
+h4 {
+  font-size: 11pt;
+  margin-top: 14px;
+}
+p {
+  margin: 0 0 8px 0;
+}
+ul, ol {
+  margin-top: 4px;
+  margin-bottom: 10px;
+}
+li {
+  margin-bottom: 3px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0 14px 0;
+  font-size: 8.6pt;
+  page-break-inside: auto;
+}
+thead {
+  display: table-header-group;
+}
+tr {
+  page-break-inside: avoid;
+}
+th, td {
+  border: 1px solid #aab2bd;
+  padding: 4px 5px;
+  vertical-align: top;
+  word-break: break-word;
+}
+th {
+  background: #eef2f6;
+  font-weight: bold;
+}
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 8.6pt;
+  line-height: 1.28;
+}
+code {
+  font-family: Consolas, "Liberation Mono", Menlo, monospace;
+  font-size: 0.92em;
+  background: #f6f8fa;
+  padding: 1px 3px;
+  border-radius: 3px;
+}
+pre code {
+  padding: 0;
+  background: transparent;
+}
+blockquote {
+  border-left: 4px solid #c9d1d9;
+  margin-left: 0;
+  padding-left: 10px;
+  color: #4b5563;
+}
+hr {
+  border: none;
+  border-top: 1px solid #c9d1d9;
+  margin: 18px 0;
+}
+.document-meta {
+  font-size: 8.5pt;
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+
+</style>
+</head>
+<body>
+<div class="document-meta">Source: user/REVIEW_PAGE_OPERATING_GUIDES.md</div>
+<h1>Review-Page Operating Guides</h1>
+<h2>WorkPlace Conditions Governance</h2>
+<h2>Stage 6O</h2>
+<h2>Purpose</h2>
+<p>This guide helps trained governance users operate the main review pages without directly platform-connected LLM support.</p>
+<p>Users may still use normal LLM support services for explanation, summarisation, drafting notes, or help interpreting exported text. However, they should not rely on an LLM to access live application state, infer hidden data, or decide whether a fixture exists.</p>
+<p>The user must read what the application actually shows.</p>
+<p>---</p>
+<h2>Who this guide is for</h2>
+<p>This guide is for trained governance users who already understand the basic operating concepts:</p>
+<ul>
+<li>recommendation</li>
+<li>structural decision</li>
+<li>pilot</li>
+<li>KPI</li>
+<li>evidence</li>
+<li>scenario pressure</li>
+<li>learning state</li>
+<li>governance action</li>
+<li>contradiction / incompleteness</li>
+<li>weak support</li>
+<li>supportable under current evidence</li>
+<li>fixture validation</li>
+</ul>
+<p>This guide is not for ordinary staff readability testing.</p>
+<p>---</p>
+<h2>Critical operating rule</h2>
+<p>&gt; Do not ask users to discover hidden prerequisite states by exploration.</p>
+<p>If a page requires a state that is not visible or cannot be named from prepared data, record:</p>
+<pre><code>Not exercised — fixture unavailable.</code></pre>
+<p>Do not treat missing fixture data as a page defect.</p>
+<p>---</p>
+<h2>Use of normal LLM support</h2>
+<p>A trained governance user may use normal LLM support to:</p>
+<ul>
+<li>explain a concept shown on the page;</li>
+<li>convert page text into a meeting note;</li>
+<li>summarise exported rows;</li>
+<li>draft a governance observation;</li>
+<li>compare a visible result with an expected result;</li>
+<li>simplify wording for management.</li>
+</ul>
+<p>A trained governance user must not use normal LLM support to:</p>
+<ul>
+<li>claim the LLM has inspected live application state unless the user has pasted/exported it;</li>
+<li>infer hidden database records that are not shown or exported;</li>
+<li>decide that a branch passed without a visible row, export, or prepared fixture;</li>
+<li>replace the application’s actual rendered state with speculation.</li>
+</ul>
+<p>Safe LLM prompt pattern:</p>
+<pre><code>I am using WorkPlace Conditions Governance. Here is the visible text/export from the page. Please help me classify what is shown, without assuming hidden data.</code></pre>
+<p>---</p>
+<h1>Review Page 1 — Governance Summary</h1>
+<h2>Page purpose</h2>
+<p>Governance Summary is the synthesis page. It helps governance users understand overall cycle posture, major concerns, scenario posture, evidence/contradiction posture, and exportable board-pack material.</p>
+<p>Use it to answer:</p>
+<ul>
+<li>What is the current governance picture?</li>
+<li>What areas require attention?</li>
+<li>What does the board or governance reviewer need to see?</li>
+<li>What evidence, contradiction, or scenario posture qualifies the summary?</li>
+</ul>
+<h2>Before using the page</h2>
+<ol>
+<li>Confirm the correct organization and assessment cycle are selected.</li>
+<li>Click `Refresh Governance Summary` if changes were made elsewhere.</li>
+<li>Check the freshness caption.</li>
+<li>Do not rely on an old Export tab state after significant changes; refresh first.</li>
+</ol>
+<h2>Operating areas</h2>
+<table><thead><tr><th>Area</th><th>Use it for</th></tr></thead><tbody>
+<tr><td>Decide</td><td>governance decisions, gates, and action posture</td></tr>
+<tr><td>Qualify</td><td>confidence, evidence, contradiction, or qualification context</td></tr>
+<tr><td>Diagnose</td><td>evidence/contradiction/incompleteness posture and diagnostics</td></tr>
+<tr><td>Govern Scenarios</td><td>scenario posture and scenario-related governance attention</td></tr>
+<tr><td>Close Learning</td><td>learning closure and cycle interpretation</td></tr>
+<tr><td>Export</td><td>board-pack / export outputs</td></tr>
+</tbody></table>
+<h2>Minimum checks</h2>
+<table><thead><tr><th>Check</th><th>Pass / issue / not applicable</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Refresh control is visible and used when needed.</td><td></td><td></td></tr>
+<tr><td>The selected cycle/context is clear.</td><td></td><td></td></tr>
+<tr><td>Diagnose shows compact evidence/contradiction/incompleteness posture.</td><td></td><td></td></tr>
+<tr><td>Govern Scenarios shows compact scenario posture.</td><td></td><td></td></tr>
+<tr><td>Detailed tables/charts are still available.</td><td></td><td></td></tr>
+<tr><td>Export renders when needed.</td><td></td><td></td></tr>
+<tr><td>Export delay is expected on first load or after refresh.</td><td></td><td></td></tr>
+<tr><td>Returning to Export without refresh is faster.</td><td></td><td></td></tr>
+</tbody></table>
+<h2>What not to infer</h2>
+<p>Do not infer that every scenario branch has been exercised just because Governance Summary renders correctly.</p>
+<p>For scenario trigger validation, use Scenario Effectiveness Review and prepared fixture rules.</p>
+<h2>Normal LLM support use</h2>
+<p>You may paste Governance Summary text or export sections into a normal LLM and ask:</p>
+<pre><code>Summarise this governance summary for a board reader. Preserve all qualifications and residual risks. Do not remove evidence or contradiction caveats.</code></pre>
+<p>---</p>
+<h1>Review Page 2 — Comparative Cycle Review</h1>
+<h2>Page purpose</h2>
+<p>Comparative Cycle Review compares assessment cycles and helps users understand movement, continuity, challenge, and closure.</p>
+<p>Use it to answer:</p>
+<ul>
+<li>What changed between cycles?</li>
+<li>Which conclusions are stable or contested?</li>
+<li>Are there unresolved challenges?</li>
+<li>Are recommendation continuity items visible and reachable?</li>
+</ul>
+<h2>Before using the page</h2>
+<ol>
+<li>Confirm the selected cycles.</li>
+<li>Click `Refresh Comparative Review` after updates elsewhere.</li>
+<li>Confirm selected cycle context remains stable after refresh.</li>
+</ol>
+<h2>Operating areas</h2>
+<table><thead><tr><th>Area</th><th>Use it for</th></tr></thead><tbody>
+<tr><td>Closure Summary</td><td>high-level closure position and action cues</td></tr>
+<tr><td>Close Challenges</td><td>human validation / challenge review</td></tr>
+<tr><td>Continuity</td><td>recommendation continuity review</td></tr>
+<tr><td>Comparative tables</td><td>cycle-to-cycle movement and interpretation</td></tr>
+</tbody></table>
+<h2>Minimum checks</h2>
+<table><thead><tr><th>Check</th><th>Pass / issue / not applicable</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Refresh control is visible.</td><td></td><td></td></tr>
+<tr><td>Selected cycle context remains stable after refresh.</td><td></td><td></td></tr>
+<tr><td>Closure Summary points to challenge and continuity workflows.</td><td></td><td></td></tr>
+<tr><td>Close Challenges remains reachable.</td><td></td><td></td></tr>
+<tr><td>Continuity remains reachable.</td><td></td><td></td></tr>
+<tr><td>Challenge or continuity absence is understandable as no-data / not applicable.</td><td></td><td></td></tr>
+</tbody></table>
+<h2>What not to infer</h2>
+<p>Do not infer that carry-forward/predecessor validation is complete unless a prepared prior/current recommendation fixture exists.</p>
+<h2>Normal LLM support use</h2>
+<p>You may paste cycle comparison text or tables into a normal LLM and ask:</p>
+<pre><code>Explain the cycle-to-cycle change shown here. Keep challenge and continuity qualifications visible.</code></pre>
+<p>---</p>
+<h1>Review Page 3 — Governance Execution Review</h1>
+<h2>Page purpose</h2>
+<p>Governance Execution Review examines whether governance responses are progressing through execution paths.</p>
+<p>Use it to answer:</p>
+<ul>
+<li>Is the selected recommendation/decision/pilot path healthy?</li>
+<li>Is there drop-off?</li>
+<li>Is scenario pressure relevant?</li>
+<li>Is evidence/KPI context adequate before progression actions?</li>
+<li>Is learning closure or reopening relevant?</li>
+</ul>
+<h2>Before using the page</h2>
+<ol>
+<li>Confirm the selected organization/cycle.</li>
+<li>Select the relevant lineage path.</li>
+<li>Click `Refresh Governance Execution Review` after updates elsewhere.</li>
+<li>Confirm selected cycle/path remains coherent after refresh.</li>
+</ol>
+<h2>Operating areas</h2>
+<table><thead><tr><th>Area</th><th>Use it for</th></tr></thead><tbody>
+<tr><td>Decide Progression</td><td>governed progression actions and action context</td></tr>
+<tr><td>Diagnose Path Health</td><td>drop-off and path diagnostics</td></tr>
+<tr><td>Govern Scenario Pressure</td><td>scenario/mitigation context</td></tr>
+<tr><td>Close Learning</td><td>learning and reopen candidate context</td></tr>
+<tr><td>Inspect Selected Path</td><td>workflow entities, KPI context, and evidence relinking</td></tr>
+</tbody></table>
+<h2>Minimum checks</h2>
+<table><thead><tr><th>Check</th><th>Pass / issue / not applicable</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Refresh control is visible.</td><td></td><td></td></tr>
+<tr><td>Selected path remains coherent after refresh.</td><td></td><td></td></tr>
+<tr><td>Decide Progression shows action context before action controls.</td><td></td><td></td></tr>
+<tr><td>Linked scenario cue is visible or states none.</td><td></td><td></td></tr>
+<tr><td>Linked KPI count is visible or states none.</td><td></td><td></td></tr>
+<tr><td>Evidence gap cue is visible.</td><td></td><td></td></tr>
+<tr><td>Weak execution cue is visible.</td><td></td><td></td></tr>
+<tr><td>Govern Scenario Pressure remains available.</td><td></td><td></td></tr>
+<tr><td>Inspect Selected Path remains available for KPI/evidence context.</td><td></td><td></td></tr>
+<tr><td>Close Learning shows learning/reopen context.</td><td></td><td></td></tr>
+</tbody></table>
+<h2>What not to infer</h2>
+<p>Do not apply a governed action merely because the control is visible. Confirm selected path, scenario pressure, evidence/KPI posture, and learning/path health first.</p>
+<h2>Normal LLM support use</h2>
+<p>You may paste the selected-path action context into a normal LLM and ask:</p>
+<pre><code>Help me write a short governance note from this selected-path context. Do not infer missing evidence or hidden linked entities.</code></pre>
+<p>---</p>
+<h1>Review Page 4 — Scenario Effectiveness Review</h1>
+<h2>Page purpose</h2>
+<p>Scenario Effectiveness Review tests whether scenario pressures are being addressed by evidence-backed execution.</p>
+<p>Use it to answer:</p>
+<ul>
+<li>Which scenario pressures are unsupported?</li>
+<li>Which are weakly supported?</li>
+<li>Which may be supportable under current evidence?</li>
+<li>Where are contradictions or mitigation weaknesses visible?</li>
+<li>What requires governance attention?</li>
+</ul>
+<h2>Before using the page</h2>
+<ol>
+<li>Confirm the selected organization/cycle.</li>
+<li>Click `Refresh Scenario Effectiveness Review`.</li>
+<li>Start in `Review Scenario Posture`.</li>
+<li>Use aggregate posture metrics as orientation, not as proof by themselves.</li>
+</ol>
+<h2>Operating areas</h2>
+<table><thead><tr><th>Area</th><th>Use it for</th></tr></thead><tbody>
+<tr><td>Review Scenario Posture</td><td>aggregate scenario posture and summary orientation</td></tr>
+<tr><td>Inspect Linked Entity Evidence</td><td>linked recommendation/decision/pilot/evidence context</td></tr>
+<tr><td>Diagnose Contradiction and Incompleteness</td><td>contradiction metrics and mitigation reality</td></tr>
+<tr><td>Surface Governance Attention</td><td>prompts or attention items</td></tr>
+</tbody></table>
+<h2>Minimum checks</h2>
+<table><thead><tr><th>Check</th><th>Pass / issue / not applicable</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Refresh control is visible.</td><td></td><td></td></tr>
+<tr><td>Selected cycle remains coherent after refresh.</td><td></td><td></td></tr>
+<tr><td>Review Scenario Posture shows aggregate metrics when rows exist.</td><td></td><td></td></tr>
+<tr><td>Linked Entity Evidence remains reachable.</td><td></td><td></td></tr>
+<tr><td>Contradiction and Incompleteness remains reachable.</td><td></td><td></td></tr>
+<tr><td>Governance Attention remains reachable.</td><td></td><td></td></tr>
+<tr><td>Candidate row/entity can be named before classifying a fixture.</td><td></td><td></td></tr>
+</tbody></table>
+<h2>Fixture classification reminder</h2>
+<p>For scenario trigger-state validation, classify each state as:</p>
+<table><thead><tr><th>Classification</th><th>Meaning</th></tr></thead><tbody>
+<tr><td>Pass</td><td>Valid fixture exists and UI/export shows expected state.</td></tr>
+<tr><td>Minor issue</td><td>State is correct but wording/signposting is unclear.</td></tr>
+<tr><td>Material defect</td><td>Valid fixture exists but UI/export renders wrong state.</td></tr>
+<tr><td>Not exercised — fixture unavailable</td><td>Required state is not present in current data.</td></tr>
+</tbody></table>
+<p>Do not classify a fixture as Pass from an aggregate count alone. Identify at least one candidate row/entity or export row.</p>
+<h2>Current known Stage 6J result</h2>
+<table><thead><tr><th>Fixture</th><th>State</th><th>Result</th></tr></thead><tbody>
+<tr><td>S1</td><td>Insufficient evidence</td><td>Pass</td></tr>
+<tr><td>S2</td><td>Weak support</td><td>Pass</td></tr>
+<tr><td>S3</td><td>Supportable under current evidence</td><td>Not exercised — fixture unavailable</td></tr>
+</tbody></table>
+<h2>Normal LLM support use</h2>
+<p>You may paste scenario export rows into a normal LLM and ask:</p>
+<pre><code>Classify these scenario rows against S1 insufficient evidence, S2 weak support, and S3 supportable. Do not assume any rows not shown.</code></pre>
+<p>---</p>
+<h1>Review Page 5 — Governance Action Queue</h1>
+<h2>Page purpose</h2>
+<p>Governance Action Queue manages governance actions, ownership, progress, and closure.</p>
+<p>Use it to answer:</p>
+<ul>
+<li>What governance actions exist?</li>
+<li>Who owns them?</li>
+<li>What is their status?</li>
+<li>What selected action is being edited?</li>
+<li>Is the action ready to close?</li>
+</ul>
+<h2>Operating areas</h2>
+<table><thead><tr><th>Area</th><th>Use it for</th></tr></thead><tbody>
+<tr><td>Review Queue Posture</td><td>queue table and posture overview</td></tr>
+<tr><td>Inspect Selected Action</td><td>selected-action summary and context</td></tr>
+<tr><td>Manage Ownership and Progress</td><td>owner/status/progress updates</td></tr>
+<tr><td>Resolve and Close Action</td><td>resolution and closure</td></tr>
+</tbody></table>
+<h2>Minimum checks</h2>
+<table><thead><tr><th>Check</th><th>Pass / issue / not applicable</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Queue table/posture appears.</td><td></td><td></td></tr>
+<tr><td>Selected action is visible before inspection.</td><td></td><td></td></tr>
+<tr><td>Inspect Selected Action updates when selection changes.</td><td></td><td></td></tr>
+<tr><td>Manage Ownership and Progress shows selected-action context before controls.</td><td></td><td></td></tr>
+<tr><td>Resolve and Close Action shows selected-action context before closure controls.</td><td></td><td></td></tr>
+<tr><td>Owner/status update is only performed on a safe test row.</td><td></td><td></td></tr>
+<tr><td>Closure is only performed when a safe/valid action is selected.</td><td></td><td></td></tr>
+</tbody></table>
+<h2>What not to infer</h2>
+<p>Do not update ownership, progress, or closure unless the selected-action summary clearly identifies the action being changed.</p>
+<h2>Normal LLM support use</h2>
+<p>You may paste a selected-action summary into a normal LLM and ask:</p>
+<pre><code>Help me draft a short ownership/progress note for this selected governance action. Do not assume any missing linked entity context.</code></pre>
+<p>---</p>
+<h1>Review Page 6 — Review History</h1>
+<h2>Page purpose</h2>
+<p>Review History provides audit/supporting history for governance interpretation.</p>
+<p>Use it to answer:</p>
+<ul>
+<li>What has changed?</li>
+<li>What was previously accepted, challenged, preserved, retired, or updated?</li>
+<li>What evidence exists for continuity or lifecycle interpretation?</li>
+</ul>
+<h2>Minimum checks</h2>
+<table><thead><tr><th>Check</th><th>Pass / issue / not applicable</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Review history opens safely.</td><td></td><td></td></tr>
+<tr><td>Events are understandable enough to support audit review.</td><td></td><td></td></tr>
+<tr><td>Event timestamps and event types are visible where available.</td><td></td><td></td></tr>
+<tr><td>Linked entity context is visible where available.</td><td></td><td></td></tr>
+<tr><td>Empty states are understandable.</td><td></td><td></td></tr>
+</tbody></table>
+<h2>What not to infer</h2>
+<p>Do not infer current state from history alone. Use the relevant current page for current status.</p>
+<h2>Normal LLM support use</h2>
+<p>You may paste review-history entries into a normal LLM and ask:</p>
+<pre><code>Summarise this review history for audit purposes. Keep event types and chronology clear.</code></pre>
+<p>---</p>
+<h1>Review-page operating rollup</h1>
+<p>Use this table after operating-guide checks.</p>
+<table><thead><tr><th>Page</th><th>Guide used?</th><th>Main result</th><th>Minor issues</th><th>Material defects</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Governance Summary</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Comparative Cycle Review</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Governance Execution Review</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Scenario Effectiveness Review</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Governance Action Queue</td><td></td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Review History</td><td></td><td></td><td></td><td></td><td></td></tr>
+</tbody></table>
+<p>---</p>
+<h2>Closure rule for Stage 6O</h2>
+<p>Stage 6O can be closed when:</p>
+<ul>
+<li>review-page operating guides exist for trained governance users;</li>
+<li>guides support operation without directly platform-connected LLM access;</li>
+<li>guides allow normal LLM support for pasted/exported text;</li>
+<li>guides do not ask users to infer hidden data;</li>
+<li>guides preserve fixture discipline and residual-risk classification;</li>
+<li>guides do not reopen design or implementation work.</li>
+</ul>
+<p>This document meets those requirements.</p>
+</body>
+</html>

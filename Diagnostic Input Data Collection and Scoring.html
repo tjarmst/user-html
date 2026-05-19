@@ -1,0 +1,184 @@
+<!doctype html>
+<html><head><meta charset=utf-8>
+<title>Diagnostic Input Data Collection and Scoring</title>
+<style>
+
+body { font-family: Segoe UI, Arial, sans-serif; line-height: 1.45; color: #202124; margin: 42px; max-width: 980px; }
+h1, h2, h3 { color: #17324d; margin-top: 1.35em; }
+h1 { border-bottom: 2px solid #d9e2ec; padding-bottom: 8px; }
+table { border-collapse: collapse; width: 100%; margin: 18px 0; font-size: 0.94rem; }
+th, td { border: 1px solid #cfd8e3; padding: 7px 9px; vertical-align: top; }
+th { background: #eef3f8; text-align: left; }
+code, pre { background: #f4f6f8; border-radius: 4px; }
+code { padding: 1px 4px; }
+pre { padding: 12px; overflow-x: auto; }
+.document-meta { color: #5f6b7a; font-size: 0.9rem; margin-bottom: 22px; }
+
+</style></head><body>
+<div class=document-meta>Source: user/metrics/Diagnostic Input Data Collection and Scoring.md</div>
+<h1>Diagnostic Input Data Collection And Scoring</h1>
+<h2>Purpose</h2>
+<p>Diagnostic Input is mainly a <strong>Stage A: Understand reality</strong> activity. It records evidence-backed observations about current workplace conditions so the system can compute scorecards, expose contradictions, and support recommendations.</p>
+<p>The goal is not to produce optimistic scores. The goal is to create a defensible picture of current reality that can later be challenged, acted on, and retested.</p>
+<h2>How Diagnostic Input Fits The Product</h2>
+<table><thead><tr><th>Product stage</th><th>What happens</th><th>Relevant pages</th></tr></thead><tbody>
+<tr><td>Stage A: Understand reality</td><td>Collect metric observations, surveys, and evidence; compute scores; inspect score components.</td><td>Diagnostic Input, Survey Input, Evidence Notes, Score Dashboard, Alignment Dashboard, Score Component Details</td></tr>
+<tr><td>Bridge: Govern interpretation</td><td>Link evidence, review contradictions, interpret confidence, and decide whether conclusions are supportable.</td><td>Score Component Details, Governance Summary, Review pages</td></tr>
+<tr><td>Stage B: Change reality intelligently</td><td>Use recommendations, decisions, pilots, KPIs, and governance actions to test change.</td><td>Recommendations, Preserve / Reform / Replace, Pilot Tracker, KPI Dashboard, Governance Action Queue</td></tr>
+</tbody></table>
+<p>Some Diagnostic Input metrics also indicate readiness for Stage B. <code>PILOT_CAPACITY</code>, <code>DATA_QUALITY_SCORE</code>, <code>STAKEHOLDER_SUPPORT_AVG</code>, <code>LEARNING_CULTURE</code>, <code>LEADERSHIP_SUPPORT</code>, and <code>ROLE_REDESIGN_RATE</code> help determine whether the organization can act and learn responsibly.</p>
+<h2>Diagnostic Input Elements</h2>
+<p>Diagnostic inputs can include:</p>
+<ul>
+<li>objective operational data, such as overtime, leave, role redesign, or technology deployment evidence;</li>
+<li>perceptual survey or interview responses, such as dignity, psychological safety, leadership support, or technology experience;</li>
+<li>composite or derived indicators, such as burnout risk, trust health, or data quality;</li>
+<li>structured judgment converted to a 0-100 scale using a documented rubric.</li>
+</ul>
+<p>Stage B execution evidence, such as pilot outcome scores and KPI progress, should be handled as execution feedback rather than as a substitute for Stage A diagnosis.</p>
+<h2>Collection Process</h2>
+<h3>1. Clarify the metric role</h3>
+<p>Before collecting data, identify whether the metric is:</p>
+<ul>
+<li>a Stage A diagnostic metric;</li>
+<li>a Stage A / Stage B readiness metric;</li>
+<li>a Bridge / governance metric such as an alignment gap.</li>
+</ul>
+<p>This helps the collector understand whether the metric describes current reality, readiness to act, or the quality of interpretation.</p>
+<h3>2. Clarify polarity</h3>
+<p>Determine whether higher values are healthier or riskier.</p>
+<p>Positive examples:</p>
+<ul>
+<li><code>SUSTAINABLE_WORKLOAD_SCORE</code></li>
+<li><code>DIGNITY_AT_WORK</code></li>
+<li><code>PSYCHOLOGICAL_SAFETY</code></li>
+<li><code>AI_AUGMENTATION_RATIO</code></li>
+</ul>
+<p>Negative examples:</p>
+<ul>
+<li><code>OVERTIME_HOURS_NORM</code></li>
+<li><code>STRESS_LEAVE_RATE</code></li>
+<li><code>POLITICAL_REWARD_BIAS</code></li>
+<li><code>SURVEILLANCE_DRIFT_SCORE</code></li>
+<li><code>SYMBOLIC_STRUCTURAL_INTEGRITY_GAP</code></li>
+</ul>
+<h3>3. Identify the strongest evidence source</h3>
+<p>Use the strongest available source for each metric:</p>
+<ul>
+<li>operational systems: HRIS, payroll, timekeeping, rostering, workforce planning, people analytics;</li>
+<li>surveys: employee climate surveys, pulse surveys, leadership assessments;</li>
+<li>interviews and focus groups: structured conversations with employees, managers, and stakeholders;</li>
+<li>document review: policies, advancement criteria, technology governance material, incident records;</li>
+<li>program data: pilot reports, KPI reports, deployment evidence, project retrospectives.</li>
+</ul>
+<h3>4. Keep assessment boundaries consistent</h3>
+<p>Use the same assessment window, organization, division, and workforce segment definitions for the metrics in a cycle. If a metric only applies to a subset, record that limitation in the note or evidence record.</p>
+<h3>5. Record confidence and rationale</h3>
+<p>Every metric should have enough context for a reviewer to understand why the value was entered:</p>
+<ul>
+<li>source;</li>
+<li>period covered;</li>
+<li>confidence level;</li>
+<li>calculation or rubric;</li>
+<li>known limitations;</li>
+<li>reason for using a placeholder, if one is used.</li>
+</ul>
+<h2>Scoring Methods</h2>
+<h3>Objective operational metrics</h3>
+<p>Use this method for counts, rates, ratios, or direct operational data.</p>
+<ol>
+<li>Define the raw measure.</li>
+<li>Extract data for the assessment window.</li>
+<li>Normalize to the 0-100 scale.</li>
+<li>Confirm whether lower or higher is healthier.</li>
+<li>Record source details and caveats.</li>
+</ol>
+<p>Examples:</p>
+<ul>
+<li><code>OVERTIME_HOURS_NORM</code></li>
+<li><code>STRESS_LEAVE_RATE</code></li>
+<li><code>ROLE_REDESIGN_RATE</code></li>
+</ul>
+<h3>Perceptual survey metrics</h3>
+<p>Use this method for employee or stakeholder perception.</p>
+<ol>
+<li>Align survey questions to the metric definition.</li>
+<li>Use a consistent response scale.</li>
+<li>Convert the average to the 0-100 scale.</li>
+<li>Review sample size and segment coverage.</li>
+<li>Record limitations and confidence.</li>
+</ol>
+<p>Example conversion:</p>
+<pre><code>1-5 Likert average -&gt; ((average - 1) / 4) * 100</code></pre>
+<p>Examples:</p>
+<ul>
+<li><code>DIGNITY_AT_WORK</code></li>
+<li><code>PSYCHOLOGICAL_SAFETY</code></li>
+<li><code>LEADERSHIP_SUPPORT</code></li>
+<li><code>AI_USE_TRANSPARENCY</code></li>
+</ul>
+<h3>Composite or derived metrics</h3>
+<p>Use this method when the metric represents a combined condition.</p>
+<ol>
+<li>Identify the component measures.</li>
+<li>Define the weighting or aggregation rule.</li>
+<li>Calculate the score.</li>
+<li>Validate the result against the intended meaning.</li>
+<li>Record enough detail for review.</li>
+</ol>
+<p>Examples:</p>
+<ul>
+<li><code>BURNOUT_RISK_SCORE</code></li>
+<li><code>TRUST_HEALTH_SCORE</code></li>
+<li><code>DATA_QUALITY_SCORE</code></li>
+</ul>
+<h3>Structured judgment metrics</h3>
+<p>Use this method when objective data is incomplete but a decision still requires disciplined assessment.</p>
+<ol>
+<li>Assemble evidence.</li>
+<li>Use a rubric.</li>
+<li>Score criteria consistently.</li>
+<li>Review with a multidisciplinary group where appropriate.</li>
+<li>Record the final value and the reasoned basis.</li>
+</ol>
+<p>Examples:</p>
+<ul>
+<li><code>POLITICAL_REWARD_BIAS</code></li>
+<li><code>HIDDEN_EXIT_PRESSURE</code></li>
+<li><code>CAPABILITY_RECOGNITION</code></li>
+<li><code>WORKER_VOICE_IN_TECH</code></li>
+</ul>
+<h2>Handling Contradictions</h2>
+<p>When objective data and perceptual evidence differ materially, do not smooth the difference away. Treat the difference as a governance signal.</p>
+<p>Examples:</p>
+<ul>
+<li>Overtime is high, but workload is reported as sustainable.</li>
+<li>Leadership says technology augments workers, but survey evidence reports surveillance drift.</li>
+<li>Promotion criteria are documented, but employees experience advancement as political.</li>
+</ul>
+<p>Contradictions should be linked to evidence and reviewed in Score Component Details or later governance review pages.</p>
+<h2>Using Neutral Placeholders</h2>
+<p>Use <code>50</code> only when evidence is not yet available or is genuinely neutral. Label it as interim. A placeholder should create a plan for better evidence, not become a permanent convenience.</p>
+<p>Avoid using <code>50</code> to hide uncertainty. The product creates value by making weak evidence visible.</p>
+<h2>Evidence Traceability</h2>
+<p>Metric values should not stand alone. Use Evidence Notes and Score Component Details to preserve the reason behind the score.</p>
+<p>Good evidence records should clarify:</p>
+<ul>
+<li>what was observed;</li>
+<li>who or what was affected;</li>
+<li>whether the evidence is mechanism, interpretation, contradiction, or validation;</li>
+<li>confidence level;</li>
+<li>link to the relevant score group, score component, recommendation, decision, pilot, KPI, or governance path where appropriate.</li>
+</ul>
+<h2>Review And Iteration</h2>
+<p>At the end of each assessment cycle:</p>
+<ol>
+<li>Review low or high-impact metrics for evidence sufficiency.</li>
+<li>Review contradictions before relying on recommendations.</li>
+<li>Compare current-cycle scores with prior cycles where possible.</li>
+<li>Revisit placeholder values.</li>
+<li>Use Stage B pilot and KPI evidence to test whether action changed the condition.</li>
+</ol>
+<h2>Owner Summary</h2>
+<p>Diagnostic Input creates the evidence base for Stage A. Its value is reliability: it gives owners a clearer picture of current workplace conditions before they decide what to preserve, reform, replace, pilot, escalate, or review.</p>
+</body></html>

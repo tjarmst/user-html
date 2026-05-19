@@ -1,0 +1,383 @@
+<!doctype html>
+<html><head><meta charset=utf-8>
+<title>TRANSFORMATION_LEAD_TRAINING</title>
+<style>
+
+body { font-family: Segoe UI, Arial, sans-serif; line-height: 1.45; color: #202124; margin: 42px; max-width: 980px; }
+h1, h2, h3 { color: #17324d; margin-top: 1.35em; }
+h1 { border-bottom: 2px solid #d9e2ec; padding-bottom: 8px; }
+table { border-collapse: collapse; width: 100%; margin: 18px 0; font-size: 0.94rem; }
+th, td { border: 1px solid #cfd8e3; padding: 7px 9px; vertical-align: top; }
+th { background: #eef3f8; text-align: left; }
+code, pre { background: #f4f6f8; border-radius: 4px; }
+code { padding: 1px 4px; }
+pre { padding: 12px; overflow-x: auto; }
+.document-meta { color: #5f6b7a; font-size: 0.9rem; margin-bottom: 22px; }
+
+</style></head><body>
+<div class=document-meta>Source: user/TRANSFORMATION_LEAD_TRAINING.md</div>
+<h1>Transformation Lead Training</h1>
+<h2>WorkPlace Conditions Governance</h2>
+<h2>Purpose</h2>
+<p>This resource trains Transformation Leads to coordinate the full WorkPlace Conditions Governance operating loop.</p>
+<p>Transformation Leads require the deepest practical training because they coordinate the workflow across diagnosis, recommendations, structural decisions, pilots, KPIs, scenario interpretation, governance actions, closure, and review-pack preparation.</p>
+<p>This resource supplements the existing training set. It does not replace the Training Manual, Concept Primer, Review-Page Operating Guides, or Role-Based Smoke-Test Scripts.</p>
+<hr>
+<h2>Recommended duration</h2>
+<table><thead><tr><th>Component</th><th>Duration</th></tr></thead><tbody>
+<tr><td>Foundation session</td><td>1 half-day</td></tr>
+<tr><td>Applied workflow session</td><td>1 half-day</td></tr>
+<tr><td>Supervised practice</td><td>At least one complete assessment cycle</td></tr>
+</tbody></table>
+<hr>
+<h2>Audience</h2>
+<p>This resource is for Transformation Leads who will:</p>
+<ul>
+<li>coordinate an assessment cycle;</li>
+<li>help move diagnostic findings into recommendations;</li>
+<li>support recommendation workflow and continuity;</li>
+<li>coordinate conversion into structural decisions;</li>
+<li>connect pilots, KPIs, evidence, and lineage;</li>
+<li>interpret scenario pressure and mitigation state;</li>
+<li>manage governance action ownership and closure;</li>
+<li>prepare governance review packs.</li>
+</ul>
+<p>This is not ordinary staff training.</p>
+<p>Critical rule:</p>
+<p>&gt; Ordinary staff should not be asked to discover hidden prerequisite states or validate advanced governance logic by exploration.</p>
+<hr>
+<h2>Existing resources to use with this training</h2>
+<table><thead><tr><th>Resource</th><th>Use</th></tr></thead><tbody>
+<tr><td><code>user/TRAINING_RESOURCE_INDEX.md</code></td><td>Overall learning pathway and role boundaries.</td></tr>
+<tr><td><code>user/TRAINING_MANUAL.md</code></td><td>Full operating-loop orientation.</td></tr>
+<tr><td><code>user/GOVERNANCE_ACTION_CONCEPT_PRIMER.md</code></td><td>Core terminology.</td></tr>
+<tr><td><code>user/metrics/Metrics explained.md</code></td><td>Owner-facing explanation of Stage A, Stage B, and Bridge metric value.</td></tr>
+<tr><td><code>user/metrics/Comprehensive Metric Reference.md</code></td><td>Detailed metric role, polarity, and interpretation reference.</td></tr>
+<tr><td><code>user/RECOMMENDATIONS_PAGE_LEARNING_RESOURCE.md</code></td><td>Recommendation, continuity, learning, and conversion workflow.</td></tr>
+<tr><td><code>user/KPI_DASHBOARD_PAGE_LEARNING_RESOURCE.md</code></td><td>KPI outcomes, reassessment, detail, lineage, and threshold rules.</td></tr>
+<tr><td><code>user/LINEAGE_VIEW_PAGE_LEARNING_RESOURCE.md</code></td><td>Path detail, evidence, learning, scenario, governance response, and threshold impact.</td></tr>
+<tr><td><code>user/PILOT_TRACKER_PAGE_LEARNING_RESOURCE.md</code></td><td>Pilot outcomes, metrics, linked KPIs, evidence, and lineage.</td></tr>
+<tr><td><code>user/REVIEW_PAGE_OPERATING_GUIDES.md</code></td><td>Review-page operation without directly platform-connected LLM support.</td></tr>
+<tr><td><code>user/ROLE_BASED_SMOKE_TEST_SCRIPTS.md</code></td><td>Role-appropriate testing boundaries.</td></tr>
+<tr><td><code>docs/56th_pass_Stage6B_2_current_state_management_brief.md</code></td><td>Management-level explanation and terminology context.</td></tr>
+</tbody></table>
+<hr>
+<h1>Session 1 — Half-Day Foundation</h1>
+<h2>Learning objective</h2>
+<p>By the end of the foundation session, the Transformation Lead should be able to explain:</p>
+<ol>
+<li>what WorkPlace Conditions Governance is for;</li>
+<li>the full operating loop;</li>
+<li>key terminology;</li>
+<li>how evidence, contradiction, weak support, and supportable states differ;</li>
+<li>why role boundaries and fixture discipline matter.</li>
+</ol>
+<hr>
+<h2>Foundation agenda</h2>
+<table><thead><tr><th>Segment</th><th>Topic</th><th>Suggested time</th></tr></thead><tbody>
+<tr><td>1</td><td>Purpose and governance model</td><td>30 min</td></tr>
+<tr><td>2</td><td>Full operating loop</td><td>45 min</td></tr>
+<tr><td>3</td><td>Core terminology</td><td>60 min</td></tr>
+<tr><td>4</td><td>Evidence, uncertainty, contradiction, and weak support</td><td>45 min</td></tr>
+<tr><td>5</td><td>Role boundaries and testing discipline</td><td>30 min</td></tr>
+<tr><td>6</td><td>Review and questions</td><td>30 min</td></tr>
+</tbody></table>
+<hr>
+<h2>1. Purpose and governance model</h2>
+<p>WorkPlace Conditions Governance is not just a dashboard.</p>
+<p>It is a governance workflow that helps an organization move from:</p>
+<pre><code>diagnosis
+→ recommendation
+→ structural decision
+→ pilot / implementation
+→ KPI and evidence monitoring
+→ scenario pressure review
+→ governance action ownership
+→ learning and closure
+→ review-pack preparation</code></pre>
+<p>The Transformation Lead coordinates this movement.</p>
+<hr>
+<h2>Metrics as Stage A, Stage B, and Bridge signals</h2>
+<p>Transformation Leads must be able to explain the metric system in plain management language:</p>
+<ul>
+<li>Stage A metrics help the organization understand reality.</li>
+<li>Stage B metrics and states test whether action is working.</li>
+<li>Bridge metrics connect diagnosis, action, evidence, continuity, scenario pressure, and governance learning.</li>
+</ul>
+<p>Teaching example:</p>
+<table><thead><tr><th>Signal</th><th>Role</th><th>Interpretation</th></tr></thead><tbody>
+<tr><td><code>structural_health_index</code></td><td>Stage A</td><td>What do workplace structures currently support or undermine?</td></tr>
+<tr><td>KPI progress / pilot outcome</td><td>Stage B</td><td>Is the intervention producing measurable movement?</td></tr>
+<tr><td><code>symbolic_structural_integrity_gap</code> or lineage drop-off</td><td>Bridge</td><td>Are claims, structures, action, and evidence coherent?</td></tr>
+</tbody></table>
+<p>The Transformation Lead should use this framing before asking users to interpret Score Dashboard, KPI Dashboard, Lineage View, or Governance Summary outputs.</p>
+<hr>
+<h2>2. Full operating loop</h2>
+<table><thead><tr><th>Stage</th><th>Transformation Lead question</th></tr></thead><tbody>
+<tr><td>Diagnose</td><td>What condition, risk, or structural concern has been identified?</td></tr>
+<tr><td>Recommend</td><td>What recommendation responds to it?</td></tr>
+<tr><td>Check continuity</td><td>Is this new, or does it continue prior work?</td></tr>
+<tr><td>Decide</td><td>Has the recommendation become a structural decision?</td></tr>
+<tr><td>Execute</td><td>Is there a pilot or implementation pathway?</td></tr>
+<tr><td>Link KPIs/evidence</td><td>What shows whether it is working?</td></tr>
+<tr><td>Review scenario pressure</td><td>Does future/contextual pressure change the interpretation?</td></tr>
+<tr><td>Govern actions</td><td>Who owns follow-up, and what is its status?</td></tr>
+<tr><td>Close learning</td><td>What has been learned, and what remains unresolved?</td></tr>
+<tr><td>Prepare review pack</td><td>What should governance bodies see and decide?</td></tr>
+</tbody></table>
+<hr>
+<h2>3. Core terminology</h2>
+<table><thead><tr><th>Term</th><th>Meaning</th><th>Transformation Lead question</th></tr></thead><tbody>
+<tr><td>Recommendation</td><td>Proposed governance response to a diagnosed concern.</td><td>Is it clear enough to act on, link, review, and carry forward?</td></tr>
+<tr><td>Continuity</td><td>Relationship between recommendations across cycles.</td><td>Is this genuinely new or continuing prior work?</td></tr>
+<tr><td>Carry-forward</td><td>Current recommendation continues a prior-cycle issue.</td><td>Is there a valid predecessor?</td></tr>
+<tr><td>Structural decision</td><td>A decision to preserve, reform, or replace a condition or pathway.</td><td>Has the recommendation become a concrete decision?</td></tr>
+<tr><td>Pilot</td><td>Bounded trial or implementation pathway.</td><td>What is being tried, owned, measured, and reviewed?</td></tr>
+<tr><td>KPI</td><td>Measure used to assess outcome, threshold, or progress.</td><td>Does this KPI help judge effect?</td></tr>
+<tr><td>Evidence</td><td>Support or qualification for interpretation.</td><td>Is the evidence strong enough?</td></tr>
+<tr><td>Scenario pressure</td><td>Future/contextual pressure affecting interpretation.</td><td>Does this make current action inadequate, urgent, contradicted, or weak?</td></tr>
+<tr><td>Governance action</td><td>Owned follow-up action.</td><td>Who owns it, what happens next, and when can it close?</td></tr>
+</tbody></table>
+<hr>
+<h2>4. Evidence and scenario states</h2>
+<table><thead><tr><th>State</th><th>Meaning</th></tr></thead><tbody>
+<tr><td>Insufficient evidence</td><td>Not enough linked support to justify the conclusion.</td></tr>
+<tr><td>Weak support</td><td>Some support exists, but it is partial, thin, or under pressure.</td></tr>
+<tr><td>Blocking pressure</td><td>Scenario or governance pressure blocks easy closure.</td></tr>
+<tr><td>Supportable</td><td>Current evidence supports a bounded conclusion.</td></tr>
+<tr><td>Attention prompt</td><td>Governance attention is required.</td></tr>
+</tbody></table>
+<p>Important:</p>
+<pre><code>A missing fixture is not a defect.
+A weak state is not failure.
+A supportable state is not certainty.</code></pre>
+<hr>
+<h2>5. Role boundaries</h2>
+<table><thead><tr><th>Role</th><th>Appropriate testing or use</th></tr></thead><tbody>
+<tr><td>Ordinary staff</td><td>readability, navigation, selected context, confusing wording</td></tr>
+<tr><td>Trained governance user</td><td>workflow operation and review-page use</td></tr>
+<tr><td>Transformation Lead</td><td>full workflow coordination and review-pack preparation</td></tr>
+<tr><td>Project Owner</td><td>governance fit, residual risk, and fixture discipline</td></tr>
+<tr><td>Developer / fixture tester</td><td>rare branches, hidden prerequisite states, controlled defect checks</td></tr>
+</tbody></table>
+<hr>
+<h1>Session 2 — Half-Day Applied Workflow</h1>
+<h2>Learning objective</h2>
+<p>By the end of the applied session, the Transformation Lead should be able to move a governance issue through the operating loop and prepare a basic review pack.</p>
+<hr>
+<h2>Applied agenda</h2>
+<table><thead><tr><th>Segment</th><th>Topic</th><th>Suggested time</th></tr></thead><tbody>
+<tr><td>1</td><td>Select cycle and diagnostic context</td><td>20 min</td></tr>
+<tr><td>2</td><td>Recommendation workflow</td><td>45 min</td></tr>
+<tr><td>3</td><td>Continuity and carry-forward</td><td>35 min</td></tr>
+<tr><td>4</td><td>Structural decision conversion</td><td>35 min</td></tr>
+<tr><td>5</td><td>Pilot and KPI linkage</td><td>45 min</td></tr>
+<tr><td>6</td><td>Scenario pressure and mitigation state</td><td>40 min</td></tr>
+<tr><td>7</td><td>Governance action ownership and closure</td><td>35 min</td></tr>
+<tr><td>8</td><td>Review-pack preparation</td><td>45 min</td></tr>
+</tbody></table>
+<hr>
+<h2>Workflow 1 — Select cycle and diagnostic context</h2>
+<p>Check:</p>
+<table><thead><tr><th>Question</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Is the correct organization selected?</td><td></td></tr>
+<tr><td>Is the correct assessment cycle selected?</td><td></td></tr>
+<tr><td>Is the domain or condition clear?</td><td></td></tr>
+<tr><td>Is there enough data to proceed?</td><td></td></tr>
+</tbody></table>
+<hr>
+<h2>Workflow 2 — Recommendation workflow</h2>
+<p>Use:</p>
+<pre><code>Recommendations</code></pre>
+<p>Check:</p>
+<table><thead><tr><th>Question</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Is the selected recommendation visible?</td><td></td></tr>
+<tr><td>Is evidence context visible?</td><td></td></tr>
+<tr><td>Does Workflow show selected recommendation context before controls?</td><td></td></tr>
+<tr><td>Does Continuity explain actions before controls?</td><td></td></tr>
+<tr><td>Does Learning show current learning state before action?</td><td></td></tr>
+<tr><td>Does Convert show recommendation and linked decision context before controls?</td><td></td></tr>
+</tbody></table>
+<hr>
+<h2>Workflow 3 — Continuity and carry-forward</h2>
+<p>Check:</p>
+<table><thead><tr><th>Situation</th><th>Correct handling</th></tr></thead><tbody>
+<tr><td>Valid prior-cycle predecessor exists</td><td>Candidate carry-forward</td></tr>
+<tr><td>No valid predecessor exists</td><td>New or not exercised</td></tr>
+<tr><td>Prior/current pair cannot be named</td><td>Not exercised — fixture unavailable</td></tr>
+<tr><td>UI gives wrong eligibility for a valid fixture</td><td>Material defect</td></tr>
+</tbody></table>
+<p>Do not guess predecessor relationships.</p>
+<hr>
+<h2>Workflow 4 — Structural decision conversion</h2>
+<p>Use:</p>
+<pre><code>Recommendations → Convert</code></pre>
+<p>Check:</p>
+<table><thead><tr><th>Question</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Is the selected recommendation clear?</td><td></td></tr>
+<tr><td>Is a linked structural decision already present?</td><td></td></tr>
+<tr><td>Is supporting evidence visible or explicitly absent?</td><td></td></tr>
+<tr><td>Is conversion appropriate?</td><td></td></tr>
+</tbody></table>
+<hr>
+<h2>Workflow 5 — Pilot and KPI linkage</h2>
+<p>Use:</p>
+<pre><code>Pilot Tracker
+KPI Dashboard
+Lineage View</code></pre>
+<p>Check:</p>
+<table><thead><tr><th>Question</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Is selected pilot context visible?</td><td></td></tr>
+<tr><td>Is pilot outcome explained?</td><td></td></tr>
+<tr><td>Are linked KPIs visible or explicitly absent?</td><td></td></tr>
+<tr><td>Is evidence visible or explicitly absent?</td><td></td></tr>
+<tr><td>Is lineage understandable?</td><td></td></tr>
+<tr><td>Are threshold or reassessment contexts relevant?</td><td></td></tr>
+</tbody></table>
+<hr>
+<h2>Workflow 6 — Scenario pressure and mitigation state</h2>
+<p>Use:</p>
+<pre><code>Scenario Effectiveness Review
+Governance Execution Review
+Governance Summary</code></pre>
+<p>Check:</p>
+<table><thead><tr><th>Question</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Was refresh used before review?</td><td></td></tr>
+<tr><td>Is scenario posture visible?</td><td></td></tr>
+<tr><td>Can a candidate row/entity be named?</td><td></td></tr>
+<tr><td>Is evidence state visible?</td><td></td></tr>
+<tr><td>Is contradiction or incompleteness visible or absent?</td><td></td></tr>
+<tr><td>Are governance attention prompts visible or absent?</td><td></td></tr>
+</tbody></table>
+<p>Do not classify a fixture as passed from aggregate counts alone. Identify a candidate row/entity or export row.</p>
+<hr>
+<h2>Workflow 7 — Governance action ownership and closure</h2>
+<p>Use:</p>
+<pre><code>Governance Action Queue
+Governance Execution Review</code></pre>
+<p>Check:</p>
+<table><thead><tr><th>Question</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Is the selected action visible?</td><td></td></tr>
+<tr><td>Do owner/status controls appear after selected-action context?</td><td></td></tr>
+<tr><td>Do resolution controls appear after selected-action context?</td><td></td></tr>
+<tr><td>Is the status update appropriate?</td><td></td></tr>
+<tr><td>Is closure appropriate?</td><td></td></tr>
+</tbody></table>
+<hr>
+<h2>Workflow 8 — Prepare a review pack</h2>
+<p>Use:</p>
+<pre><code>Governance Summary → Export
+Comparative Cycle Review
+Scenario Effectiveness Review
+Governance Execution Review
+Governance Action Queue</code></pre>
+<p>Minimum sections:</p>
+<table><thead><tr><th>Section</th><th>Included?</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Cycle and scope</td><td></td><td></td></tr>
+<tr><td>Main diagnostic posture</td><td></td><td></td></tr>
+<tr><td>Recommendations and status</td><td></td><td></td></tr>
+<tr><td>Structural decisions / conversions</td><td></td><td></td></tr>
+<tr><td>Pilots and KPI linkage</td><td></td><td></td></tr>
+<tr><td>Scenario pressure and mitigation state</td><td></td><td></td></tr>
+<tr><td>Evidence, contradiction, and weak support</td><td></td><td></td></tr>
+<tr><td>Governance action ownership and closure</td><td></td><td></td></tr>
+<tr><td>Learning and residual risks</td><td></td><td></td></tr>
+</tbody></table>
+<hr>
+<h1>Supervised Use Through One Complete Assessment Cycle</h1>
+<p>The Transformation Lead should complete at least one full assessment cycle with supervision.</p>
+<table><thead><tr><th>Step</th><th>Completed?</th><th>Supervisor notes</th></tr></thead><tbody>
+<tr><td>Cycle context confirmed</td><td></td><td></td></tr>
+<tr><td>Diagnosis reviewed</td><td></td><td></td></tr>
+<tr><td>Recommendations reviewed</td><td></td><td></td></tr>
+<tr><td>Continuity/carry-forward classified</td><td></td><td></td></tr>
+<tr><td>Structural decisions reviewed or created</td><td></td><td></td></tr>
+<tr><td>Pilot/KPI linkage reviewed</td><td></td><td></td></tr>
+<tr><td>Scenario pressure reviewed</td><td></td><td></td></tr>
+<tr><td>Governance actions reviewed</td><td></td><td></td></tr>
+<tr><td>Review pack prepared</td><td></td><td></td></tr>
+<tr><td>Residual risks updated</td><td></td><td></td></tr>
+</tbody></table>
+<hr>
+<h1>Competency Checklist</h1>
+<p>A Transformation Lead is ready for independent use when they can:</p>
+<table><thead><tr><th>Competency</th><th>Ready?</th><th>Notes</th></tr></thead><tbody>
+<tr><td>Explain the full operating loop.</td><td></td><td></td></tr>
+<tr><td>Select the correct organization and cycle.</td><td></td><td></td></tr>
+<tr><td>Navigate recommendations, KPIs, lineage, pilots, and review pages.</td><td></td><td></td></tr>
+<tr><td>Distinguish recommendation, decision, pilot, KPI, and evidence.</td><td></td><td></td></tr>
+<tr><td>Explain continuity and carry-forward without guessing.</td><td></td><td></td></tr>
+<tr><td>Convert or review structural decisions with selected context visible.</td><td></td><td></td></tr>
+<tr><td>Interpret pilot and KPI linkage.</td><td></td><td></td></tr>
+<tr><td>Interpret scenario pressure and mitigation state.</td><td></td><td></td></tr>
+<tr><td>Manage governance action ownership and closure safely.</td><td></td><td></td></tr>
+<tr><td>Prepare a review pack with qualifications and residual risks.</td><td></td><td></td></tr>
+<tr><td>Know when a missing fixture is not a defect.</td><td></td><td></td></tr>
+<tr><td>Know when to ask for developer/fixture support.</td><td></td><td></td></tr>
+</tbody></table>
+<hr>
+<h1>Normal LLM Support</h1>
+<p>Transformation Leads may use normal LLM support services for:</p>
+<ul>
+<li>explaining visible page text;</li>
+<li>summarising exported rows;</li>
+<li>drafting review-pack notes;</li>
+<li>converting observations into plain language;</li>
+<li>preparing meeting summaries.</li>
+</ul>
+<p>Safe prompt:</p>
+<pre><code>I am using WorkPlace Conditions Governance. Here is the visible page text/export. Please help me summarise it without assuming hidden data.</code></pre>
+<p>Do not ask an LLM to infer unseen application state.</p>
+<p>Do not treat an LLM as connected to the live platform unless it actually is.</p>
+<hr>
+<h1>Additional Doctrine Module — Diversity, Respect, Trust, and Mission Integrity</h1>
+<p>Use:</p>
+<pre><code>user/DIVERSITY_RESPECT_TRUST_MISSION_INTEGRITY_MODULE.md</code></pre>
+<p>This module teaches:</p>
+<pre><code>human diversity
+→ shared mission values
+→ reciprocal recognition
+→ respectful contestation
+→ conflict clarification and legitimate resolution
+→ earned trust
+→ cooperation
+→ collaboration
+→ mission execution under flourishing constraints</code></pre>
+<p>It also teaches the ambiguity of <code>performance</code>:</p>
+<table><thead><tr><th>Mode</th><th>Meaning</th></tr></thead><tbody>
+<tr><td>Presentational performance</td><td>Appropriate statements, gestures, reports, metrics, rituals, or compliance signals that appear aligned with values.</td></tr>
+<tr><td>Value-realising performance</td><td>Actual achievement of intended outcomes in relation to mission, dignity, trust, cooperation, collaboration, and real value creation.</td></tr>
+</tbody></table>
+<p>Transformation Leads must ask:</p>
+<pre><code>Are we observing a persuasive performance of alignment, or evidence that the intended value is actually being realised?</code></pre>
+<hr>
+<h1>Facilitator Guide</h1>
+<p>Use:</p>
+<pre><code>user/TRANSFORMATION_LEAD_TRAINING_FACILITATOR_GUIDE.md</code></pre>
+<p>The facilitator guide provides trainer preparation notes, run sheets, doctrine teaching notes, practical exercises, debrief prompts, and supervised-cycle guidance.</p>
+<hr>
+<h1>Participant Workbook</h1>
+<p>Use:</p>
+<pre><code>user/TRANSFORMATION_LEAD_TRAINING_PARTICIPANT_WORKBOOK.md</code></pre>
+<p>The participant workbook gives learners practical worksheets for the foundation session, applied workflow session, review-pack preparation, supervised-cycle practice, and readiness reflection.</p>
+<hr>
+<h1>Competency Assessment</h1>
+<p>Use:</p>
+<pre><code>user/TRANSFORMATION_LEAD_TRAINING_COMPETENCY_ASSESSMENT.md</code></pre>
+<p>The competency assessment helps a facilitator, Project Owner, or supervisor judge whether a Transformation Lead is ready for supervised practice, continued supervision, limited independent coordination, or independent coordination.</p>
+<hr>
+<h1>Six Management Intentions and Four-Cycle Operating Pattern</h1>
+<p>Use:</p>
+<pre><code>user/SIX_MANAGEMENT_INTENTIONS_AND_FOUR_CYCLE_OPERATING_PATTERN.md</code></pre>
+<p>This resource teaches the management-purpose architecture of WorkPlace Conditions Governance: the six management-intention questions, seven value-adding activities, four-cycle operating pattern, recommendation and governance judgment gates, learning orientation, and performance-integrity discipline.</p>
+<hr>
+<h1>Worked Training Example Assessment Cycle</h1>
+<p>Use:</p>
+<pre><code>user/WORKED_TRAINING_EXAMPLE_ASSESSMENT_CYCLE.md</code></pre>
+<p>This resource provides an illustrative end-to-end worked assessment-cycle example organized around the six management-intention questions, seven value-adding activities, four-cycle operating pattern, recommendation gates, governance gates, evidence review, learning, and review-pack preparation.</p>
+<hr>
+<h1>Training Resource Closure Guide</h1>
+<p>Use:</p>
+<pre><code>user/TRANSFORMATION_LEAD_TRAINING_RESOURCE_CLOSURE_GUIDE.md</code></pre>
+<p>The closure guide maps the complete Transformation Lead Training resource set, recommended sequence, doctrine preservation, role boundaries, optional improvements, and closure position.</p>
+</body></html>
